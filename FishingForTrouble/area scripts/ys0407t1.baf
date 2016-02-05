@@ -1,0 +1,7 @@
+IF
+  IsOverMe([ANYONE])
+	Global("ys0407t1","GLOBAL",0)
+THEN
+  RESPONSE #100
+	 SetGlobal("ys0407t1","GLOBAL",1)
+END

@@ -1,0 +1,145 @@
+//I'm dead
+IF
+	Dead("ysblrwz")
+THEN
+	RESPONSE #100
+		SetGlobal("ys_BLRWIsDead","GLOBAL",1)
+END
+
+//Lead the way to Rockfist
+IF
+	Global("WizardWalk","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("WizardWalk","GLOBAL",2)
+		MoveToPoint([2060.960])
+END
+
+//Red Wizard attacks and defences
+IF
+  OR(2)
+    Global("ys_RedCompanyFight","GLOBAL",1)
+    Global("ysblgrd","GLOBAL",2)
+	!Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		SetGlobal("ysFoundCaravan","GLOBAL",1)
+		Enemy()
+		Continue()
+END
+
+//Select some magic defences
+IF
+	Allegiance(Myself,ENEMY)
+	Global("ys_RWGI","LOCALS",0)
+THEN
+	RESPONSE #20
+		SetGlobal("ys_RWGI","LOCALS",1)
+		ReallyForceSpell(Myself,WIZARD_GLOBE_OF_INVULNERABILITY)
+		ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+		ReallyForceSpell(Myself,WIZARD_FIRE_SHIELD_RED)
+	RESPONSE #27
+		SetGlobal("ys_RWGI","LOCALS",1)
+		ReallyForceSpell(Myself,WIZARD_FIRE_SHIELD_BLUE)
+		ReallyForceSpell(Myself,WIZARD_ARMOR)
+		ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	RESPONSE #27
+		SetGlobal("ys_RWGI","LOCALS",1)
+		ReallyForceSpell(Myself,WIZARD_GHOST_ARMOR)
+		ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+		ReallyForceSpell(Myself,WIZARD_MINOR_GLOBE_OF_INVULNERABILITY)
+	RESPONSE #26
+		SetGlobal("ys_RWGI","LOCALS",1)
+		ReallyForceSpell(Myself,WIZARD_MINOR_SPELL_DEFLECTION)
+		ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_FIRE)
+		ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	Continue()
+END
+
+//Potion of Healing aka Cure Moderate Wounds
+IF
+	HPPercentLT(Myself,25)
+	GlobalLT("ys_ExHeal","LOCALS",2)
+THEN
+	RESPONSE #100
+		IncrementGlobal("ys_ExHeal","LOCALS",1)
+		ReallyForceSpell(Myself,CLERIC_CURE_MEDIUM_WOUNDS)
+//			DisplayStringHead(Myself,18893)							// say "Potion of Extra Healing"
+END
+
+//Throw out an area spell
+IF
+	Allegiance(Myself,ENEMY)
+	Global("ys_RWWeb","LOCALS",0)
+	See([GOODCUTOFF])
+THEN
+	RESPONSE #33
+		SetGlobal("ys_RWWeb","LOCALS",1)
+		ForceSpell(LastSeenBy(Myself),WIZARD_WEB)
+	RESPONSE #67
+		SetGlobal("ys_RWWeb","LOCALS",1)
+		ForceSpell(LastSeenBy(Myself),WIZARD_GREASE)
+	Continue()
+END
+
+//Give them a selection of spells to chose from
+IF
+	Allegiance(Myself,ENEMY)
+	GlobalLT("ys_RWMM","LOCALS",10)
+	See([GOODCUTOFF])
+THEN
+	RESPONSE #5
+		IncrementGlobal("ys_RWMM","LOCALS",1)
+		ForceSpell(LastSeenBy(Myself),WIZARD_MAGIC_MISSILE)
+	RESPONSE #10
+		IncrementGlobal("ys_RWMM","LOCALS",1)
+		ForceSpell(LastSeenBy(Myself),WIZARD_CHROMATIC_ORB)
+	RESPONSE #10
+		IncrementGlobal("ys_RWMM","LOCALS",1)
+		ForceSpell(LastSeenBy(Myself),WIZARD_AGANNAZAR_SCORCHER)
+	RESPONSE #10
+		IncrementGlobal("ys_RWMM","LOCALS",1)
+		ForceSpell(LastSeenBy(Myself),WIZARD_DIRE_CHARM)
+	RESPONSE #10
+		IncrementGlobal("ys_RWMM","LOCALS",1)
+		ForceSpell(LastSeenBy(Myself),WIZARD_EMOTION_HOPELESSNESS)
+	RESPONSE #10
+		IncrementGlobal("ys_RWMM","LOCALS",1)
+		ForceSpell(LastSeenBy(Myself),WIZARD_FLAME_ARROW)
+	RESPONSE #10
+		IncrementGlobal("ys_RWMM","LOCALS",1)
+		ForceSpell(LastSeenBy(Myself),WIZARD_MELF_ACID_ARROW)
+	RESPONSE #10
+		IncrementGlobal("ys_RWMM","LOCALS",1)
+		ForceSpell(LastSeenBy(Myself),WIZARD_ANIMATE_DEAD)
+	RESPONSE #10
+		IncrementGlobal("ys_RWMM","LOCALS",1)
+		ForceSpell(LastSeenBy(Myself),WIZARD_HORROR)
+	RESPONSE #10
+		IncrementGlobal("ys_RWMM","LOCALS",1)
+		ForceSpell(LastSeenBy(Myself),WIZARD_CONFUSION)
+	RESPONSE #5
+		IncrementGlobal("ys_RWMM","LOCALS",1)
+		ForceSpell(LastSeenBy(Myself),WIZARD_LARLOCH_MINOR_DRAIN)
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	GlobalGT("ys_RWMM","LOCALS",10)
+	See([GOODCUTOFF])
+	!Range([GOODCUTOFF],4)
+THEN
+	RESPONSE #100
+		RunAwayFrom([GOODCUTOFF],75)
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	GlobalGT("ys_RWMM","LOCALS",10)
+	See([GOODCUTOFF])
+	Range([GOODCUTOFF],4)
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+		Attack(LastSeenBy())
+END

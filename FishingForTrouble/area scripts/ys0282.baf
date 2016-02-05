@@ -1,0 +1,18 @@
+IF
+	Global("ys_enter282","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ys_enter282","GLOBAL",1)
+		Lock("DOOR01")
+		Continue()
+END
+
+IF
+  Global("ys_TombFight","GLOBAL",1)
+  Global("ys_DupDwarfLord","GLOBAL",0)
+THEN
+  RESPONSE #100
+    CreateCreature("YSDLDOP",[662.578],10)
+    CreateCreature("YSDLDOP",[756.542],10)
+    SetGlobal("ys_DupDwarfLord","GLOBAL",1)
+END

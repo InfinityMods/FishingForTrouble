@@ -1,0 +1,9 @@
+IF
+  Global("ysTalkedToAkil","GLOBAL",1)
+  Global("ysCreateRimon","GLOBAL",0)
+  TimeOfDay(NIGHT)
+THEN
+  RESPONSE #100
+    SetGlobal("ysCreateRimon","GLOBAL",1)
+    CreateCreature("ysrimon",[624.256],2)
+END

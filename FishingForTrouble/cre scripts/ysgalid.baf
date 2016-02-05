@@ -1,0 +1,14 @@
+IF
+	Detect([PC])
+THEN
+	RESPONSE #100
+		MoveToPoint([1964.459])
+		Wait(10)
+		MoveToPoint([2063.482])
+		Wait(3)
+		MoveToPoint([1830.419])
+		Wait(4)
+		MoveToPoint([1776.358])
+		Wait(2)
+END
+

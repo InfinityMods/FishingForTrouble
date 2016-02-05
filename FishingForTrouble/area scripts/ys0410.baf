@@ -1,0 +1,35 @@
+IF
+  Global("ys_ImradimMapnotes","YS0410",0)
+THEN
+  RESPONSE #100
+    AddMapNote([1332.917],@307)
+    AddMapNote([800.1400],@308)
+    AddMapNote([358.1094],@309)
+    AddMapNote([4584.512],@310)
+    AddMapNote([4277.1960],@311)
+    AddMapNote([1767.1283],@312)
+    AddMapNote([2292.2333],@313)
+    AddMapNote([1284.2491],@314)
+    AddMapNote([1518.261],@317)
+    SetGlobal("ys_ImradimMapnotes","YS0410",1)
+END
+
+IF
+	Global("ysAssassinCave,","GLOBAL",1)
+  Global("ys_AssassinMapnote","YS0410",0)
+THEN
+  RESPONSE #100
+    AddMapNote([4334.2009],@317)
+    SetGlobal("ys_AssassinMapnote","YS0410",1)
+END
+
+// Face off by the water tank
+IF
+  Global("ysTalkedToRimon","GLOBAL",1)
+  Global("ysCreateAkil","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ysCreateAkil","GLOBAL",1)
+    CreateCreature("ysrimon",[2004.1147],12)
+    CreateCreature("ysakil",[2095.1148],3)
+END

@@ -1,0 +1,30 @@
+//Open magic rockfall
+IF
+  Clicked([ANYONE])
+  !PartyHasItem("ysdhkey")
+THEN
+  RESPONSE #100
+    DisplayString(Myself,@415)
+END
+
+IF
+  Global("dai_KeyHole","GLOBAL",1)
+  Clicked([ANYONE])
+THEN
+  RESPONSE #100
+    DisplayStringHead(Myself,@420)
+END
+
+IF
+  Global("dai_KeyHole","GLOBAL",0)
+  PartyHasItem("ysdhkey")
+  Clicked([ANYONE])
+THEN
+  RESPONSE #100
+    DisplayStringHead(Myself,@419)
+    Wait(2)
+    Unlock("DOOR0200")
+    OpenDoor("DOOR0200")
+    SetGlobal("dai_KeyHole","GLOBAL",1)
+END
+

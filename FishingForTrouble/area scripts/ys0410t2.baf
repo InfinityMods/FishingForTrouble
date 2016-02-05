@@ -1,0 +1,29 @@
+IF
+	!PartyHasItem("yscpem")
+	IsOverMe([ANYONE])
+	Global("ys_SourWater","GLOBAL",0)
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@413)
+		SetGlobal("ys_SourWater","GLOBAL",1)
+END
+
+IF
+	PartyHasItem("yscpem")
+	IsOverMe([ANYONE])
+	Global("ys_SourWater","GLOBAL",0)
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@414)
+		TakePartyItem("yscpem")
+		GiveItemCreate("yscpfl",Player1,1,1,0)
+		SetGlobal("ys_SourWater","GLOBAL",1)
+END
+
+IF
+	!IsOverMe([ANYONE])
+	Global("ys_SourWater","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ys_SourWater","GLOBAL",0)
+END

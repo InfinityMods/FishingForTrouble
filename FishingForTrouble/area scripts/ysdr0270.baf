@@ -1,0 +1,29 @@
+//Hack a hole in the cave wall
+IF
+  Clicked([ANYONE])
+  !PartyHasItem("YSPKHMR")
+THEN
+  RESPONSE #100
+    DisplayString(Myself,@417)
+END
+
+IF
+  Global("dai_PickHole","GLOBAL",1)
+  Clicked([ANYONE])
+THEN
+  RESPONSE #100
+    DisplayStringHead(Myself,@418)
+END
+
+IF
+  Global("dai_PickHole","GLOBAL",0)
+  PartyHasItem("YSPKHMR")
+  Clicked([ANYONE])
+THEN
+  RESPONSE #100
+    DisplayStringHead(Myself,@416)
+    Wait(2)
+    Unlock("DOOR0270")
+    OpenDoor("DOOR0270")
+    SetGlobal("dai_PickHole","GLOBAL",1)
+END

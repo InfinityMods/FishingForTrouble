@@ -1,0 +1,37 @@
+IF
+  Global("ysBasimahAttack","GLOBAL",1)
+	OR(3)
+		AttackedBy([ANYONE],DEFAULT)
+		AttackedBy([ANYONE],MELEE)
+		AttackedBy([ANYONE],RANGED)
+THEN
+	RESPONSE #100
+		ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+		ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+		ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+		SetGlobal("ysBasimahAttack","GLOBAL",2)
+		Continue()
+END
+
+IF
+	HPLT(Myself,30)
+	GlobalLT("ysBasimahCure","LOCALS",4)
+THEN
+	RESPONSE #100
+		ReallyForceSpell(Myself,CLERIC_HEAL)
+	  IncrementGlobal("ysBasimahCure","LOCALS",1)
+	  Continue()
+END
+
+IF
+	Global("ysBasimahAttack","GLOBAL",2)
+THEN
+	RESPONSE #25
+		ReallyForceSpell(LastAttackerOf(),CLERIC_SLAY_LIVING)
+	RESPONSE #25
+		ReallyForceSpell(LastAttackerOf(),WIZARD_CHAIN_LIGHTNING)
+	RESPONSE #25
+		ReallyForceSpell(LastAttackerOf(),WIZARD_DEATH_SPELL)
+	RESPONSE #25
+		ReallyForceSpell(LastAttackerOf(),WIZARD_EMOTION_HOPELESSNESS)
+END

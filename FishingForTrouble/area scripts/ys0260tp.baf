@@ -1,0 +1,28 @@
+IF
+	IsOverMe([ANYONE]) //All characters are in my proximity box
+	Global("ys_VillageQuestComplete","GLOBAL",0) //Flag to control the area to move to
+THEN
+	RESPONSE #100
+  	SetGlobal("ys_0260TravelTrap","GLOBAL",0) //Reset the primer
+  	ActionOverride(Player1,LeaveAreaLUA("ys1000","",[2730.2040],3)) //and move the party to the required area
+  	ActionOverride(Player2,LeaveAreaLUA("ys1000","",[2740.2050],3)) //and move the party to the required area
+  	ActionOverride(Player3,LeaveAreaLUA("ys1000","",[2710.2040],3)) //and move the party to the required area
+  	ActionOverride(Player4,LeaveAreaLUA("ys1000","",[2720.2050],3)) //and move the party to the required area
+  	ActionOverride(Player5,LeaveAreaLUA("ys1000","",[2690.2040],3)) //and move the party to the required area
+  	ActionOverride(Player6,LeaveAreaLUA("ys1000","",[2700.2050],3)) //and move the party to the required area
+END
+
+//Village restored
+IF
+	IsOverMe([ANYONE]) //All characters are in my proximity box
+	Global("ys_VillageQuestComplete","GLOBAL",1) //Flag to control the area to move to
+THEN
+	RESPONSE #100
+  	SetGlobal("ys_0260TravelTrap","GLOBAL",0) //Reset the primer
+  	ActionOverride(Player1,LeaveAreaLUA("ys1001","",[2730.2040],3)) //and move the party to the required area
+  	ActionOverride(Player2,LeaveAreaLUA("ys1001","",[2740.2050],3)) //and move the party to the required area
+  	ActionOverride(Player3,LeaveAreaLUA("ys1001","",[2710.2040],3)) //and move the party to the required area
+  	ActionOverride(Player4,LeaveAreaLUA("ys1001","",[2720.2050],3)) //and move the party to the required area
+  	ActionOverride(Player5,LeaveAreaLUA("ys1001","",[2690.2040],3)) //and move the party to the required area
+  	ActionOverride(Player6,LeaveAreaLUA("ys1001","",[2700.2050],3)) //and move the party to the required area
+END

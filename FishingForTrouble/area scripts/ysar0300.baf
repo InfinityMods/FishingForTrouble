@@ -1,0 +1,20 @@
+//Create Bengoch
+IF
+	Global("ys_SeeBengoch","GLOBAL",0)
+  Global("ys_TalkedToAiloth","GLOBAL",1)
+THEN
+	RESPONSE #100
+	SetGlobal("ys_SeeBengoch","GLOBAL",1)
+	CreateCreature("ysbengch",[2075.3356],7)
+	CreateCreature("ysatbow",[1775.3284],5)
+	CreateCreature("ysatbow",[1803.3221],5)
+	CreateCreature("ysatbow",[1871.3107],6)
+	CreateCreature("ysatbow",[2096.3040],9)
+	CreateCreature("ysatbow",[2149.3080],9)
+	CreateCreature("ysatbow",[2199.3090],10)
+	CreateCreature("ysatgrd",[1894.3312],5)
+	CreateCreature("ysatgrd",[1970.3261],6)
+	CreateCreature("ysatgrd",[2088.3200],10)
+	CreateCreature("ysatgrd",[2197.3204],12)
+	Continue()
+END

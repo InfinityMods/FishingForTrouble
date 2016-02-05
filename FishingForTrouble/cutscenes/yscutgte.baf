@@ -1,0 +1,14 @@
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneID(Player1)
+    HideGUI()
+ 		CreateCreature("OBSERVE",[2113.584],0)
+ 		MoveViewPoint([2113.680],VERY_FAST)
+ 		SetGlobalTimer("ys_GateGuardTimer","GLOBAL",8)
+    SetGlobal("ys_GateCutscene","GLOBAL",1)
+    UnhideGUI()
+    EndCutSceneMode()
+END
+

@@ -1,0 +1,7 @@
+IF
+	See([PC])
+	AreaCheck("ar0020")
+THEN
+	RESPONSE #100
+	Dialogue(Protagonist)
+END

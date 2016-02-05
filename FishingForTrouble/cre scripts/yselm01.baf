@@ -1,0 +1,11 @@
+//Stupid move
+IF
+	OR(3)
+		AttackedBy([ANYONE],DEFAULT)
+		AttackedBy([ANYONE],MELEE)
+		AttackedBy([ANYONE],RANGED)
+THEN
+	RESPONSE #100
+		ChangeAIScript("yselmov",OVERRIDE)
+END
+

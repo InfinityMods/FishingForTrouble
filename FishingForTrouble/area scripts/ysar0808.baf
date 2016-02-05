@@ -1,0 +1,9 @@
+IF
+  Global("ys_SetVampChild","GLOBAL",1)
+THEN
+  RESPONSE #100
+    CreateCreature("yschvam",[422.1527],10)
+    SetGlobal("ys_SetVampChild","GLOBAL",2)
+    Continue()
+END
+

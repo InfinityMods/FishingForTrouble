@@ -1,0 +1,68 @@
+//Timer setup
+IF
+  Global("ISVTimers","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ys_ElminsterTimer","GLOBAL",0)
+    SetGlobal("ISVTimers","LOCALS",1)
+END
+
+//------------------------------------------------------------------------
+//Create Lief Torman inside the Inn of the Seven Veils
+//This relies on the letter not having been accepted and Elminster
+//has been met in Trademeet for the first time
+IF
+	Global("ys_FindElminster","GLOBAL",2)
+	Global("ys_NoLetter","GLOBAL",1)
+	Global("ys_SpawnLief2","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ys_SpawnLief2","GLOBAL",1)
+		CreateCreature("ysltor",[848.456],2)
+END
+
+//------------------------------------------------------------------------
+//Set dialog flags to speak to Elminster after he has been to Brynnlaw
+//Ensure Elminster is destroyed before creation
+//Ensure Lief Torman is also destroyed
+IF
+  GlobalTimerExpired("ys_ElminsterTimer","GLOBAL")
+  Global("ys_TanarriElminister","GLOBAL",2)
+THEN
+  RESPONSE #100
+    SetGlobal("ys_TanarriElminister","GLOBAL",3)
+		ActionOverride("yselm01",DestroySelf())
+		ActionOverride("ysltor",DestroySelf())
+		CreateCreature("yselm01",[828.470],2)
+END
+
+//------------------------------------------------------------------------
+//<CHARNAME> is a ghoul
+//Ensure Elminster is destroyed before creation
+//Ensure Lief Torman is also destroyed
+IF
+  PartyHasItem("ysghoul1")
+  Global("ys_ElminsterGhoul","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ys_ElminsterGhoul","GLOBAL",1)
+		ActionOverride("yselm01",DestroySelf())
+		ActionOverride("ysltor",DestroySelf())
+		CreateCreature("yselm01",[828.470],2)
+		CreateCreature("ysltor",[840.498],2)
+END
+
+//------------------------------------------------------------------------
+//Create both Lief and Elminster when the player comes looking for Elminster
+//after finishing the quest
+IF
+  GlobalGT("ys_TalkedToGarGel","GLOBAL",7)
+  Global("ys_ElminsterEndQuest","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ys_ElminsterEndQuest","GLOBAL",1)
+		ActionOverride("yselm01",DestroySelf())
+		ActionOverride("ysltor",DestroySelf())
+		CreateCreature("yselm01",[828.470],2)
+		CreateCreature("ysltor",[840.498],2)
+END

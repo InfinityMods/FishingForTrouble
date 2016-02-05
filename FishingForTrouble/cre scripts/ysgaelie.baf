@@ -1,0 +1,9 @@
+IF
+	See([PC])
+	Global("ysSeenGaelie","LOCALS",0)
+THEN
+	RESPONSE #100
+    SetGlobal("ysSeenGaelie","LOCALS",1)
+    Dialogue(Protagonist)
+END
+

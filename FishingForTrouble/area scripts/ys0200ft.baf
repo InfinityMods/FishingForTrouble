@@ -1,0 +1,40 @@
+IF
+  OR(6)
+    IsOverMe(Player1)
+    IsOverMe(Player2)
+    IsOverMe(Player3)
+    IsOverMe(Player4)
+    IsOverMe(Player5)
+    IsOverMe(Player6)
+	Global("ys0200tfartrap","GLOBAL",1)
+THEN
+  RESPONSE #100
+	  SetGlobal("ys0200tfartrap","GLOBAL",2)
+END
+
+IF
+  OR(6)
+    IsOverMe(Player1)
+    IsOverMe(Player2)
+    IsOverMe(Player3)
+    IsOverMe(Player4)
+    IsOverMe(Player5)
+    IsOverMe(Player6)
+	Global("ys0200tfartrap","GLOBAL",0)
+THEN
+  RESPONSE #100
+	  SetGlobal("ys0200tfartrap","GLOBAL",1)
+		SetGlobal("ys0200twalls","GLOBAL",1)
+    ActionOverride(Player1,LeaveAreaLUA("ys0200","",[1800.1470],3))
+    ActionOverride(Player1,CreateVisualEffectObject("SPUSEANY",Player1))
+    ActionOverride(Player2,LeaveAreaLUA("ys0200","",[1800.1470],10))
+    ActionOverride(Player2,CreateVisualEffectObject("SPUSEANY",Player2))
+    ActionOverride(Player3,LeaveAreaLUA("ys0200","",[1800.1470],7))
+    ActionOverride(Player3,CreateVisualEffectObject("SPUSEANY",Player3))
+    ActionOverride(Player4,LeaveAreaLUA("ys0200","",[1800.1470],6))
+    ActionOverride(Player4,CreateVisualEffectObject("SPUSEANY",Player4))
+    ActionOverride(Player5,LeaveAreaLUA("ys0200","",[1800.1470],1))
+    ActionOverride(Player5,CreateVisualEffectObject("SPUSEANY",Player5))
+    ActionOverride(Player6,LeaveAreaLUA("ys0200","",[1800.1470],9))
+    ActionOverride(Player6,CreateVisualEffectObject("SPUSEANY",Player6))
+END

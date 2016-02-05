@@ -1,0 +1,56 @@
+IF
+	Dead("ysfirdos")
+	Global("ysDeadFirdos","LOCALS",0)
+THEN
+	RESPONSE #100
+		AddexperienceParty(3000)
+		SetGlobal("ysDeadFirdos","LOCALS",1)
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	Global("ysFirdosAttack","LOCALS",0)
+THEN
+	RESPONSE #100
+		ReallyForceSpell(Myself,WIZARD_SPELL_IMMUNITY)
+		ReallyForceSpell(Myself,WIZARD_GLOBE_OF_INVULNERABILITY)
+		SetGlobal("ysFirdosAttack","LOCALS",1)
+		Continue()
+END
+
+IF
+	See([PC])
+	Global("ysFirdosAttackCounter","LOCALS",3)
+THEN
+	RESPONSE #100
+		SetGlobal("ysTalkedToFirdos","GLOBAL",2)
+	 	Dialogue(Protagonist)
+END
+
+IF
+		Global("ysFirdosAttack","LOCALS",1)
+		GlobalLT("ysFirdosAttackCounter","LOCALS",5)
+THEN
+	RESPONSE #20
+		ForceSpell(NearestEnemyOf(),WIZARD_MAGIC_MISSILE)
+		IncrementGlobal("ysFirdosAttackCounter","LOCALS",1)
+	RESPONSE #20
+		ForceSpell(NearestEnemyOf(),WIZARD_DIRE_CHARM)
+		IncrementGlobal("ysFirdosAttackCounter","LOCALS",1)
+	RESPONSE #20
+		ForceSpell(NearestEnemyOf(),WIZARD_FLAME_ARROW)
+		IncrementGlobal("ysFirdosAttackCounter","LOCALS",1)
+	RESPONSE #20
+		ForceSpell(NearestEnemyOf(),WIZARD_MONSTER_SUMMONING_2)
+		IncrementGlobal("ysFirdosAttackCounter","LOCALS",1)
+	RESPONSE #20
+		ForceSpell(NearestEnemyOf(),WIZARD_MELF_ACID_ARROW)
+		IncrementGlobal("ysFirdosAttackCounter","LOCALS",1)
+END
+
+IF
+		Global("ysFirdosAttackCounter","LOCALS",5)
+THEN
+	RESPONSE #20
+		Attack(NearestEnemyOf(Myself))
+END

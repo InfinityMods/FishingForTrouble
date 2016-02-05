@@ -1,0 +1,7 @@
+IF
+	IsOverMe([ANYONE])
+	Global("ysEnterCave","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ysEnterCave","GLOBAL",0)
+END

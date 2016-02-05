@@ -1,0 +1,388 @@
+IF
+	Global("YS0200TimerStartup","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("YS0200TimerStartup","GLOBAL",1)
+		SetGlobalTimer("ys0200_walltimer","GLOBAL",0)
+    SetGlobalTimer("ys0200_trap1timer","GLOBAL",0)
+    SetGlobalTimer("ys0200_trap2timer","GLOBAL",0)
+    SetGlobalTimer("ys0200_trap3timer","GLOBAL",0)
+    SetGlobalTimer("ys0200_trap4timer","GLOBAL",0)
+    SetGlobalTimer("ys0200_trap5timer","GLOBAL",0)
+    SetGlobalTimer("ys0200_trap6timer","GLOBAL",0)
+    SetGlobalTimer("ys0200_trap8timer","GLOBAL",0)
+    SetGlobalTimer("ys0200_trap9timer","GLOBAL",0)
+    SetGlobalTimer("ys0200_trap10timer","GLOBAL",0)
+    SetGlobalTimer("ys0200_trap11timer","GLOBAL",0)
+    SetGlobalTimer("ys0200_trap12timer","GLOBAL",0)
+    Continue()
+END
+
+//Exit trap has triggered - start spawning
+IF
+  Global("ys0200twalls","GLOBAL",1)
+  Global("ys0200spawn_set","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ys0200spawn_set","GLOBAL",1)
+    CreateCreature("GHOGR01",[1090.1515],10)
+    CreateCreature("GHOGR01",[1100.1525],10)
+    CreateCreature("GHOGR01",[985.1490],13)
+    CreateCreature("GHOGR01",[1177.1519],10)
+    CreateCreature("GHOGR01",[896.1359],13)
+    CreateCreature("MUMMY",[863.1284],14)
+    CreateCreature("MUMMY",[816.1402],13)
+    CreateCreature("SKELAR02",[442.1316],5)
+    CreateCreature("SKELAR02",[442.1316],5)
+    CreateCreature("SKELAR02",[402.1338],5)
+    CreateCreature("SKELAR02",[364.1352],5)
+    CreateCreature("SKELWA02",[291.1187],0)
+    CreateCreature("SKELWA02",[243.1200],0)
+    CreateCreature("SKELWA02",[332.1220],2)
+    CreateCreature("SKELWA02",[213.1241],0)
+    CreateCreature("CAMBION1",[378.617],14)
+    CreateCreature("CAMBION1",[385.913],14)
+    CreateCreature("GHOLOR01",[2212.688],2)
+    CreateCreature("GHOLOR01",[2021.789],10)
+    CreateCreature("SKELAR02",[1845.582],5)
+    CreateCreature("SKELAR02",[1928.630],5)
+    CreateCreature("SKELAR02",[1855.179],10)
+    CreateCreature("SKELAR02",[1823.185],10)
+    CreateCreature("SKELAR02",[1796.221],10)
+    CreateCreature("SKELAR02",[1876.256],10)
+    CreateCreature("SKELAR02",[1971.283],0)
+    CreateCreature("WRAITH01",[2071.391],10)
+    CreateCreature("WRAITH01",[2124.459],10)
+    CreateCreature("SPECTR01",[2044.334],1)
+    CreateCreature("MUMGRE01",[1486.250],13)
+    CreateCreature("MUMGRE01",[1492.407],10)
+    CreateCreature("MUMGRE01",[1492.269],13)
+    CreateCreature("YSDWFGRD",[546.460],10)
+    CreateCreature("YSDWFKNT",[507.501],10)
+    CreateCreature("YSDWFGR2",[474.392],10)
+    Continue()
+END
+
+//Lock door 6 closed if door 10 is not locked
+IF
+  Global("ys0200twalls","GLOBAL",1)
+  Global("ys0200t1_set","GLOBAL",1)
+  Global("ys0200_door10lock","GLOBAL",0)
+  Global("ys0200_door6lock","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ys0200_door6lock","GLOBAL",1)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR06")
+END
+
+//Lock door 10 closed if door 6 is not locked
+IF
+  Global("ys0200twalls","GLOBAL",1)
+  Global("ys0200t2_set","GLOBAL",1)
+  Global("ys0200_door10lock","GLOBAL",0)
+  Global("ys0200_door6lock","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ys0200_door10lock","GLOBAL",1)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR10")
+END
+
+//Lift the walls - door 6 locked
+IF
+  Global("ys0200twalls","GLOBAL",1)
+  Global("ys0200_door6lock","GLOBAL",1)
+	GlobalTimerExpired("ys0200_walltimer","GLOBAL")
+THEN
+  RESPONSE #100
+  	OpenDoor("DOOR01")
+  	OpenDoor("DOOR02")
+  	OpenDoor("DOOR03")
+  	OpenDoor("DOOR04")
+  	OpenDoor("DOOR05")
+  	OpenDoor("DOOR07")
+  	OpenDoor("DOOR08")
+  	OpenDoor("DOOR09")
+  	OpenDoor("DOOR10")
+  	OpenDoor("DOOR11")
+  	OpenDoor("DOOR12")
+  	Continue()
+END
+
+//Lift the walls - door 10 locked
+IF
+  Global("ys0200twalls","GLOBAL",1)
+  Global("ys0200_door10lock","GLOBAL",1)
+	GlobalTimerExpired("ys0200_walltimer","GLOBAL")
+THEN
+  RESPONSE #100
+  	OpenDoor("DOOR01")
+  	OpenDoor("DOOR02")
+  	OpenDoor("DOOR03")
+  	OpenDoor("DOOR04")
+  	OpenDoor("DOOR05")
+  	OpenDoor("DOOR06")
+  	OpenDoor("DOOR07")
+  	OpenDoor("DOOR08")
+  	OpenDoor("DOOR09")
+  	OpenDoor("DOOR11")
+  	OpenDoor("DOOR12")
+  	Continue()
+END
+
+//Close walls - door 6 is locked
+IF
+  Global("ys0200twalls","GLOBAL",1)
+	GlobalTimerExpired("ys0200_walltimer","GLOBAL")
+  Global("ys0200_door6lock","GLOBAL",1)
+THEN
+  RESPONSE #5
+  	SetGlobalTimer("ys0200_walltimer","GLOBAL",15)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR01")
+  	CloseDoor("DOOR02")
+  	CloseDoor("DOOR03")
+  RESPONSE #5
+  	SetGlobalTimer("ys0200_walltimer","GLOBAL",17)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR04")
+  	CloseDoor("DOOR05")
+  	CloseDoor("DOOR07")
+  RESPONSE #5
+  	SetGlobalTimer("ys0200_walltimer","GLOBAL",7)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR08")
+  	CloseDoor("DOOR09")
+  	CloseDoor("DOOR10")
+  RESPONSE #5
+  	SetGlobalTimer("ys0200_walltimer","GLOBAL",12)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR11")
+  	CloseDoor("DOOR12")
+  	CloseDoor("DOOR01")
+  RESPONSE #5
+  	SetGlobalTimer("ys0200_walltimer","GLOBAL",10)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR07")
+  	CloseDoor("DOOR03")
+  	CloseDoor("DOOR09")
+  RESPONSE #5
+  	SetGlobalTimer("ys0200_walltimer","GLOBAL",18)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR02")
+  	CloseDoor("DOOR05")
+  	CloseDoor("DOOR12")
+  RESPONSE #5
+  	SetGlobalTimer("ys0200_walltimer","GLOBAL",10)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR10")
+  	CloseDoor("DOOR03")
+  	CloseDoor("DOOR08")
+  RESPONSE #5
+  	SetGlobalTimer("ys0200_walltimer","GLOBAL",5)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR08")
+  	CloseDoor("DOOR07")
+  	CloseDoor("DOOR04")
+  RESPONSE #5
+  	SetGlobalTimer("ys0200_walltimer","GLOBAL",8)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR10")
+  	CloseDoor("DOOR02")
+  	CloseDoor("DOOR05")
+  RESPONSE #5
+  	SetGlobalTimer("ys0200_walltimer","GLOBAL",4)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR11")
+  	CloseDoor("DOOR02")
+  	CloseDoor("DOOR04")
+  RESPONSE #5
+  	SetGlobalTimer("ys0200_walltimer","GLOBAL",15)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR01")
+  	CloseDoor("DOOR02")
+  	CloseDoor("DOOR07")
+  RESPONSE #5
+  	SetGlobalTimer("ys0200_walltimer","GLOBAL",3)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR04")
+  	CloseDoor("DOOR05")
+  	CloseDoor("DOOR10")
+  RESPONSE #5
+  	SetGlobalTimer("ys0200_walltimer","GLOBAL",27)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR07")
+  	CloseDoor("DOOR09")
+  	CloseDoor("DOOR11")
+  RESPONSE #5
+  	SetGlobalTimer("ys0200_walltimer","GLOBAL",19)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR12")
+  	CloseDoor("DOOR08")
+  	CloseDoor("DOOR04")
+  RESPONSE #5
+  	SetGlobalTimer("ys0200_walltimer","GLOBAL",13)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR09")
+  	CloseDoor("DOOR07")
+  	CloseDoor("DOOR05")
+  RESPONSE #5
+  	SetGlobalTimer("ys0200_walltimer","GLOBAL",9)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR07")
+  	CloseDoor("DOOR05")
+  	CloseDoor("DOOR03")
+  RESPONSE #5
+  	SetGlobalTimer("ys0200_walltimer","GLOBAL",12)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR01")
+  	CloseDoor("DOOR05")
+  	CloseDoor("DOOR11")
+  RESPONSE #5
+  	SetGlobalTimer("ys0200_walltimer","GLOBAL",16)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR03")
+  	CloseDoor("DOOR09")
+  	CloseDoor("DOOR08")
+  RESPONSE #5
+  	SetGlobalTimer("ys0200_walltimer","GLOBAL",20)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR01")
+  	CloseDoor("DOOR03")
+  	CloseDoor("DOOR12")
+  RESPONSE #5
+  	SetGlobalTimer("ys0200_walltimer","GLOBAL",23)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR10")
+  	CloseDoor("DOOR11")
+  	CloseDoor("DOOR07")
+END
+
+//Close walls - door 10 is locked
+IF
+  Global("ys0200twalls","GLOBAL",1)
+	GlobalTimerExpired("ys0200_walltimer","GLOBAL")
+  Global("ys0200_door10lock","GLOBAL",1)
+THEN
+  RESPONSE #5
+  	SetGlobalTimer("ys0200_walltimer","GLOBAL",15)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR01")
+  	CloseDoor("DOOR02")
+  	CloseDoor("DOOR03")
+  RESPONSE #5
+  	SetGlobalTimer("ys0200_walltimer","GLOBAL",17)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR04")
+  	CloseDoor("DOOR05")
+  	CloseDoor("DOOR07")
+  RESPONSE #5
+  	SetGlobalTimer("ys0200_walltimer","GLOBAL",22)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR08")
+  	CloseDoor("DOOR09")
+  	CloseDoor("DOOR06")
+  RESPONSE #5
+  	SetGlobalTimer("ys0200_walltimer","GLOBAL",12)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR11")
+  	CloseDoor("DOOR12")
+  	CloseDoor("DOOR01")
+  RESPONSE #5
+  	SetGlobalTimer("ys0200_walltimer","GLOBAL",3)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR07")
+  	CloseDoor("DOOR03")
+  	CloseDoor("DOOR09")
+  RESPONSE #5
+  	SetGlobalTimer("ys0200_walltimer","GLOBAL",18)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR02")
+  	CloseDoor("DOOR05")
+  	CloseDoor("DOOR12")
+  RESPONSE #5
+  	SetGlobalTimer("ys0200_walltimer","GLOBAL",10)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR06")
+  	CloseDoor("DOOR03")
+  	CloseDoor("DOOR08")
+  RESPONSE #5
+  	SetGlobalTimer("ys0200_walltimer","GLOBAL",5)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR08")
+  	CloseDoor("DOOR07")
+  	CloseDoor("DOOR04")
+  RESPONSE #5
+  	SetGlobalTimer("ys0200_walltimer","GLOBAL",8)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR06")
+  	CloseDoor("DOOR02")
+  	CloseDoor("DOOR05")
+  RESPONSE #5
+  	SetGlobalTimer("ys0200_walltimer","GLOBAL",22)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR11")
+  	CloseDoor("DOOR02")
+  	CloseDoor("DOOR04")
+  RESPONSE #5
+  	SetGlobalTimer("ys0200_walltimer","GLOBAL",25)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR01")
+  	CloseDoor("DOOR02")
+  	CloseDoor("DOOR07")
+  RESPONSE #5
+  	SetGlobalTimer("ys0200_walltimer","GLOBAL",35)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR04")
+  	CloseDoor("DOOR05")
+  	CloseDoor("DOOR06")
+  RESPONSE #5
+  	SetGlobalTimer("ys0200_walltimer","GLOBAL",27)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR07")
+  	CloseDoor("DOOR09")
+  	CloseDoor("DOOR11")
+  RESPONSE #5
+  	SetGlobalTimer("ys0200_walltimer","GLOBAL",19)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR12")
+  	CloseDoor("DOOR08")
+  	CloseDoor("DOOR04")
+  RESPONSE #5
+  	SetGlobalTimer("ys0200_walltimer","GLOBAL",13)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR09")
+  	CloseDoor("DOOR07")
+  	CloseDoor("DOOR05")
+  RESPONSE #5
+  	SetGlobalTimer("ys0200_walltimer","GLOBAL",29)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR07")
+  	CloseDoor("DOOR05")
+  	CloseDoor("DOOR03")
+  RESPONSE #5
+  	SetGlobalTimer("ys0200_walltimer","GLOBAL",9)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR01")
+  	CloseDoor("DOOR05")
+  	CloseDoor("DOOR11")
+  RESPONSE #5
+  	SetGlobalTimer("ys0200_walltimer","GLOBAL",16)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR03")
+  	CloseDoor("DOOR09")
+  	CloseDoor("DOOR08")
+  RESPONSE #5
+  	SetGlobalTimer("ys0200_walltimer","GLOBAL",20)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR01")
+  	CloseDoor("DOOR03")
+  	CloseDoor("DOOR12")
+  RESPONSE #5
+  	SetGlobalTimer("ys0200_walltimer","GLOBAL",23)
+		PlaySound("ysstdrc")
+  	CloseDoor("DOOR06")
+  	CloseDoor("DOOR11")
+  	CloseDoor("DOOR07")
+END

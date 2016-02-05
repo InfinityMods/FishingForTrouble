@@ -1,0 +1,53 @@
+//Main cave guardian
+IF
+	Global("ys_SeeCG","LOCALS",0)
+	See([PC])
+THEN
+	RESPONSE #100
+		Dialogue(Protagonist)
+		SetGlobal("ys_SeeCG","LOCALS",1)
+END
+
+//Battlescript
+IF
+	Global("ys_FightCG","GLOBAL",2)
+	Dead("yscdcg")
+THEN
+	RESPONSE #100
+		AddexperienceParty(6000)
+		SetGlobal("ys_FightCG","GLOBAL",3)
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	!Global("ys_FightCG","GLOBAL",2)
+	!Global("ys_FightCG","GLOBAL",3)
+	OR(4)
+		AttackedBy([ANYONE],DEFAULT)
+		AttackedBy([ANYONE],MELEE)
+		AttackedBy([ANYONE],RANGED)
+		Global("ys_FightCG","GLOBAL",1)
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	Global("ys_mcg","LOCALS",0)
+	See([GOODCUTOFF])
+THEN
+	RESPONSE #100
+		SetGlobal("ys_mcg","LOCALS",1)
+		ReallyForceSpell(Myself,WIZARD_GLOBE_OF_INVULNERABILITY)
+		Continue()
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	See([GOODCUTOFF])
+THEN
+	RESPONSE #100
+		Attack(LastSeenBy(Myself))
+END

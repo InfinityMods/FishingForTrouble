@@ -1,0 +1,343 @@
+IF
+	Global("ys_TalkedToBenGoch","GLOBAL",1)
+	!Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+
+//Get a default target
+IF
+  Allegiance(Myself,ENEMY)
+  See([GOODCUTOFF])
+THEN
+	Response #100
+	Continue()
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+	OR(3)
+		AttackedBy([ANYONE],DEFAULT)
+		AttackedBy([ANYONE],MELEE)
+		AttackedBy([ANYONE],RANGED)
+	See(LastAttackerOf(Myself))
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+// **********************************************************************
+// *           Segment Name: gs_TargetCleric.baf
+// **********************************************************************
+	// * Cleric as Second Priority Target-Choice
+	// * --------------------------------
+	// * If we see a Priest anywhere and I have a ranged weapon, Target them instead
+	IF
+		HPGT(TenthNearestEnemyOf(),5)							//and have more than 5 hp
+		!InParty(TenthNearestEnemyOf())						//and they're not in our party
+		Class(TenthNearestEnemyOf(),CLERIC_ALL)	//and not invisible/impinvis
+		!StateCheck(TenthNearestEnemyOf(),STATE_NOT_VISIBLE)	//and not invisible/impinvis
+		!StateCheck(TenthNearestEnemyOf(),STATE_HARMLESS)		//and not charmed, helpless,sleeping,feebleminded or stunned
+		!Class(TenthNearestEnemyOf(),INNOCENT)				//and not an "innocent"
+		See(TenthNearestEnemyOf())							//they're our new target
+		False()
+	THEN
+		RESPONSE #100
+			Continue()
+	END
+
+	IF
+		HPGT(NinthNearestEnemyOf(),5)							//and have more than 5 hp
+		!InParty(NinthNearestEnemyOf())						//and they're not in our party
+		Class(NinthNearestEnemyOf(),CLERIC_ALL)	//and not invisible/impinvis
+		!StateCheck(NinthNearestEnemyOf(),STATE_NOT_VISIBLE)	//and not invisible/impinvis
+		!StateCheck(NinthNearestEnemyOf(),STATE_HARMLESS)		//and not charmed, helpless,sleeping,feebleminded or stunned
+		!Class(NinthNearestEnemyOf(),INNOCENT)				//and not an "innocent"
+		See(NinthNearestEnemyOf())							//they're our new target
+		False()
+	THEN
+		RESPONSE #100
+			Continue()
+	END
+
+	IF
+		HPGT(EighthNearestEnemyOf(),5)							//and have more than 5 hp
+		!InParty(EighthNearestEnemyOf())						//and they're not in our party
+		Class(EighthNearestEnemyOf(),CLERIC_ALL)	//and not invisible/impinvis
+		!StateCheck(EighthNearestEnemyOf(),STATE_NOT_VISIBLE)	//and not invisible/impinvis
+		!StateCheck(EighthNearestEnemyOf(),STATE_HARMLESS)		//and not charmed, helpless,sleeping,feebleminded or stunned
+		!Class(EighthNearestEnemyOf(),INNOCENT)				//and not an "innocent"
+		See(EighthNearestEnemyOf())							//they're our new target
+		False()
+	THEN
+		RESPONSE #100
+			Continue()
+	END
+
+	IF
+		HPGT(SeventhNearestEnemyOf(),5)							//and have more than 5 hp
+		!InParty(SeventhNearestEnemyOf())						//and they're not in our party
+		Class(SeventhNearestEnemyOf(),CLERIC_ALL)	//and not invisible/impinvis
+		!StateCheck(SeventhNearestEnemyOf(),STATE_NOT_VISIBLE)	//and not invisible/impinvis
+		!StateCheck(SeventhNearestEnemyOf(),STATE_HARMLESS)		//and not charmed, helpless,sleeping,feebleminded or stunned
+		!Class(SeventhNearestEnemyOf(),INNOCENT)				//and not an "innocent"
+		See(SeventhNearestEnemyOf())							//they're our new target
+		False()
+	THEN
+		RESPONSE #100
+			Continue()
+	END
+
+  IF
+		HPGT(SixthNearestEnemyOf(),5)							//and have more than 5 hp
+		!InParty(SixthNearestEnemyOf())						//and they're not in our party
+		Class(SixthNearestEnemyOf(),CLERIC_ALL)	//and not invisible/impinvis
+		!StateCheck(SixthNearestEnemyOf(),STATE_NOT_VISIBLE)	//and not invisible/impinvis
+		!StateCheck(SixthNearestEnemyOf(),STATE_HARMLESS)		//and not charmed, helpless,sleeping,feebleminded or stunned
+		!Class(SixthNearestEnemyOf(),INNOCENT)				//and not an "innocent"
+		See(SixthNearestEnemyOf())							//they're our new target
+		False()
+	THEN
+		RESPONSE #100
+			Continue()
+	END
+
+	IF
+		HPGT(FifthNearestEnemyOf(),5)							//and have more than 5 hp
+		!InParty(FifthNearestEnemyOf())						//and they're not in our party
+		Class(FifthNearestEnemyOf(),CLERIC_ALL)	//and not invisible/impinvis
+		!StateCheck(FifthNearestEnemyOf(),STATE_NOT_VISIBLE)	//and not invisible/impinvis
+		!StateCheck(FifthNearestEnemyOf(),STATE_HARMLESS)		//and not charmed, helpless,sleeping,feebleminded or stunned
+		!Class(FifthNearestEnemyOf(),INNOCENT)				//and not an "innocent"
+		See(FifthNearestEnemyOf())							//they're our new target
+		False()
+	THEN
+		RESPONSE #100
+			Continue()
+	END
+
+	// * If we see a Priest in the nearest Four, Target them with melee or ranged as appropriate
+	IF
+		HPGT(FourthNearestEnemyOf(),5)							//and have more than 5 hp
+		!InParty(FourthNearestEnemyOf())						//and they're not in our party
+		Class(FourthNearestEnemyOf(),CLERIC_ALL)	//and not invisible/impinvis
+		!StateCheck(FourthNearestEnemyOf(),STATE_NOT_VISIBLE)	//and not invisible/impinvis
+		!StateCheck(FourthNearestEnemyOf(),STATE_HARMLESS)		//and not charmed, helpless,sleeping,feebleminded or stunned
+		!Class(FourthNearestEnemyOf(),INNOCENT)				//and not an "innocent"
+		See(FourthNearestEnemyOf())							//they're our new target
+		False()
+	THEN
+		RESPONSE #100
+			Continue()
+	END
+
+	IF
+		HPGT(ThirdNearestEnemyOf(),5)							//and have more than 5 hp
+		!InParty(ThirdNearestEnemyOf())						//and they're not in our party
+		Class(ThirdNearestEnemyOf(),CLERIC_ALL)	//and not invisible/impinvis
+		!StateCheck(ThirdNearestEnemyOf(),STATE_NOT_VISIBLE)	//and not invisible/impinvis
+		!StateCheck(ThirdNearestEnemyOf(),STATE_HARMLESS)		//and not charmed, helpless,sleeping,feebleminded or stunned
+		!Class(ThirdNearestEnemyOf(),INNOCENT)				//and not an "innocent"
+		See(ThirdNearestEnemyOf())							//they're our new target
+		False()
+	THEN
+		RESPONSE #100
+			Continue()
+	END
+	IF
+		HPGT(SecondNearestEnemyOf(),5)							//and have more than 5 hp
+		!InParty(SecondNearestEnemyOf())						//and they're not in our party
+		Class(SecondNearestEnemyOf(),CLERIC_ALL)	//and not invisible/impinvis
+		!StateCheck(SecondNearestEnemyOf(),STATE_NOT_VISIBLE)	//and not invisible/impinvis
+		!StateCheck(SecondNearestEnemyOf(),STATE_HARMLESS)		//and not charmed, helpless,sleeping,feebleminded or stunned
+		!Class(SecondNearestEnemyOf(),INNOCENT)				//and not an "innocent"
+		See(SecondNearestEnemyOf())							//they're our new target
+		False()
+	THEN
+		RESPONSE #100
+			Continue()
+	END
+
+	IF
+		HPGT(NearestEnemyOf(),5)							//and have more than 5 hp
+		!InParty(NearestEnemyOf())						//and they're not in our party
+		Class(NearestEnemyOf(),CLERIC_ALL)	//and not invisible/impinvis
+		!StateCheck(NearestEnemyOf(),STATE_NOT_VISIBLE)	//and not invisible/impinvis
+		!StateCheck(NearestEnemyOf(),STATE_HARMLESS)		//and not charmed, helpless,sleeping,feebleminded or stunned
+		!Class(NearestEnemyOf(),INNOCENT)				//and not an "innocent"
+		See(NearestEnemyOf())							//they're our new target
+		False()
+	THEN
+		RESPONSE #100
+			Continue()
+	END
+
+//Mages as priority targets
+// **********************************************************************
+// *           Segment Name: gs_TargetMage.baf
+// **********************************************************************
+
+	// * Mage as Priority Target-Choice
+	// * ------------------------------
+	// * If we see a mage, target them
+	// * --------------------------------
+	IF
+		HPGT(TenthNearestEnemyOf(),5)							//and have more than 5 hp
+		!InParty(TenthNearestEnemyOf())						//and they're not in our party
+		Class(TenthNearestEnemyOf(),MAGE_ALL)	//and not invisible/impinvis
+		!StateCheck(TenthNearestEnemyOf(),STATE_NOT_VISIBLE)	//and not invisible/impinvis
+		!StateCheck(TenthNearestEnemyOf(),STATE_HARMLESS)		//and not charmed, helpless,sleeping,feebleminded or stunned
+		!Class(TenthNearestEnemyOf(),INNOCENT)				//and not an "innocent"
+		See(TenthNearestEnemyOf())							//they're our new target
+		False()
+	THEN
+		RESPONSE #100
+			Continue()
+	END
+
+	IF
+		HPGT(NinthNearestEnemyOf(),5)							//and have more than 5 hp
+		!InParty(NinthNearestEnemyOf())						//and they're not in our party
+		Class(NinthNearestEnemyOf(),MAGE_ALL)	//and not invisible/impinvis
+		!StateCheck(NinthNearestEnemyOf(),STATE_NOT_VISIBLE)	//and not invisible/impinvis
+		!StateCheck(NinthNearestEnemyOf(),STATE_HARMLESS)		//and not charmed, helpless,sleeping,feebleminded or stunned
+		!Class(NinthNearestEnemyOf(),INNOCENT)				//and not an "innocent"
+		See(NinthNearestEnemyOf())							//they're our new target
+		False()
+	THEN
+		RESPONSE #100
+			Continue()
+	END
+
+	IF
+		HPGT(EighthNearestEnemyOf(),5)							//and have more than 5 hp
+		!InParty(EighthNearestEnemyOf())						//and they're not in our party
+		Class(EighthNearestEnemyOf(),MAGE_ALL)	//and not invisible/impinvis
+		!StateCheck(EighthNearestEnemyOf(),STATE_NOT_VISIBLE)	//and not invisible/impinvis
+		!StateCheck(EighthNearestEnemyOf(),STATE_HARMLESS)		//and not charmed, helpless,sleeping,feebleminded or stunned
+		!Class(EighthNearestEnemyOf(),INNOCENT)				//and not an "innocent"
+		See(EighthNearestEnemyOf())							//they're our new target
+		False()
+	THEN
+		RESPONSE #100
+			Continue()
+	END
+
+	IF
+		HPGT(SeventhNearestEnemyOf(),5)							//and have more than 5 hp
+		!InParty(SeventhNearestEnemyOf())						//and they're not in our party
+		Class(SeventhNearestEnemyOf(),MAGE_ALL)	//and not invisible/impinvis
+		!StateCheck(SeventhNearestEnemyOf(),STATE_NOT_VISIBLE)	//and not invisible/impinvis
+		!StateCheck(SeventhNearestEnemyOf(),STATE_HARMLESS)		//and not charmed, helpless,sleeping,feebleminded or stunned
+		!Class(SeventhNearestEnemyOf(),INNOCENT)				//and not an "innocent"
+		See(SeventhNearestEnemyOf())							//they're our new target
+		False()
+	THEN
+		RESPONSE #100
+			Continue()
+	END
+
+  IF
+		HPGT(SixthNearestEnemyOf(),5)							//and have more than 5 hp
+		!InParty(SixthNearestEnemyOf())						//and they're not in our party
+		Class(SixthNearestEnemyOf(),MAGE_ALL)	//and not invisible/impinvis
+		!StateCheck(SixthNearestEnemyOf(),STATE_NOT_VISIBLE)	//and not invisible/impinvis
+		!StateCheck(SixthNearestEnemyOf(),STATE_HARMLESS)		//and not charmed, helpless,sleeping,feebleminded or stunned
+		!Class(SixthNearestEnemyOf(),INNOCENT)				//and not an "innocent"
+		See(SixthNearestEnemyOf())							//they're our new target
+		False()
+	THEN
+		RESPONSE #100
+			Continue()
+	END
+
+	IF
+		HPGT(FifthNearestEnemyOf(),5)							//and have more than 5 hp
+		!InParty(FifthNearestEnemyOf())						//and they're not in our party
+		Class(FifthNearestEnemyOf(),MAGE_ALL)	//and not invisible/impinvis
+		!StateCheck(FifthNearestEnemyOf(),STATE_NOT_VISIBLE)	//and not invisible/impinvis
+		!StateCheck(FifthNearestEnemyOf(),STATE_HARMLESS)		//and not charmed, helpless,sleeping,feebleminded or stunned
+		!Class(FifthNearestEnemyOf(),INNOCENT)				//and not an "innocent"
+		See(FifthNearestEnemyOf())							//they're our new target
+		False()
+	THEN
+		RESPONSE #100
+			Continue()
+	END
+
+	// * If we see a Mage in the nearest Four, Target them with melee or ranged as appropriate
+	IF
+		HPGT(FourthNearestEnemyOf(),5)							//and have more than 5 hp
+		!InParty(FourthNearestEnemyOf())						//and they're not in our party
+		Class(FourthNearestEnemyOf(),MAGE_ALL)	//and not invisible/impinvis
+		!StateCheck(FourthNearestEnemyOf(),STATE_NOT_VISIBLE)	//and not invisible/impinvis
+		!StateCheck(FourthNearestEnemyOf(),STATE_HARMLESS)		//and not charmed, helpless,sleeping,feebleminded or stunned
+		!Class(FourthNearestEnemyOf(),INNOCENT)				//and not an "innocent"
+		See(FourthNearestEnemyOf())							//they're our new target
+		False()
+	THEN
+		RESPONSE #100
+			Continue()
+	END
+
+	IF
+		HPGT(ThirdNearestEnemyOf(),5)							//and have more than 5 hp
+		!InParty(ThirdNearestEnemyOf())						//and they're not in our party
+		Class(ThirdNearestEnemyOf(),MAGE_ALL)	//and not invisible/impinvis
+		!StateCheck(ThirdNearestEnemyOf(),STATE_NOT_VISIBLE)	//and not invisible/impinvis
+		!StateCheck(ThirdNearestEnemyOf(),STATE_HARMLESS)		//and not charmed, helpless,sleeping,feebleminded or stunned
+		!Class(ThirdNearestEnemyOf(),INNOCENT)				//and not an "innocent"
+		See(ThirdNearestEnemyOf())							//they're our new target
+		False()
+	THEN
+		RESPONSE #100
+			Continue()
+	END
+	IF
+		HPGT(SecondNearestEnemyOf(),5)							//and have more than 5 hp
+		!InParty(SecondNearestEnemyOf())						//and they're not in our party
+		Class(SecondNearestEnemyOf(),MAGE_ALL)	//and not invisible/impinvis
+		!StateCheck(SecondNearestEnemyOf(),STATE_NOT_VISIBLE)	//and not invisible/impinvis
+		!StateCheck(SecondNearestEnemyOf(),STATE_HARMLESS)		//and not charmed, helpless,sleeping,feebleminded or stunned
+		!Class(SecondNearestEnemyOf(),INNOCENT)				//and not an "innocent"
+		See(SecondNearestEnemyOf())							//they're our new target
+		False()
+	THEN
+		RESPONSE #100
+			Continue()
+	END
+
+	IF
+		HPGT(NearestEnemyOf(),5)							//and have more than 5 hp
+		!InParty(NearestEnemyOf())						//and they're not in our party
+		Class(NearestEnemyOf(),MAGE_ALL)	//and not invisible/impinvis
+		!StateCheck(NearestEnemyOf(),STATE_NOT_VISIBLE)	//and not invisible/impinvis
+		!StateCheck(NearestEnemyOf(),STATE_HARMLESS)		//and not charmed, helpless,sleeping,feebleminded or stunned
+		!Class(NearestEnemyOf(),INNOCENT)				//and not an "innocent"
+		See(NearestEnemyOf())							//they're our new target
+		False()
+	THEN
+		RESPONSE #100
+			Continue()
+	END
+
+IF
+  Allegiance(Myself,ENEMY)
+	!Range(LastSeenBy(Myself),5)
+THEN
+	RESPONSE #100
+		EquipRanged()
+		Attack(LastSeenBy(Myself))
+END
+
+//Oops! Too close.
+IF
+  Allegiance(Myself,ENEMY)
+	Range(LastSeenBy(Myself),5)
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+		Attack(LastSeenBy(Myself))
+END

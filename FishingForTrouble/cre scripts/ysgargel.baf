@@ -1,0 +1,42 @@
+//Get up defences
+IF
+	Global("ys_GGAttacked","GLOBAL",0)
+	OR(4)
+		AttackedBy([ANYONE],DEFAULT)
+		AttackedBy([ANYONE],MELEE)
+		AttackedBy([ANYONE],RANGED)
+		Global("ys_AFAttacked","GLOBAL",1)
+THEN
+	RESPONSE #100
+		ReallyForceSpell(Myself,CLERIC_DRAW_UPON_HOLY_MIGHT)
+		ReallyForceSpell(Myself,CLERIC_PHYSICAL_MIRROR)
+		ReallyForceSpell(Myself,CLERIC_AURA_OF_FLAMING_DEATH)
+		SetGlobal("ys_GGAttacked","GLOBAL",1)
+		ChangeEnemyAlly(Myself,ENEMY)
+		Continue()
+END
+
+//Cure - just in case!!!
+IF
+	Allegiance(Myself,ENEMY)
+	HPPercentLT(Myself,75)
+THEN
+	RESPONSE #100
+		ReallyForceSpell(Myself,CLERIC_HEAL)
+END
+
+//Strike - if it gets this far then someone has made a REALLY stupid move
+IF
+	Global("ys_GGAttacked","GLOBAL",1)
+THEN
+	RESPONSE #20
+		ReallyForceSpell(NearestEnemyOf(),CLERIC_SLAY_LIVING)
+	RESPONSE #20
+		ReallyForceSpell(NearestEnemyOf(),CLERIC_DOOM)
+	RESPONSE #20
+		ReallyForceSpell(NearestEnemyOf(),CLERIC_ANIMATE_DEAD)
+	RESPONSE #20
+		ReallyForceSpell(NearestEnemyOf(),CLERIC_CAUSE_CRITICAL_WOUNDS)
+	RESPONSE #20
+		ReallyForceSpell(NearestEnemyOf(),CLERIC_CONFUSION)
+END

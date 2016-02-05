@@ -1,0 +1,8 @@
+IF
+  Global("ys_Woodsman","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ys_Woodsman","GLOBAL",1)
+    CreateCreature("yswdman",[1246.1097],3)
+END
+

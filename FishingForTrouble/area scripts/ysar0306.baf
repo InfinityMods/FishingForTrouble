@@ -1,0 +1,10 @@
+//Create Oengus of Caer Callidyrr
+IF
+	Global("ys_Oengus","GLOBAL",0)
+	Global("ys_talkedToEP","GLOBAL",2)
+THEN
+	RESPONSE #100
+	CreateCreature("ysoengus",[664.550],14)
+	SetGlobal("ys_Oengus","GLOBAL",1)
+	Continue()
+END

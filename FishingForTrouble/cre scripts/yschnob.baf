@@ -1,0 +1,51 @@
+// Conditions to turn red
+IF
+  OR(2)
+	 AttackedBy([GOODCUTOFF],DEFAULT)
+	 Heard([ANYONE],2002)
+  !Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		Enemy()
+		Shout(2002)
+		ChangeAIScript("ysreact",OVERRIDE)
+END
+
+IF
+  ActionListEmpty()
+THEN
+	RESPONSE #5
+    RandomTurn()
+	RESPONSE #5
+    RandomWalk()
+	RESPONSE #5
+    RandomTurn()
+	RESPONSE #10
+    Wait(1)
+	RESPONSE #5
+    RandomWalk()
+	RESPONSE #5
+    RandomWalk()
+	RESPONSE #5
+    Wait(6)
+	RESPONSE #5
+    Wait(10)
+	RESPONSE #10
+    RandomWalk()
+	RESPONSE #5
+    RandomTurn()
+	RESPONSE #5
+    Wait(3)
+	RESPONSE #5
+    Wait(5)
+	RESPONSE #5
+    RandomWalk()
+	RESPONSE #10
+    RandomTurn()
+	RESPONSE #5
+    RandomTurn()
+	RESPONSE #5
+    RandomWalk()
+	RESPONSE #5
+    Wait(1)
+END

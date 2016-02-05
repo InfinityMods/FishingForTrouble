@@ -1,0 +1,15 @@
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		Deactivate("ysadag")
+END
+
+
+IF
+	Global("ysYalkedToBran","GLOBAL",2)
+THEN
+	RESPONSE #100
+		ActionOverride("ysbehol1",DestroySelf())
+		Deactivate("ysbehol2")
+END

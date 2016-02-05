@@ -1,0 +1,63 @@
+//Spawn Ceinwen for the first time if <Chapter3
+IF
+  Global("dai_CeinwenSpawn","GLOBAL",1)
+  Global("dai_CeinwenSpawned","YS0401",0)
+  Global("ys_TanarriElminister","GLOBAL",0)
+THEN
+  RESPONSE #100
+    CreateCreature("ysceinwn",[565.197],2)
+    SetGlobal("dai_CeinwenSpawned","YS0401",1)
+END
+
+//------------------------------------------------------------------
+//Destroy Ceinwen 24 hours after first conversation with PC
+//and set flag to create Gaelie Trimthorn <Chapter3
+IF
+  Global("dai_TalkedToCeinwen","GLOBAL",1)
+  GlobalTimerExpired("ys_CeinwenTimer","GLOBAL")
+  Global("ys_TanarriElminister","GLOBAL",0)
+  Global("ys_CreateGaelie","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ys_CreateGaelie","GLOBAL",1)
+    ActionOverride("ysceinwn",DestroySelf())
+END
+
+//------------------------------------------------------------------
+//Alternate create Gaelie Trimthorn to tell party that the Cowled Wizards
+//have taken Ceinwen
+IF
+  Global("dai_TalkedToTanaari","GLOBAL",1)
+  GlobalGT("Chapter","GLOBAL",4)
+  Global("ys_CreateGaelie","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ys_CreateGaelie","GLOBAL",1)
+END
+
+//------------------------------------------------------------------
+//Respawn Ceinwen when released from the Cowled Wizards or Spellhold <Chapter3 quest start
+IF
+  Global("dai_TalkedToCeinwen","GLOBAL",5)
+  Global("dai_CeinwenSpawned","YS0401",1)
+  Global("ys_TanarriElminister","GLOBAL",0)
+THEN
+  RESPONSE #100
+    CreateCreature("ysceinwn",[565.197],2)
+    SetGlobal("dai_CeinwenSpawned","YS0401",2)
+END
+
+//------------------------------------------------------------------
+//This timer is the one day wait timer.
+//Set the dialog variable to skip the Cowled Wizard quest if Elminster frees Ceinwen
+//Dispose of Elminster
+IF
+  Global("ys_TanarriElminister","GLOBAL",3)
+  GlobalTimerExpired("ys_CeinwenTimer","GLOBAL")
+THEN
+  RESPONSE #100
+    SetGlobal("dai_TalkedToCeinwen","GLOBAL",5)
+    SetGlobal("ys_TanarriElminister","GLOBAL",4)
+    ActionOverride("yselm01",DestroySelf())
+END
+

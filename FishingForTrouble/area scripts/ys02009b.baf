@@ -1,0 +1,19 @@
+IF
+  IsOverMe([ANYONE])
+	Global("ys0200t9_set","GLOBAL",1)
+THEN
+  RESPONSE #100
+		SetGlobal("ys0200t9_set","GLOBAL",2)
+    ActionOverride(Player1,LeaveAreaLUA("ys0200","",[1800.1470],3))
+    ActionOverride(Player1,CreateVisualEffectObject("SPUSEANY",Player1))
+    ActionOverride(Player2,LeaveAreaLUA("ys0200","",[1800.1470],10))
+    ActionOverride(Player2,CreateVisualEffectObject("SPUSEANY",Player2))
+    ActionOverride(Player3,LeaveAreaLUA("ys0200","",[1800.1470],7))
+    ActionOverride(Player3,CreateVisualEffectObject("SPUSEANY",Player3))
+    ActionOverride(Player4,LeaveAreaLUA("ys0200","",[1800.1470],6))
+    ActionOverride(Player4,CreateVisualEffectObject("SPUSEANY",Player4))
+    ActionOverride(Player5,LeaveAreaLUA("ys0200","",[1800.1470],1))
+    ActionOverride(Player5,CreateVisualEffectObject("SPUSEANY",Player5))
+    ActionOverride(Player6,LeaveAreaLUA("ys0200","",[1800.1470],9))
+    ActionOverride(Player6,CreateVisualEffectObject("SPUSEANY",Player6))
+END

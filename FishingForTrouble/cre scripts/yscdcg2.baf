@@ -1,0 +1,40 @@
+IF
+	Allegiance(Myself,ENEMY)
+	See([GOODCUTOFF])
+	Global("ys_mcg2","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ys_mcg2","LOCALS",1)
+		ReallyForceSpell(Myself,WIZARD_GLOBE_OF_INVULNERABILITY)
+		Continue()
+END
+
+IF
+	GlobalLT("ys_cg2","LOCALS",7)
+	See([GOODCUTOFF])
+THEN
+	RESPONSE #11
+		IncrementGlobal("ys_cg2","LOCALS",1)
+		ForceSpell(LastSeenBy(Myself),WIZARD_CONE_OF_COLD)
+	RESPONSE #12
+		Attack(LastSeenBy(Myself))
+	RESPONSE #25
+		IncrementGlobal("ys_cg2","LOCALS",1)
+		ForceSpell(LastSeenBy(Myself),WIZARD_ICE_STORM)
+	RESPONSE #25
+		IncrementGlobal("ys_cg2","LOCALS",1)
+		ForceSpell(LastSeenBy(Myself),WIZARD_EMOTION_HOPELESSNESS)
+	RESPONSE #12
+		Attack(LastSeenBy(Myself))
+	RESPONSE #11
+		IncrementGlobal("ys_cg2","LOCALS",1)
+		ForceSpell(LastSeenBy(Myself),WIZARD_FOG_CLOUD)
+END
+
+IF
+	GlobalGT("ys_cg2","LOCALS",6)
+	See([GOODCUTOFF])
+THEN
+	RESPONSE #100
+		Attack(LastSeenBy(Myself))
+END

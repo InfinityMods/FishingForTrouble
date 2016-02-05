@@ -1,0 +1,10 @@
+//---------------------------------------------------------
+//Create Telther Strongarm to continue plot
+IF
+  Global("ys_CreateTelther","GLOBAL",1)
+THEN
+  RESPONSE #100
+    CreateCreature("ystelthe",[2300.2250],12)
+    SetGlobal("ys_CreateTelther","GLOBAL",2)
+    Continue()
+END

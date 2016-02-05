@@ -1,0 +1,23 @@
+//Create Elminster at the NW corner of Trademeet to say he is looking for information
+IF
+	TimeLT(DUSK_START)
+	TimeGT(DAWN_END)
+	Global("ys_Elminster1Spawn","GLOBAL",0)
+	Global("ys_FindElminster","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ys_Elminster1Spawn","GLOBAL",1)
+		CreateCreature("YSELM01",[1262.372],2)
+END
+
+//Create Elminster on the SE side of the fountain in daylight only if the letter is found
+IF
+	TimeLT(DUSK_START)
+	TimeGT(DAWN_END)
+	Global("ys_Elminster2Spawn","GLOBAL",0)
+	Global("ys_FindElminster","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ys_Elminster2Spawn","GLOBAL",1)
+		CreateCreature("YSELM01",[1956.1457],2)
+END

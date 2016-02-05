@@ -1,0 +1,48 @@
+//Fires
+IF
+  Global("ys_FireTrapActive","GLOBAL",0)
+  OR(6)
+    IsOverMe(Player1)
+    IsOverMe(Player2)
+    IsOverMe(Player3)
+    IsOverMe(Player4)
+    IsOverMe(Player5)
+    IsOverMe(Player6)
+  PartyHasItem("YSLOTUS")
+  Global("ys_BLRWIsDead","GLOBAL",1)
+  Global("ys_RockfistIsDead","GLOBAL",1)
+  CombatCounter(0)
+THEN
+  RESPONSE #100
+    DisplayString(Myself,@424)
+    TakePartyItem("yslotus")
+    SetGlobal("ys_FireTrapActive","GLOBAL",2)
+END
+
+IF
+  Global("ys_FireTrapActive","GLOBAL",0)
+  OR(6)
+    IsOverMe(Player1)
+    IsOverMe(Player2)
+    IsOverMe(Player3)
+    IsOverMe(Player4)
+    IsOverMe(Player5)
+    IsOverMe(Player6)
+THEN
+  RESPONSE #100
+    DisplayString(Myself,@423)
+    SetGlobal("ys_FireTrapActive","GLOBAL",1)
+END
+
+IF
+  Global("ys_FireTrapActive","GLOBAL",1)
+  !IsOverMe(Player1)
+  !IsOverMe(Player2)
+  !IsOverMe(Player3)
+  !IsOverMe(Player4)
+  !IsOverMe(Player5)
+  !IsOverMe(Player6)
+THEN
+  RESPONSE #100
+    SetGlobal("ys_FireTrapActive","GLOBAL",0)
+END

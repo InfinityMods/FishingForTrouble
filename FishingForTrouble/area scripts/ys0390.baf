@@ -1,0 +1,29 @@
+//Spawn Gaelie Trimthorn
+IF
+  Global("ys_CreateGaelie","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ys_CreateGaelie","GLOBAL",2)
+    CreateCreature("ysgaelie",[1520.862],0)
+END
+
+//Destroy Gaelie Trimthorn if Kalun Trimthorn is not brought home
+IF
+  Global("ys_FoundKalun","GLOBAL",2)
+THEN
+  RESPONSE #100
+    ActionOverride("ysgaelie",DestroySelf())
+    SetGlobal("ys_FoundKalun","GLOBAL",3)
+END
+
+//Create Aella if fedex Elizabeth Pavaral or Eildaren Colver
+IF
+	OR(2)
+		!Global("ys_FindColver","GLOBAL",0)
+		!Global("ys_talkedToEP","GLOBAL",0)
+	Global("ys_CreateAella","GLOBAL",0)
+THEN
+	RESPONSE #100
+	 CreateCreature("ysaella",[2050.390],0)
+	 SetGlobal("ys_CreateAella","GLOBAL",1)
+END

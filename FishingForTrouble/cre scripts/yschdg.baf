@@ -1,0 +1,18 @@
+//Change allegiance
+IF
+	Global("ys_TalkedToDungeonGuard","GLOBAL",1)
+	Global("ys_ChangeAlly","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ys_ChangeAlly","LOCALS",1)
+		Enemy()
+		Continue()
+END
+
+IF
+	Allegiance(Myself, ENEMY)
+THEN
+	RESPONSE #100
+		Attack(NearestEnemyOf(Myself))
+END
+

@@ -1,0 +1,13 @@
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneID(Player1)
+    FadeToColor([20.0],0) // fades to black
+    Wait(2)
+    OpenDoor("DOOR03")
+ 		MoveViewPoint([2200.980],INSTANT)
+    FadeFromColor([20.0],0)
+    ActionOverride("OBSERVE",DestroySelf())
+    EndCutSceneMode()
+END

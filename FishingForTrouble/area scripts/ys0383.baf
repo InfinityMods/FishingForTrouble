@@ -1,0 +1,6 @@
+IF
+	Global("ys_FindColver","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ys_FindColver","GLOBAL",2)
+END

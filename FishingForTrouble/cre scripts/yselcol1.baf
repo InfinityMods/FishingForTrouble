@@ -1,0 +1,7 @@
+IF
+	Global("ysEildarenOK","GLOBAL",1)
+THEN
+  RESPONSE #100
+    DestroySelf()
+    ActionOverride("yselcol1",DestroySelf())
+END

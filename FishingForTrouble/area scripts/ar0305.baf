@@ -1,0 +1,14 @@
+//Create Lughaidh and group
+IF
+	Global("ys_CreateLugh","GLOBAL",1)
+	Global("ys_SeeLugh","GLOBAL",0)
+THEN
+	RESPONSE #100
+	CreateCreature("yslugh",[570.512],2)
+	CreateCreature("yssthief",[519.461],2)
+	CreateCreature("yssthief",[534.592],2)
+	CreateCreature("yssthief",[519.461],4)
+	CreateCreature("yssthief",[425.651],8)
+	SetGlobal("ys_SeeLugh","GLOBAL",1)
+	Continue()
+END

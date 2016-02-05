@@ -1,0 +1,14 @@
+IF
+  Global("ys_TethyrWoodsman","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ys_TethyrWoodsman","GLOBAL",2)
+    CreateCreature("yskalun",[295.213],0)
+    ActionOverride("yskalun", MakeGlobal()) 
+    CreateCreature("WOLF01",[300.420],7)
+    CreateCreature("WOLF01",[240.377],8)
+    CreateCreature("WOLF01",[150.276],12)
+    CreateCreature("WOLF01",[425.348],6)
+    CreateCreature("WOLF01",[420.381],6)
+END
+

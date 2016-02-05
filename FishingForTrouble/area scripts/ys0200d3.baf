@@ -1,0 +1,45 @@
+IF
+	Entered([ANYONE])
+  Global("ys0200twalls","GLOBAL",1)
+	Global("ys0200_trap3check","GLOBAL",0)
+	GlobalTimerExpired("ys0200_trap3timer","GLOBAL")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("ys0200_trap3timer","GLOBAL",1)
+		SetGlobal("ys0200_trap3check","GLOBAL",1)
+		Continue()
+END
+
+IF
+	GlobalTimerExpired("ys0200_trap3timer","GLOBAL")
+	Global("ys0200_trap3check","GLOBAL",1)
+THEN
+  RESPONSE #100
+	  SetGlobal("ys0200_trap3check","GLOBAL",2)
+	  Continue()
+END
+
+IF
+  IsOverMe([ANYONE])
+	Global("ys0200_trap3check","GLOBAL",2)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    Kill(LastTrigger)
+		PlaySound("ysstdrc")
+	  CloseDoor("DOOR03")
+		PlaySound("ysstdrc")
+	  CloseDoor("DOOR04")
+    SetInterrupt(TRUE)
+END
+
+IF
+	Global("ys0200_trap3check","GLOBAL",2)
+THEN
+  RESPONSE #100
+		PlaySound("ysstdrc")
+    CloseDoor("DOOR03")
+		PlaySound("ysstdrc")
+	  CloseDoor("DOOR04")
+    SetGlobal("ys0200_trap3check","GLOBAL",0)
+END

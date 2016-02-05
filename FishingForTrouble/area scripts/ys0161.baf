@@ -1,0 +1,25 @@
+//Play the background music
+IF
+	Global("ys_Lute","GLOBAL",0)
+THEN
+  RESPONSE #100
+		SetGlobalTimer("ys_LuteTimer","GLOBAL",75)
+    PlaySong(0)
+    Wait(1)
+    PlaySound("ysbhshrt")
+		SetGlobal("ys_Lute","GLOBAL",1)
+		Continue()
+END
+
+//Garalial and Co.
+IF
+	Global("ys_TalkedToGarGel","GLOBAL",7)
+	Global("ys_CreateAntiSpells","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ys_CreateAntiSpells","GLOBAL",1)
+		CreateCreature("ysgargel",[248.402],10)
+		CreateCreature("ysanghrd",[249.424],10)
+		CreateCreature("yselcol2",[344.437],4)
+		Continue()
+END

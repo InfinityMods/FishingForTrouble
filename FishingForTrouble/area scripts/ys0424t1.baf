@@ -1,0 +1,46 @@
+IF
+	PartyHasItem("ysgldag")
+	OR(6)
+		IsOverMe(Player1)
+		IsOverMe(Player2)
+		IsOverMe(Player3)
+		IsOverMe(Player4)
+		IsOverMe(Player5)
+		IsOverMe(Player6)
+	Global("ys_GotEye","GLOBAL",0)
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@409)
+		SetGlobal("ys_GotEye","GLOBAL",1)
+    SetGlobal("ys_TalkedToGarGel","GLOBAL",3)
+		GiveItemCreate("ysteye",Player1,0,0,0)
+END
+
+IF
+	!PartyHasItem("ysgldag")
+	OR(6)
+		IsOverMe(Player1)
+		IsOverMe(Player2)
+		IsOverMe(Player3)
+		IsOverMe(Player4)
+		IsOverMe(Player5)
+		IsOverMe(Player6)
+	Global("ys_GotEye","GLOBAL",0)
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@412)
+		SetGlobal("ys_GotEye","GLOBAL",1)
+END
+
+IF
+	!IsOverMe(Player1)
+	!IsOverMe(Player2)
+	!IsOverMe(Player3)
+	!IsOverMe(Player4)
+	!IsOverMe(Player5)
+	!IsOverMe(Player6)
+	Global("ys_GotEye","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ys_GotEye","GLOBAL",0)
+END

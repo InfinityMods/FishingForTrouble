@@ -1,0 +1,9 @@
+IF
+  GlobalTimerExpired("ys_GateGuardTimer","GLOBAL")
+  Global("ys_GateCutscene","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ys_GateCutscene","GLOBAL",2)
+    StartDialogNoSet(Player1)
+END
+

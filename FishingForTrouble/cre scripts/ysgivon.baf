@@ -1,0 +1,17 @@
+IF
+	Global("ysTalkedToGivon","GLOBAL",2)
+THEN
+	RESPONSE #100
+		Enemy()
+		Attack(NearestEnemyOf(Myself))
+		Continue()
+END
+
+IF
+	Global("ysTalkedToGivon","GLOBAL",2)
+	Dead("ysgivon")
+THEN
+	RESPONSE #100
+		ReputationInc(-1)
+		SetGlobal("ysTalkedToGivon","GLOBAL",3)
+END

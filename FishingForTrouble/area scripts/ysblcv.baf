@@ -1,0 +1,11 @@
+//Caravan guard trigger
+
+IF
+	Opened([ANYONE])
+THEN
+	RESPONSE #100
+		Wait(1)
+		CreateCreature("YSBLGRD",[-1.-1],0)
+		SetGlobal("ysblgrd","GLOBAL",1)
+		SetGlobal("ysFoundCaravan","GLOBAL",1)
+END

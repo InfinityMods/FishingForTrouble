@@ -1,0 +1,42 @@
+//Get up defences
+IF
+	Global("dai_Elminster_Attacked","LOCALS",0)
+	OR(3)
+		AttackedBy([ANYONE],DEFAULT)
+		AttackedBy([ANYONE],MELEE)
+		AttackedBy([ANYONE],RANGED)
+THEN
+	RESPONSE #100
+		ReallyForceSpell(Myself,WIZARD_SPELL_IMMUNITY)
+		ReallyForceSpell(Myself,WIZARD_GLOBE_OF_INVULNERABILITY)
+		ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+		ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+		ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+		SetGlobal("dai_Elminster_Attacked","LOCALS",1)
+END
+
+//Cure - just in case!!!
+IF
+	HPLT(Myself,75)
+THEN
+	RESPONSE #100
+		ReallyForceSpell(Myself,CLERIC_HEAL)
+END
+
+//Strike - if it gets this far then someone has made a REALLY stupid move
+IF
+	Global("dai_Elminster_Attacked","LOCALS",1)
+	OR(3)
+		AttackedBy([ANYONE],DEFAULT)
+		AttackedBy([ANYONE],MELEE)
+		AttackedBy([ANYONE],RANGED)
+THEN
+	RESPONSE #25
+		ReallyForceSpell(LastAttackerOf(),WIZARD_FINGER_OF_DEATH_IGNORE_RESISTANCE)
+	RESPONSE #25
+		ReallyForceSpell(LastAttackerOf(),WIZARD_DISINTEGRATE_IGNORE_RESISTANCE)
+	RESPONSE #25
+		ReallyForceSpell(LastAttackerOf(),WIZARD_DISINTEGRATE2_IGNORE_RESISTANCE)
+	RESPONSE #25
+		ReallyForceSpell(LastAttackerOf(),WIZARD_FLESH_TO_STONE_IGNORE_RESISTANCE)
+END

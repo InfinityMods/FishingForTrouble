@@ -1,0 +1,34 @@
+//Initialise the timer
+IF
+  Global("ys_270Timer","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("ys_PlayerIsUndead","GLOBAL",1)
+    SetGlobal("ys_270Timer","GLOBAL",1)
+END
+
+//Check to see if the Vampire's Bed potion has been swallowed
+//If so, disable the Traps of the Living and start the Vampire Bed timer running
+//As Ceinwen says, this is CHARNAME only
+IF
+  CheckStat(Player1,9,INT)
+  CheckStat(Player1,9,WIS)
+  CheckStat(Player1,9,DEX)
+  CheckStat(Player1,9,CON)
+  CheckStat(Player1,17,STR)
+  CheckStat(Player1,3,CHR)
+THEN
+  RESPONSE #100
+    SetGlobal("ys_Player1Vamp","GLOBAL",1)
+    SetGlobalTimer("ys_PlayerIsUndead","GLOBAL",300)
+END
+
+//Set variables after key is retrieved
+IF
+  PartyHasItem("ystankey")
+  Global("ysGotKey","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ysGotKey","GLOBAL",1)
+    SetGlobal("dai_TalkedToTanaari","GLOBAL",3)
+END

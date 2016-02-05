@@ -1,0 +1,43 @@
+//Get up defences
+IF
+	Global("ys_OCCAttacked","GLOBAL",0)
+	OR(3)
+		AttackedBy([ANYONE],DEFAULT)
+		AttackedBy([ANYONE],MELEE)
+		AttackedBy([ANYONE],RANGED)
+THEN
+	RESPONSE #100
+		ReallyForceSpell(Myself,WIZARD_IMPROVED_INVISIBILITY)
+		SetGlobal("ys_OCCAttacked","GLOBAL",1)
+		ChangeEnemyAlly(Myself,ENEMY)
+END
+
+//Cure twice - just in case!!!
+IF
+	Allegiance(Myself,ENEMY)
+	HPPercentLT(Myself,50)
+	GlobalLT("ys_OengusHealed","LOCALS",2)
+THEN
+	RESPONSE #100
+		ReallyForceSpell(Myself,CLERIC_HEAL)
+		IncrementGlobal("ys_OengusHealed","LOCALS",1)
+END
+
+//Strike
+IF
+	Global("ys_GGAttacked","GLOBAL",1)
+	StateCheck(Myself,STATE_NOT_VISIBLE)
+THEN
+	RESPONSE #100
+		MoveToObject(NearestEnemyOf(Myself))
+		BackStab(NearestEnemyOf(Myself))
+END
+
+IF
+	Global("ys_GGAttacked","GLOBAL",1)
+	!StateCheck(Myself,STATE_NOT_VISIBLE)
+THEN
+	RESPONSE #100
+		MoveToObject(NearestEnemyOf(Myself))
+		Attack(NearestEnemyOf(Myself))
+END

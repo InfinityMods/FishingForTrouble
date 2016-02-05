@@ -1,0 +1,14 @@
+//Create prisoners
+IF
+//	OnCreation()
+  Global("ys_FillCells","LOCALS",0)
+THEN
+	RESPONSE #100
+    SetGlobal("ys_FillCells","LOCALS",1)
+    CreateCreature("yscell1",[177.379],14)
+    CreateCreature("yscell2",[296.294],14)
+    CreateCreature("yscell3",[409.219],14)
+    CreateCreature("yscell4",[527.131],14)
+    CreateCreature("yscell5",[734.289],2)
+END
+

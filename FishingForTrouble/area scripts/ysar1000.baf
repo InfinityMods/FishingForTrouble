@@ -1,0 +1,12 @@
+//Create Elminster in the Government District. This is the last chance to start the quest
+IF
+	TimeLT(DUSK_END)
+	TimeGT(DAWN_START)
+	Global("ys_FindElminster","GLOBAL",3)
+	Global("ys_Elminster3Spawn","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ys_Elminster3Spawn","GLOBAL",1)
+		CreateCreature("YSELM01",[2792.1816],10)
+END
+

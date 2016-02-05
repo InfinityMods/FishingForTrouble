@@ -1,0 +1,50 @@
+IF
+  Global("ys_gibrial","GLOBAL",0)
+THEN
+  RESPONSE #100
+    CreateCreature("ysgibmel",[372.561],7)
+    SetGlobal("ys_gibrial","GLOBAL",1)
+END
+
+//Eildaren is cured
+IF
+  OR(6)
+    IsOverMe(Player1)
+    IsOverMe(Player2)
+    IsOverMe(Player3)
+    IsOverMe(Player4)
+    IsOverMe(Player5)
+    IsOverMe(Player6)
+  GlobalTimerExpired("ysCureEildaren","GLOBAL")
+	Global("ys_TalkedToGarGel","GLOBAL",6)
+	Global("ysEildarenOK","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ys0407t1","GLOBAL",0)
+    ActionOverride(Player1,LeaveAreaLUA("ys0409","",[179.270],0))
+  	ActionOverride(Player2,LeaveAreaLUA("ys0409","",[179.270],0))
+  	ActionOverride(Player3,LeaveAreaLUA("ys0409","",[179.270],0))
+  	ActionOverride(Player4,LeaveAreaLUA("ys0409","",[179.270],0))
+  	ActionOverride(Player5,LeaveAreaLUA("ys0409","",[179.270],0))
+  	ActionOverride(Player6,LeaveAreaLUA("ys0409","",[179.270],0))
+END
+
+//Eildaren is sick or not yet there
+IF
+  OR(6)
+    IsOverMe(Player1)
+    IsOverMe(Player2)
+    IsOverMe(Player3)
+    IsOverMe(Player4)
+    IsOverMe(Player5)
+    IsOverMe(Player6)
+THEN
+  RESPONSE #100
+    SetGlobal("ys0407t1","GLOBAL",0)
+    ActionOverride(Player1,LeaveAreaLUA("ys0408","",[179.270],0))
+  	ActionOverride(Player2,LeaveAreaLUA("ys0408","",[179.270],0))
+  	ActionOverride(Player3,LeaveAreaLUA("ys0408","",[179.270],0))
+  	ActionOverride(Player4,LeaveAreaLUA("ys0408","",[179.270],0))
+  	ActionOverride(Player5,LeaveAreaLUA("ys0408","",[179.270],0))
+  	ActionOverride(Player6,LeaveAreaLUA("ys0408","",[179.270],0))
+END

@@ -1,0 +1,28 @@
+// Sided with Akil
+IF
+  Global("ysTalkedToAkil","GLOBAL",2)
+  Global("ysCreateAkilLevon","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ysCreateAkilLevon","GLOBAL",1)
+    CreateCreature("ysakil",[414.521],0)
+END
+
+IF
+	Global("ysTalkedToLeron","GLOBAL",100)
+  Global("ysCreateAkilLevon","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ysCreateAkilLevon","GLOBAL",2)
+    CreateCreature("yslevon",[201.367],9)
+END
+
+// Sided with levon
+IF
+  Global("ysTalkedToLeron","GLOBAL",1)
+  Global("ysCreateLevon","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ysCreateLevon","GLOBAL",2)
+    CreateCreature("yslevon",[201.367],9)
+END

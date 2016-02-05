@@ -1,0 +1,14 @@
+IF
+  OR(6)
+    IsOverMe(Player1)
+    IsOverMe(Player2)
+    IsOverMe(Player3)
+    IsOverMe(Player4)
+    IsOverMe(Player5)
+    IsOverMe(Player6)
+	Global("ys0200t1_set","GLOBAL",0)
+	!Global("ys0200t2_set","GLOBAL",1)
+THEN
+  RESPONSE #100
+		SetGlobal("ys0200t1_set","GLOBAL",1)
+END

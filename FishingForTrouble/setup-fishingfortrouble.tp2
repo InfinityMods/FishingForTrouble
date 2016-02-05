@@ -1,0 +1,1299 @@
+BACKUP ~fishingfortrouble/backup~
+AUTHOR ~www.shsforums.net/forum/550-fishing-for-trouble/~
+VERSION ~v3.0 BWP Fix pre-update~
+//MODDER setup_tra NONE
+//launch the ReadMe file immediately
+README ~fishingfortrouble/readme.html~
+
+LANGUAGE ~English (Yovaneth)~ ~english~ ~fishingfortrouble/language/english/english.tra~
+LANGUAGE ~Russian (subzero400)~ ~russian~ ~fishingfortrouble/language/russian/russian.tra~
+
+//Quest title
+BEGIN @20000
+
+INCLUDE ~fishingfortrouble/wmp/worldmap.tph~
+
+//##################################################
+// Apply IDS and EXE patches if necessary (no TobEx)
+//##################################################
+INCLUDE ~fishingfortrouble/lib/patches.tpa~
+
+//##################################################
+// Copy new material
+//##################################################
+//Spells
+  COPY ~fishingfortrouble/spells/yselmin.spl~ ~override~
+  SAY NAME1 @149
+
+  COPY ~fishingfortrouble/spells/ysghoul.spl~ ~override~
+
+//##################################################
+//Cutscenes
+//##################################################
+//Cerendor Hold
+	COMPILE ~fishingfortrouble/cutscenes/yscutgte.baf~
+	COMPILE ~fishingfortrouble/cutscenes/yscut01.baf~
+	COMPILE ~fishingfortrouble/cutscenes/yscut02.baf~
+	COMPILE ~fishingfortrouble/cutscenes/yscut03.baf~
+
+//##################################################
+//Bams
+//##################################################
+	COPY ~fishingfortrouble/bams~ ~override~
+
+//##################################################
+//Music
+//##################################################
+	COPY ~fishingfortrouble/music/ysblank.mus~ ~music~
+	COPY_EXISTING ~songlist.2da~ ~override~
+	SET_2DA_ENTRY 0 2 3 ~YSBLANK.MUS~
+
+//##################################################
+//Sounds
+//##################################################
+	COPY ~fishingfortrouble/sounds~ ~override~
+
+//##################################################
+//Ghoul portrait
+//##################################################
+  COPY ~fishingfortrouble/bmp~ ~override~
+
+//##################################################
+//2da
+//##################################################
+	COPY_EXISTING ~itemdial.2da~ ~override~
+	BUT_ONLY_IF_IT_CHANGES
+	APPEND ~itemdial.2da~ ~YSPRPT     4978  YSPRPT~
+	              UNLESS ~YSPRPT        4978   YSPRPT~
+	APPEND ~itemdial.2da~ ~YSLABRD    4978  YSLABRD~
+	              UNLESS ~YSLABRD       4978   YSLABRD~
+
+
+  ACTION_IF NOT FILE_EXISTS_IN_GAME ~racetext.2da~ BEGIN
+    COPY ~fishingfortrouble/2da/racetext.2da~ ~override~
+  END ELSE BEGIN
+    APPEND ~racetext.2da~ ~108  15946~ UNLESS ~^108~
+  END
+
+//##################################################
+//Items
+//##################################################
+//Cloudpeaks
+	COPY ~fishingfortrouble/items/yslotus.itm~ ~override/yslotus.itm~
+	SAY NAME2 @130
+	SAY IDENTIFIED_DESC @131
+
+//Athkatla
+	COPY ~fishingfortrouble/items/ysletel.itm~ ~override/ysletel.itm~
+	SAY NAME1 @102
+	SAY NAME2 @103
+	SAY UNIDENTIFIED_DESC @104
+	SAY IDENTIFIED_DESC @105
+	COPY ~fishingfortrouble/items/yspotn01.itm~ ~override/yspotn01.itm~
+	SAY NAME2 @116
+	SAY IDENTIFIED_DESC @115
+	COPY ~fishingfortrouble/items/yspotn02.itm~ ~override/yspotn02.itm~
+	SAY NAME2 @120
+	SAY IDENTIFIED_DESC @121
+	COPY ~fishingfortrouble/items/ysdhkey.itm~ ~override/ysdhkey.itm~
+	SAY NAME1 @106
+	SAY NAME2 @107
+	SAY UNIDENTIFIED_DESC @108
+	SAY IDENTIFIED_DESC @100
+	COPY ~fishingfortrouble/items/ysepring.itm~ ~override/ysepring.itm~
+	SAY NAME2 @128
+	SAY IDENTIFIED_DESC @129
+	COPY ~fishingfortrouble/items/ysgldag.itm~ ~override/ysgldag.itm~
+	SAY NAME2 @137
+	SAY IDENTIFIED_DESC @138
+	COPY ~fishingfortrouble/items/ysprpt.itm~ ~override/ysprpt.itm~
+	SAY NAME2 @144
+	SAY IDENTIFIED_DESC @145
+	COPY ~fishingfortrouble/items/ysvmpbld.itm~ ~override/ysvmpbld.itm~
+	SAY NAME2 @122
+	SAY IDENTIFIED_DESC @123
+
+//Porthpentyrch
+	COPY ~fishingfortrouble/items/yslabrd.itm~ ~override/yslabrd.itm~
+	SAY NAME2 @171
+	SAY IDENTIFIED_DESC @171
+	COPY ~fishingfortrouble/items/yscnote.itm~ ~override/yscnote.itm~
+	SAY NAME2 @169
+	SAY IDENTIFIED_DESC @170
+	COPY ~fishingfortrouble/items/yspkhmr.itm~ ~override/yspkhmr.itm~
+	SAY NAME1 @110
+	SAY NAME2 @111
+	SAY UNIDENTIFIED_DESC @112
+	SAY IDENTIFIED_DESC @113
+	COPY ~fishingfortrouble/items/yslhskey.itm~ ~override/yslhskey.itm~
+	SAY NAME1 @107
+	SAY NAME2 @107
+	SAY UNIDENTIFIED_DESC @114
+	SAY IDENTIFIED_DESC @114
+	COPY ~fishingfortrouble/items/ystankey.itm~ ~override/ystankey.itm~
+	SAY NAME1 @107
+	SAY NAME2 @107
+	SAY UNIDENTIFIED_DESC @119
+	SAY IDENTIFIED_DESC @119
+	COPY ~fishingfortrouble/items/ysdltkey.itm~ ~override/ysdltkey.itm~
+	SAY NAME1 @107
+	SAY NAME2 @107
+	SAY UNIDENTIFIED_DESC @132
+	SAY IDENTIFIED_DESC @132
+	COPY ~fishingfortrouble/items/ysorb.itm~ ~override/ysorb.itm~
+	SAY NAME2 @133
+	SAY IDENTIFIED_DESC @134
+	COPY ~fishingfortrouble/items/ysghoul1.itm~ ~override/ysghoul1.itm~
+	SAY 0x1fe @148
+	SAY NAME1 @146
+	SAY NAME2 @146
+	SAY UNIDENTIFIED_DESC @147
+
+//Cerendor Hold
+	COPY ~fishingfortrouble/items/yschdnky.itm~ ~override/yschdnky.itm~
+	SAY NAME2 @107
+	SAY IDENTIFIED_DESC @126
+	COPY ~fishingfortrouble/items/yscelkey.itm~ ~override/yscelkey.itm~
+	SAY NAME2 @107
+	SAY IDENTIFIED_DESC @127
+
+//Imradim
+	COPY ~fishingfortrouble/items/ysteye.itm~ ~override/ysteye.itm~
+	SAY NAME2 @135
+	SAY IDENTIFIED_DESC @136
+	COPY ~fishingfortrouble/items/yscpem.itm~ ~override/yscpem.itm~
+	SAY NAME2 @139
+	SAY IDENTIFIED_DESC @140
+	COPY ~fishingfortrouble/items/yscpfl.itm~ ~override/yscpfl.itm~
+	SAY NAME2 @139
+	SAY IDENTIFIED_DESC @141
+	COPY ~fishingfortrouble/items/yssfrb.itm~ ~override/yssfrb.itm~
+	SAY NAME2 @142
+	SAY IDENTIFIED_DESC @143
+
+//##################################################
+//Dialog files
+//##################################################
+//Cloudpeaks
+	COMPILE ~fishingfortrouble/dialog/ysblgrd.d~
+	COMPILE ~fishingfortrouble/dialog/ysblrwz.d~
+	COMPILE ~fishingfortrouble/dialog/ysblmr.d~
+
+//Trademeet
+	COMPILE ~fishingfortrouble/dialog/yselm01.d~
+
+//Athkatla
+	COMPILE ~fishingfortrouble/dialog/ysltor.d~
+	COMPILE ~fishingfortrouble/dialog/ysbran.d~
+	COMPILE ~fishingfortrouble/dialog/ysceinwn.d~
+	COMPILE ~fishingfortrouble/dialog/ysgaelie.d~
+	COMPILE ~fishingfortrouble/dialog/yscwlwiz.d~
+	COMPILE ~fishingfortrouble/dialog/ystelthe.d~
+	COMPILE ~fishingfortrouble/dialog/ysaella.d~
+	COMPILE ~fishingfortrouble/dialog/yselpara.d~
+	COMPILE ~fishingfortrouble/dialog/yssanob1.d~
+	COMPILE ~fishingfortrouble/dialog/yssanob2.d~
+	COMPILE ~fishingfortrouble/dialog/ysapopf.d~
+	COMPILE ~fishingfortrouble/dialog/ysapopm.d~
+	COMPILE ~fishingfortrouble/dialog/ysmcook.d~
+	COMPILE ~fishingfortrouble/dialog/ysoengus.d~
+	COMPILE ~fishingfortrouble/dialog/yslugh.d~
+	COMPILE ~fishingfortrouble/dialog/yshansol.d~
+	COMPILE ~fishingfortrouble/dialog/ysstbboy.d~
+	COMPILE ~fishingfortrouble/dialog/yskeldrl.d~
+	COMPILE ~fishingfortrouble/dialog/ysgibmel.d~
+	COMPILE ~fishingfortrouble/dialog/yselcol2.d~
+	COMPILE ~fishingfortrouble/dialog/ysgargel.d~
+	COMPILE ~fishingfortrouble/dialog/ysanghrd.d~
+	COMPILE ~fishingfortrouble/dialog/ysdrosig.d~
+	COMPILE ~fishingfortrouble/dialog/ystiggrd.d~
+	COMPILE ~fishingfortrouble/dialog/ystignch.d~
+	COMPILE ~fishingfortrouble/dialog/yscolla.d~
+	COMPILE ~fishingfortrouble/dialog/ysserv.d~
+	COMPILE ~fishingfortrouble/dialog/ysbengch.d~
+	COMPILE ~fishingfortrouble/dialog/ysprpt.d~
+	COMPILE ~fishingfortrouble/dialog/ystigres.d~
+
+//Porthpentyrch
+	COMPILE ~fishingfortrouble/dialog/ysboydlg.d~
+	COMPILE ~fishingfortrouble/dialog/ysgrldlg.d~
+	COMPILE ~fishingfortrouble/dialog/ysmandlg.d~
+	COMPILE ~fishingfortrouble/dialog/yswmndlg.d~
+	COMPILE ~fishingfortrouble/dialog/yswmnres.d~
+	COMPILE ~fishingfortrouble/dialog/ysmenres.d~
+	COMPILE ~fishingfortrouble/dialog/bwfishw.d~
+	COMPILE ~fishingfortrouble/dialog/bfisher2.d~
+	COMPILE ~fishingfortrouble/dialog/ysmtown.d~
+	COMPILE ~fishingfortrouble/dialog/ysftown.d~
+	COMPILE ~fishingfortrouble/dialog/ystanarr.d~
+	COMPILE ~fishingfortrouble/dialog/yslkeep.d~
+	COMPILE ~fishingfortrouble/dialog/ysgensto.d~
+	COMPILE ~fishingfortrouble/dialog/ysarmsto.d~
+	COMPILE ~fishingfortrouble/dialog/ysaine.d~
+	COMPILE ~fishingfortrouble/dialog/ysderv.d~
+	COMPILE ~fishingfortrouble/dialog/ysmorv.d~
+	COMPILE ~fishingfortrouble/dialog/ysmorvr.d~
+	COMPILE ~fishingfortrouble/dialog/ysgaol.d~
+	COMPILE ~fishingfortrouble/dialog/yswtchmn.d~
+	COMPILE ~fishingfortrouble/dialog/ysdwfknt.d~
+	COMPILE ~fishingfortrouble/dialog/ysdwflrd.d~
+	COMPILE ~fishingfortrouble/dialog/yslabrd.d~
+
+//Cerendor Hold
+	COMPILE ~fishingfortrouble/dialog/ysblksto.d~
+	COMPILE ~fishingfortrouble/dialog/yshhappr.d~
+	COMPILE ~fishingfortrouble/dialog/yscvmstr.d~
+	COMPILE ~fishingfortrouble/dialog/yschearl.d~
+	COMPILE ~fishingfortrouble/dialog/yscgroad.d~
+	COMPILE ~fishingfortrouble/dialog/yscgtowr.d~
+	COMPILE ~fishingfortrouble/dialog/yschdg.d~
+	COMPILE ~fishingfortrouble/dialog/yscrnbl.d~
+	COMPILE ~fishingfortrouble/dialog/ysserj.d~
+	COMPILE ~fishingfortrouble/dialog/yschcapt.d~
+	COMPILE ~fishingfortrouble/dialog/ysailoth.d~
+	COMPILE ~fishingfortrouble/dialog/yschclr.d~
+	COMPILE ~fishingfortrouble/dialog/yschcom.d~
+	COMPILE ~fishingfortrouble/dialog/yschnob.d~
+	COMPILE ~fishingfortrouble/dialog/yschbnd.d~
+	COMPILE ~fishingfortrouble/dialog/yscado.d~
+	COMPILE ~fishingfortrouble/dialog/yshldgrd.d~
+	COMPILE ~fishingfortrouble/dialog/ysredgrd.d~
+	COMPILE ~fishingfortrouble/dialog/yscook1.d~
+	COMPILE ~fishingfortrouble/dialog/yscook2.d~
+	COMPILE ~fishingfortrouble/dialog/yscntwul.d~
+
+//North Forest and the Forest of Tethyr
+	COMPILE ~fishingfortrouble/dialog/yskalun.d~
+	COMPILE ~fishingfortrouble/dialog/yswdman.d~
+
+//Imradim
+	COMPILE ~fishingfortrouble/dialog/yspashan.d~
+	COMPILE ~fishingfortrouble/dialog/ysaiesha.d~
+	COMPILE ~fishingfortrouble/dialog/ysadara.d~
+	COMPILE ~fishingfortrouble/dialog/yskhoury.d~
+	COMPILE ~fishingfortrouble/dialog/ysnuri.d~
+	COMPILE ~fishingfortrouble/dialog/ysgadil.d~
+	COMPILE ~fishingfortrouble/dialog/ystahir.d~
+	COMPILE ~fishingfortrouble/dialog/yscdmer.d~
+	COMPILE ~fishingfortrouble/dialog/yscdpop.d~
+	COMPILE ~fishingfortrouble/dialog/yscddw.d~
+	COMPILE ~fishingfortrouble/dialog/yscdcg.d~
+	COMPILE ~fishingfortrouble/dialog/yskarim.d~
+	COMPILE ~fishingfortrouble/dialog/ysjehan.d~
+	COMPILE ~fishingfortrouble/dialog/ysmuktar.d~
+	COMPILE ~fishingfortrouble/dialog/ysharem.d~
+	COMPILE ~fishingfortrouble/dialog/yseunch.d~
+	COMPILE ~fishingfortrouble/dialog/ysyasar.d~
+	COMPILE ~fishingfortrouble/dialog/ysqadir.d~
+	COMPILE ~fishingfortrouble/dialog/yscadfan.d~
+	COMPILE ~fishingfortrouble/dialog/ysfirdos.d~
+	COMPILE ~fishingfortrouble/dialog/ysain.d~
+	COMPILE ~fishingfortrouble/dialog/ysgivon.d~
+	COMPILE ~fishingfortrouble/dialog/yswermr.d~
+	COMPILE ~fishingfortrouble/dialog/ysbasima.d~
+	COMPILE ~fishingfortrouble/dialog/ysjalil.d~
+	COMPILE ~fishingfortrouble/dialog/ysakil.d~
+	COMPILE ~fishingfortrouble/dialog/yslevon.d~
+	COMPILE ~fishingfortrouble/dialog/ysakilfr.d~
+	COMPILE ~fishingfortrouble/dialog/ysrimon.d~
+	COMPILE ~fishingfortrouble/dialog/ysakilah.d~
+
+//##################################################
+//Areas
+//##################################################
+//Cloudpeak Mountains
+	COPY ~fishingfortrouble/areas/cloudpeaks/.~ ~override/.~
+	COPY ~fishingfortrouble/areas/cloudpeaks/ys0370/.~ ~override/.~
+	SAY 0x11e8 @404
+
+//Athkatla
+	COPY ~fishingfortrouble/areas/Athkatla/.~ ~override/.~
+
+//Porthpentyrch
+	COPY ~fishingfortrouble/areas/porthpentyrch/.~ ~override/.~
+	COPY ~fishingfortrouble/areas/porthpentyrch/ys0030/.~ ~override/.~
+	SAY 0x308 @218
+	COPY ~fishingfortrouble/areas/porthpentyrch/ys1000/.~ ~override/.~
+	SAY 0x4054 @400
+	SAY 0x4118 @401
+	SAY 0x41dc @402
+	COPY ~fishingfortrouble/areas/porthpentyrch/ys1001/.~ ~override/.~
+	SAY 0x4e24 @400
+	SAY 0x4ee8 @401
+	SAY 0x4fac @402
+
+//Cerendor Hold
+	COPY ~fishingfortrouble/areas/Cerendor Hold/.~ ~override/.~
+
+//Imradim
+	COPY ~fishingfortrouble/areas/Calim Desert/.~ ~override/.~
+	COPY ~fishingfortrouble/areas/Calim Desert/cave/.~ ~override/.~
+	SAY 0x664 @411
+	SAY 0x728 @410
+
+//##################################################
+//Actors
+//##################################################
+//Cloudpeaks
+	COPY ~fishingfortrouble/cre/ysblgrd.cre~ ~override/ysblgrd.cre~
+	SAY NAME1 @251
+	SAY NAME2 @251
+	COPY ~fishingfortrouble/cre/ysblrwz.cre~ ~override/ysblrwz.cre~
+	SAY NAME1 @252
+	SAY NAME2 @252
+	COPY ~fishingfortrouble/cre/ysblmr.cre~ ~override/ysblmr.cre~
+	SAY NAME1 @253
+	SAY NAME2 @253
+
+//Athkatla
+	COPY ~fishingfortrouble/cre/athkatla/.~ ~override/.~
+	COPY ~fishingfortrouble/cre/ysltor.cre~ ~override/ysltor.cre~
+	SAY NAME1 @200
+	SAY NAME2 @201
+	COPY ~fishingfortrouble/cre/ysceinwn.cre~ ~override/ysceinwn.cre~
+	SAY NAME1 @205
+	SAY NAME2 @206
+	COPY ~fishingfortrouble/cre/ysgaelie.cre~ ~override/ysgaelie.cre~
+	SAY NAME1 @207
+	SAY NAME2 @212
+	COPY ~fishingfortrouble/cre/yscwlwiz.cre~ ~override/yscwlwiz.cre~
+	SAY NAME1 @208
+	SAY NAME2 @208
+	COPY ~fishingfortrouble/cre/ystelthe.cre~ ~override/ystelthe.cre~
+	SAY NAME1 @204
+	SAY NAME2 @204
+	COPY ~fishingfortrouble/cre/yschvam.cre~ ~override/yschvam.cre~
+	SAY NAME1 @213
+	SAY NAME2 @213
+	COPY ~fishingfortrouble/cre/ysaella.cre~ ~override/ysaella.cre~
+	SAY NAME1 @246
+	SAY NAME2 @246
+	COPY ~fishingfortrouble/cre/yselpara.cre~ ~override/yselpara.cre~
+	SAY NAME1 @247
+	SAY NAME2 @247
+	COPY ~fishingfortrouble/cre/ysmcook.cre~ ~override/ysmcook.cre~
+	SAY NAME1 @245
+	SAY NAME2 @245
+	COPY ~fishingfortrouble/cre/ysoengus.cre~ ~override/ysoengus.cre~
+	SAY NAME1 @248
+	SAY NAME2 @248
+	COPY ~fishingfortrouble/cre/yslugh.cre~ ~override/yslugh.cre~
+	SAY NAME1 @255
+	SAY NAME2 @255
+	COPY ~fishingfortrouble/cre/yssthief.cre~ ~override/yssthief.cre~
+	COPY ~fishingfortrouble/cre/yshansol.cre~ ~override/yshansol.cre~
+	SAY NAME1 @249
+	SAY NAME2 @249
+	COPY ~fishingfortrouble/cre/ysstbboy.cre~ ~override/ysstbboy.cre~
+	SAY NAME1 @250
+	SAY NAME2 @250
+	COPY ~fishingfortrouble/cre/yskeldrl.cre~ ~override/yskeldrl.cre~
+	SAY NAME1 @256
+	SAY NAME2 @256
+	COPY ~fishingfortrouble/cre/ysgibmel.cre~ ~override/ysgibmel.cre~
+	SAY NAME1 @258
+	SAY NAME2 @258
+	COPY ~fishingfortrouble/cre/yselcol1.cre~ ~override/yselcol1.cre~
+	SAY NAME1 @259
+	SAY NAME2 @259
+	COPY ~fishingfortrouble/cre/yselcol2.cre~ ~override/yselcol2.cre~
+	SAY NAME1 @259
+	SAY NAME2 @259
+	COPY ~fishingfortrouble/cre/ysgargel.cre~ ~override/ysgargel.cre~
+	SAY NAME1 @244
+	SAY NAME2 @244
+	COPY ~fishingfortrouble/cre/ysanghrd.cre~ ~override/ysanghrd.cre~
+	SAY NAME1 @224
+	SAY NAME2 @224
+	COPY ~fishingfortrouble/cre/ysdrosig.cre~ ~override/ysdrosig.cre~
+	SAY NAME1 @260
+	SAY NAME2 @260
+	COPY ~fishingfortrouble/cre/ystiggrd.cre~ ~override/ystiggrd.cre~
+	SAY NAME1 @273
+	SAY NAME2 @273
+	COPY ~fishingfortrouble/cre/ystignch.cre~ ~override/ystignch.cre~
+	SAY NAME1 @271
+	SAY NAME2 @271
+	COPY ~fishingfortrouble/cre/yscolla.cre~ ~override/yscolla.cre~
+	SAY NAME1 @272
+	SAY NAME2 @272
+	COPY ~fishingfortrouble/cre/ysbran.cre~ ~override/ysbran.cre~
+	SAY NAME1 @290
+	SAY NAME2 @290
+	COPY ~fishingfortrouble/cre/ysadag.cre~ ~override/ysadag.cre~
+	SAY NAME1 @291
+	SAY NAME2 @291
+	COPY ~fishingfortrouble/cre/ysfserv.cre~ ~override/ysfserv.cre~
+	COPY ~fishingfortrouble/cre/ysmserv.cre~ ~override/ysmserv.cre~
+	COPY ~fishingfortrouble/cre/yscdfsrv.cre~ ~override/yscdfsrv.cre~
+	COPY ~fishingfortrouble/cre/yscdmsrv.cre~ ~override/yscdmsrv.cre~
+	COPY ~fishingfortrouble/cre/ysbengch.cre~ ~override/ysbengch.cre~
+	SAY NAME1 @277
+	SAY NAME2 @277
+	COPY ~fishingfortrouble/cre/ysatgrd.cre~ ~override/ysatgrd.cre~
+	SAY NAME1 @230
+	SAY NAME2 @230
+	COPY ~fishingfortrouble/cre/ysatbow.cre~ ~override/ysatbow.cre~
+	SAY NAME1 @230
+	SAY NAME2 @230
+	COPY ~fishingfortrouble/cre/ystres1.cre~ ~override/ystres1.cre~
+	COPY ~fishingfortrouble/cre/ystres2.cre~ ~override/ystres2.cre~
+	COPY ~fishingfortrouble/cre/ystres3.cre~ ~override/ystres3.cre~
+	COPY ~fishingfortrouble/cre/ystres4.cre~ ~override/ystres4.cre~
+	COPY ~fishingfortrouble/cre/ysbehol1.cre~ ~override/ysbehol1.cre~
+	COPY ~fishingfortrouble/cre/ysbehol2.cre~ ~override/ysbehol2.cre~
+
+//Trademeet
+	COPY ~fishingfortrouble/cre/yselm01.cre~ ~override/yselm01.cre~
+
+//Porthpentyrch
+	COPY ~fishingfortrouble/cre/ppt/.~ ~override/.~
+	COPY ~fishingfortrouble/cre/ysogrema.cre~ ~override/ysogrema.cre~
+	COPY ~fishingfortrouble/bcs/ysogmage.bcs~ ~override/ysogmage.bcs~
+	COPY ~fishingfortrouble/cre/ystanarr.cre~ ~override/ystanarr.cre~
+	COPY ~fishingfortrouble/cre/yslkeep.cre~ ~override/yslkeep.cre~
+	SAY NAME1 @202
+	SAY NAME2 @203
+	COPY ~fishingfortrouble/cre/ysgensto.cre~ ~override/ysgensto.cre~
+	SAY NAME1 @215
+	SAY NAME2 @215
+	COPY ~fishingfortrouble/cre/ysarmsto.cre~ ~override/ysarmsto.cre~
+	SAY NAME1 @214
+	SAY NAME2 @214
+	COPY ~fishingfortrouble/cre/ysaine.cre~ ~override/ysaine.cre~
+	SAY NAME1 @239
+	SAY NAME2 @239
+	COPY ~fishingfortrouble/cre/ysderv.cre~ ~override/ysderv.cre~
+	SAY NAME1 @238
+	SAY NAME2 @238
+	COPY ~fishingfortrouble/cre/ysmorv.cre~ ~override/ysmorv.cre~
+	SAY NAME1 @241
+	SAY NAME2 @241
+	COPY ~fishingfortrouble/cre/ysgaol.cre~ ~override/ysgaol.cre~
+	SAY NAME1 @243
+	SAY NAME2 @243
+	COPY ~fishingfortrouble/cre/yswtchmn.cre~ ~override/yswtchmn.cre~
+	SAY NAME1 @257
+	SAY NAME2 @257
+	COPY ~fishingfortrouble/cre/ysdwfknt.cre~ ~override/ysdwfknt.cre~
+	SAY NAME1 @261
+	SAY NAME2 @261
+	COPY ~fishingfortrouble/cre/ysdwfgrd.cre~ ~override/ysdwfgrd.cre~
+	SAY NAME1 @299
+	SAY NAME2 @299
+	COPY ~fishingfortrouble/cre/ysdwfgr2.cre~ ~override/ysdwfgr2.cre~
+	SAY NAME1 @299
+	SAY NAME2 @299
+	COPY ~fishingfortrouble/cre/ysdwflrd.cre~ ~override/ysdwflrd.cre~
+	SAY NAME1 @262
+	SAY NAME2 @262
+	COPY ~fishingfortrouble/cre/ysdldop.cre~ ~override/ysdldop.cre~
+	SAY NAME1 @262
+	SAY NAME2 @262
+	COPY ~fishingfortrouble/cre/ysgrmarc.cre~ ~override/ysgrmarc.cre~
+
+//Cerendor Hold
+	COPY ~fishingfortrouble/cre/cerendor/.~ ~override/.~
+	COPY ~fishingfortrouble/cre/ysblksto.cre~ ~override/ysblksto.cre~
+	SAY NAME1 @222
+	SAY NAME2 @222
+	COPY ~fishingfortrouble/cre/ysgalid.cre~ ~override/ysgalid.cre~
+	SAY NAME1 @225
+	SAY NAME2 @225
+	COPY ~fishingfortrouble/cre/yscvmstr.cre~ ~override/yscvmstr.cre~
+	SAY NAME1 @223
+	SAY NAME2 @223
+	COPY ~fishingfortrouble/cre/yschearl.cre~ ~override/yschearl.cre~
+	SAY NAME1 @237
+	SAY NAME2 @237
+	COPY ~fishingfortrouble/cre/yscntwul.cre~ ~override/yscntwul.cre~
+	SAY NAME1 @240
+	SAY NAME2 @240
+	COPY ~fishingfortrouble/cre/yscgroad.cre~ ~override/yscgroad.cre~
+	SAY NAME1 @219
+	SAY NAME2 @219
+	COPY ~fishingfortrouble/cre/ysgengrd.cre~ ~override/ysgengrd.cre~
+	SAY NAME1 @221
+	SAY NAME2 @221
+	COPY ~fishingfortrouble/cre/yscgtowr.cre~ ~override/yscgtowr.cre~
+	SAY NAME1 @220
+	SAY NAME2 @220
+	COPY ~fishingfortrouble/cre/yschdg.cre~ ~override/yschdg.cre~
+	SAY NAME1 @226
+	SAY NAME2 @226
+	COPY ~fishingfortrouble/cre/yscrnbl.cre~ ~override/yscrnbl.cre~
+	COPY ~fishingfortrouble/cre/yscook1.cre~ ~override/yscook1.cre~
+	COPY ~fishingfortrouble/cre/yscook2.cre~ ~override/yscook2.cre~
+	COPY ~fishingfortrouble/cre/ysserj.cre~ ~override/ysserj.cre~
+	SAY NAME1 @227
+	SAY NAME2 @227
+	COPY ~fishingfortrouble/cre/yschcapt.cre~ ~override/yschcapt.cre~
+	SAY NAME1 @234
+	SAY NAME2 @234
+	COPY ~fishingfortrouble/cre/yshldgrd.cre~ ~override/yshldgrd.cre~
+	SAY NAME1 @235
+	SAY NAME2 @235
+	COPY ~fishingfortrouble/cre/ysredgrd.cre~ ~override/ysredgrd.cre~
+	SAY NAME1 @230
+	SAY NAME2 @230
+	COPY ~fishingfortrouble/cre/yscell1.cre~ ~override/yscell1.cre~
+	SAY NAME1 @220
+	SAY NAME2 @221
+	COPY ~fishingfortrouble/cre/yscell2.cre~ ~override/yscell2.cre~
+	SAY NAME1 @220
+	SAY NAME2 @221
+	COPY ~fishingfortrouble/cre/yscell3.cre~ ~override/yscell3.cre~
+	SAY NAME1 @220
+	SAY NAME2 @221
+	COPY ~fishingfortrouble/cre/yscell4.cre~ ~override/yscell4.cre~
+	SAY NAME1 @220
+	SAY NAME2 @221
+	COPY ~fishingfortrouble/cre/yscell5.cre~ ~override/yscell5.cre~
+	SAY NAME1 @220
+	SAY NAME2 @221
+	COPY ~fishingfortrouble/cre/ysredwiz.cre~ ~override/ysredwiz.cre~
+	SAY NAME1 @228
+	SAY NAME2 @228
+	COPY ~fishingfortrouble/cre/ysailoth.cre~ ~override/ysailoth.cre~
+	SAY NAME1 @229
+	SAY NAME2 @229
+	COPY ~fishingfortrouble/cre/yschclr.cre~ ~override/yschclr.cre~
+	SAY NAME1 @233
+	SAY NAME2 @233
+	COPY ~fishingfortrouble/cre/yschbnd.cre~ ~override/yschbnd.cre~
+	SAY NAME1 @236
+	SAY NAME2 @236
+	COPY ~fishingfortrouble/cre/yscado.cre~ ~override/yscado.cre~
+	SAY NAME1 @289
+	SAY NAME2 @289
+
+//North Forest and the Forest of Tethyr
+	COPY ~fishingfortrouble/cre/yskalun.cre~ ~override/yskalun.cre~
+	SAY NAME1 @210
+	SAY NAME2 @211
+	COPY ~fishingfortrouble/cre/yswdman.cre~ ~override/yswdman.cre~
+	SAY NAME1 @209
+	SAY NAME2 @209
+
+//Imradim
+	COPY ~fishingfortrouble/cre/imradim/.~ ~override/.~
+	COPY ~fishingfortrouble/cre/yspashan.cre~ ~override/yspashan.cre~
+	SAY NAME1 @263
+	SAY NAME2 @263
+	COPY ~fishingfortrouble/cre/ysaiesha.cre~ ~override/ysaiesha.cre~
+	SAY NAME1 @264
+	SAY NAME2 @264
+	COPY ~fishingfortrouble/cre/ysadara.cre~ ~override/ysadara.cre~
+	SAY NAME1 @268
+	SAY NAME2 @268
+	COPY ~fishingfortrouble/cre/yskhoury.cre~ ~override/yskhoury.cre~
+	SAY NAME1 @265
+	SAY NAME2 @265
+	COPY ~fishingfortrouble/cre/ysnuri.cre~ ~override/ysnuri.cre~
+	SAY NAME1 @266
+	SAY NAME2 @266
+	COPY ~fishingfortrouble/cre/ysgadil.cre~ ~override/ysgadil.cre~
+	SAY NAME1 @267
+	SAY NAME2 @267
+	COPY ~fishingfortrouble/cre/ystahir.cre~ ~override/ystahir.cre~
+	SAY NAME1 @269
+	SAY NAME2 @269
+	COPY ~fishingfortrouble/cre/yscdmer1.cre~ ~override/yscdmer1.cre~
+	SAY NAME1 @270
+	SAY NAME2 @270
+	COPY ~fishingfortrouble/cre/yscdmer2.cre~ ~override/yscdmer2.cre~
+	SAY NAME1 @270
+	SAY NAME2 @270
+	COPY ~fishingfortrouble/cre/yscdmer3.cre~ ~override/yscdmer3.cre~
+	SAY NAME1 @270
+	SAY NAME2 @270
+	COPY ~fishingfortrouble/cre/imradim/yscddwm1.cre~ ~override/yscddwm1.cre~
+	SAY NAME1 @274
+	SAY NAME2 @274
+	COPY ~fishingfortrouble/cre/imradim/yscddwm2.cre~ ~override/yscddwm2.cre~
+	SAY NAME1 @274
+	SAY NAME2 @274
+	COPY ~fishingfortrouble/cre/imradim/yscddwf1.cre~ ~override/yscddwf1.cre~
+	SAY NAME1 @274
+	SAY NAME2 @274
+	COPY ~fishingfortrouble/cre/yscdcook.cre~ ~override/yscdcook.cre~
+	SAY NAME1 @275
+	SAY NAME2 @275
+	COPY ~fishingfortrouble/cre/yscdcg.cre~ ~override/yscdcg.cre~
+	SAY NAME1 @276
+	SAY NAME2 @276
+	COPY ~fishingfortrouble/cre/yscdcg1.cre~ ~override/yscdcg1.cre~
+	SAY NAME1 @276
+	SAY NAME2 @276
+	COPY ~fishingfortrouble/cre/yscdcg2.cre~ ~override/yscdcg2.cre~
+	SAY NAME1 @276
+	SAY NAME2 @276
+	COPY ~fishingfortrouble/cre/yskarim.cre~ ~override/yskarim.cre~
+	SAY NAME1 @278
+	SAY NAME2 @278
+	COPY ~fishingfortrouble/cre/ysjehan.cre~ ~override/ysjehan.cre~
+	SAY NAME1 @279
+	SAY NAME2 @279
+	COPY ~fishingfortrouble/cre/ysmuktar.cre~ ~override/ysmuktar.cre~
+	SAY NAME1 @280
+	SAY NAME2 @280
+	COPY ~fishingfortrouble/cre/ysharem1.cre~ ~override/ysharem1.cre~
+	SAY NAME1 @281
+	SAY NAME2 @281
+	COPY ~fishingfortrouble/cre/yseunch.cre~ ~override/yseunch.cre~
+	SAY NAME1 @282
+	SAY NAME2 @282
+	COPY ~fishingfortrouble/cre/ysharem2.cre~ ~override/ysharem2.cre~
+	SAY NAME1 @281
+	SAY NAME2 @281
+	COPY ~fishingfortrouble/cre/ysyasar.cre~ ~override/ysyasar.cre~
+	SAY NAME1 @283
+	SAY NAME2 @283
+	COPY ~fishingfortrouble/cre/ysqadir.cre~ ~override/ysqadir.cre~
+	SAY NAME1 @284
+	SAY NAME2 @284
+	COPY ~fishingfortrouble/cre/yscadfan.cre~ ~override/yscadfan.cre~
+	SAY NAME1 @285
+	SAY NAME2 @285
+	COPY ~fishingfortrouble/cre/ysfirdos.cre~ ~override/ysfirdos.cre~
+	SAY NAME1 @286
+	SAY NAME2 @286
+	COPY ~fishingfortrouble/cre/ysain.cre~ ~override/ysain.cre~
+	SAY NAME1 @287
+	SAY NAME2 @287
+	COPY ~fishingfortrouble/cre/ysgivon.cre~ ~override/ysgivon.cre~
+	SAY NAME1 @288
+	SAY NAME2 @288
+	COPY ~fishingfortrouble/cre/ysbasima.cre~ ~override/ysbasima.cre~
+	SAY NAME1 @292
+	SAY NAME2 @292
+	COPY ~fishingfortrouble/cre/ysjalil.cre~ ~override/ysjalil.cre~
+	SAY NAME1 @293
+	SAY NAME2 @293
+	COPY ~fishingfortrouble/cre/yslevon.cre~ ~override/yslevon.cre~
+	SAY NAME1 @294
+	SAY NAME2 @294
+	COPY ~fishingfortrouble/cre/ysakil.cre~ ~override/ysakil.cre~
+	SAY NAME1 @295
+	SAY NAME2 @295
+	COPY ~fishingfortrouble/cre/ysakilfr.cre~ ~override/ysakilfr.cre~
+	SAY NAME1 @296
+	SAY NAME2 @296
+	COPY ~fishingfortrouble/cre/ysrimon.cre~ ~override/ysrimon.cre~
+	SAY NAME1 @297
+	SAY NAME2 @297
+	COPY ~fishingfortrouble/cre/yslevong.cre~ ~override/yslevong.cre~
+	COPY ~fishingfortrouble/cre/ysakilah.cre~ ~override/ysakilah.cre~
+	SAY NAME1 @298
+	SAY NAME2 @298
+
+//##################################################
+//Actor scripts
+//##################################################
+//General
+	COMPILE ~fishingfortrouble/cre scripts/ysreact.baf~
+	COMPILE ~fishingfortrouble/cre scripts/yschild.baf~
+	COMPILE ~fishingfortrouble/cre scripts/ysmorale.baf~
+	COMPILE ~fishingfortrouble/cre scripts/ysstatic.baf~
+
+//Cloudpeaks
+	COMPILE ~fishingfortrouble/cre scripts/ysblgrd.baf~
+	COMPILE ~fishingfortrouble/cre scripts/ysblrwz.baf~
+	COMPILE ~fishingfortrouble/cre scripts/ysblmr.baf~
+
+//Trademeet
+	COMPILE ~fishingfortrouble/cre scripts/yselmov.baf~
+	COMPILE ~fishingfortrouble/cre scripts/yselm01.baf~
+
+//Athkatla
+	COMPILE ~fishingfortrouble/cre scripts/ysltor.baf~
+	COMPILE ~fishingfortrouble/cre scripts/ysbran.baf~
+	COMPILE ~fishingfortrouble/cre scripts/ysbehold.baf~
+	COMPILE ~fishingfortrouble/cre scripts/ysceinwn.baf~
+	COMPILE ~fishingfortrouble/cre scripts/ysgaelie.baf~
+	COMPILE ~fishingfortrouble/cre scripts/ystelthe.baf~
+	COMPILE ~fishingfortrouble/cre scripts/yscvam.baf~
+	COMPILE ~fishingfortrouble/cre scripts/ysaella.baf~
+	COMPILE ~fishingfortrouble/cre scripts/ysoengus.baf~
+	COMPILE ~fishingfortrouble/cre scripts/yslugh.baf~
+	COMPILE ~fishingfortrouble/cre scripts/yssthief.baf~
+	COMPILE ~fishingfortrouble/cre scripts/ysgargel.baf~
+	COMPILE ~fishingfortrouble/cre scripts/ysanghrd.baf~
+	COMPILE ~fishingfortrouble/cre scripts/ysbengch.baf~
+	COMPILE ~fishingfortrouble/cre scripts/ysatgrd.baf~
+	COMPILE ~fishingfortrouble/cre scripts/ysatbow.baf~
+	COMPILE ~fishingfortrouble/cre scripts/yselcol1.baf~
+	COMPILE ~fishingfortrouble/cre scripts/yselcol2.baf~
+
+//Portpentyrch
+	COMPILE ~fishingfortrouble/cre scripts/yspoprnd.baf~
+	COMPILE ~fishingfortrouble/cre scripts/ystanarr.baf~
+	COMPILE ~fishingfortrouble/cre scripts/ysdwfknt.baf~
+	COMPILE ~fishingfortrouble/cre scripts/ysdwflrd.baf~
+	COMPILE ~fishingfortrouble/cre scripts/ysdwfgrd.baf~
+
+//Cerendor Hold
+	COMPILE ~fishingfortrouble/cre scripts/ysgalid.baf~
+	COMPILE ~fishingfortrouble/cre scripts/yscgroad.baf~
+	COMPILE ~fishingfortrouble/cre scripts/ysgengrd.baf~
+	COMPILE ~fishingfortrouble/cre scripts/yscgtowr.baf~
+	COMPILE ~fishingfortrouble/cre scripts/yschdg.baf~
+	COMPILE ~fishingfortrouble/cre scripts/yscrnbl.baf~
+	COMPILE ~fishingfortrouble/cre scripts/yscrncon.baf~
+	COMPILE ~fishingfortrouble/cre scripts/ysserj.baf~
+	COMPILE ~fishingfortrouble/cre scripts/yshldgrd.baf~
+	COMPILE ~fishingfortrouble/cre scripts/ysredgrd.baf~
+	COMPILE ~fishingfortrouble/cre scripts/ysredwiz.baf~
+	COMPILE ~fishingfortrouble/cre scripts/ysailoth.baf~
+	COMPILE ~fishingfortrouble/cre scripts/yschnob.baf~
+	COMPILE ~fishingfortrouble/cre scripts/yschnob1.baf~
+	COMPILE ~fishingfortrouble/cre scripts/yschbnd.baf~
+	COMPILE ~fishingfortrouble/cre scripts/yschearl.baf~
+
+//North Forest and Forest of Tethyr
+	COMPILE ~fishingfortrouble/cre scripts/yskalun.baf~
+	EXTEND_BOTTOM ~hunter.bcs~ ~fishingfortrouble/cre scripts/hunter.baf~
+
+//Imradim
+	COMPILE ~fishingfortrouble/cre scripts/yscdpop.baf~
+	COMPILE ~fishingfortrouble/cre scripts/yscddw.baf~
+	COMPILE ~fishingfortrouble/cre scripts/yscdcg.baf~
+	COMPILE ~fishingfortrouble/cre scripts/yscdcg1.baf~
+	COMPILE ~fishingfortrouble/cre scripts/yscdcg2.baf~
+	COMPILE ~fishingfortrouble/cre scripts/ysfirdos.baf~
+	COMPILE ~fishingfortrouble/cre scripts/ysain.baf~
+	COMPILE ~fishingfortrouble/cre scripts/ysgivon.baf~
+	COMPILE ~fishingfortrouble/cre scripts/ysbasima.baf~
+	COMPILE ~fishingfortrouble/cre scripts/ysakil.baf~
+	COMPILE ~fishingfortrouble/cre scripts/ysakilfr.baf~
+	COMPILE ~fishingfortrouble/cre scripts/yslevon.baf~
+	COMPILE ~fishingfortrouble/cre scripts/yslevong.baf~
+
+//##################################################
+//Area scripts
+//##################################################
+//Cloudpeaks
+	COMPILE ~fishingfortrouble/area scripts/ysblcv.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0370.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0370t1.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0370t2.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0370f1.baf~
+
+//Athkatla
+	COPY_EXISTING ~ar0305.are~ ~override~
+	WRITE_ASCII 0x94 ~ar0305~
+	COMPILE ~fishingfortrouble/area scripts/ar0305.baf~
+	COPY_EXISTING ~ar0306.are~ ~override~
+	WRITE_ASCII 0x94 ~ar0306~
+	COMPILE ~fishingfortrouble/area scripts/ar0306.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0390.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0401.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0405.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0383.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0407.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0407t1.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0408.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0409.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0430t1.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0431t1.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0431.baf~
+	EXTEND_BOTTOM ~ar0020.bcs~ ~fishingfortrouble/area scripts/ysar0020.baf~
+	EXTEND_TOP ~ar0709.bcs~ ~fishingfortrouble/area scripts/ysar0709.baf~
+	EXTEND_TOP ~ar1000.bcs~ ~fishingfortrouble/area scripts/ysar1000.baf~
+	EXTEND_TOP ~ar1002.bcs~ ~fishingfortrouble/area scripts/ysar1002.baf~
+	EXTEND_TOP ~ar0801.bcs~ ~fishingfortrouble/area scripts/ysar0801.baf~
+	EXTEND_TOP ~ar0808.bcs~ ~fishingfortrouble/area scripts/ysar0808.baf~
+	EXTEND_TOP ~ar0400.bcs~ ~fishingfortrouble/area scripts/ysar0400.baf~
+	EXTEND_TOP ~ar0300.bcs~ ~fishingfortrouble/area scripts/ysar0300.baf~
+
+//Trademeet
+	EXTEND_TOP ~ar2000.bcs~ ~fishingfortrouble/area scripts/ysar2000.baf~
+
+//Porthpentyrch
+	COMPILE ~fishingfortrouble/area scripts/ysdr0200.baf~
+	COMPILE ~fishingfortrouble/area scripts/ysdr0270.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0270t1.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0270t2.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0270t3.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0270.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys1000.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys1001.baf~
+	COMPILE ~fishingfortrouble/area scripts/yslhdoor.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0030.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0031.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0040.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0041.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0260in.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0260tp.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0161.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0200.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0200d1.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0200d2.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0200d3.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0200d4.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0200d5.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0200d6.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0200d8.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0200d9.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0200et.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0200ft.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0200t1.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0200t2.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0200t3.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0200t4.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys020010.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys020011.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys020012.baf~
+  COMPILE ~fishingfortrouble/area scripts/ys0396.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0282.baf~
+
+//Cerendor Hold
+	COMPILE ~fishingfortrouble/area scripts/ys0330.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0330cv.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0350.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0360.baf~
+
+//North Forest
+	EXTEND_TOP ~ar1800.bcs~ ~fishingfortrouble/area scripts/ysar1800.baf~
+
+//Forest of Tethyr
+	EXTEND_TOP ~ar2600.bcs~ ~fishingfortrouble/area scripts/ysar2600.baf~
+
+//Spellhold
+	EXTEND_TOP ~ar1515.bcs~ ~fishingfortrouble/area scripts/ysar1515.baf~
+
+//Imradim
+	COMPILE ~fishingfortrouble/area scripts/ys0410.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0410t1.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0410t2.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0410t3.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0410t4.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0410t5.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0424t2.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0424t1.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0414.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0441.baf~
+	COMPILE ~fishingfortrouble/area scripts/ys0440.baf~
+
+//##################################################
+//Other area scripts
+	EXTEND_TOP ~baldur.bcs~ ~fishingfortrouble/area scripts/ysbaldur.baf~
+
+//##################################################
+//Stores
+//Athkatla
+	COPY ~fishingfortrouble/stores/ysslvale.sto~ ~override/ysslvale.sto~
+	SAY 0xc @403
+	COPY ~fishingfortrouble/stores/yskeldrl.sto~ ~override/yskeldrl.sto~
+	SAY 0xc @405
+	COPY ~fishingfortrouble/stores/ysgibmel.sto~ ~override/ysgibmel.sto~
+	SAY 0xc @406
+	COPY ~fishingfortrouble/stores/yscolla1.sto~ ~override/yscolla1.sto~
+	SAY 0xc @272
+	COPY ~fishingfortrouble/stores/yscolla2.sto~ ~override/yscolla2.sto~
+	SAY 0xc @272
+
+//Porthpentyrch
+	COPY ~fishingfortrouble/stores/ysstor1c.sto~ ~override/ysstor1c.sto~
+	COPY ~fishingfortrouble/stores/ysstor1e.sto~ ~override/ysstor1e.sto~
+	COPY ~fishingfortrouble/stores/ysstor2c.sto~ ~override/ysstor2c.sto~
+	COPY ~fishingfortrouble/stores/ysstor2e.sto~ ~override/ysstor2e.sto~
+	COPY ~fishingfortrouble/stores/ysmorv.sto~ ~override/ysmorv.sto~
+	SAY 0xc @402
+
+//Cerendor Hold
+	COPY ~fishingfortrouble/stores/yschclr.sto~ ~override/yschclr.sto~
+	SAY 0xc @233
+	COPY ~fishingfortrouble/stores/ysbk1sto.sto~ ~override/ysbk1sto.sto~
+	SAY 0xc @222
+	COPY ~fishingfortrouble/stores/ysblksto.sto~ ~override/ysblksto.sto~
+	SAY 0xc @222
+
+//Imradim
+	COPY ~fishingfortrouble/stores/ysnuri.sto~ ~override/ysnuri.sto~
+	SAY 0xc @266
+	COPY ~fishingfortrouble/stores/yskhoury.sto~ ~override/yskhoury.sto~
+	SAY 0xc @265
+	COPY ~fishingfortrouble/stores/ystahir.sto~ ~override/ystahir.sto~
+	SAY 0xc @407
+	COPY ~fishingfortrouble/stores/ysbasima.sto~ ~override/ysbasima.sto~
+	SAY 0xc @422
+
+//##################################################
+//Uncompressed Tilesets
+//##################################################
+	COPY ~fishingfortrouble/tis~ ~override~
+
+//**************************************************
+// SConrad's Worldmap patching - do this last so we can patch the new areas too
+//**************************************************
+// Append mastarea.2da with the new areas
+  APPEND ~MASTAREA.2da~ ~ys0360 value~ UNLESS ~ys0360~ //Cerendor Hold
+  APPEND ~MASTAREA.2da~ ~ys0370 value~ UNLESS ~ys0370~ //Cloudpeak Mountains
+  APPEND ~MASTAREA.2da~ ~ys0410 value~ UNLESS ~ys0410~ //Imradim
+  APPEND ~MASTAREA.2da~ ~ys0390 value~ UNLESS ~ys0390~ //Government District Westside
+  APPEND ~MASTAREA.2da~ ~ys1000 value~ UNLESS ~ys1000~ //Portpentyrch
+  APPEND ~MASTAREA.2da~ ~ys1001 value~ UNLESS ~ys1001~ //Portpentyrch
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Porthpentyrch abandoned
+  OUTER_SPRINT areName "YS1000"   // area reference, like "AR0700"
+  OUTER_SPRINT strName "Porthpentyrch" // area name, like "Waukeen's Promenade"
+  OUTER_SPRINT strDesc "Porthpentyrch" // area description which will show up when hovering the area on the worldmap
+
+  OUTER_SET mapIcon = 13             // map icon
+  OUTER_SET xCoord  = 583            // x coordinate
+  OUTER_SET yCoord  = 630            // y coordinate
+  OUTER_SET tTime   = 2              // travel time, *4, so two means eight hours
+  OUTER_SET inclSv  = 1              // include save games bool, 1 means yes and 0 means no
+
+// set up link variables
+
+  // add links from these area(s) to the new area
+  ACTION_DEFINE_ASSOCIATIVE_ARRAY toNewArea BEGIN
+    "AR0020" => "Exitne"       // City Gates
+    "AR0300" => "Exitne"       // Docks
+    "AR0400" => "Exitne"       // Slums
+    "AR0500" => "Exitne"       // Bridge District
+    "AR0700" => "Exitne"       // Waukeen's Promenade
+    "AR0800" => "Exitne"       // Graveyard
+    "AR0900" => "Exitne"       // Temple District
+    "AR1000" => "Exitne"       // Government
+    "YS0390" => "Exitne"       // Government Westside
+    "AR1100" => "Exitne"       // Umar Hills
+    "AR1300" => "Exitne"       // d'Arnise Keep
+    "AR1304" => "Exitne"       // d'Arnise Keep
+    "AR2000" => "Exite"        // Trademeet
+    "AR1200" => "Exite"        // Windspear Hills
+    "YS0390" => "Exite"        // Govt westside
+    "YS0360" => "Exite"        // Cerendor Hold
+    "YS0370" => "Exite"        // Cloudpeaks
+  END
+
+  // add links from the new area to these area(s)
+  ACTION_DEFINE_ASSOCIATIVE_ARRAY fromNewArea BEGIN
+    "AR0020" => "ExitNE"      // City Gates
+    "AR0300" => "ExitN"       // Docks
+    "AR0400" => "ExitN"       // Slums
+    "AR0500" => "ExitNE"      // Bridge District
+    "AR0700" => "ExitE"       // Waukeen's Promenade
+    "AR0800" => "ExitS"       // Graveyard
+    "AR0900" => "ExitNW"      // Temple District
+    "AR1000" => "ExitN"       // Government
+    "YS0390" => "Exitwmp"     // Government Westside
+    "AR1100" => "ExitSE"      // Umar Hills
+    "AR1300" => "ExitSE"      // d'Arnise Keep
+    "AR1304" => "ExitSE"      // d'Arnise Keep
+    "AR2000" => "ExitSW"      // Trademeet
+    "AR1200" => "ExitW"       // Windspear Hills
+    "YS0390" => "Exitwmp"     // Govt westside
+    "YS0360" => "Exit1"       // Cerendor Hold
+    "YS0370" => "Exits"       // Cloudpeaks
+  END
+
+// call the sc#addWmpAre function
+  // returns the worldmap entry number for the new area
+  LAUNCH_ACTION_FUNCTION sc#addWmpAre RET areNum = areNum END
+  PRINT "Portpentyrch abandoned patched. New area number is: %areNum%"
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Porthpentyrch restored
+  OUTER_SPRINT areName "YS1001"   // area reference, like "AR0700"
+  OUTER_SPRINT strName "Porthpentyrch" // area name, like "Waukeen's Promenade"
+  OUTER_SPRINT strDesc "Porthpentyrch" // area description which will show up when hovering the area on the worldmap
+
+  OUTER_SET mapIcon = 13             // map icon
+  OUTER_SET xCoord  = 583            // x coordinate
+  OUTER_SET yCoord  = 630            // y coordinate
+  OUTER_SET tTime   = 2              // travel time, *4, so two means eight hours
+  OUTER_SET inclSv  = 1              // include save games bool, 1 means yes and 0 means no
+
+// set up link variables
+
+  // add links from these area(s) to the new area
+  // add links from these area(s) to the new area
+  ACTION_DEFINE_ASSOCIATIVE_ARRAY toNewArea BEGIN
+    "AR0020" => "Exitne"       // City Gates
+    "AR0300" => "Exitne"       // Docks
+    "AR0400" => "Exitne"       // Slums
+    "AR0500" => "Exitne"       // Bridge District
+    "AR0700" => "Exitne"       // Waukeen's Promenade
+    "AR0800" => "Exitne"       // Graveyard
+    "AR0900" => "Exitne"       // Temple District
+    "AR1000" => "Exitne"       // Government
+    "YS0390" => "Exitne"	     // Government Westside
+    "AR1100" => "Exitne"       // Umar Hills
+    "AR1300" => "Exitne"       // d'Arnise Keep
+    "AR1304" => "Exitne"       // d'Arnise Keep
+    "AR2000" => "Exite"        // Trademeet
+    "AR1200" => "Exite"        // Windspear Hills
+    "YS0390" => "Exite"        // Govt westside
+    "YS0360" => "Exite"	     	 // Cerendor Hold
+    "YS0370" => "Exite"        // Cloudpeaks
+  END
+
+  // add links from the new area to these area(s)
+  ACTION_DEFINE_ASSOCIATIVE_ARRAY fromNewArea BEGIN
+    "AR0020" => "ExitNE"      // City Gates
+    "AR0300" => "ExitN"       // Docks
+    "AR0400" => "ExitN"       // Slums
+    "AR0500" => "ExitNE"      // Bridge District
+    "AR0700" => "ExitE"       // Waukeen's Promenade
+    "AR0800" => "ExitS"       // Graveyard
+    "AR0900" => "ExitNW"      // Temple District
+    "AR1000" => "ExitN"       // Government
+    "YS0390" => "Exitwmp"     // Government Westside
+    "AR1100" => "ExitSE"      // Umar Hills
+    "AR1300" => "ExitSE"      // d'Arnise Keep
+    "AR1304" => "ExitSE"      // d'Arnise Keep
+    "AR2000" => "ExitSW"      // Trademeet
+    "AR1200" => "ExitW"       // Windspear Hills
+    "YS0390" => "Exitwmp"     // Govt westside
+    "YS0360" => "Exit1"       // Cerendor Hold
+    "YS0370" => "ExitS"       // Cloudpeaks
+  END
+
+// call the sc#addWmpAre function
+  // returns the worldmap entry number for the new area
+  LAUNCH_ACTION_FUNCTION sc#addWmpAre RET areNum = areNum END
+  PRINT "Portpentyrch restored patched. New area number is: %areNum%"
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Government District Westside
+  OUTER_SPRINT areName "YS0390"   // area reference, like "AR0700"
+  OUTER_SPRINT strName "Govt. West" // area name, like "Waukeen's Promenade"
+  OUTER_SPRINT strDesc "Govt. West" // area description which will show up when hovering the area on the worldmap
+
+  OUTER_SET mapIcon = 21             // map icon
+  OUTER_SET xCoord  = 240            // x coordinate
+  OUTER_SET yCoord  = 130            // y coordinate
+  OUTER_SET tTime   = 2              // travel time, *4, so two means eight hours
+  OUTER_SET inclSv  = 1              // include save games bool, 1 means yes and 0 means no
+
+// set up link variables
+  // add links from these area(s) to the new area
+  ACTION_DEFINE_ASSOCIATIVE_ARRAY toNewArea BEGIN
+    "AR0020" => "Exitwmp"       // City Gates
+    "AR0300" => "Exitwmp"       // Docks
+    "AR0400" => "Exitwmp"       // Slums
+    "AR0500" => "Exitwmp"       // Bridge District
+    "AR0700" => "Exitwmp"       // Waukeen's Promenade
+    "AR0800" => "Exitwmp"       // Graveyard
+    "AR0900" => "Exitwmp"       // Temple District
+    "AR1000" => "Exitwmp"       // Government
+    "AR1100" => "Exitwmp"       // Umar Hills
+    "AR1300" => "Exitwmp"       // d'Arnise Keep
+    "AR1304" => "Exitwmp"       // d'Arnise Keep
+    "AR2000" => "Exitwmp"       // Trademeet
+    "AR1200" => "Exitwmp"       // Windspear Hills
+    "YS1000" => "Exitwmp"	     	// Porthpentyrch
+    "YS0360" => "Exitwmp"	     	// Cerendor Hold
+    "YS0370" => "Exitwmp"       // Cloudpeaks
+  END
+
+  // add links from the new area to these area(s)
+  ACTION_DEFINE_ASSOCIATIVE_ARRAY fromNewArea BEGIN
+    "AR0020" => "ExitNE"      // City Gates
+    "AR0300" => "ExitN"       // Docks
+    "AR0400" => "ExitN"       // Slums
+    "AR0500" => "ExitNE"      // Bridge District
+    "AR0700" => "ExitE"       // Waukeen's Promenade
+    "AR0800" => "ExitS"       // Graveyard
+    "AR0900" => "ExitNW"      // Temple District
+    "AR1000" => "ExitN"       // Government
+    "AR1100" => "ExitSE"      // Umar Hills
+    "AR1300" => "ExitSE"      // d'Arnise Keep
+    "AR1304" => "ExitSE"      // d'Arnise Keep
+    "AR2000" => "ExitSW"      // Trademeet
+    "AR1200" => "ExitW"       // Windspear Hills
+    "YS1000" => "Exitne"	    // Porthpentyrch
+    "YS0360" => "Exit2"	     	// Cerendor Hold
+    "YS0370" => "ExitS"       // Cloudpeaks
+  END
+
+// call the sc#addWmpAre function
+  // returns the worldmap entry number for the new area
+  LAUNCH_ACTION_FUNCTION sc#addWmpAre RET areNum = areNum END
+  PRINT "Government District Westside patched. New area number is: %areNum%"
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Cerendor Hold
+  OUTER_SPRINT areName "YS0360"   // area reference, like "AR0700"
+  OUTER_SPRINT strName "Cerendor Hold" // area name, like "Waukeen's Promenade"
+  OUTER_SPRINT strDesc "Cerendor Hold" // area description which will show up when hovering the area on the worldmap
+
+  OUTER_SET mapIcon = 13             // map icon
+  OUTER_SET xCoord  = 912            // x coordinate
+  OUTER_SET yCoord  = 65	            // y coordinate
+  OUTER_SET tTime   = 6              // travel time, *4, so two means eight hours
+  OUTER_SET inclSv  = 1              // include save games bool, 1 means yes and 0 means no
+
+// set up link variables
+  // add links from these area(s) to the new area
+  ACTION_DEFINE_ASSOCIATIVE_ARRAY toNewArea BEGIN
+    "AR0020" => "Exit1"       // City Gates
+    "AR0300" => "Exit1"        // Docks
+    "AR0400" => "Exit1"       // Slums
+    "AR0500" => "Exit1"       // Bridge District
+    "AR0700" => "Exit1"       // Waukeen's Promenade
+    "AR0800" => "Exit1"       // Graveyard
+    "AR0900" => "Exit1"       // Temple District
+    "AR1000" => "Exit1"       // Government
+    "AR1100" => "Exit2"       // Umar Hills
+    "AR1300" => "Exit2"       // d'Arnise Keep
+    "AR1304" => "Exit2"       // d'Arnise Keep
+    "AR2000" => "Exit2"       // Trademeet
+    "AR1200" => "Exit2"       // Windspear Hills
+    "YS1000" => "Exit2"	     	// Porthpentyrch
+    "YS0390" => "Exit1"       // Govt westside
+    "YS0370" => "Exit2"       // Cloudpeaks
+  END
+
+  // add links from the new area to these area(s)
+  ACTION_DEFINE_ASSOCIATIVE_ARRAY fromNewArea BEGIN
+    "AR0020" => "ExitNE"      // City Gates
+    "AR0300" => "ExitN"       // Docks
+    "AR0400" => "ExitN"       // Slums
+    "AR0500" => "ExitNE"      // Bridge District
+    "AR0700" => "ExitE"       // Waukeen's Promenade
+    "AR0800" => "ExitS"       // Graveyard
+    "AR0900" => "ExitNW"      // Temple District
+    "AR1000" => "ExitN"       // Government
+    "AR1100" => "ExitSE"      // Umar Hills
+    "AR1300" => "ExitSE"      // d'Arnise Keep
+    "AR1304" => "ExitSE"      // d'Arnise Keep
+    "AR2000" => "ExitSW"      // Trademeet
+    "AR1200" => "ExitW"       // Windspear Hills
+    "YS1000" => "Exitne"	    // Porthpentyrch
+    "YS0390" => "Exitwmp"     // Govt westside
+    "YS0370" => "Exitn"       // Cloudpeaks
+  END
+
+// call the sc#addWmpAre function
+  // returns the worldmap entry number for the new area
+  LAUNCH_ACTION_FUNCTION sc#addWmpAre RET areNum = areNum END
+  PRINT "Cerendor Hold patched. New area number is: %areNum%"
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Cloudpeak Caravan
+  OUTER_SPRINT areName "YS0370"   // area reference, like "AR0700"
+  OUTER_SPRINT strName "Cloudpeak Mountains" // area name, like "Waukeen's Promenade"
+  OUTER_SPRINT strDesc "Cloudpeak Mountains" // area description which will show up when hovering the area on the worldmap
+
+  OUTER_SET mapIcon = 17             // map icon
+  OUTER_SET xCoord  = 799            // x coordinate
+  OUTER_SET yCoord  = 53	           // y coordinate
+  OUTER_SET tTime   = 6              // travel time, *4, so two means eight hours
+  OUTER_SET inclSv  = 1              // include save games bool, 1 means yes and 0 means no
+
+// set up link variables
+  // add links from these area(s) to the new area
+  ACTION_DEFINE_ASSOCIATIVE_ARRAY toNewArea BEGIN
+    "AR0020" => "Exit1"       // City Gates
+    "AR0300" => "Exit1"       // Docks
+    "AR0400" => "Exit1"       // Slums
+    "AR0500" => "Exit1"       // Bridge District
+    "AR0700" => "Exit1"       // Waukeen's Promenade
+    "AR0800" => "Exit1"       // Graveyard
+    "AR0900" => "Exit1"       // Temple District
+    "AR1000" => "Exit1"       // Government
+    "AR1100" => "Exit2"       // Umar Hills
+    "AR1300" => "Exit2"       // d'Arnise Keep
+    "AR1304" => "Exit2"       // d'Arnise Keep
+    "AR2000" => "Exit2"       // Trademeet
+    "AR1200" => "Exit2"       // Windspear Hills
+    "YS1000" => "Exit2"	     	// Porthpentyrch
+    "YS0390" => "Exit1"       // Govt westside
+    "YS0360" => "Exit2"	      // Cerendor Hold
+  END
+
+  // add links from the new area to these area(s)
+  ACTION_DEFINE_ASSOCIATIVE_ARRAY fromNewArea BEGIN
+    "AR0020" => "ExitNE"      // City Gates
+    "AR0300" => "ExitN"       // Docks
+    "AR0400" => "ExitN"       // Slums
+    "AR0500" => "ExitNE"      // Bridge District
+    "AR0700" => "ExitE"       // Waukeen's Promenade
+    "AR0800" => "ExitS"       // Graveyard
+    "AR0900" => "ExitNW"      // Temple District
+    "AR1000" => "ExitN"       // Government
+    "AR1100" => "ExitSE"      // Umar Hills
+    "AR1300" => "ExitSE"      // d'Arnise Keep
+    "AR1304" => "ExitSE"      // d'Arnise Keep
+    "AR2000" => "ExitSW"      // Trademeet
+    "AR1200" => "ExitW"       // Windspear Hills
+    "YS1000" => "Exitne"	    // Porthpentyrch
+    "YS0390" => "Exitwmp"     // Govt westside
+    "YS0360" => "Exit2"	     	// Cerendor Hold
+  END
+
+// call the sc#addWmpAre function
+  // returns the worldmap entry number for the new area
+  LAUNCH_ACTION_FUNCTION sc#addWmpAre RET areNum = areNum END
+  PRINT "Cloudpeak Mountains patched. New area number is: %areNum%"
+
+//OS-specific .ogg and .tiz conversion
+ACTION_IF (~%WEIDU_OS%~ STRING_EQUAL_CASE ~win32~ = 1) BEGIN
+  AT_NOW ~fishingfortrouble/music/oggdec.exe -o override/ysbhall.wav fishingfortrouble/music/ysbhall.ogg~
+  AT_NOW ~fishingfortrouble/music/oggdec.exe -o override/ysbhshrt.wav fishingfortrouble/music/ysbhshrt.ogg~
+  ACTION_BASH_FOR ~fishingfortrouble/tizpacks~ ~.+/.tiz$~ BEGIN
+    AT_NOW ~fishingfortrouble/tizpacks/tisunpack.exe -s -f -o override/%BASH_FOR_RES%.tis fishingfortrouble/tizpacks/%BASH_FOR_RES%.tiz~
+  END
+  AT_INTERACTIVE_UNINSTALL ~del override/ys*.tis~
+  AT_INTERACTIVE_UNINSTALL ~del override/ysbhall.wav~
+  AT_INTERACTIVE_UNINSTALL ~del override/ysbhshrt.wav~
+END ELSE ACTION_IF (~%WEIDU_OS%~ STRING_EQUAL_CASE ~osx~ = 1) BEGIN
+  AT_NOW ~shopt -s nocaseglob~
+  AT_NOW ~fishingfortrouble/music/sox fishingfortrouble/music/ysbhall.ogg override/ysbhall.wav~
+  AT_NOW ~fishingfortrouble/music/sox fishingfortrouble/music/ysbhshrt.ogg override/ysbhshrt.wav~
+  ACTION_BASH_FOR ~fishingfortrouble/tizpacks~ ~.+/.tiz$~ BEGIN
+    AT_NOW ~fishingfortrouble/tizpacks/tisunpack -s -f -o override/%BASH_FOR_RES%.tis fishingfortrouble/tizpacks/%BASH_FOR_RES%.tiz~
+  END
+  AT_INTERACTIVE_UNINSTALL ~shopt -s nocaseglob~
+  AT_INTERACTIVE_UNINSTALL ~rm -f override/ys*.tis~
+  AT_INTERACTIVE_UNINSTALL ~rm -f override/ysbhall.wav~
+  AT_INTERACTIVE_UNINSTALL ~rm -f override/ysbhshrt.wav~
+END ELSE ACTION_IF (~%WEIDU_OS%~ STRING_EQUAL_CASE ~unix~ = 1) BEGIN
+  AT_NOW ~shopt -s nocaseglob~
+  AT_NOW ~oggdec -o override/ysbhall.wav fishingfortrouble/music/ysbhall.ogg~
+  AT_NOW ~oggdec -o override/ysbhshrt.wav fishingfortrouble/music/ysbhshrt.ogg~
+  ACTION_BASH_FOR ~fishingfortrouble/tizpacks~ ~.+/.tiz$~ BEGIN
+    AT_NOW ~fishingfortrouble/tizpacks/tisunpack -s -f -o override/%BASH_FOR_RES%.tis fishingfortrouble/tizpacks/%BASH_FOR_RES%.tiz~
+  END
+  AT_INTERACTIVE_UNINSTALL ~shopt -s nocaseglob~
+  AT_INTERACTIVE_UNINSTALL ~rm -f override/ys*.tis~
+  AT_INTERACTIVE_UNINSTALL ~rm -f override/ysbhall.wav~
+  AT_INTERACTIVE_UNINSTALL ~rm -f override/ysbhshrt.wav~
+END
+
+//***************************************************
+//***************************************************
+//Optional component - portraits
+//***************************************************
+//***************************************************
+BEGIN @20001
+REQUIRE_COMPONENT ~setup-dq.tp2~ 0 ~This component requires the main component.~
+ACTION_IF NOT MOD_IS_INSTALLED ~setup-dq.tp2~ 0 BEGIN
+  FAIL ~This component requires the main component.~
+END
+
+COPY ~fishingfortrouble/portraits~ ~override~
+
+BEGIN @20002
+REQUIRE_COMPONENT ~setup-dq.tp2~ 0 ~This component requires the main component.~
+
+ACTION_IF FILE_EXISTS ~Worldmap/map_mods_areas.tbl~ THEN BEGIN
+  COPY ~Worldmap/map_mods_areas.tbl~  ~Worldmap~
+   APPEND_FILE ~fishingfortrouble/Worldmap/areas.tbl~
+  COPY ~Worldmap/map_mods_links.tbl~  ~Worldmap~
+   APPEND_FILE ~fishingfortrouble/Worldmap/links.tbl~
+  COPY - ~fishingfortrouble/Worldmap/worldmap.tra~  ~tmp_worldmap.tra~
+  COPY ~Worldmap/map_mods_trans.tra~  ~Worldmap~
+   APPEND_FILE ~tmp_worldmap.tra~
+END
+ELSE BEGIN
+  MKDIR ~Worldmap~
+  COPY ~fishingfortrouble/Worldmap/areas.tbl~ ~Worldmap/map_mods_areas.tbl~
+  COPY ~fishingfortrouble/Worldmap/links.tbl~ ~Worldmap/map_mods_links.tbl~
+  COPY ~fishingfortrouble/Worldmap/worldmap.tra~ ~Worldmap/map_mods_trans.tra~
+END

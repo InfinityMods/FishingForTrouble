@@ -1,0 +1,40 @@
+IF
+	Allegiance(Myself,ENEMY)
+	See([GOODCUTOFF])
+	Global("ys_mcg1","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ys_mcg1","LOCALS",1)
+		ReallyForceSpell(Myself,WIZARD_GLOBE_OF_INVULNERABILITY)
+		Continue()
+END
+
+IF
+	GlobalLT("ys_cg1","LOCALS",7)
+	See([GOODCUTOFF])
+THEN
+	RESPONSE #11
+		IncrementGlobal("ys_cg1","LOCALS",1)
+		ForceSpell(LastSeenBy(Myself),WIZARD_AGANNAZAR_SCORCHER)
+	RESPONSE #12
+		Attack(LastSeenBy(Myself))
+	RESPONSE #25
+		IncrementGlobal("ys_cg1","LOCALS",1)
+		ForceSpell(LastSeenBy(Myself),WIZARD_BURNING_HANDS)
+	RESPONSE #25
+		IncrementGlobal("ys_cg1","LOCALS",1)
+		ForceSpell(LastSeenBy(Myself),WIZARD_FLAME_ARROW)
+	RESPONSE #12
+		Attack(LastSeenBy(Myself))
+	RESPONSE #11
+		IncrementGlobal("ys_cg1","LOCALS",1)
+		ForceSpell(LastSeenBy(Myself),WIZARD_MAGIC_MISSILE)
+END
+
+IF
+	GlobalGT("ys_cg1","LOCALS",6)
+	See([GOODCUTOFF])
+THEN
+	RESPONSE #100
+		Attack(LastSeenBy(Myself))
+END

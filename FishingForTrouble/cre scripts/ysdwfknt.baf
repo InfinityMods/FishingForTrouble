@@ -1,0 +1,154 @@
+//Timer
+IF
+	Global("ys_dwfknt_fight_timercheck","LOCALS",0)
+THEN
+  RESPONSE #100
+  	SetGlobal("ys_dwfknt_fight_timercheck","LOCALS",1)
+    SetGlobalTimer("ys_dwfknt_magic_check","LOCALS",0)
+END
+
+IF
+	See([PC])
+	Global("ys_dwfknt_talk","GLOBAL",0)
+THEN
+	RESPONSE #100
+    Dialogue(Protagonist)
+    SetGlobal("ys_dwfknt_talk","GLOBAL",1)
+END
+
+//Script trigger
+IF
+	!Allegiance(Myself,ENEMY)
+	OR(2)
+		Global("ys_TombFight","GLOBAL",1)
+ 	 	Global("ys_TalkedToDwarfKnight","GLOBAL",2)
+THEN
+  RESPONSE #100
+    Enemy()
+END
+
+//Defence
+IF
+	Allegiance(Myself,ENEMY)
+	Global("ys_dwfknt_fight","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ys_dwfknt_fight","LOCALS",1)
+		ReallyForceSpell(Myself,WIZARD_GLOBE_OF_INVULNERABILITY)
+		ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+		ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	Continue()
+END
+
+//Target acquisition
+IF
+	Allegiance(Myself,ENEMY)
+	See(Myself)
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+//Check for the nearest target
+IF
+	Allegiance(Myself,ENEMY)
+	!InParty(SixthNearestEnemyOf())
+	!StateCheck(SixthNearestEnemyOf(),STATE_NOT_VISIBLE)
+	!StateCheck(SixthNearestEnemyOf(),STATE_HARMLESS)
+	See(SixthNearestEnemyOf())
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	!InParty(FifthNearestEnemyOf())
+	!StateCheck(FifthNearestEnemyOf(),STATE_NOT_VISIBLE)
+	!StateCheck(FifthNearestEnemyOf(),STATE_HARMLESS)
+	See(FifthNearestEnemyOf())
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	!InParty(FourthNearestEnemyOf())
+	!StateCheck(FourthNearestEnemyOf(),STATE_NOT_VISIBLE)
+	!StateCheck(FourthNearestEnemyOf(),STATE_HARMLESS)
+	See(FourthNearestEnemyOf())
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	!InParty(ThirdNearestEnemyOf())
+	!StateCheck(ThirdNearestEnemyOf(),STATE_NOT_VISIBLE)
+	!StateCheck(NearestEnemyOf(),STATE_HARMLESS)
+	See(ThirdNearestEnemyOf())
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	!InParty(SecondNearestEnemyOf())
+	!StateCheck(SecondNearestEnemyOf(),STATE_NOT_VISIBLE)
+	!StateCheck(SecondNearestEnemyOf(),STATE_HARMLESS)
+	See(SecondNearestEnemyOf())
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	!InParty(NearestEnemyOf())
+	!StateCheck(NearestEnemyOf(),STATE_NOT_VISIBLE)
+	!StateCheck(NearestEnemyOf(),STATE_HARMLESS)
+	See(NearestEnemyOf())
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+//We should have a target by now but get the weakest if possible
+IF
+	Allegiance(Myself,ENEMY)
+	See(WeakestOf(GroupOf(NearestEnemyOf(Myself))))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+//Magic Missile
+IF
+	Allegiance(Myself,ENEMY)
+  GlobalTimerExpired("ys_dwfknt_magic_check","LOCALS")
+  ActionListEmpty()
+THEN
+  RESPONSE #100
+		ForceSpell(LastSeenBy(Myself),WIZARD_MAGIC_MISSILE)
+    SetGlobalTimer("ys_dwfknt_magic_check","LOCALS",12)
+END
+
+//Attack
+IF
+	Allegiance(Myself,ENEMY)
+  ActionListEmpty()
+THEN
+  RESPONSE #100
+    AttackOneRound(LastSeenBy(Myself))
+END

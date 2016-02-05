@@ -1,0 +1,53 @@
+IF
+  Global("ys_CloudpeakMapnotes","YS0370",0)
+THEN
+  RESPONSE #100
+    AddMapNote([2460.868],@317)
+    AddMapNote([2923.300],@317)
+    SetGlobal("ys_CloudpeakMapnotes","YS0370",1)
+END
+
+// Global("TalkedToBLWizard","GLOBAL",3) will provide the baseline number of Black Lotus Guards
+// Global("ys_RedCompanyFight","GLOBAL",1) will make a full contingent
+// Global("ys_TalkedToMR","GLOBAL",2) will make a full contingent
+
+// Six guards
+IF
+	OR(2)
+  	Global("ysblgrd","GLOBAL",2)
+  	Global("TalkedToBLWizard","GLOBAL",3)
+  Global("ys_LoadBLGuards","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ys_LoadBLGuards","GLOBAL",1)
+    CreateCreature("ysblgrd",[650.506],14)
+    CreateCreature("ysblgrd",[650.506],14)
+    CreateCreature("ysblgrd",[650.506],14)
+    CreateCreature("ysblgrd",[650.506],14)
+    CreateCreature("ysblgrd",[650.506],14)
+    CreateCreature("ysblgrd",[650.506],14)
+END
+
+// Another twelve
+IF
+  Global("ysblgrd","GLOBAL",2)
+  OR(2)
+    GlobalTimerExpired("ys_PrimeBLGuards","GLOBAL")
+    Global("ys_RedCompanyFight","GLOBAL",1)
+  Global("ys_LoadBLGuards","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ys_LoadBLGuards","GLOBAL",2)
+    CreateCreature("ysblgrd",[529.753],10)
+    CreateCreature("ysblgrd",[529.753],10)
+    CreateCreature("ysblgrd",[529.753],10)
+    CreateCreature("ysblgrd",[529.753],10)
+    CreateCreature("ysblgrd",[529.753],10)
+    CreateCreature("ysblgrd",[529.753],10)
+    CreateCreature("ysblgrd",[529.753],10)
+    CreateCreature("ysblgrd",[529.753],10)
+    CreateCreature("ysblgrd",[529.753],10)
+    CreateCreature("ysblgrd",[529.753],10)
+    CreateCreature("ysblgrd",[529.753],10)
+    CreateCreature("ysblgrd",[529.753],10)
+END

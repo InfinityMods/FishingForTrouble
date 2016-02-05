@@ -1,0 +1,14 @@
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+  !Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		Attack(LastAttackerOf(Myself))
+END

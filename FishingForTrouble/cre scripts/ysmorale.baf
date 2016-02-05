@@ -1,0 +1,11 @@
+//Anyone who doesn't have a fight script
+IF
+  AttackedBy([GOODCUTOFF],DEFAULT)
+  Allegiance(Myself,NEUTRAL)
+  Global("ysPlayerAttackedActors","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ysPlayerAttackedActors","LOCALS",1)
+    MoraleInc(Myself,-5)
+    Enemy()
+END

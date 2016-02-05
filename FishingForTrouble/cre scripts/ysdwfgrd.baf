@@ -1,0 +1,82 @@
+//Timer
+IF
+	Global("ys_dwfknt_fight_timercheck","LOCALS",0)
+THEN
+  RESPONSE #100
+  	SetGlobal("ys_dwfknt_fight_timercheck","LOCALS",1)
+    SetGlobalTimer("ys_dwfknt_magic_check","LOCALS",0)
+END
+
+//Move
+IF
+	!Allegiance(Myself,ENEMY)
+  Global("ys_TalkedToDwarfKnight","GLOBAL",3)
+	Global("ys_dwfknt_movecheck","LOCALS",0)
+THEN
+  RESPONSE #100
+    MoveToPoint([666.619])
+	  SetGlobal("ys_dwfknt_movecheck","LOCALS",1)
+END
+
+//Fight trigger
+IF
+	!Allegiance(Myself,ENEMY)
+	OR(2)
+		Global("ys_TombFight","GLOBAL",1)
+ 	 	Global("ys_TalkedToDwarfKnight","GLOBAL",2)
+THEN
+  RESPONSE #100
+    Enemy()
+END
+
+//Defence
+IF
+	Allegiance(Myself,ENEMY)
+	Global("ys_dwfknt_fight","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ys_dwfknt_fight","LOCALS",1)
+		ReallyForceSpell(Myself,WIZARD_GLOBE_OF_INVULNERABILITY)
+		ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+		ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	Continue()
+END
+
+//Target acquisition
+IF
+	Allegiance(Myself,ENEMY)
+	See(NearestEnemyOf())
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+//We should have a target by now but get the weakest if possible
+IF
+	Allegiance(Myself,ENEMY)
+	See(WeakestOf(GroupOf(NearestEnemyOf(Myself))))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+//Magic Missile every 12 seconds
+IF
+	Allegiance(Myself,ENEMY)
+  GlobalTimerExpired("ys_dwfknt_magic_check","LOCALS")
+  ActionListEmpty()
+THEN
+  RESPONSE #100
+		ForceSpell(LastSeenBy(Myself),WIZARD_MAGIC_MISSILE)
+    SetGlobalTimer("ys_dwfknt_magic_check","LOCALS",12)
+END
+
+//Attack
+IF
+	Allegiance(Myself,ENEMY)
+  ActionListEmpty()
+THEN
+  RESPONSE #100
+    AttackOneRound(LastSeenBy(Myself))
+END

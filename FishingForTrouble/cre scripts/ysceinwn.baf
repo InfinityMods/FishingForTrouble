@@ -1,0 +1,86 @@
+//---------------------------------------------------------
+//Dialog control
+//---------------------------------------------------------
+IF
+	See([PC])
+  Global("ys_RudeToCeinwen","GLOBAL",1)
+  Global("ys_CeinwenTeachesBullies","LOCALS",1)
+THEN
+	RESPONSE #100
+	 Wait (1)
+	 Dialogue(Protagonist)
+END
+
+//---------------------------------------------------------
+IF
+  Global("ys_RudeToCeinwen","GLOBAL",1)
+  Global("ys_CeinwenTeachesBullies","LOCALS",0)
+THEN
+  RESPONSE #100
+    ReallyForceSpell(Player1,WIZARD_MAGIC_MISSILE)
+    ReallyForceSpell(Player2,WIZARD_MAGIC_MISSILE)
+    ReallyForceSpell(Player3,WIZARD_MAGIC_MISSILE)
+    ReallyForceSpell(Player4,WIZARD_MAGIC_MISSILE)
+    ReallyForceSpell(Player5,WIZARD_MAGIC_MISSILE)
+    ReallyForceSpell(Player6,WIZARD_MAGIC_MISSILE)
+    SetGlobal("ys_CeinwenTeachesBullies","LOCALS",1)
+END
+
+
+//---------------------------------------------------------
+//Get up defences
+IF
+	Global("dai_Ceinwen_Attacked","LOCALS",0)
+	OR(3)
+		AttackedBy([ANYONE],DEFAULT)
+		AttackedBy([ANYONE],MELEE)
+		AttackedBy([ANYONE],RANGED)
+THEN
+	RESPONSE #100
+    ChangeEnemyAlly(Myself,ENEMY)
+		ReallyForceSpell(Myself,WIZARD_SPELL_IMMUNITY)
+		ReallyForceSpell(Myself,WIZARD_GLOBE_OF_INVULNERABILITY)
+		ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+		ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+		ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+		SetGlobal("dai_Ceinwen_Attacked","LOCALS",1)
+END
+
+//Cure - just in case!!!
+IF
+	HPLT(Myself,75)
+THEN
+	RESPONSE #100
+		ReallyForceSpell(Myself,CLERIC_HEAL)
+END
+
+//Strike - if it gets this far then someone has made a REALLY stupid move
+IF
+	Global("dai_Ceinwen_Attacked","LOCALS",1)
+	OR(3)
+		AttackedBy([ANYONE],DEFAULT)
+		AttackedBy([ANYONE],MELEE)
+		AttackedBy([ANYONE],RANGED)
+THEN
+	RESPONSE #15
+		ReallyForceSpell(LastAttackerOf(),WIZARD_MAGIC_MISSILE)
+	RESPONSE #10
+		ReallyForceSpell(LastAttackerOf(),WIZARD_MELF_ACID_ARROW)
+	RESPONSE #15
+		ReallyForceSpell(LastAttackerOf(),WIZARD_FLAME_ARROW)
+	RESPONSE #10
+		ReallyForceSpell(LastAttackerOf(),WIZARD_SLOW)
+	RESPONSE #10
+		ReallyForceSpell(LastAttackerOf(),WIZARD_FIREBALL)
+	RESPONSE #10
+		ReallyForceSpell(LastAttackerOf(),WIZARD_BLINDNESS)
+	RESPONSE #10
+		ReallyForceSpell(LastAttackerOf(),WIZARD_DIRE_CHARM)
+	RESPONSE #10
+		ReallyForceSpell(LastAttackerOf(),WIZARD_GREATER_MALISON)
+	RESPONSE #5
+		ReallyForceSpell(LastAttackerOf(),WIZARD_SLEEP)
+	RESPONSE #5
+		ReallyForceSpell(LastAttackerOf(),WIZARD_WEB)
+END
+

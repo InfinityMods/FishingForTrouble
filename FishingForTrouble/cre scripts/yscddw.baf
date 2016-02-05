@@ -1,0 +1,131 @@
+// Conditions to turn red
+IF
+  OR(2)
+	 AttackedBy([GOODCUTOFF],DEFAULT)
+	 Heard([ANYONE],2002)
+  !Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		Enemy()
+		Shout(2002)
+		ChangeAIScript("ysreact",OVERRIDE)
+END
+
+//Inside tents
+IF
+	OR(2)
+		AreaCheck("ys0421")
+		AreaCheck("ys0422")
+THEN
+	RESPONSE #10
+    RandomTurn()
+	RESPONSE #5
+    RandomWalk()
+	RESPONSE #10
+    RandomTurn()
+	RESPONSE #5
+    RandomWalk()
+	RESPONSE #5
+    RandomWalk()
+	RESPONSE #65
+		NoAction()
+END
+
+//DW outdoors
+IF
+	AreaCheck("ys0410")
+THEN
+	RESPONSE #2
+    MoveToPoint([1421.2660])
+	RESPONSE #2
+    RandomTurn()
+    Wait(12)
+	RESPONSE #2
+    RandomWalk()
+	RESPONSE #2
+    RandomTurn()
+	RESPONSE #2
+		Wait(20)
+    MoveToPoint([1808.2500])
+	RESPONSE #2
+    Wait(1)
+	RESPONSE #2
+    RandomWalk()
+	RESPONSE #2
+    RandomWalk()
+	RESPONSE #2
+    Wait(6)
+	RESPONSE #2
+    Wait(10)
+	RESPONSE #2
+    RandomWalk()
+	RESPONSE #2
+		Wait(7)
+    MoveToPoint([1371.2067])
+	RESPONSE #2
+    RandomTurn()
+	RESPONSE #2
+    MoveToPoint([2169.2532])
+	RESPONSE #2
+    Wait(3)
+	RESPONSE #2
+    Wait(30)
+	RESPONSE #2
+    RandomWalk()
+	RESPONSE #2
+    RandomTurn()
+	RESPONSE #2
+    RandomTurn()
+    Wait(10)
+	RESPONSE #2
+    RandomWalk()
+	RESPONSE #2
+    Wait(1)
+	RESPONSE #2
+    MoveToPoint([2415.3109])
+	RESPONSE #2
+    MoveToPoint([649.2273])
+	RESPONSE #2
+    RandomTurn()
+    Wait(12)
+	RESPONSE #2
+    NoAction()
+	RESPONSE #2
+    MoveToPoint([492.2670])
+	RESPONSE #2
+    RandomTurn()
+	RESPONSE #2
+		Wait(15)
+    MoveToPoint([931.2814])
+	RESPONSE #2
+    Wait(3)
+	RESPONSE #2
+    Wait(7)
+	RESPONSE #2
+    NoAction()
+	RESPONSE #2
+    RandomWalk()
+	RESPONSE #2
+    NoAction()
+	RESPONSE #2
+		RandomWalk()
+	RESPONSE #2
+    NoAction()
+	RESPONSE #2
+    MoveToPoint([2158.2139])
+	RESPONSE #2
+    RandomTurn()
+	RESPONSE #2
+		Wait(3)
+	RESPONSE #2
+    Wait(7)
+	RESPONSE #2
+    RandomTurn()
+	RESPONSE #2
+    NoAction()
+	RESPONSE #2
+    RandomWalk()
+	RESPONSE #2
+    NoAction()
+END
+

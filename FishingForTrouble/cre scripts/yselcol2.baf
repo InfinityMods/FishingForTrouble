@@ -1,0 +1,7 @@
+IF
+	ActionListEmpty()
+	!Range("ysgargel",4)
+THEN
+	RESPONSE #100
+	FollowObjectFormation("ysgargel",3,3)
+END

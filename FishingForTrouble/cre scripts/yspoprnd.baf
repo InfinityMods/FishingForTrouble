@@ -1,0 +1,172 @@
+// Conditions to turn red
+IF
+  OR(2)
+	 AttackedBy([GOODCUTOFF],DEFAULT)
+	 Heard([ANYONE],2002)
+  !Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		Enemy()
+		Shout(2002)
+		ChangeAIScript("ysreact",OVERRIDE)
+END
+
+//Select script portion by random number
+//Should be different for each startup
+IF
+	Global("ys_GetScript","LOCALS",0)
+	RandomNum(3,1)
+THEN
+	RESPONSE #100
+		SetGlobal("ys_GetScript","LOCALS",1)
+END
+
+IF
+	Global("ys_GetScript","LOCALS",0)
+	RandomNum(3,2)
+THEN
+	RESPONSE #100
+		SetGlobal("ys_GetScript","LOCALS",2)
+END
+
+IF
+	Global("ys_GetScript","LOCALS",0)
+	RandomNum(3,3)
+THEN
+	RESPONSE #100
+		SetGlobal("ys_GetScript","LOCALS",3)
+END
+
+//Porthpentyrch outdoors - set 1
+IF
+	Global("ys_GetScript","LOCALS",1)
+  ActionListEmpty()
+	Allegiance(Myself,NEUTRAL)
+	AreaCheck("ys1001")
+THEN
+	RESPONSE #4
+    MoveToPoint([2013.1601])
+	RESPONSE #4
+    RandomTurn()
+    Wait(12)
+	RESPONSE #4
+    RandomWalk()
+	RESPONSE #4
+    RandomTurn()
+	RESPONSE #4
+		Wait(20)
+    MoveToPoint([1578.1330])
+	RESPONSE #4
+    Wait(1)
+	RESPONSE #4
+    RandomWalk()
+	RESPONSE #4
+    Wait(1)
+	RESPONSE #4
+    RandomWalk()
+	RESPONSE #4
+    Wait(6)
+	RESPONSE #4
+    Wait(10)
+	RESPONSE #4
+    RandomWalk()
+	RESPONSE #4
+		Wait(7)
+    MoveToPoint([2498.668])
+	RESPONSE #4
+    RandomTurn()
+	RESPONSE #4
+    MoveToPoint([582.1454])
+	RESPONSE #4
+    Wait(3)
+	RESPONSE #4
+    Wait(30)
+	RESPONSE #4
+    RandomWalk()
+	RESPONSE #4
+    RandomTurn()
+	RESPONSE #4
+    Wait(3)
+	RESPONSE #4
+    RandomTurn()
+    Wait(10)
+	RESPONSE #4
+    RandomWalk()
+	RESPONSE #4
+    Wait(1)
+	RESPONSE #4
+    MoveToPoint([1418.1262])
+	RESPONSE #4
+    MoveToPoint([1822.673])
+END
+
+//Porthpentyrch outdoors - set 2
+IF
+	Global("ys_GetScript","LOCALS",2)
+  ActionListEmpty()
+	AreaCheck("ys1001")
+THEN
+	RESPONSE #10
+    RandomTurn()
+    Wait(12)
+	RESPONSE #10
+    NoAction()
+	RESPONSE #10
+    MoveToPoint([4076.1382])
+	RESPONSE #10
+    RandomTurn()
+	RESPONSE #10
+		Wait(15)
+    MoveToPoint([2087.1519])
+	RESPONSE #10
+    Wait(3)
+	RESPONSE #10
+    Wait(7)
+	RESPONSE #10
+    NoAction()
+	RESPONSE #10
+    RandomWalk()
+	RESPONSE #10
+    NoAction()
+END
+
+//Porthpentyrch outdoors - set 3
+IF
+	Global("ys_GetScript","LOCALS",3)
+  ActionListEmpty()
+	AreaCheck("ys1001")
+THEN
+	RESPONSE #10
+		RandomWalk()
+	RESPONSE #10
+    NoAction()
+	RESPONSE #10
+    MoveToPoint([2101.640])
+	RESPONSE #10
+    RandomTurn()
+	RESPONSE #10
+		Wait(3)
+	RESPONSE #10
+    Wait(7)
+	RESPONSE #10
+    RandomTurn()
+	RESPONSE #10
+    NoAction()
+	RESPONSE #10
+    RandomWalk()
+	RESPONSE #10
+    NoAction()
+END
+
+//Indoors
+IF
+  ActionListEmpty()
+	!AreaCheck("ys1001")
+THEN
+	RESPONSE #15
+    RandomTurn()
+	RESPONSE #5
+    RandomWalk()
+	RESPONSE #80
+		NoAction()
+END

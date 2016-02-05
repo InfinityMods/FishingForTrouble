@@ -1,0 +1,20 @@
+// DSH = 4625
+IF
+	See([PC])
+	Global("ysBranTrigger","GLOBAL",1)
+	Global("ysYalkedToBran","GLOBAL",0)
+THEN
+	RESPONSE #100
+		Dialogue(Player1)
+END
+
+IF
+	Global("ysBranIllusion","GLOBAL",0)
+	Global("ysBranBehold","GLOBAL",1)
+	Global("ysYalkedToBran","GLOBAL",1)
+	Global("ysBranDSH","GLOBAL",0)
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@4631)
+		SetGlobal("ysBranDSH","GLOBAL",1)
+END

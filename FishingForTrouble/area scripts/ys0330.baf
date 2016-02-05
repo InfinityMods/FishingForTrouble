@@ -1,0 +1,37 @@
+//------------------------------------------------------------------
+//Garrison has been retaken
+IF
+	GlobalGT("ys_DeadRedGuards","GLOBAL",30)
+	Global("ys_GarrisonFight","GLOBAL",1)
+THEN
+	RESPONSE #100
+	SetGlobal("ys_GarrisonFight","GLOBAL",2)
+	Continue()
+END
+
+//------------------------------------------------------------------
+//Recreate the caravan master in his room when the garrison is cleared
+//Also create Ailoth Tam
+IF
+	Global("ys_TalkedToCaravanMaster","GLOBAL",4)
+	Global("ys_GarrisonFight","GLOBAL",2)
+THEN
+  RESPONSE #100
+		SetGlobal("ys_GarrisonFight","GLOBAL",3)
+    CreateCreature("yscvmstr",[2240.650],14)
+    CreateCreature("ysailoth",[2250.655],14)
+    CloseDoor("door09")
+    Continue()
+END
+
+//------------------------------------------------------------------
+// Create the cooks in the new kitchen
+IF
+	Global("ysCreateCooks","GLOBAL",0)
+	AreaCheck("ys0330")
+THEN
+	RESPONSE #100
+		CreateCreature("yscook1",[639.844],2)
+		CreateCreature("yscook2",[808.766],11)
+		SetGlobal("ysCreateCooks","GLOBAL",1)
+END

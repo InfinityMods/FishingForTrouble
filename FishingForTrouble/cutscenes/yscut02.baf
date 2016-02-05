@@ -1,0 +1,21 @@
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneID(Player1)
+    ActionOverride("yscell1",MoveToPoint([169.539])
+    ActionOverride("yscell2",MoveToPoint([219.529])
+    ActionOverride("yscell3",MoveToPoint([235.457])
+    ActionOverride("yscell4",MoveToPoint([250.453])
+    ActionOverride("yscell5",MoveToPoint([270.455])
+    ActionOverride("ysserj",MoveToPoint([286.460])
+    Wait(4)
+    ActionOverride("yscell1",DestroySelf())
+    ActionOverride("yscell2",DestroySelf())
+    ActionOverride("yscell3",DestroySelf())
+    ActionOverride("yscell4",DestroySelf())
+    ActionOverride("yscell5",DestroySelf())
+    ActionOverride("ysserj",DestroySelf())
+		EndCutSceneMode()
+END
+

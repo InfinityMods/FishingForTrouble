@@ -1,0 +1,12 @@
+IF
+	Clicked([ANYONE])
+THEN
+	RESPONSE #100
+	ActionOverride(Player1,MoveToPoint([116.434]))
+	ActionOverride(Player2,MoveToPoint([116.434]))
+	ActionOverride(Player3,MoveToPoint([116.434]))
+	ActionOverride(Player4,MoveToPoint([116.434]))
+	ActionOverride(Player5,MoveToPoint([116.434]))
+	ActionOverride(Player6,MoveToPoint([116.434]))
+	SetGlobal("ys_0260TravelTrap","GLOBAL",1)
+END

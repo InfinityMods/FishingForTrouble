@@ -1,0 +1,17 @@
+//---------------------------------------------------------
+//If in this proxbox it's a fair bet that someone's tried the door
+//---------------------------------------------------------
+IF
+  Global("ysLHDoorIsLocked","GLOBAL",0)
+  OR(6)
+    IsOverMe(Player1)
+    IsOverMe(Player2)
+    IsOverMe(Player3)
+    IsOverMe(Player4)
+    IsOverMe(Player5)
+    IsOverMe(Player6)
+THEN
+  RESPONSE #100
+    SetGlobal("ysLHDoorIsLocked","GLOBAL",1)
+END
+

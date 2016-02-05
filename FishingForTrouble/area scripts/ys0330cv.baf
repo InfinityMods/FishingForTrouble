@@ -1,0 +1,36 @@
+//------------------------------------------------------------------
+//Destroy caravan master after first conversation and recreate him in his room
+IF
+  Global("ys_TalkedToCaravanMaster","GLOBAL",1)
+  Global("ys_CreateCaravanMaster","GLOBAL",0)
+	OR(6)
+    IsOverMe(Player1)
+    IsOverMe(Player2)
+    IsOverMe(Player3)
+    IsOverMe(Player4)
+    IsOverMe(Player5)
+    IsOverMe(Player6)
+THEN
+  RESPONSE #100
+  	SetGlobal("ys_CreateCaravanMaster","GLOBAL",1)
+    ActionOverride("yscvmstr",DestroySelf())
+    CreateCreature("yscvmstr",[2233.634],0)
+END
+
+//------------------------------------------------------------------
+//When the garrison fight starts, again destroy the caravan master
+IF
+	Global("ys_TalkedToCaravanMaster","GLOBAL",4)
+	Global("ys_GarrisonFight","GLOBAL",1)
+	OR(6)
+    IsOverMe(Player1)
+    IsOverMe(Player2)
+    IsOverMe(Player3)
+    IsOverMe(Player4)
+    IsOverMe(Player5)
+    IsOverMe(Player6)
+THEN
+  RESPONSE #100
+    ActionOverride("yscvmstr",DestroySelf())
+END
+

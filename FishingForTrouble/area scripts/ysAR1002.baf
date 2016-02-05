@@ -1,0 +1,38 @@
+//Create/add to Govt Building script
+
+//---------------------------------------------
+//Too late - Ceinwen is already sent to Spellhold
+//---------------------------------------------
+IF
+  GlobalTimerExpired("ys_GetCeinwenGold","GLOBAL")
+  Global("dai_TalkedToCowled","GLOBAL",2)
+THEN
+  RESPONSE #100
+    ActionOverride("ysceinwn",DestroySelf())
+END
+
+//---------------------------------------------
+//Create Cowled Wizards and Ceinwen
+//---------------------------------------------
+IF
+  Global("dai_TalkedToCeinwen","GLOBAL",3)
+  Global("ys_CwlWizCein","GLOBAL",0)
+THEN
+  RESPONSE #100
+    CreateCreature("yscwlwiz",[653.499],2)
+    CreateCreature("ysceinwn",[594.504],10)
+    SetGlobal("ys_CwlWizCein","GLOBAL",1)
+END
+
+//---------------------------------------------
+//Create just the Cowled Wizard Inquisitor
+//---------------------------------------------
+IF
+  Global("dai_TalkedToTanaari","GLOBAL",1)
+  Global("ys_CwlWizCein","GLOBAL",0)
+THEN
+  RESPONSE #100
+    CreateCreature("yscwlwiz",[653.499],2)
+    SetGlobal("ys_CwlWizCein","GLOBAL",1)
+END
+

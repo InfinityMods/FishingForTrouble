@@ -1,0 +1,27 @@
+//Stop party when within striking range
+IF
+	See([PC])
+	Global("ys_TalkToWatchGuard","LOCALS",0)
+	Global("ys_BlockPath","GLOBAL",0)
+	Range([PC],6)
+THEN
+	RESPONSE #100
+    SetGlobal("ys_TalkToWatchGuard","LOCALS",1)
+		Dialogue(Protagonist)
+END
+
+//Fighting script
+IF
+	OR(4)
+		AttackedBy([ANYONE],DEFAULT)
+		AttackedBy([ANYONE],MELEE)
+		AttackedBy([ANYONE],RANGED)
+		Global("ys_TalkedToTentGuard","GLOBAL",2)
+  Global("ys_GuardAttacked","GLOBAL",0)
+  !Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@507)
+    SetGlobal("ys_GuardAttacked","GLOBAL",1)
+    Enemy()
+END

@@ -1,0 +1,9 @@
+//Spawn Tigernach mic Muirgheas
+IF
+	Global("ys_FindColver","GLOBAL",8)
+	Global("ys_SpawnTigernach","GLOBAL",0)
+THEN
+  RESPONSE #100
+		SetGlobal("ys_SpawnTigernach","GLOBAL",1)
+    CreateCreature("ystignch",[1149.359],2)
+END

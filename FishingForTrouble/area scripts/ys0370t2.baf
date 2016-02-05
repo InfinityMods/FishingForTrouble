@@ -1,0 +1,19 @@
+//Move to the Crooked Crane
+
+IF
+	OR(6)
+		IsOverMe(Player1)
+		IsOverMe(Player2)
+		IsOverMe(Player3)
+		IsOverMe(Player4)
+		IsOverMe(Player5)
+		IsOverMe(Player6)
+THEN
+	RESPONSE #100
+		ActionOverride(Player1,LeaveAreaLUA("ar0020","",[786.467],2))
+		ActionOverride(Player2,LeaveAreaLUA("ar0020","",[816.487],2))
+		ActionOverride(Player3,LeaveAreaLUA("ar0020","",[786.507],2))
+		ActionOverride(Player4,LeaveAreaLUA("ar0020","",[796.467],2))
+		ActionOverride(Player5,LeaveAreaLUA("ar0020","",[826.487],2))
+		ActionOverride(Player6,LeaveAreaLUA("ar0020","",[816.517],2))
+END

@@ -1,0 +1,8 @@
+IF
+  Global("ysTalkedToLeron","GLOBAL",4)
+  Global("ysCreateLevon","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ysCreateLevon","GLOBAL",1)
+    CreateCreature("yslevon",[843.423],0)
+END

@@ -1,0 +1,69 @@
+//---------------------------------------------------------
+//Angharad attacked
+//---------------------------------------------------------
+IF
+	Global("ysAFAttacked","GLOBAL",0)
+	OR(4)
+		AttackedBy([ANYONE],DEFAULT)
+		AttackedBy([ANYONE],MELEE)
+		AttackedBy([ANYONE],RANGED)
+		Global("ys_GGAttacked","GLOBAL",1)
+THEN
+	RESPONSE #100
+    ChangeEnemyAlly(Myself,ENEMY)
+		ReallyForceSpell(Myself,WIZARD_MELF_METEOR)
+		ReallyForceSpell(Myself,WIZARD_SPELL_IMMUNITY)
+		ReallyForceSpell(Myself,WIZARD_GLOBE_OF_INVULNERABILITY)
+		ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+		SetGlobal("ys_AFAttacked","GLOBAL",1)
+		ChangeEnemyAlly(Myself,ENEMY)
+		Continue()
+END
+
+//Cure - just in case!!!
+IF
+	HPPercentLT(Myself,50)
+THEN
+	RESPONSE #100
+		ReallyForceSpell(Myself,CLERIC_CURE_SERIOUS_WOUNDS)
+END
+
+//Strike with Melf's Minute Meteors
+IF
+	Global("ys_AFAttacked","GLOBAL",1)
+	HasItem("MELFMET",Myself)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		UseItem("MELFMET",LastSeenBy())
+END
+
+//Strike with magic
+IF
+	Global("ys_AFAttacked","LOCALS",1)
+	OR(3)
+		AttackedBy([ANYONE],DEFAULT)
+		AttackedBy([ANYONE],MELEE)
+		AttackedBy([ANYONE],RANGED)
+THEN
+	RESPONSE #15
+		ReallyForceSpell(LastAttackerOf(),WIZARD_MAGIC_MISSILE)
+	RESPONSE #10
+		ReallyForceSpell(LastAttackerOf(),WIZARD_MELF_ACID_ARROW)
+	RESPONSE #15
+		ReallyForceSpell(LastAttackerOf(),WIZARD_FLAME_ARROW)
+	RESPONSE #10
+		ReallyForceSpell(LastAttackerOf(),WIZARD_SLOW)
+	RESPONSE #10
+		ReallyForceSpell(LastAttackerOf(),WIZARD_FIREBALL)
+	RESPONSE #10
+		ReallyForceSpell(LastAttackerOf(),WIZARD_BLINDNESS)
+	RESPONSE #10
+		ReallyForceSpell(LastAttackerOf(),WIZARD_DIRE_CHARM)
+	RESPONSE #10
+		ReallyForceSpell(LastAttackerOf(),WIZARD_GREATER_MALISON)
+	RESPONSE #5
+		ReallyForceSpell(LastAttackerOf(),WIZARD_SLEEP)
+	RESPONSE #5
+		ReallyForceSpell(LastAttackerOf(),WIZARD_WEB)
+END

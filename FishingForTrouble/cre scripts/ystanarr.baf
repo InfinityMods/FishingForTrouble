@@ -1,0 +1,49 @@
+//---------------------------------------------------------
+//Dialog control
+//---------------------------------------------------------
+IF
+  Global("ys_RudeToTanari","GLOBAL",1)
+  Global("ys_TanariTeachesBullies","GLOBAL",0)
+THEN
+  RESPONSE #100
+    ReallyForceSpell(Player1,WIZARD_FIREBALL)
+    SetGlobal("ys_TanariTeachesBullies","GLOBAL",1)
+END
+
+IF
+	See([PC])
+  Global("ys_RudeToTanari","GLOBAL",1)
+  Global("ys_TanariTeachesBullies","GLOBAL",1)
+THEN
+	RESPONSE #100
+    Wait (2)
+    SetGlobal("ys_RudeToTanari","GLOBAL",3)
+    Dialogue(Protagonist)
+END
+
+//--------------------------------------------------------
+IF
+  Global("ys_RudeToTanari","GLOBAL",2)
+  Global("ys_TanariTeachesBullies","GLOBAL",0)
+THEN
+  RESPONSE #100
+    ReallyForceSpell(Player1,WIZARD_MELF_ACID_ARROW)
+    ReallyForceSpell(Player2,WIZARD_MELF_ACID_ARROW)
+    ReallyForceSpell(Player3,WIZARD_FLAME_ARROW)
+    ReallyForceSpell(Player4,WIZARD_MELF_ACID_ARROW)
+    ReallyForceSpell(Player5,WIZARD_FLAME_ARROW)
+    ReallyForceSpell(Player6,WIZARD_FLAME_ARROW)
+    SetGlobal("ys_TanariTeachesBullies","GLOBAL",1)
+END
+
+IF
+	See([PC])
+  Global("ys_RudeToTanari","GLOBAL",2)
+  Global("ys_TanariTeachesBullies","GLOBAL",1)
+THEN
+	RESPONSE #100
+    Wait (2)
+    SetGlobal("ys_RudeToTanari","GLOBAL",4)
+    Dialogue(Protagonist)
+END
+

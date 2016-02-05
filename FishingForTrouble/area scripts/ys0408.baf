@@ -1,0 +1,30 @@
+//Create Eildaren Colver
+IF
+	Global("ys_CreateColver","GLOBAL",0)
+  Global("ys_TalkedToGibrial","GLOBAL",2)
+THEN
+	RESPONSE #100
+		SetGlobal("ys_CreateColver","GLOBAL",1)
+		CreateCreature("yselcol1",[645.231],10)
+		CreateCreature("ysgibmel",[650.296],8)
+END
+
+//Create Garalial by the bed - Gibri'al should already be there
+IF
+  Global("ys_FindColver","GLOBAL",7)
+	Global("ys_CreateColver","GLOBAL",1)
+THEN
+  RESPONSE #100
+		CreateCreature("ysgargel",[568.280],12)
+	  SetGlobal("ys_CreateColver","GLOBAL",2)
+END
+
+//Tiger's Eye quest is blown - destroy Eildaren Colver
+IF
+  Global("ys_FindColver","GLOBAL",100)
+	Global("ys_CreateColver","GLOBAL",1)
+THEN
+  RESPONSE #100
+    ActionOverride("yselcol1",DestroySelf())
+	  SetGlobal("ys_CreateColver","GLOBAL",2)
+END

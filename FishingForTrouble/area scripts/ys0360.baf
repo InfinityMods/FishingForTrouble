@@ -1,0 +1,76 @@
+// Mapnote
+IF
+  Global("ys_CerendorMapnotes","YS0360",0)
+THEN
+  RESPONSE #100
+    AddMapNote([2189.727],@318)
+    SetGlobal("ys_CerendorMapnotes","YS0360",1)
+END
+
+//Open the drawbridge
+IF
+	Global("ys_TowerGuard","GLOBAL",1)
+	Global("ys_Drawbridge","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ys_Drawbridge","GLOBAL",1)
+    ClearAllActions()
+    StartCutSceneMode()
+    StartCutScene("yscut03")
+END
+
+//Initialise timers and setup
+IF
+//	OnCreation()
+  Global("ys_ITimers","LOCALS",0)
+THEN
+	RESPONSE #100
+    SetGlobal("ys_ITimers","LOCALS",1)
+    SetGlobalTimer("ys_GuardFight","GLOBAL",0)
+    CreateCreature("yscgroad",[2385.1569],1)
+    OpenDoor("DOOR04")
+		Continue()
+END
+
+//Spawn six guards by the guard tent
+//a: if guard is attacked unprovoked
+//b: if guard is provoked through dialog
+//NB!! The fence is a reversed door i.e. open=closed
+IF
+  OR(2)
+    Global("ys_GuardAttacked","GLOBAL",1)
+    Global("ys_TalkedToTentGuard","GLOBAL",2)
+  Global("ys_SpawnedGuards","GLOBAL",0)
+THEN
+	RESPONSE #100
+    CreateCreature("ysgengrd",[2260.1510],1)
+    CreateCreature("ysgengrd",[2240.1510],1)
+    CreateCreature("ysgengrd",[2220.1500],1)
+    CreateCreature("ysgengrd",[2280.1530],1)
+    CreateCreature("ysgengrd",[2280.1550],1)
+    CreateCreature("ysgengrd",[2270.1520],1)
+    SetGlobalTimer("ys_GuardFight","GLOBAL",TWO_DAYS)
+    SetGlobal("ys_SpawnedGuards","GLOBAL",1)
+    SetGlobal("ys_GuardAttacked","GLOBAL",2)
+    SetGlobal("ys_TalkedToTentGuard","GLOBAL",3)
+    OpenDoor("DOOR04")
+    Continue()
+END
+
+//Reset the whole mess and create a new road guard
+IF
+    GlobalTimerExpired("ys_GuardFight","GLOBAL")
+		Global("ys_TalkedToTentGuard","GLOBAL",3)
+THEN
+	RESPONSE #100
+    SetGlobal("ys_TalkedToTentGuard","GLOBAL",0)
+    SetGlobal("ys_BlockPath","GLOBAL",0)
+    SetGlobal("ys_GuardAttacked","GLOBAL",0)
+		SetGlobal("ys_FenceClosed","LOCALS",0)
+    SetGlobal("ys_SpawnedGuards","GLOBAL",0)
+		CloseDoor("DOOR04")
+    CreateCreature("yscgroad",[2385.1569],1)
+		Continue()
+END
+
+

@@ -1,0 +1,11 @@
+IF
+  OR(2)
+    Global("ys_CeinwenRot","GLOBAL",1)
+    Global("ys_CeinwenSpellhold","GLOBAL",1)
+  Global("ys_SetCeinwenInSpellhold","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ys_SetCeinwenInSpellhold","GLOBAL",1)
+    CreateCreature("ysceinwn",[862.687],3)
+END
+

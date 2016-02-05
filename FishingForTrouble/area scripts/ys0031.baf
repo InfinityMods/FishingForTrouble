@@ -1,0 +1,8 @@
+IF
+  Global("ys_LHKeeper","ys0031",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ys_LHKeeper","ys0031",1)
+    CreateCreature("yslkeep",[358.246],6)
+END
+

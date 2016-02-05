@@ -1,0 +1,21 @@
+IF
+	Detect([PC])
+	Range(LastSeenBy(Myself),5)
+THEN
+	RESPONSE #100
+		StartDialogNoSet(LastSeenBy(Myself))
+END
+
+IF
+  OR(6)
+	 !Range(Player1,5)
+	 !Range(Player2,5)
+	 !Range(Player3,5)
+	 !Range(Player4,5)
+	 !Range(Player5,5)
+	 !Range(Player6,5)
+THEN
+	RESPONSE #100
+		ActionOverride("yscrnbl",DestroySelf())
+END
+

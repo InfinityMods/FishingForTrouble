@@ -1,0 +1,35 @@
+IF
+	OR(2)
+		Global("ysCaveBlocked","GLOBAL",2)
+		Global("ysCaveBlocked","GLOBAL",3)
+	IsOverMe([ANYONE])
+	Global("ysEnterCave","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ysEnterCave","GLOBAL",1)
+		ActionOverride(Player1,LeaveAreaLUA("ys0423","",[2751.250],2))
+		ActionOverride(Player2,LeaveAreaLUA("ys0423","",[2751.250],2))
+		ActionOverride(Player3,LeaveAreaLUA("ys0423","",[2751.250],2))
+		ActionOverride(Player4,LeaveAreaLUA("ys0423","",[2751.250],2))
+		ActionOverride(Player5,LeaveAreaLUA("ys0423","",[2751.250],2))
+		ActionOverride(Player6,LeaveAreaLUA("ys0423","",[2751.250],2))
+END
+
+//Toggle DSH
+IF
+	!IsOverMe([ANYONE])
+	Global("ysAtCave","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ysAtCave","GLOBAL",0)
+END
+
+IF
+	Global("ysAtCave","GLOBAL",0)
+	GlobalLT("ysCaveBlocked","GLOBAL",2)
+	IsOverMe([ANYONE])
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@421)
+		SetGlobal("ysAtCave","GLOBAL",1)
+END

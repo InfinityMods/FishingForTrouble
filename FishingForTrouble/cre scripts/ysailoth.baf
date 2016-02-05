@@ -1,0 +1,58 @@
+//Red Wizard attacks and defences
+//Has Ring of Free Action
+IF
+	OR(3)
+		AttackedBy([ANYONE],DEFAULT)
+		AttackedBy([ANYONE],MELEE)
+		AttackedBy([ANYONE],RANGED)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	Global("ys_RWGI","LOCALS",0)
+	See([GOODCUTOFF])
+THEN
+	RESPONSE #100
+		SetGlobal("ys_RWGI","LOCALS",1)
+		ReallyForceSpell(Myself,WIZARD_GLOBE_OF_INVULNERABILITY)
+		ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+		ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+		Continue()
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	Global("ys_RWWeb","LOCALS",0)
+	See([GOODCUTOFF])
+THEN
+	RESPONSE #100
+		SetGlobal("ys_RWWeb","LOCALS",1)
+		ForceSpell(LastSeenBy(Myself),WIZARD_WEB)
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	GlobalLT("ys_RWMM","LOCALS",10)
+	See([GOODCUTOFF])
+THEN
+	RESPONSE #10
+		IncrementGlobal("ys_RWMM","LOCALS",1)
+		ForceSpell(LastAttackerOf(Myself),WIZARD_MAGIC_MISSILE)
+	RESPONSE #25
+		IncrementGlobal("ys_RWMM","LOCALS",1)
+		ForceSpell(LastAttackerOf(Myself),WIZARD_CHROMATIC_ORB)
+	RESPONSE #25
+		IncrementGlobal("ys_RWMM","LOCALS",1)
+		ForceSpell(LastAttackerOf(Myself),WIZARD_AGANNAZAR_SCORCHER)
+	RESPONSE #25
+		IncrementGlobal("ys_RWMM","LOCALS",1)
+		ForceSpell(LastAttackerOf(Myself),WIZARD_DIRE_CHARM)
+	RESPONSE #15
+		IncrementGlobal("ys_RWMM","LOCALS",1)
+		ForceSpell(LastAttackerOf(Myself),WIZARD_EMOTION_HOPELESSNESS)
+END
+
+

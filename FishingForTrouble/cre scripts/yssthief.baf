@@ -1,0 +1,60 @@
+IF
+  Global("ysgrshld","GLOBAL",1)
+  !Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+
+//Find an initial target
+IF
+  Allegiance(Myself,ENEMY)
+	See([GOODCUTOFF])
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+//Potion of Healing aka Cure Moderate Wounds
+IF
+	HPPercentLT(Myself,25)
+	GlobalLT("ys_ExHeal","LOCALS",1)
+THEN
+	RESPONSE #100
+		IncrementGlobal("ys_ExHeal","LOCALS",1)
+		ReallyForceSpell(Myself,CLERIC_CURE_MEDIUM_WOUNDS)
+//			DisplayStringHead(Myself,18893)							// say "Potion of Extra Healing"
+END
+
+//If I'm being attacked then select my attacker as a new target
+IF
+  Allegiance(Myself,ENEMY)
+	OR(3)
+		AttackedBy([ANYONE],DEFAULT)
+		AttackedBy([ANYONE],MELEE)
+		AttackedBy([ANYONE],RANGED)
+	See(LastAttackerOf(Myself))
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+//Select weapon
+IF
+  Allegiance(Myself,ENEMY)
+	!Range(LastSeenBy(Myself),5)
+THEN
+	RESPONSE #100
+		EquipRanged()
+		Attack(LastSeenBy(Myself))
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+	Range(LastSeenBy(Myself),5)
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+		Attack(LastSeenBy(Myself))
+END

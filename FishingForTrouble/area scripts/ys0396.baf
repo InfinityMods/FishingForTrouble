@@ -1,0 +1,8 @@
+IF
+ Global("ys_TalkedToDrosig","GLOBAL",3)
+ Global("ys_DrosigQuest","LOCALS",0)
+THEN
+	RESPONSE #100
+	SetGlobal("ys_DrosigQuest","LOCALS",1)
+	DisplayString(Myself,@2954)  //You solved the mystery of the disappearing nameboard
+END

@@ -1,0 +1,866 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <style type="text/css">
+/*<![CDATA[*/
+    <!--
+      body {
+        margin: 0;
+        padding: 0;
+        cursor: default;
+        text-align: center;
+        color: #000;
+        background: #e3e3db url('images/shsbkgd.jpg');
+      }
+      #wrap {
+        text-align: left;
+        margin: 0 auto;
+        margin-top: 20px;
+        width: 88%;
+        font-family: Verdana, Tahoma, Arial, sans-serif;
+        font-size: 12px;
+        color: #333;
+      }
+      #header {
+        text-align: center;
+        background: #e5e5e5;
+        border: 1px solid #781808;
+        border-top: 5px solid #781808;
+        border-bottom: 5px solid #781808;
+        padding: 5px 0 13px 0;
+      }
+      #header .about {
+        margin: 7px 0 0 0;
+        padding: 0;
+        font-style: italic;
+        color: #555;
+      }
+      #header .menu {
+        font-weight: bold;
+        margin: 0;
+        color: #999;
+      }
+      #header .menu a:link,
+      #header .menu a:visited {
+        color: #333;
+      }
+      #footer {
+        text-align: center;
+        background: #e5e5e5;
+        border: 1px solid #781808;
+        border-top: 5px solid #781808;
+        border-bottom: 5px solid #781808;
+        font-size: 75%;
+        padding: 5px 0 13px 0;
+      }
+      #maindiv {
+        margin: 0 auto;
+        margin-top: -20px;
+        width: 80%;
+      }
+      #maindiv .content {
+        counter-increment: kman;
+        counter-reset: h2;
+        background-color: #e8e8e6;
+        padding: 0 0 25px 0;
+        margin: 50px auto;
+        border-width: 1px 1px 4px 10px;
+        border-style: solid;
+        border-color: #781808;
+        position: relative;
+        display: block;
+      }
+      #maindiv .content::before {
+        content: counter(kman, lower-roman);
+        font-size: 100%;
+        font-weight: bold;
+        text-align: center;
+        color: #eee;
+        background-color: #781808;
+        width: 35px;
+        top: 0px;
+        left: 0px;
+        display: block;
+      }
+      #maindiv .important {
+        font-size: 95%;
+        font-family: Verdana;
+        text-align: left;
+        background-color: #F1F1F1;
+        border-top: solid 1px #aaa;
+        border-bottom: solid 1px #aaa;
+        border-left: solid 6px #aaa;
+        border-right: solid 6px #aaa;
+        padding: 10px;
+        margin: 20px auto;
+        width: 80%;
+        line-height: 160%;
+      }
+      #maindiv .important::before {
+        display: none;
+      }
+      #maindiv .important p {
+        font-size: 100%;
+        text-indent: 0px;
+        margin: 5px 0 10px 0;
+      }
+      #maindiv .important ol {
+        margin: -10px 0 0 20px;
+      }
+      #maindiv .important ul {
+        margin: -10px 0 0 15px;
+      }
+      #maindiv p {
+        font-size: 100%;
+        font-style: normal;
+        line-height: 150%;
+        padding: 0px;
+        margin: 10px auto;
+        width: 90%;
+        display: block;
+      }
+      #maindiv address {
+        font-size: 95%;
+        font-style: normal;
+        font-weight: bold;
+        text-decoration: none;
+        color: #BBB;
+        background-color: #781808;
+        padding: 3px 0px 0px;
+        margin: 0px;
+        width: 100%;
+        position: absolute;
+        bottom: -1px;
+        left: 0px;
+        display: block;
+        text-align: right;
+      }
+      #maindiv address a:active {
+        color: #fff;
+        text-decoration: line-through;
+        border: none;
+      }
+      #maindiv address a:focus,
+      #maindiv address a:hover {
+        text-decoration: none;
+        color: #F1F1F1;
+        border: 0;
+      }
+      #maindiv address a:link,
+      #maindiv address a:visited {
+        font-weight: bold;
+        text-decoration: underline;
+        background-color: transparent;
+        color: #eaeaea !important;
+        padding-right: 5px;
+        padding-left: 6px;
+      }
+      #maindiv ol {
+        margin: -10px 0 0 35px;
+        *margin-left: 70px;
+      }
+      #maindiv ol li {
+        line-height: 150%;
+      }
+      #maindiv ul {
+        margin: -10px 0 0 30px;
+        *margin-left: 65px;
+      }
+      #maindiv ul li {
+        list-style-type: square;
+        line-height: 150%;
+      }
+      .t1 {
+        font-weight: bold;
+        width: 26%;
+        text-align: right;
+        clear: right;
+        float: left;
+        *float: none;
+        *margin-left: 65px;
+        line-height: 22px;
+      }
+      .t2 {
+        text-align: left;
+        width: 73%;
+        float: right;
+        *float: none;
+        line-height: 22px;
+      }
+      a:hover,
+      a:active {
+        color: #222;
+        border-bottom: 1px solid black;
+      }
+      a:link,
+      a:visited {
+        color: #781808;
+        font-weight: bold;
+        text-decoration: none;
+      }
+      h1 {
+        font-size: 225%;
+        color: #444;
+        padding: 5px 0 5px 0;
+        margin: 0;
+        width: 100%;
+      }
+      h2 {
+        display: block;
+        font-family: Verdana, Trebuchet MS, Arial, serif;
+        text-align: left;
+        text-indent: 30px;
+        padding: 0px;
+        margin: 20px 0 0 0;
+        border-bottom: dotted 2px #d0d0d0;
+        border-top: dotted 2px #d0d0d0;
+        background: #deded9;
+        font-size: 160%;
+      }
+      h2::first-letter {
+        color: #781808;
+        background-color: transparent;
+      }
+      h3,
+      h4,
+      h5 {
+        margin: 10px 40px 10px 40px;
+        padding: 0;
+      }
+      h3 {
+        font-size: 125%;
+        font-style: italic;
+      }
+      h4 {
+        font-size: 125%;
+      }
+      h5 {
+        font-size: 100%;
+      }
+      h6 {
+        width: 100%;
+        margin: 10px 0 15px 0;
+        background-color: #ECECEC;
+        text-align: left;
+        text-indent: 30px;
+        font-size: 100%;
+        font-style: italic;
+        padding-top: 1px;
+        padding-bottom: 1px;
+        border-bottom: solid 1px #bbb;
+        border-top: solid 1px #bbb;
+      }
+      hr {
+        margin: 10px 0 10px 0;
+        padding: 0;
+        height: 1px;
+        border: 0;
+        color: #aaa;
+        background-color: #aaa;
+      }
+      hr.floatfix {
+        clear: both;
+        color: #e8e8e6;
+        background-color: #e8e8e6;
+        *margin: 0;
+        *padding: 0;
+      }
+      ul.c1 {margin-left: 32px;}
+    -->
+    /*]]>*/
+    </style>
+    <title>
+      Spellhold Studios - Fishing For Trouble
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="images/shsweb.ico" rel="icon" type="image/bmp" />
+  </head>
+  <body>
+    <div id="wrap">
+      <a name="top" id="top"></a>
+      <div id="header">
+        <h1>
+          Fishing For Trouble
+        </h1><strong>A Spellhold Studios mod for Baldur's Gate II:
+        <acronym title="Throne of Bhaal">ToB</acronym></strong>
+        <hr />
+        <p class="about">
+          Author: Yovaneth
+        </p>
+        <p class="about">
+          <a href="http://www.spellholdstudios.net/ie/fft">Mod Website</a>  &#8226;
+          <a href="http://www.shsforums.net/forum/550-fishing-for-trouble/">Mod
+          Forum</a> &#8226; <a href=
+          "http://www.shsforums.net/index.php?app=downloads&showfile=894">Download</a>
+          &#8226; Version 3.0 with hotfix 1
+        </p>
+        <hr />
+        <p class="menu">
+          <a href="#intro">Introduction</a> &middot; <a href=
+          "#compat">Compatibility</a> &middot; <a href=
+          "#installation">Installation</a> &middot; <a href=
+          "#compon">Components</a> &middot;
+          <a href="#trouble">Troubleshooting</a> &middot;
+          <a href="#credits">Credits</a> &middot;
+          <a href="#version">Version History</a>
+        </p>
+      </div>
+      <div id="maindiv">
+        <!-- ================== I n t r o d u c t i o n ================== -->
+        <a name="intro" id="intro"></a>
+        <div class="content">
+          <h2>
+            Introduction
+          </h2>
+          <p>
+            As is perfectly normal in the Infinity Engine games, at some point
+            you will be accosted by a complete stranger asking you to deliver a
+            letter for him. The recipient is your old friend Elminster (yes, he
+            gets a bitpart again). Elminster is very concerned about the
+            contents of the letter and asks you to investigate why a village
+            just south of Athkatla is being deserted by its inhabitants. You
+            find that a demon has taken up residence in the village's
+            lighthouse. The demon has a small favour to ask of you and in
+            return, promises to tell why the village has been deserted. And so
+            it begins...
+          </p>
+          <p>
+            A few useless facts...
+          </p>
+          <ul>
+            <li>Five new major areas</li>
+            <li>109 new internal areas</li>
+            <li>One new piece of music</li>
+            <li>Nearly 12,000 lines of dialog</li>
+            <li>221 new <acronym title="Non-Player Characters">NPCs</acronym></li>
+            <li>Sixty-three portraits for the major
+            <acronym title="Non-Player Characters">NPCs</acronym></li>
+            <li>Four cutscenes</li>
+            <li>Seventeen new stores</li>
+            <li>Twenty-nine new resource graphics</li>
+            <li>Sixty unique new creature scripts</li>
+          </ul>
+         <p>
+           All of the 'new' areas have been created from cut-up and recycled
+           BioWare originals. All but around ten of the internal areas have
+           been modified in one way or another to distinguish them from the
+           original areas - much as BioWare themselves did, in fact. Some areas
+           do have new textures but these are mainly restricted to 'easy' places
+           such as floors and walls.
+         </p>
+         <p>
+           The portraits derive from far and wide and in nearly all cases
+           I cannot tell you who the original artist was. If anyone recognises
+           any of them as their own art and wants them pulled, please let me
+           know and I will remove them from the current version of the mod
+           <em><strong>immediately</strong></em>. Those instantly
+           recognisable as BioWare's are, in most cases, modified to
+           distinguish them from the vanilla originals.
+         </p>
+         <p>
+           Fishing For Trouble is designed for characters at mid-level (eleven
+           and above). You can attempt it with lower levels (i.e. just starting
+           out in <acronym title="Baldur's Gate II">BG2</acronym>) but it will
+           get a bit difficult in places. If you are a high-level character
+           then it will be a complete walkover. You can start it at any point
+           in the game but preferably before Saemon Haverian takes you to
+           Brynnlaw. If you start the mod after Chapter 4 (you can install it
+           during Chapter 4 but the plot won't start until you leave Spellhold)
+           then some parts of the plot may have to be railroaded because Brynnlaw
+           and Spellhold are not available. Those parts that you might have done
+           will be done by Elminster instead: that is, he goes to Spellhold
+           'to do things' after you've wrecked it.</p>
+          <p>
+          <address>
+            <span class="footer">Fishing For Trouble &gt; Introduction</span>
+            &#8226;<a href="#top">Back to top</a>
+          </address>
+        </div>
+        <!-- ================= C o m p a t i b i l i t y ================= -->
+        <a name="compat" id="compat"></a>
+        <div class="content">
+          <h2>
+            Compatibility
+          </h2>
+          <p>
+            This mod works with <acronym title=
+            "Baldur's Gate II">BG2</acronym>: Throne of Bhaal patched to version
+            26498. Check the ReadMe files related to your patch in your game
+            folder and the <a href="http://www.bioware.com/support/games/">BioWare</a>
+            website to obtain the patch if necessary.
+          </p>
+          <p>
+            This mod should be compatible with other mods. It should work with <a href=
+            "http://www.shsforums.net/forum/261-bgt-weidu/">Baldur's Gate
+            Trilogy</a>, though it has not yet had extensive testing on that
+            platform. It has not yet been added to the <a href=
+            "http://www.shsforums.net/forum/401-worldmap/">Worldmap</a> mod.
+            If using <a href=
+            "http://www.shsforums.net/forum/606-tobex/"><acronym title=
+            "Throne of Bhaal Extender">ToBEx</acronym></a>, make sure
+            that is installed first. If using <a href=
+            "http://www.shsforums.net/forum/418-auroras-shoes/">Aurora's Shoes</a>
+            or <a href=
+            "http://www.shsforums.net/forum/594-infinity-animations/">Infinity Animations</a>,
+            make sure those are installed after Fishing For Trouble to avoid
+            animation incompatibilities.
+          </p>
+          <address>
+            <span class="footer">Fishing For Trouble &gt; Compatibility</span>
+            &#8226;<a href="#top">Back to top</a>
+          </address>
+        </div>
+        <!-- ================== I n s t a l l a t i o n ================== -->
+        <a name="installation" id="installation"></a>
+        <div class="content">
+          <h2>
+            Installation
+          </h2>
+          <p>
+            <em><strong>Note:</strong> If you've previously installed the mod,
+            remove it before extracting the new version. To do this, run
+            <strong>setup-dq.exe</strong> (or .command), uninstall all
+            previously installed components and delete the dq folder. When
+            installing or uninstalling, do not close the <acronym title=
+            "Disk Operating System">DOS</acronym> window by clicking on the
+            <strong>X</strong> button! Instead, press the
+            <strong>Enter</strong> key when instructed to do so.</em>
+          </p>
+          <p>
+            <strong>Important:</strong> Disconnect from the Internet and turn
+            off any antivirus, firewall or other memory-resident software when
+            installing this mod or any others. Not only will your installation
+            go faster, but some antivirus packages report false errors with
+            <acronym title="Weimer Dialogue Utility">WeiDU</acronym> mods.
+          </p>
+          <p>
+            You can extract files from the archive using <a href=
+            "http://www.7-zip.org/download.html">7-Zip</a> (Windows), <a href=
+            "http://www.macupdate.com/app/mac/17741/rar-expander">RAR Expander</a>
+            (OS X), <a href="http://home.gna.org/unrar/">unrar</a> (Linux) or
+            another file compression utility that handles .rar files.
+          </p>
+          <p>
+            <strong>Windows</strong><br />
+            Extract the contents of the mod to the folder of the game you wish
+            to modify (<acronym title="Baldur's Gate II">BG2</acronym>,
+            <acronym title="Baldur's Gate Trilogy">BGT</acronym> or EasyTutu).
+            On successful extraction, there should be a dq folder and a
+            setup-dq.exe file in your game folder. To install, simply
+            double-click <strong>setup-dq.exe</strong> and follow the
+            instructions on screen.
+          </p>
+          <p>
+            Run <strong>setup-dq.exe</strong> in your game folder to
+            reinstall, uninstall or otherwise change components.
+          </p>
+          <p>
+            <strong>Mac OS X</strong><br />
+            Extract the contents of the mod to the folder of the game you wish
+            to modify. On successful extraction, there should be a dq
+            subfolder in your game folder. Download the OS X version of <a href=
+            "http://weidu.org/~thebigg/"><acronym title=
+            "Weimer Dialogue Utility">WeiDU</acronym></a> (or copy another mod's
+            launcher) and rename it <strong>setup-dq</strong>. Put this and
+            the <strong>setup-dq.command</strong> file within the dq
+            subfolder in your main game folder. To install, double-click on
+            <strong>setup-dq.command</strong> and follow the instructions
+            on screen.
+          </p>
+          <p>
+            <strong>Linux</strong><br />
+            Extract the contents of the mod to the folder of the game you wish
+            to modify. Download the latest Linux version of <a href=
+            "http://weidu.org/~thebigg/"><acronym title=
+            "Weimer Dialogue Utility">WeiDU</acronym></a> and copy WeiDU and
+            WeInstall to /usr/bin. Then open a terminal and cd to your game
+            installation directory.
+          </p>
+          <p>
+            <em>Optional: run 'tolower' and answer 'Y' to both queries. You can
+            avoid running the second option (linux.ini) if you've already ran
+            it once in the same directory. To save time, the archive is already
+            tolowered, so there's no need to run the first option (lowercasing
+            file names) either, if you've extracted only this mod since the
+            last time you lowercased file names. If unsure, running tolower and
+            choosing both options is the safe bet.</em>
+          </p>
+          <p>
+            Run <strong>WeInstall setup-dq</strong> in your game folder to
+            install the mod. Then run <strong>wine BGMain.exe</strong> and
+            start playing.
+          </p>
+          <address>
+            <span class="footer">Fishing For Trouble &gt; Installation</span>
+            &#8226;<a href="#top">Back to top</a>
+          </address>
+        </div>
+        <!-- =================== C o m p o n e n t s ==================== -->
+        <a name="compon" id="compon"></a>
+        <div class="content">
+          <h2>
+            Components
+          </h2>
+          <p>
+            There are two components: one for the core files and an optional
+            component that installs portraits for 63 of the most important
+            <acronym title="Non-Player Characters">NPCs</acronym>.
+            When the core files installation has completed, the installer will
+            automatically decompress the Ogg Vorbis music files and the area
+            tilesets. This may take some time. Uninstalling the mod will cause
+            the installer to clean up behind itself, so there should be no trace
+            left behind after it has finished uninstalling.
+          </p>
+          <address>
+            <span class="footer">Fishing For Trouble &gt; Components</span>
+            &#8226;<a href="#top">Back to top</a>
+          </address>
+        </div>
+        <!-- ============== T r o u b l e s h o o t i n g =============== -->
+        <a name="trouble" id="trouble"></a>
+        <div class="content">
+          <h2>
+            Troubleshooting
+          </h2>
+          <p>
+            Please report bugs on the mod's <a href=
+            "http://www.shsforums.net/forum/550-fishing-for-trouble/">Spellhold Studios forum</a>.
+            What will be very helpful for debugging is a savegame just before
+            the problem and clear instructions on how to reproduce it. The more
+            precise the instructions, the faster it will be fixed. Reports along
+            the lines of "this doesn't work - you've screwed my game - fix it
+            now" will ignored but the post will be left visible. Abusive posts
+            <strong>will</strong> be pulled with neither warning nor apology
+            and the poster reported to an administrator. You need to register
+            on the forum to post attachments, though you can post general
+            feedback as a guest without registering.
+          </p>
+          <p>
+            If you encounter a problem installing the mod, please open your
+            <strong>SETUP-DQ.DEBUG</strong> file with a text editor and post the
+            few lines of text before and after any ERROR message. If you
+            encounter a crash whilst playing the mod, make sure you have error
+            logging enabled (see below) and post the text related to the
+            assertion from your <strong>Baldur.err</strong> file (or TobEx.log
+            if you're using that). If you have a compatibility problem with
+            another mod, post your <strong>WeiDU.log</strong> in [SPOILER]
+            [/SPOILER] tags. However, if you have many mods installed, there is
+            no guarantee of help; you may have better luck posting in the <a href=
+            "http://www.shsforums.net/forum/193-mega-mod-help/">Mega-Mod Help</a>
+            forum.
+          </p>
+          <p>
+            Listed below are some general tips if you have problems getting the
+            game working, with or without this or other mods. Many times, errors
+            have to do with the game engine itself or the manner of installation
+            or gameplay. The game recommends deleting all files out of the /cache,
+            /temp and /tempsave subfolders in your game folder to see if that
+            resolves the problem before any further troubleshooting.
+          </p>
+          <p>
+            <strong>Symptom: Game freezes or crashes to desktop (CTDs)</strong>
+            <br />
+            Sometimes the game displays an "assertion error" in a pop-up window
+            when this happens, but often times it doesn't. To enable the full
+            error message, open the file <strong>baldur.ini</strong> in your
+            game folder with a text editor (such as Notepad). If you find you
+            can't edit it or save changes in Windows Vista or 7, see <a href=
+            "http://forums.bioware.com/viewtopic.html?topic=662080&forum=10">
+            this topic</a> for assistance.
+          </p>
+          <p>
+            Under the [Program Options] section in the file, type <strong>
+            Logging On=1</strong> (unless it's already there). While you're
+            there, you may also want to make sure <strong>Debug Mode=1</strong>
+            is there to enable the <a href=
+            "http://iesdp.gibberlings3.net/clua/bg2.htm">CLUA Console</a> for
+            debugging and testing. Save the file and exit. Now go back into the
+            game and try to reproduce the crash. Then look in your game folder
+            again for the <strong>Baldur.err</strong> file and open it with a
+            text editor to analyse its contents.
+          </p>
+          <p>
+            <strong>Symptom: Game crashes with no Baldur.err log and shows
+            either a black screen or a pop-up window indicating an error</strong>
+            <br />
+            This is more difficult to troubleshoot, but may indicate an
+            animation-related issue (usually at offset 005ca8a8). Try
+            reproducing and pressing the <strong>Print Screen</strong> button
+            right before the crash. Then post the Baldr###.bmp file from your
+            ScrnShot folder in the forum. It will save space if you convert it
+            to a .png or .jpg with a graphics program like Paint or GIMP first.
+          </p>
+          <p>
+            <strong>ERROR: error copying [dq/bams/somefile.bam]</strong> or<br />
+            <strong>ERROR: [SOMEFILE.CRE] -> [override/SOMEFILE.CRE] Patching failed
+            (COPY)<br />
+            Stopping installation because of error.</strong> <em>(with no other
+            error message)</em><br />
+            Less-than-informative messages like these may indicate you're
+            installing to a hard drive with a low data transfer rate or an
+            antivirus program is active during installation (which can also
+            affect data transfer). Try installing to an internal drive with
+            antivirus protection disabled during the install. If unsure,
+            disconnect from the Internet (either unplug your network cable or
+            disable your wireless adaptor) and turn off <strong>all</strong>
+            memory-resident programs during the install. To get a list of these,
+            go to Start > Run and type <strong>msconfig</strong> where it says
+            "Open:" then click OK. When the System Configuration Utility appears,
+            click on the Startup tab. The only really necessary programs that
+            need to be loaded in memory at startup are those related to your
+            graphics chip (typically ATI or nVIDIA). Uncheck everything else,
+            reboot and try installing the mod again. There are well-documented
+            issues with installing mods while Avast antivirus is running, so
+            make absolutely sure all components of Avast are completely disabled.
+          </p>
+          <p>
+            <strong>Assertion failed in ChDimm.cpp at line #7641</strong><br />
+            Exp: pBiffHeader->dwFileType != mmioFOURCC('B', 'I', 'F', 'C')<br />
+            Msg: c:\{path}\bg2\cd#\DATA\BIFNAME.BIF: attempted to use compressed
+            BIF from CD, check free hard drive space
+          </p>
+          <p>
+            Sometimes, the referenced BIF will exist, but the game expects it to
+            be in your main \data folder or in \cache\data. Copying it from the
+            cd# folder (or the CD itself) will sometimes work. Other times, you
+            may need to use <a href=
+            "http://www.gibberlings3.net/tools/dltcep.php"><acronym title=
+            "Dragonlance Total Conversion Editor Pro">DLTCEP</acronym></a> to
+            decompress the BIF. To do this, go to <strong>Extraction >
+            Uncompress BIF</strong>. The decompressed BIF should end up in your
+            main \data folder. Relaunch the game and see if this resolves the
+            issue. The mod is designed to avoid these types of errors, but
+            please report any such issues we may have missed.
+          </p>
+          <p>
+            <strong>Assertion failed in ObjCreatureAI.cpp at line #16055
+            </strong><br />
+            Exp: FALSE<br />
+            Msg: AR#### missing Exit####
+          </p>
+          <p>
+            Usually, this means you have installed the mod and used a saved
+            game in which you've already visited an area changed by the mod.
+            You need to use a save from before this point, or preferably, start
+            a new game.
+          </p>
+          <p>
+            <strong>Other issues</strong><br />
+            If you have more than one large mod installed, please refer to the
+            <a href="http://www.shsforums.net/index.php?showtopic=41036">
+            Megamod FAQ</a> for more troubleshooting tips. If none of this
+            resolves your issue, or you have mod-specific issues, please report
+            the problem in the mod's <a href=
+            "http://www.shsforums.net/forum/550-fishing-for-trouble/">forum</a>.
+          <address>
+            <span class="footer">Fishing For Trouble &gt; Troubleshooting</span>
+            &#8226;<a href="#top">Back to top</a>
+          </address>
+        </div>
+        <!-- ======================= C r e d i t s ====================== -->
+        <a name="credits" id="credits"></a>
+        <div class="content">
+          <h2>
+            Credits
+          </h2>
+          <p>
+            This mod took six years (!!) to develop. Along the way, I received a
+            lot of help from SConrad for the tp2 code for patching the worldmap.
+            I badgered him for help and he badgered the bigg for help, and
+            between them they fixed my problems, improving <acronym title=
+            "Weimer Dialogue Utility">WeiDU</acronym> in the process.
+            Nythrun provided the code for patching in the new entrance graphic
+            from the Bridge District into the Government District Westside.
+            In the end I did not use the animation patch in the Bridge District,
+            as SConrad solved the worldmap patching problem, but I know at least
+            two other mods used it because I did the graphics and tp2 code for them.
+            So your time and efforts were not wasted. Someone else (probably
+            Nythrun) gave me the patching code to add new entrances and exits
+            to existing areas. Hlidskialf (no longer a member of the Infinity
+            Engine community) taught me how to use Near Infinity to read the
+            offsets necessary to code info points. Avenger answered many
+            questions on the use of <acronym title=
+            "Dragonlance Total Conversion Editor Pro">DLTCEP</acronym>. All of
+            which finally resulted in the <a href=
+            "http://www.simpilot.net/~sc/dltcep/index.htm">DLTCEP area-making tutorials.</a>
+            Erephine gave me two new potion graphics and she and Taimon also
+            provided some very nifty bgmain.exe-patching code. Miloch nailed
+            the ghoul transformation problem and became an all-round
+            troubleshooter for patch-code problems. Cmorgan performed
+            installation testing and helped debug the .tp2 file. Rich "Weeds"
+            Nagel, who is no RPG player, kindly gave me the music played by
+            Derval and Aine in the Blue Harpy Inn and did not object when I
+            butchered it to suit the game.
+          </p>
+          <p>
+            Finally, I have to give a separate mention to Shaitan who persisted
+            in testing build after build and provided high-quality feedback and
+            suggestions that improved many areas of the mod.
+          </p>
+          <p>
+            All other sins committed in the making of this mod are mine.
+          </p>
+          <hr class="floatfix" />
+          <h5>
+            Tools used in creation:
+          </h5><br />
+          <ul class="version-list c1">
+            <li>
+              <a href="http://audacity.sourceforge.net/">Audacity</a> by
+              Dominic Mazzoni and others
+            </li>
+            <li>
+              <a href="http://www.sorcerers.net/Games/IEmodding/index.php">BAM
+              Workshop</a> by Glenn Flansburg
+            </li>
+            <li>
+              <a href="http://www.sorcerers.net/Games/IEmodding/index.php">BAM
+              Workshop II</a> by Andrew Bridges
+            </li>
+            <li>
+              <a href="http://www.contexteditor.org/">ConTEXT</a> by
+              the ConTEXT Project
+            </li>
+            <li>
+              <a href="http://www.gibberlings3.net/tools/weidu.php">ConTEXT WeiDU Highlighters</a>
+              by Idobek and cmorgan
+            </li>
+            <li>
+              <a href=
+              "http://www.gibberlings3.net/tools/dltcep.php"><acronym title=
+              "Dragonlance Total Conversion Editor Pro">DLTCEP</acronym></a> by
+              Avenger
+            </li>
+            <li>
+              <a href=
+              "http://www.shsforums.net/topic/31285-infinity-explorer-v085/">
+              Infinity Explorer</a> by Dmitry Jemerov and others
+            </li>
+            <li>
+              <a href=
+              "http://forums.pocketplane.net/index.php/topic,25153.msg314249.html#msg314249">
+              Near Infinity</a> by Jon Olav Hauglid and others
+            </li>
+            <li>
+              <a href="http://www.rarewares.org/ogg-oggdec.php">Oggdec</a> by
+              John33
+            </li>
+            <li>
+              <a href="http://download.cnet.com/Paint-Shop-Pro-8-0/3000-2192_4-10189075.html">Paint Shop Pro 8</a> by
+              Jasc Software
+            </li>
+            <li>
+              <a href="http://www.adobe.com/products/photoshop/compare/">Photoshop 7.0 and CS4</a>
+              by Adobe
+            </li>
+            <li>
+              <a href="http://www.cakewalk.com/">SONAR Home Studio 3 and Pro Audio 9</a>
+              by Cakewalk
+            </li>
+            <li>
+              <a href="http://www.sonicspot.com/soundprobe/soundprobe.html">Soundprobe 2</a>
+              by HiSoft Systems
+            </li>
+            <li>
+              <a href="http://www.pocketplane.net/mambo/index.php?option=com_content&task=blogcategory&id=137&Itemid=96">
+              TisPack</a> by Per Olofsson
+            </li>
+            <li>
+              <a href="http://weidu.org/main.html#weidu"><acronym title=
+              "Weimer Dialogue Utility">WeiDU</acronym></a> by Wes Weimer and
+              the bigg
+            </li>
+          </ul>
+          <h5>
+            Sources of information:
+          </h5><br />
+          <ul class="version-list c1">
+            <li>
+              <a href="http://www.forgottenwars.com/">Forgotten Wars</a> (now
+              hosting Dudleyville)
+            </li>
+            <li>
+              <a href="http://forums.gibberlings3.net/">Gibberlings 3 Forums</a>
+            </li>
+            <li>
+              <a href="http://iesdp.gibberlings3.net/"><acronym title=
+              "Infinity Engine Structures Description Project">IESDP</acronym></a>
+              maintained by igi
+            </li>
+            <li>
+              <a href="http://forums.pocketplane.net/">Pocket Plane Forums</a>
+            </li>
+            <li>
+              <a href="http://www.shsforums.net/">Spellhold Studios Forums</a>
+            </li>
+            <li>
+              <a href="http://www.wizards.com/dnd/">Wizards of the Coast</a>
+            </li>
+          </ul>
+          <p>
+            Fishing For Trouble is copyright &copy; 2011 by Yovaneth.
+            This work (including all code and documentation) is licensed under
+            a <a href="http://creativecommons.org/licenses/by-nc/3.0/">Creative
+            Commons Attribution-Noncommercial 3.0 Unported License</a>. You are
+            free to copy, distribute and transmit this work, except for
+            commercial purposes. See the <a href=
+            "http://creativecommons.org/licenses/by-nc/3.0/legalcode">Creative
+            Commons Public License</a> for more details. All other copyrights
+            and trademarks are the property of their respective owners.
+          </p>
+          <address>
+            <span class="footer">Fishing For Trouble &gt; Credits</span> &#8226;<a href=
+            "#top">Back to top</a>
+          </address>
+        </div>
+        <!-- ============== V e r s i o n   H i s t o r y =============== -->
+        <a name="version" id="version"></a>
+        <div class="content">
+          <h2>
+            Version History
+          </h2>
+          <h6>
+            Version 1: 15 Feb 2011
+          </h6>
+          <ul>
+            <li>First public release
+            </li>
+          </ul>
+          <h6>
+            Version 2.3: 24 December 2012
+          </h6>
+          <h6>
+            Version 2.4: 24 June 2013
+          </h6>
+          <h6>
+            Version 2.5: 24 August 2013
+          </h6>
+          <h6>
+            Version 2.6: 25 August 2013 (spot the panic release).
+          </h6>
+          <h6>
+            Version 2.7: 8 October 2013
+          </h6>
+          <h6>
+            Version 2.8: 14 December 2013
+          </h6>
+          <h6>
+            Version 3.0: 25 February 2014. FINAL RELEASE. There will be no further updates or bugfixes.
+          </h6>
+          <h6>
+            Version 3.0HF1: 19 February 2015. Hotfix 1 folded into the main installer.
+          </h6>
+          <ul>
+            <li>See the ReadmeFirst.pdf in the \dq folder for a comprehensive list of updates and fixes.
+            </li>
+          </ul>
+          <address>
+            <span class="footer">Fishing For Trouble &gt; Version History</span>
+            &#8226;<a href="#top">Back to top</a>
+          </address>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

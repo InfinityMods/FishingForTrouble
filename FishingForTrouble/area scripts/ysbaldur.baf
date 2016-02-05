@@ -1,0 +1,44 @@
+//------------------------------------------------------------------
+//Need to abuse baldur.bcs to check for timer timeout because
+//we don't know where the player will be
+IF
+  Global("ys_Player1Vamp","GLOBAL",1)
+  GlobalTimerExpired("ys_PlayerIsUndead","GLOBAL")
+  CheckStat(Player1,9,INT)
+  CheckStat(Player1,9,WIS)
+  CheckStat(Player1,9,DEX)
+  CheckStat(Player1,9,CON)
+  CheckStat(Player1,17,STR)
+  CheckStat(Player1,3,CHR)
+THEN
+	RESPONSE #100
+		ReallyForceSpellRES("yspervmp",Player1)
+  	SetGlobal("ys_Player1Vamp","GLOBAL",2)
+  	Continue()
+END
+
+//------------------------------------------------------------------
+//Change Porthpentyrch area
+IF
+	GlobalTimerExpired("ysLiftCurse","GLOBAL")
+	Global("ysChangePPT","GLOBAL",0)
+THEN
+	RESPONSE #100
+		HideAreaOnMap("ys1000")
+		RevealAreaOnMap("ys1001")
+		SetGlobal("ysChangePPT","GLOBAL",1)
+		Continue()
+END
+
+//------------------------------------------------------------------
+//Make Government District Westside visible after Chapter1
+IF
+	GlobalGT("Chapter","GLOBAL",1)
+	Global("ysFFT_GDW","GLOBAL",0)
+THEN
+	RESPONSE #100
+		RevealAreaOnMap("ys0390")
+		SetGlobal("ysFFT_GDW","GLOBAL",1)
+		Continue()
+END
+

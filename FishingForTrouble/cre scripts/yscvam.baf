@@ -1,0 +1,50 @@
+IF
+	Global("ysKilledChildVamp","LOCALS",0)
+	Die()
+	OR(6)
+		HasItemEquipedReal("ysvmpbld",Player1)
+		HasItemEquipedReal("ysvmpbld",Player2)
+		HasItemEquipedReal("ysvmpbld",Player3)
+		HasItemEquipedReal("ysvmpbld",Player4)
+		HasItemEquipedReal("ysvmpbld",Player5)
+		HasItemEquipedReal("ysvmpbld",Player6)
+THEN
+	RESPONSE #100
+		SetGlobal("ysKilledChildVamp","LOCALS",1)
+		SetGlobal("ys_VampChildIsDead","GLOBAL",1)
+		ReallyForceSpellDead(Myself,VAMPIRE_GAS_FORM_CHANGE)
+END
+
+IF
+	Global("ysKilledChildVamp","LOCALS",0)
+	Die()
+THEN
+	RESPONSE #100
+		ReallyForceSpellDead(Myself,VAMPIRE_GAS_FORM_CHANGE)
+		SetGlobal("ys_VampChildIsDead","GLOBAL",2)
+		SetGlobal("ysKilledChildVamp","LOCALS",1)
+END
+
+IF
+	TimeGT(5)
+	TimeLT(DUSK_END)
+	AreaType(OUTDOOR)
+THEN
+	RESPONSE #100
+		ReallyForceSpellDead(Myself,VAMPIRE_BAT_FORM_CHANGE)
+END
+
+IF
+	See([GOODCUTOFF])
+	Delay(3)
+	Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #25
+		ForceSpell(LastSeenBy(),VAMPIRE_FEAR)
+	RESPONSE #25
+		ForceSpell(LastSeenBy(),VAMPIRE_DOMINATION)
+	RESPONSE #25
+		RunAwayFrom(LastSeenBy(),5)
+	RESPONSE #25
+		ForceSpell(LastSeenBy(),WIZARD_VAMPIRIC_TOUCH)
+END

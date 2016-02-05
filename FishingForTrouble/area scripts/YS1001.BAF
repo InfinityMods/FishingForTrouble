@@ -1,0 +1,43 @@
+//Day-night movies
+//Night
+IF
+	Time(DUSK_END)
+	Global("ys_PlayDayNightMovie","GLOBAL",0)
+	AreaCheck("ys1001")
+THEN
+  RESPONSE #100
+	  SetGlobal("ys_PlayDayNightMovie","GLOBAL",1)
+    StartMovie("ysdayni")
+END
+
+//Day
+IF
+	Time(DAWN_START)
+	Global("ys_PlayDayNightMovie","GLOBAL",1)
+	AreaCheck("ys1001")
+THEN
+  RESPONSE #100
+	  SetGlobal("ys_PlayDayNightMovie","GLOBAL",0)
+    StartMovie("ysniday")
+END
+
+//Reset globals
+IF
+  TimeGT(DAWN_END)
+  TimeLT(DUSK_START)
+	Global("ys_PlayDayNightMovie","GLOBAL",1)
+THEN
+  RESPONSE #100
+	  SetGlobal("ys_PlayDayNightMovie","GLOBAL",0)
+END
+
+IF
+  OR(2)
+    TimeGT(DUSK_END)
+    TimeLT(DAWN_START)
+	Global("ys_PlayDayNightMovie","GLOBAL",0)
+THEN
+  RESPONSE #100
+	  SetGlobal("ys_PlayDayNightMovie","GLOBAL",1)
+END
+

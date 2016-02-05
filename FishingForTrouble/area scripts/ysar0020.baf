@@ -1,0 +1,13 @@
+//Create Lief Torman outside the Crooked Crane during daylight only
+
+IF
+	TimeLT(DUSK_START)
+	TimeGT(DAWN_END)
+	Global("dai_SpawnLief","GLOBAL",0)
+	Global("dai_FindElminster","GLOBAL",0)
+	LevelGT(Protagonist,3)
+THEN
+	RESPONSE #100
+		SetGlobal("dai_SpawnLief","GLOBAL",1)
+		CreateCreature("ysltor",[469.543],2)
+END

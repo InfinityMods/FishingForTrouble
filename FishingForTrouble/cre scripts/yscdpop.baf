@@ -1,0 +1,141 @@
+// Conditions to turn red
+IF
+  !Allegiance(Myself,ENEMY)
+  OR(4)
+	 AttackedBy([GOODCUTOFF],DEFAULT)
+	 AttackedBy([GOODCUTOFF],RANGED)
+	 AttackedBy([GOODCUTOFF],MELEE)
+	 Heard([ANYONE],2002)
+THEN
+	RESPONSE #100
+		Enemy()
+		Shout(2002)
+		ChangeAIScript("ysreact",OVERRIDE)
+END
+
+//Indoors
+IF
+  !Allegiance(Myself,ENEMY)
+	OR(14)
+		AreaCheck("ys0411")
+		AreaCheck("ys0412")
+		AreaCheck("ys0413")
+		AreaCheck("ys0414")
+		AreaCheck("ys0415")
+		AreaCheck("ys0416")
+		AreaCheck("ys0417")
+		AreaCheck("ys0418")
+		AreaCheck("ys0419")
+		AreaCheck("ys0420")
+		AreaCheck("ys0421")
+		AreaCheck("ys0422")
+		AreaCheck("ys0441")
+		AreaCheck("ys0442")
+THEN
+	RESPONSE #15
+    RandomTurn()
+	RESPONSE #5
+    RandomWalk()
+	RESPONSE #80
+		NoAction()
+END
+
+//Imradim outdoors
+IF
+  !Allegiance(Myself,ENEMY)
+	AreaCheck("ys0410")
+THEN
+	RESPONSE #2
+    MoveToPoint([2013.1601])
+	RESPONSE #2
+    RandomTurn()
+    Wait(12)
+	RESPONSE #2
+    RandomWalk()
+	RESPONSE #2
+    RandomTurn()
+	RESPONSE #2
+		Wait(20)
+    MoveToPoint([1578.1330])
+	RESPONSE #2
+    Wait(1)
+	RESPONSE #2
+    RandomWalk()
+	RESPONSE #2
+    RandomWalk()
+	RESPONSE #2
+    Wait(6)
+	RESPONSE #2
+    Wait(10)
+	RESPONSE #2
+    RandomWalk()
+	RESPONSE #2
+		Wait(7)
+    MoveToPoint([1914.1078])
+	RESPONSE #2
+    RandomTurn()
+	RESPONSE #2
+    MoveToPoint([327.1794])
+	RESPONSE #2
+    Wait(3)
+	RESPONSE #2
+    Wait(30)
+	RESPONSE #2
+    RandomWalk()
+	RESPONSE #2
+    RandomTurn()
+	RESPONSE #2
+    RandomTurn()
+    Wait(10)
+	RESPONSE #2
+    RandomWalk()
+	RESPONSE #2
+    Wait(1)
+	RESPONSE #2
+    MoveToPoint([443.1297])
+	RESPONSE #2
+    MoveToPoint([371.831])
+	RESPONSE #2
+    RandomTurn()
+    Wait(12)
+	RESPONSE #2
+    NoAction()
+	RESPONSE #2
+    MoveToPoint([181.1353])
+	RESPONSE #2
+    RandomTurn()
+	RESPONSE #2
+		Wait(15)
+    MoveToPoint([2161.1103])
+	RESPONSE #2
+    Wait(3)
+	RESPONSE #2
+    Wait(7)
+	RESPONSE #2
+    NoAction()
+	RESPONSE #2
+    RandomWalk()
+	RESPONSE #2
+    NoAction()
+	RESPONSE #2
+		RandomWalk()
+	RESPONSE #2
+    NoAction()
+	RESPONSE #2
+    MoveToPoint([558.1387])
+	RESPONSE #2
+    RandomTurn()
+	RESPONSE #2
+		Wait(3)
+	RESPONSE #2
+    Wait(7)
+	RESPONSE #2
+    RandomTurn()
+	RESPONSE #2
+    NoAction()
+	RESPONSE #2
+    RandomWalk()
+	RESPONSE #2
+    NoAction()
+END
+

@@ -1,0 +1,11 @@
+IF
+	Global("ys_TalkedToGarGel","GLOBAL",7)
+  !GlobalTimerExpired("ysLiftCurse","GLOBAL")
+	Global("ys_CreateAntiSpells","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ys_CreateAntiSpells","LOCALS",1)
+		CreateCreature("ysgargel",[427.208],3)
+		CreateCreature("ysanghrd",[395.238],4)
+		CreateCreature("yselcol2",[348.288],5)
+END

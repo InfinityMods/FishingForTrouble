@@ -1,0 +1,8 @@
+IF
+  OnCreation()
+THEN
+  RESPONSE #100
+    CreateCreature("yselcol2",[370.294],15)
+    CreateCreature("ysanghrd",[371.350],10)
+    CreateCreature("ysgargel",[451.352],3)
+END

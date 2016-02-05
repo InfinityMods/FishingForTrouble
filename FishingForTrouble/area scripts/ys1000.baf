@@ -1,0 +1,13 @@
+
+//Garalial and Co.
+IF
+	Global("ys_TalkedToGarGel","GLOBAL",7)
+	Global("ys_CreateAntiSpells","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ys_CreateAntiSpells","GLOBAL",1)
+		CreateCreature("ysgargel",[1365.1873],4)
+		CreateCreature("ysanghrd",[1330.1910],4)
+		CreateCreature("yselcol2",[1333.1962],5)
+		Continue()
+END

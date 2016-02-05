@@ -1,0 +1,214 @@
+IF
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+ 		Wait(2)
+ 		Enemy()
+ 		Continue()
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  OR(2)
+	  Dead("ysbehol1")
+	  Dead("ysbehol2")
+THEN
+	RESPONSE #100
+		Deactivate("ysbehol1")
+		Deactivate("ysbehol2")
+		SetGlobal("ysBranIllusion","GLOBAL",1)
+		Activate("ysadag")
+END
+
+IF
+	Global("BeholderBehavior","LOCALS",0)
+	See([GOODCUTOFF.0.0.0.0.SUMMONED])
+THEN
+	RESPONSE #100
+		FaceObject(LastSeenBy(Myself))
+		ForceSpell(LastSeenBy(Myself),3990)
+		Wait(3)
+		Continue()
+END
+
+IF
+	Global("BeholderBehavior","LOCALS",0)
+	See(SecondNearestEnemyOf())
+	HPGT(Myself,55)
+	!HasBounceEffects(SecondNearestEnemyOf())
+THEN
+	RESPONSE #100
+		FaceObject(SecondNearestEnemyOf())
+		ForceSpell(SecondNearestEnemyOf(),BEHOLDER_FEAR)
+		Wait(2)
+		Continue()
+END
+
+IF
+	Global("BeholderBehavior","LOCALS",0)
+	See(LeastDamagedOf(Myself))
+	HPGT(Myself,45)
+	!HasBounceEffects([PC])
+THEN
+	RESPONSE #100
+		FaceObject(LeastDamagedOf(Myself))
+		ForceSpell(LeastDamagedOf(Myself),3990)
+		Continue()
+END
+
+IF
+	Global("BeholderBehavior","LOCALS",0)
+	See([PC])
+	!See(LeastDamagedOf(Myself))
+	HPGT(Myself,45)
+	!HasBounceEffects([PC])
+THEN
+	RESPONSE #100
+		FaceObject([PC])
+		ForceSpell([PC],3990)
+		Continue()
+END
+
+IF
+	Global("BeholderBehavior","LOCALS",0)
+	See([PC])
+	HPGT(Myself,25)
+	!HasBounceEffects(ThirdNearestEnemyOf())
+THEN
+	RESPONSE #100
+		FaceObject(ThirdNearestEnemyOf())
+		ForceSpell(ThirdNearestEnemyOf(),BEHOLDER_FLESH_TO_STONE)
+		Wait(2)
+		Continue()
+END
+
+IF
+	Global("BeholderBehavior","LOCALS",0)
+	See([PC])
+	See([PC.0.0.MAGE])
+	!HasBounceEffects([PC.0.0.MAGE])
+THEN
+	RESPONSE #100
+		FaceObject(LastSeenBy(Myself))
+		ForceSpell(LastSeenBy(Myself),BEHOLDER_ANTIMAGIC_RAY)
+		SetGlobal("BeholderBehavior","LOCALS",1)
+		Wait(2)
+END
+
+IF
+	Global("BeholderBehavior","LOCALS",0)
+	See([PC])
+	!See([PC.0.0.MAGE])
+	!HasBounceEffects([PC.0.0.MAGE])
+THEN
+	RESPONSE #100
+		FaceObject([PC])
+		ForceSpell([PC],BEHOLDER_ANTIMAGIC_RAY)
+		SetGlobal("BeholderBehavior","LOCALS",1)
+		Wait(2)
+END
+
+IF
+	Global("BeholderBehavior","LOCALS",1)
+	See([GOODCUTOFF.0.0.0.0.SUMMONED])
+THEN
+	RESPONSE #100
+		FaceObject(LastSeenBy(Myself))
+		ForceSpell(LastSeenBy(Myself),3990)
+		Wait(3)
+		Continue()
+END
+
+IF
+	Global("BeholderBehavior","LOCALS",1)
+	See([PC])
+	HPGT(Myself,35)
+	!HasBounceEffects(SecondNearestEnemyOf())
+THEN
+	RESPONSE #100
+		FaceObject(SecondNearestEnemyOf())
+		ForceSpell(SecondNearestEnemyOf(),BEHOLDER_SLOW)
+		Wait(2)
+		Continue()
+END
+
+IF
+	Global("BeholderBehavior","LOCALS",1)
+	See([PC])
+	HPGT(Myself,5)
+	!HasBounceEffects(ThirdNearestEnemyOf())
+THEN
+	RESPONSE #100
+		FaceObject(ThirdNearestEnemyOf())
+		ForceSpell(ThirdNearestEnemyOf(),BEHOLDER_CAUSE_SERIOUS_WOUNDS)
+		Wait(2)
+		Continue()
+END
+
+IF
+	Global("BeholderBehavior","LOCALS",1)
+	See(LeastDamagedOf(Myself))
+	!HasBounceEffects(LeastDamagedOf(Myself))
+THEN
+	RESPONSE #100
+		FaceObject(LeastDamagedOf(Myself))
+		ForceSpell(LeastDamagedOf(Myself),BEHOLDER_DEATH_RAY)
+		Continue()
+END
+
+IF
+	Global("BeholderBehavior","LOCALS",1)
+	See([PC])
+	!See(LeastDamagedOf(Myself))
+	!HasBounceEffects([PC])
+THEN
+	RESPONSE #100
+		FaceObject([PC])
+		ForceSpell([PC],BEHOLDER_DEATH_RAY)
+		Continue()
+END
+
+IF
+	Global("BeholderBehavior","LOCALS",1)
+	See([PC])
+	See([PC.0.0.MAGE])
+	!HasBounceEffects([PC.0.0.MAGE])
+THEN
+	RESPONSE #100
+		FaceObject(LastSeenBy(Myself))
+		ForceSpell(LastSeenBy(Myself),BEHOLDER_ANTIMAGIC_RAY)
+		SetGlobal("BeholderBehavior","LOCALS",0)
+		Wait(2)
+END
+
+IF
+	Global("BeholderBehavior","LOCALS",1)
+	See([PC])
+	!See([PC.0.0.MAGE])
+	!HasBounceEffects([PC.0.0.MAGE])
+THEN
+	RESPONSE #100
+		FaceObject([PC])
+		ForceSpell([PC],BEHOLDER_ANTIMAGIC_RAY)
+		SetGlobal("BeholderBehavior","LOCALS",0)
+		Wait(2)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HasBounceEffects(NearestEnemyOf(Myself))
+	GlobalLT("KRBEHELD","LOCALS",2)
+THEN
+	RESPONSE #100
+		IncrementGlobal("KRBEHELD","LOCALS",1)
+		ForceSpell(Myself,CLERIC_AERIAL_SERVANT)
+		SetGlobalTimer("KRGOTHS2","GLOBAL",136)
+END
+
+IF
+	GlobalTimerExpired("KRGOTHS2","GLOBAL")
+THEN
+	RESPONSE #100
+		SetGlobal("KRBEHELD","LOCALS",0)
+END
+

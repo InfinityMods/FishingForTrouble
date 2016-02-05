@@ -1,0 +1,7 @@
+IF
+  Global("ysTanarri","ys0040",0)
+THEN
+  RESPONSE #100
+    CreateCreature("ystanarr",[308.168],14)
+  	SetGlobal("ysTanarri","ys0040",1)
+END

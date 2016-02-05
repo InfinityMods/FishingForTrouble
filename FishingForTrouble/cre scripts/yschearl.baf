@@ -1,0 +1,80 @@
+//------------------------------------------------------------------
+// Create Countess Wultheof.
+// Has to be done here because ys0340 has no script
+// and we need to allow for savegames containing ys0340.
+IF
+	Global("ysCreateCountess","GLOBAL",0)
+THEN
+	RESPONSE #100
+		CreateCreature("yscntwul",[1920.764],10)
+		SetGlobal("ysCreateCountess","GLOBAL",1)
+		Continue()
+END
+
+//Earl Waltheof
+IF
+  Global("ys_GarrisonFight","GLOBAL",1)
+	Global("ys_MoveEarl","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ys_MoveEarl","LOCALS",1)
+		MoveToPoint([1969.1471])
+		Continue()
+END
+
+//Find a target
+IF
+  Global("ys_GarrisonFight","GLOBAL",1)
+	See([EVILCUTOFF])
+	See(NearestEnemyOf())
+	!Class(LastSeenBy(),INNOCENT)
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+// * Potion of Extra Healing
+IF
+  HPPercentLT(Myself,40)
+  HasItem("potn52",Myself)
+THEN
+  RESPONSE #100
+    DisplayStringHead(Myself,46150)//quaffs a potion
+    UseItem("potn52",Myself)
+    Continue()
+END
+
+//If I'm being attacked then select my attacker as a new target
+IF
+  Global("ys_GarrisonFight","GLOBAL",1)
+  ActionListEmpty()
+	OR(3)
+		AttackedBy([ANYONE],DEFAULT)
+		AttackedBy([ANYONE],MELEE)
+		AttackedBy([ANYONE],RANGED)
+	See(LastAttackerOf(Myself))
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+//Select weapon and move to opponent
+IF
+  Global("ys_GarrisonFight","GLOBAL",1)
+  ActionListEmpty()
+	!Range(LastSeenBy(Myself),5)
+THEN
+	RESPONSE #100
+		MoveToObject(LastSeenBy(Myself))
+END
+
+IF
+  Global("ys_GarrisonFight","GLOBAL",1)
+  ActionListEmpty()
+	Range(LastSeenBy(Myself),5)
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+		Attack(LastSeenBy(Myself))
+END
+

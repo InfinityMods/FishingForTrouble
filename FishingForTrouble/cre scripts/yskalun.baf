@@ -1,0 +1,35 @@
+IF
+  Dead("yskalun")
+THEN
+  RESPONSE #100
+    SetGlobal("ys_KalunIsDead","GLOBAL",1)
+END
+
+// Do something to stay alive
+IF
+  ActionListEmpty()
+  HPPercentLT("ysKalun",30)
+THEN
+  RESPONSE #100
+	 ReallyForceSpell("yskalun",1401)
+	 Continue()
+END
+
+//If I'm being attacked then select my attacker as a new target
+IF
+  ActionListEmpty()
+	AttackedBy([ANYONE],DEFAULT)
+	See(LastAttackerOf(Myself))
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+  ActionListEmpty()
+	Range(LastSeenBy(Myself),5)
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+		Attack(LastSeenBy(Myself))
+END

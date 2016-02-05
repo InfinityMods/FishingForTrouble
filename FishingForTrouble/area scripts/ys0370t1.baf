@@ -1,0 +1,19 @@
+//Move to Cerendor Hold
+
+IF
+	OR(6)
+		IsOverMe(Player1)
+		IsOverMe(Player2)
+		IsOverMe(Player3)
+		IsOverMe(Player4)
+		IsOverMe(Player5)
+		IsOverMe(Player6)
+THEN
+	RESPONSE #100
+		ActionOverride(Player1,LeaveAreaLUA("ys0360","",[260.622],12))
+		ActionOverride(Player2,LeaveAreaLUA("ys0360","",[290.652],12))
+		ActionOverride(Player3,LeaveAreaLUA("ys0360","",[260.692],12))
+		ActionOverride(Player4,LeaveAreaLUA("ys0360","",[290.662],12))
+		ActionOverride(Player5,LeaveAreaLUA("ys0360","",[260.702],12))
+		ActionOverride(Player6,LeaveAreaLUA("ys0360","",[290.622],12))
+END
