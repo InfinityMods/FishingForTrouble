@@ -5,9 +5,6 @@ VERSION ~v3.1 pre-release~
 //launch the ReadMe file immediately
 README ~fishingfortrouble/readme.html~
 
-LANGUAGE ~English (Yovaneth)~ ~english~ ~fishingfortrouble/language/english/english.tra~
-LANGUAGE ~Russian (subzero400)~ ~russian~ ~fishingfortrouble/language/russian/russian.tra~
-
 ALWAYS
 	ACTION_IF (GAME_IS ~eet~) AND (FILE_CONTAINS ~override/EET.flag~ ~EET_JOURNAL~) BEGIN
 		OUTER_SET bg2_chapter = 14
@@ -27,6 +24,9 @@ ALWAYS
 		OUTER_SET wmp_yCoord_SoA = 0
 	END
 END
+
+LANGUAGE ~English (Yovaneth)~ ~english~ ~fishingfortrouble/language/english/english.tra~
+LANGUAGE ~Russian (subzero400)~ ~russian~ ~fishingfortrouble/language/russian/russian.tra~
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //Core component: Fishing for Trouble by Yovaneth
@@ -70,7 +70,7 @@ COPY ~fishingfortrouble/bams~ ~override~
 //##################################################
 //Music
 //##################################################
-COPY ~fishingfortrouble/music/ysblank.mus~ ~music~
+COPY ~fishingfortrouble/audio/ysblank.mus~ ~music~
 COPY_EXISTING ~songlist.2da~ ~override~
 	SET_2DA_ENTRY 0 2 3 ~YSBLANK.MUS~ // "no_music" resource
 
@@ -144,7 +144,7 @@ COPY ~fishingfortrouble/tis~ ~override~
 //##################################################
 //SConrad's Worldmap patching - do this last so we can patch the new areas too
 //##################################################
-INCLUDE ~fishingfortrouble/patch_worldmap.tpa~
+INCLUDE ~fishingfortrouble/lib/patch_worldmap.tpa~
 
 //##################################################
 // .ogg and .tiz conversion
