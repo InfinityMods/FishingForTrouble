@@ -1,6 +1,6 @@
 //Journal entries - NOTE: Two carriage returns needed to create a journal title with the entry
 @20000 = ~Core Files: Fishing for Trouble by Yovaneth~
-@20001 = ~Optional: Major character portraits~
+@20001 = ~Optional: Install portraits for major characters~
 @20002 = ~Optional: Add Fishing for Trouble to BP-BGT-Worldmap~
 @2 = ~Fishing for Trouble: Find Elminster
 
@@ -125,7 +125,7 @@ I have given the Orb of Breaca to Angharad Firehair. Now to see if Garalial Gelt
 We have put to rest the spirit of Meilir of Meilirion. In return he gave us the Orb of Breaca which we must now return to Angharad Firehair.~
 @42 =~Fishing for Trouble: The Orb of Breaca
 
-So much for the spirit of Meilir of Meilirion. At least he was not lying about the Orb; I now have it in my posession.~
+So much for the spirit of Meilir of Meilirion. At least he was not lying about the Orb; I now have it in my possession.~
 @43 = ~Fishing for Trouble: Ceinwen Ravenhair
 
 I killed the child vampire as requested by Ceinwen Ravenhair but I did not use the Vampire Bloodsucker knife she gave me. She says that she can no longer help me pass the Traps of the Living and so I cannot get the key that the tanar'ri requires to return to his own plane. This means that my mission from Elminster is at an end; he is not going to be the slightest bit pleased with me.~
@@ -158,13 +158,13 @@ I had to confess to Elminster that I had wrecked the chances of restoring Porthp
 Despite all the time and effort I put into solving this 'minor problem' of Elminster's, he was extremely ungrateful. Pah! I couldn't care less if I never saw him or his cohort Torman again.~
 @53 =~Fishing for Trouble: Restore Porthpentyrch
 
-Elminster received the news of the saving of Porthpentyrch with a great deal of relief. He is now on his way to Calimsham to deal with Pasha Baadilhaela. I would not like to be him when the Sage of Shadowdale gets there; I doubt Elminster will be very sage at that meeting!~
+Elminster received the news of the saving of Porthpentyrch with a great deal of relief. He is now on his way to Calimshan to deal with Pasha Baadilhaela. I would not like to be him when the Sage of Shadowdale gets there; I doubt Elminster will be very sage at that meeting!~
 @54 =~Fishing for Trouble: Restore Porthpentyrch
 
-Elminster received the news of the saving of Porthpentyrch with a great deal of relief. He was very surprised to learn of the involvement of Garalial Geltarath and even more surprised when Jaheira asked him to visit the ex-Harper. With luck and the will to do it, Garalial may yet be received back into that secretive band. Meanwhile, Elminster is now on his way to Calimsham to deal with Pasha Baadilhaela. I would not like to be him when the Sage of Shadowdale gets there; I doubt Elminster will be very sage at that meeting!~
+Elminster received the news of the saving of Porthpentyrch with a great deal of relief. He was very surprised to learn of the involvement of Garalial Geltarath and even more surprised when Jaheira asked him to visit the ex-Harper. With luck and the will to do it, Garalial may yet be received back into that secretive band. Meanwhile, Elminster is now on his way to Calimshan to deal with Pasha Baadilhaela. I would not like to be him when the Sage of Shadowdale gets there; I doubt Elminster will be very sage at that meeting!~
 @55 =~Fishing for Trouble: The Black Lotus Caravan
 
-I found Maredudd Bengoch in Athkatla's harbour, negotiating for a ship to carry his 'wares' north to Waterdeep and Luskan. I told him about the destruction of his smuggling caravan and the release of Cerendor Hold, and although I expected a fight to the very death, I was able to persuade him to turn himself in to the local magistrate. I left him with the warning that if he did not so so, I would seek him out and would not be so lenient the next time. There is no doubt that with the destruction of the smuggler's route from Calimsham to Icewind Dale the supply of Black Lotus will run very dry - for a short while.~
+I found Maredudd Bengoch in Athkatla's harbour, negotiating for a ship to carry his 'wares' north to Waterdeep and Luskan. I told him about the destruction of his smuggling caravan and the release of Cerendor Hold, and although I expected a fight to the very death, I was able to persuade him to turn himself in to the local magistrate. I left him with the warning that if he did not do so, I would seek him out and would not be so lenient the next time. There is no doubt that with the destruction of the smuggler's route from Calimshan to Icewind Dale the supply of Black Lotus will run very dry - for a short while.~
 @56 = ~Fishing for Trouble: The Trimthorns
 
 I had to give Gaelie the bad news that her father had died. The poor child looked as if the world had fallen to pieces around her.~
@@ -182,7 +182,7 @@ I have promised to find the thieves who stole Lady Pavaral's flamedance ring. Sh
 I have recovered Lady Pavaral's flamedance ring.~
 @61 =~Fishing for Trouble: The Black Lotus Caravan
 
-I found Maredudd Bengoch in Athkatla's harbour, negotiating for a ship to carry his 'wares' north to Waterdeep and Luskan. I told him about the destruction of his smuggling caravan and the release of Cerendor Hold and as you might guess, he was not too pleased. He attacked without warning and I was forced to kill him and his men. There is no doubt that with the destruction of the smuggler's route from Calimsham to Icewind Dale the supply of Black Lotus will run very dry - for a short while.~
+I found Maredudd Bengoch in Athkatla's harbour, negotiating for a ship to carry his 'wares' north to Waterdeep and Luskan. I told him about the destruction of his smuggling caravan and the release of Cerendor Hold and as you might guess, he was not too pleased. He attacked without warning and I was forced to kill him and his men. There is no doubt that with the destruction of the smuggler's route from Calimshan to Icewind Dale the supply of Black Lotus will run very dry - for a short while.~
 @62 =~Fishing for Trouble: The Food Thief
 
 My guess is that a gnome was responsible for the theft of food from the Cerendor kitchen but he was too quick for me and has escaped.~
@@ -250,7 +250,7 @@ Type:  1-handed~
 It's time to find some way to destroy this cargo of misery.~
 @132 =~The key to the dwarf-lord's tomb.~
 @133 = ~The Orb of Breaca~
-@134 = ~The orb was found in the the tomb of Meilir of Meilirion; Meilir himself took it from the horde of a green dragon. You can feel dark magic emanating from it but you have no idea how to use it.~
+@134 = ~The orb was found in the tomb of Meilir of Meilirion; Meilir himself took it from the horde of a green dragon. You can feel dark magic emanating from it but you have no idea how to use it.~
 @135 = ~Tiger's Eye~
 @136 = ~You stare in wonder at the beauty of the Tiger's Eye flower. It is as wide as your outstretched hand, yet it has taken no harm from being tucked into your travelling pack.~
 @137 = ~The Glass Dagger~
@@ -302,7 +302,7 @@ A merchant call Levon has hired me to kill a bandit leader called Akil. He's off
 I killed the bandit Akil and collected my reward. I still can't help wondering why the merchant was offering such a high sum for such a simple task.~
 @157 =~Fishing for Trouble: Kill Akil
 
-I doubt Levon will be bothering Akil again anytime soon. The young man is restored to his fortune, if not to his girl.~
+I doubt Levon will be bothering Akil again any time soon. The young man is restored to his fortune, if not to his girl.~
 @158 =~Fishing for Trouble: Kill Akil
 
 So now I know why the price on Akil's head was so high - the lust for power in high places is not a new story. Time to find this rogue Rimon and see if we can scare the rest of the story out of him.~
@@ -593,7 +593,7 @@ Garalial Geltarath has sent me to find Eildaren Colver. He thinks she may be in 
 @629  = ~Ha! A rat in a hole!~
 @630  = ~I TOLD you - DON'T MOCK ME!!!! If you're so brave then you stay here at night, on your own and unarmed. You won't - I know you won't - I know your type; cowards behind the bluster and yellow without a sword.~
 @631  = ~Hmm. Go on - your improbable tale interests me. You have a chance to keep your miserable life yet.~
-@632  = ~I don't know why I hid. I just couldn't stand the sight of him - and I was desparately afraid. He took over the lamp room and the lamp went out. I couldn't get there to light it at night; so many ships nearly ripped to pieces on our coast.~
+@632  = ~I don't know why I hid. I just couldn't stand the sight of him - and I was desperately afraid. He took over the lamp room and the lamp went out. I couldn't get there to light it at night; so many ships nearly ripped to pieces on our coast.~
 @633  = ~One did get caught... a storm whipped it round like a child's toy and splintered it against the rocks at the mouth of the Isthlwyn River. You've probably seen it...a small fishing boat. The crew were lucky and all escaped to the river banks.~
 @634  = ~What about the demon?~
 @635  = ~The same night as the shipwreck the mage climbed to the top of lighthouse and started some kind of incantation ritual. I don't know what and I guess it didn't work as he'd expected because some time later he came flying down the stairs in a fearful black rage.~
@@ -639,7 +639,7 @@ Garalial Geltarath has sent me to find Eildaren Colver. He thinks she may be in 
 @686  = ~Athkatla wants to tax our fishing as well as our farming.~
 @687  = ~It's said that a party of angry adventurers are busy cleaning out the bandit nests this side of the Cloudpeak Mountains.~
 @688  = ~Bandit attacks on caravans are up again this year.~
-@689  = ~It's said that Amn is going to war with Calimsham over the amount of Black Lotus being traded up the Sword Coast.~
+@689  = ~It's said that Amn is going to war with Calimshan over the amount of Black Lotus being traded up the Sword Coast.~
 
 //*************************************************************************
 //Jehan's holding line
@@ -672,7 +672,7 @@ Garalial Geltarath has sent me to find Eildaren Colver. He thinks she may be in 
 @714  = ~Ha! Go on - say it - say "I need your help"~
 @715  = ~Ha! You need our help, do you?~
 @716  = ~Will it be worth it? -Tsss-~
-@717  = ~Ah - you need our help. You shall have it, for what you think it worth. I have no desire to see you trapped here for ever.~
+@717  = ~Ah - you need our help. You shall have it, for what you think it worth. I have no desire to see you trapped here forever.~
 @718  = ~Ah - you need our help. Will it be worth us giving it?~
 @719  = ~DO - NOT - INSULT - ME - <PRO_RACE>. It is not good for you.~
 @720  = ~I think *cough* I shall bear that in mind. By all the Hells, that hurt!~
@@ -727,7 +727,7 @@ Garalial Geltarath has sent me to find Eildaren Colver. He thinks she may be in 
 @769  = ~Hehe. Oh no - I'm wise to you, tanar'ri. I'll be out that door before you can move. No more fireballing me, you stinking little demon.~
 @770  = ~Ha! I choose to keep my word that I would tell you what I know of the madness in this town. The Red Wizard was not working alone.~
 @771  = ~Ahhhh! Go on~
-@772  = ~TSSSHA!!!! A good reply, <PRO_RACE>! However, I have no gold to give you,only the information you so dearly want - and what might be in this chest behind me. The Red Wizard was not working alone.~
+@772  = ~TSSSHA!!!! A good reply, <PRO_RACE>! However, I have no gold to give you, only the information you so dearly want - and what might be in this chest behind me. The Red Wizard was not working alone.~
 @773  = ~Do you wish to try me, <PRO_RACE>? Say, how many of your misbegotten companions I can get before you make that door?~
 @774  = ~Errrrr - I was only joking. Really, I didn't mean it. Honest. Here's your key.~
 @775  = ~Do you wish to try me, <PRO_RACE>? Say, can I get your misbegotten companion before you make that door?~
@@ -867,7 +867,7 @@ Garalial Geltarath has sent me to find Eildaren Colver. He thinks she may be in 
 
 //*************************************************************************
 //Arms Store
-@950  = ~My wares are discounted to you at anytime. Please take a look.~
+@950  = ~My wares are discounted to you at any time. Please take a look.~
 @951  = ~Thank you.~
 @952  = ~Not at the moment, thank you.~
 @953  = ~Do you want to buy anything?~
@@ -883,7 +883,7 @@ Garalial Geltarath has sent me to find Eildaren Colver. He thinks she may be in 
 @963  = ~Well, Tralthor One-Eye, I'd like to see what you have for sale.~
 @964  = ~A misplaced arrow while fighting trolls and goblins up on the Spine of the World. Not a place I can recommend to anyone to visit; the wind is colder than a witch's tit and has razors for teeth. The gods know how the people that live there stand it!~
 @965  = ~Icewind Dale?~
-@966  = ~Easthaven - Lac Dinneshere. The BattlePriest of Tempus there - Everard was his name - probably saved my life by getting the arrow out without any more damage than the loss of my left eye. Ah, but that was a long time ago. How can I help you today?~
+@966  = ~Easthaven - Lac Dinneshere. The Battle Priest of Tempus there - Everard was his name - probably saved my life by getting the arrow out without any more damage than the loss of my left eye. Ah, but that was a long time ago. How can I help you today?~
 @967  = ~So you are.~
 @968  = ~Yes we are. Now are you going to show us what you sell or not?~
 @969  = ~Yes we are. And there's nothing we want to spend it on here today.~
@@ -918,7 +918,7 @@ Garalial Geltarath has sent me to find Eildaren Colver. He thinks she may be in 
 @1004 = ~Very well, Lief, we will carry your message and will deliver it if we can. I do not promise delivery, mind!~
 @1005 = ~Courteous words will often remove the sting of a refusal. I wish you good fortune upon your Bhaalspawn quest and may Mystra's Blessing be upon you.~
 @1006 = ~That is enough for me. But hold for one moment - I would give you Mystra's Blessing before I go~
-@1007 = ~Ah, <CHARNAME>, is it not? May I ask if you would be willing to carry a message for me now? I admit, I am getting a little desparate to contact Elminster and it seems that so far, no-one has found him!~
+@1007 = ~Ah, <CHARNAME>, is it not? May I ask if you would be willing to carry a message for me now? I admit, I am getting a little desperate to contact Elminster and it seems that so far, no-one has found him!~
 @1008 = ~I do not have the time. Maybe in the future.~
 @1009 = ~Certainly. I regret that I could not do so earlier. I recently met Elminster in Trademeet; he stated his intention of staying there for a short while - I think he wanted to investigate further the recent wild animal problem~
 @1010 = ~Oh! I am disappointed but no matter. I am sure that if I ask enough people, someone will get the message through.~
@@ -935,7 +935,7 @@ Garalial Geltarath has sent me to find Eildaren Colver. He thinks she may be in 
 @1036 = ~I have no idea what you're talking about.~
 @1037 = ~Speak sense man! Or gnome, whatever you are.~
 @1038 = ~The mush - wait a minute. You're not the cook!~
-@1039 = ~Nooo - I'm definately not the cook.~
+@1039 = ~Nooo - I'm definitely not the cook.~
 @1040 = ~You don't? Wait a minute - you're not - ~
 @1041 = ~I'm not what?~
 @1042 = ~No, I'm not whatever it is you're muttering about.~
@@ -1010,7 +1010,7 @@ So Ledban looks and sure enough, the notice says 'Tree fellers wanted'. Ledban b
 
 //*************************************************************************
 //Cerendor Hold Blacksmith
-@1150 = ~My wares are available to you at anytime. Please take a look~
+@1150 = ~My wares are available to you at any time. Please take a look~
 @1151 = ~Well open up then.~
 @1152 = ~Not now.~
 @1153 = ~Thank you.~
@@ -1162,7 +1162,7 @@ So Ledban looks and sure enough, the notice says 'Tree fellers wanted'. Ledban b
 @1355 = ~Just answer my question, wizard.~
 @1356 = ~You are looking for a few nights in the jail perhaps? A one-way trip to Spellhold, maybe? I can assist you if you wish <PRO_RACE> - or better still, you could remove yourself from Athkatla altogether.~
 @1357 = ~I need her help, wizard. If you know where she is I would be grateful if you would share that knowledge.~
-@1358 = ~I *could* count that as improvement in your mannners - at a very long stretch, that is. The woman you seek is in Spellhold.~
+@1358 = ~I *could* count that as improvement in your manners - at a very long stretch, that is. The woman you seek is in Spellhold.~
 @1359 = ~And she is there because?~
 @1360 = ~Ceinwen Ravenhair? Yes, I remember her. She is in Spellhold.~
 @1361 = ~Spellhold? Why is she there?~
@@ -1176,9 +1176,9 @@ So Ledban looks and sure enough, the notice says 'Tree fellers wanted'. Ledban b
 @1369 = ~Just answer my questions, wizard.~
 @1370 = ~You are looking for a few nights in the jail perhaps? I can assist you if you wish <PRO_RACE> - or better still, I suggest you remove yourself from Athkatla altogether.~
 @1371 = ~I would like to know why you are holding this Ceinwen Ravenhair?~
-@1372 = ~I suppose I could count that as sufficient improvement in your mannners - at a very long stretch, that is.~
+@1372 = ~I suppose I could count that as sufficient improvement in your manners - at a very long stretch, that is.~
 @1373 = ~And she is here because?~
-@1374 = ~Persistant little <PRO_RACE>, aren't you? She is a user of unlicensed magic. She has received the statutory warning and has ignored it.~
+@1374 = ~Persistent little <PRO_RACE>, aren't you? She is a user of unlicensed magic. She has received the statutory warning and has ignored it.~
 @1375 = ~And she cannot or will not pay for the licence?~
 @1376 = ~And she cannot or will not pay your blackmail - I mean pay for your licence?~
 @1377 = ~She is a user of unlicensed magic. She has received the statutory warning and has ignored it.~
@@ -1326,7 +1326,7 @@ So Ledban looks and sure enough, the notice says 'Tree fellers wanted'. Ledban b
 @1552 = ~Because you have to be dead to cross them. Dead. Do you understand? Dead!~
 @1553 = ~But you did it.~
 @1554 = ~And you have NO idea what it cost me. It was THE most stupid thing I ever did - for NOTHING. What does this tanar'ri want?~
-@1555 = ~He says there is a key in one of the far tombs that will help him return to his own plane of existance.~
+@1555 = ~He says there is a key in one of the far tombs that will help him return to his own plane of existence.~
 @1556 = ~He wants to return home does he? - so would I in his position. He could be trapped there for an eternity in that time bubble; I would not like to be him. Very well; I will need to think on this. Return in twenty-four hours, <CHARNAME>, and I'll see what I can do.~
 @1557 = ~Until tomorrow, Lady Ceinwen.~
 @1558 = ~He wants to return home does he? Very well; I will need to think on this. Return in twenty-four hours - and bring some manners with you, <PRO_RACE>!~
@@ -1378,16 +1378,16 @@ So Ledban looks and sure enough, the notice says 'Tree fellers wanted'. Ledban b
 @1604 = ~Very well <CHARNAME> - come back in two days and I will have it ready for you.~
 @1605 = ~You are still determined to go ahead then? Despite my warnings?~
 @1606 = ~Just give me the stuff.~
-@1607 = ~Then here it is - the Ghoul's Bed and its antidote. Wait until you are on the edge of the Traps of the Living; you must then swallow the potion to pass the Traps. Remember; you have just two hours before you must take the antidote or remain undead for ever. When you have taken the antidote, its effects will last up to three days. I will not wish you luck, for I doubt that luck has anything to do with it.~
+@1607 = ~Then here it is - the Ghoul's Bed and its antidote. Wait until you are on the edge of the Traps of the Living; you must then swallow the potion to pass the Traps. Remember; you have just two hours before you must take the antidote or remain undead forever. When you have taken the antidote, its effects will last up to three days. I will not wish you luck, for I doubt that luck has anything to do with it.~
 @1608 = ~Thank you, Lady Ceinwen. May Mystra guard you.~
-@1609 = ~Then here it is - the Ghoul's Bed and its antidote. Wait until you are on the edge of the Traps of the Living; you must then swallow the potion to pass the Traps. Remember; you have just two hours before you must take the antidote or remain undead for ever. The effects of the antidote will last up to three days. I have filled my obligation to you and I do not wish to see you again. Now go.~
-@1610 = ~A gh - ! Wait - I know you. You did not listen, did you? For all of my warnings, you did not listen. I cannot help you <CHARNAME> and there is no-one who can.~
+@1609 = ~Then here it is - the Ghoul's Bed and its antidote. Wait until you are on the edge of the Traps of the Living; you must then swallow the potion to pass the Traps. Remember; you have just two hours before you must take the antidote or remain undead forever. The effects of the antidote will last up to three days. I have filled my obligation to you and I do not wish to see you again. Now go.~
+@1610 = ~Agh - ! Wait - I know you. You did not listen, did you? For all of my warnings, you did not listen. I cannot help you <CHARNAME> and there is no-one who can.~
 @1611 = ~ Unless - unless - maybe.. but where...?~
 @1612 = ~'Where' what, Lady Ceinwen?~
 @1613 = ~Spit it out you stupid hedge-witch!~
 @1614 = ~One of the Chosen may be able to help, but I do not know where to find any of them. They could be scattered to the four winds of Faerun for all I know of their whereabouts.~
 @1615 = ~Ah! But I think I know where I can find Elminster. Thank you, Lady Ceinwen.~
-@1616 = ~You dare come here to insult me and demand that I help you after you have completely ignored all of my instructions? Your arrogance is unbelieveable!!~
+@1616 = ~You dare come here to insult me and demand that I help you after you have completely ignored all of my instructions? Your arrogance is unbelievable!!~
 @1617 = ~Tell me where I can find help, hedge-witch, before I tear your head from your shoulders!~
 @1618 = ~Fool. Idiot. Death has no fear for me - I already live on borrowed time. One of Mystra's Chosen may possibly have an answer to your stupidity but I don't and better than that, I have no idea where any of them are! Now get you gone from here; the stench you bring with you is worse than that of the grave.~
 @1619 = ~Ha! Mystra's Chosen eh? It just so happens I know where that meddling fool Elminster is. Drunk in his cups again, no doubt. You can keep your head Ceinwen Ravenhair - this time.~
@@ -1405,7 +1405,7 @@ So Ledban looks and sure enough, the notice says 'Tree fellers wanted'. Ledban b
 @1628 = ~Pasha Baadilhaela? Who's he?~
 @1629 = ~One of two feuding wizards in Calimport. The other is Khariyl the Winged.~
 @1630 = ~And what does a feud in far Calimport have to do with Thay?~
-@1631 = ~Pasha Baadilhaela also needs money for bribes to contimue his feud. My master got to hear of this and proposed an alliance; Pasha Baadilhaela was to supply Black Lotus and my master would help distribute it.~
+@1631 = ~Pasha Baadilhaela also needs money for bribes to continue his feud. My master got to hear of this and proposed an alliance; Pasha Baadilhaela was to supply Black Lotus and my master would help distribute it.~
 @1632 = ~Your master - who is he?~
 @1633 = ~If I tell you that I will die!! Please - do not make me say his name!~
 @1634 = ~Then I will tell you. Homen Odesseiron - is that the name you will not speak?~
@@ -1436,7 +1436,7 @@ So Ledban looks and sure enough, the notice says 'Tree fellers wanted'. Ledban b
 @1659 = ~Be sure that if he is not there I will be back for you. Tell me, who is in charge of the drug caravan?~
 @1660 = ~That's what he says. He lives in one of the houses under the Southgate Wall.~
 @1661 = ~You've been there, have you? Directions - quickly!~
-@1662 = ~Yes, yes. The southside of the Slum District - there's a ruined house there - you can see the Southgate Wall from behind it. Go east from the house and it will take you to the harper's house.~
+@1662 = ~Yes, yes. The south side of the Slum District - there's a ruined house there - you can see the Southgate Wall from behind it. Go east from the house and it will take you to the harper's house.~
 @1663 = ~I see. Be sure that if he is not there I will be back for you. One last question for you, Ailoth Tam; who is in charge of the drug caravan?~
 @1664 = ~Mordaran Rockfist; one of the Duergar. His lieutenant is an ex-Amnish soldier, Maredudd Bengoch by name.~
 @1665 = ~A Duergar? And a Moonshae Islander by his name! Where are they heading?~
@@ -1457,7 +1457,7 @@ So Ledban looks and sure enough, the notice says 'Tree fellers wanted'. Ledban b
 @1705 = ~Can you heal us?~
 @1706 = ~Can you heal me?~
 @1707 = ~Farewell for now.~
-@1708 = ~Not a great deal. They came in with the last caravan from Calimsham and simply never went out again; before we really knew what was happening they had taken over the Hold.~
+@1708 = ~Not a great deal. They came in with the last caravan from Calimshan and simply never went out again; before we really knew what was happening they had taken over the Hold.~
 @1709 = ~Did it affect you?~
 @1710 = ~On a day-to-day basis, no. Long term though, it certainly will. I also expect that the authorities in Crimmor will begin to wonder what's happening up here sooner or later.~
 @1711 = ~What about reporting back to your temple?~
@@ -1495,7 +1495,7 @@ So Ledban looks and sure enough, the notice says 'Tree fellers wanted'. Ledban b
 @1745 = ~Anyone who leaves here and reports to any other authority will kiss goodbye to his life. If not his life, maybe one or more of his family - and not in a quick and easy death either. If the sword doesn't get him then the magecraft will.~
 @1746 = ~I see. What are the Red Wizards up to?~
 @1747 = ~I think they are in the operation of smuggling high-value, low-bulk goods along the Sword Coast.~
-@1748 = ~And the origin of these high-value, low-bulk goods would be Calimsham, would it?~
+@1748 = ~And the origin of these high-value, low-bulk goods would be Calimshan, would it?~
 @1749 = ~I value my life above the discussion of certain things.~
 @1750 = ~Ah. Would you be willing to ...return... the Hold to its former owners?~
 @1751 = ~Coward.~
@@ -1589,7 +1589,7 @@ So Ledban looks and sure enough, the notice says 'Tree fellers wanted'. Ledban b
 @1884 = ~Oh; it sounds good. For all that though, I'm a lousy bard anyway.~
 @1885 = ~You're a - ! Okay, never mind. Was that you playing the piano when we came through the door?~
 @1886 = ~No, it was Aine here. She plays well, doesn't she? The only problem is she can only remember the half of it.~
-@1887 = ~Then if our guests here wish to here the whole of the piece, I, Derval Cadarn, Bard of the Sword Coast, shall play it for them!~
+@1887 = ~Then if our guests here wish to hear the whole of the piece, I, Derval Cadarn, Bard of the Sword Coast, shall play it for them!~
 @1888 = ~Then prepare to be amazed!!~
 @1889 = ~Shh, my sweeting - you can get your own back on me later. There's a very comfortable hayloft around the back which would be just perfect for it. Now, listen!~
 @1890 = ~One moment - what is the piece called?~
@@ -1778,7 +1778,7 @@ So Ledban looks and sure enough, the notice says 'Tree fellers wanted'. Ledban b
 @2107 = ~There is something on that caravan that I am interested in.~
 @2108 = ~That caravan is carrying four waggons of Black Lotus and I intend to stop it.~
 @2109 = ~Yes, I am. Can I help you?~
-@2110 = ~I am trying to find the whereabouts of a caravan that had six Red Wizards travelling with it and has recently arrived from Calimsham.~
+@2110 = ~I am trying to find the whereabouts of a caravan that had six Red Wizards travelling with it and has recently arrived from Calimshan.~
 @2111 = ~I am looking for a caravan that is guarded by six Red Wizards and is said to be carrying four waggons of Black Lotus.~
 @2112 = ~There has been such a caravan through here recently. Why do you want to know about it?~
 @2113 = ~I have reason to believe it is carrying a large quantity of Black Lotus on it.~
@@ -1838,8 +1838,8 @@ So Ledban looks and sure enough, the notice says 'Tree fellers wanted'. Ledban b
 @2167 = ~Look what we found hiding in the garderobes! One of my men saw him trying to climb down inside - you'll have to excuse the smell I'm afraid. No doubt you'd like a word with this young man.~
 @2168 = ~Many words, as it happens.~
 @2169 = ~I think I'll take your word on that - ! So; let's see what this mage has to say for himself.~
-@2170 = ~So that's the story is it? We'll be on our guard in future for any caravan that originates from Calimsham and arrives somewhat over-guarded! Listen now: that caravan left here bound for Athkatla and has to cross the old mountain road. If you cut north of the river and head west from here you should catch up with it in the Cloudpeaks somewhere. Good luck - though I doubt you'll need it!~
-@2171 = ~So that's the story is it? We'll be on our guard in future for any caravan that originates from Calimsham and arrives somewhat over-guarded! Listen now: that caravan left here bound for Athkatla and has to cross the old mountain road. If you cut north of the river and head west from here you should catch up with it in the Cloudpeaks somewhere. Before you go, I think the Earl Wultheof would like to talk with you.~
+@2170 = ~So that's the story is it? We'll be on our guard in future for any caravan that originates from Calimshan and arrives somewhat over-guarded! Listen now: that caravan left here bound for Athkatla and has to cross the old mountain road. If you cut north of the river and head west from here you should catch up with it in the Cloudpeaks somewhere. Good luck - though I doubt you'll need it!~
+@2171 = ~So that's the story is it? We'll be on our guard in future for any caravan that originates from Calimshan and arrives somewhat over-guarded! Listen now: that caravan left here bound for Athkatla and has to cross the old mountain road. If you cut north of the river and head west from here you should catch up with it in the Cloudpeaks somewhere. Before you go, I think the Earl Wultheof would like to talk with you.~
 @2172 = ~I think the Wizards of Thay will think twice before trying to set up shop again in Cerendor Hold. It will always be a place of welcome for you, <CHARNAME>.~
 @2173 = ~You'll need to hurry if you want to catch that caravan.~
 @2174 = ~I spoke to the Hold Captain and he says you were responsible for keeping Cerendor together after the takeover.~
@@ -1910,7 +1910,7 @@ So Ledban looks and sure enough, the notice says 'Tree fellers wanted'. Ledban b
 @2252 = ~It is true indeed, for it was I, <CHARNAME>, that did it!~
 @2253 = ~If it is true, that pretty much solves all your problems, doesn't it?~
 @2254 = ~You and everyone else.  I've already met three others that claimed the deed as their own, so you'd best get in line.  As if heroes like that would be such braggarts.  Sheesh.~
-@2255 = ~Not by a long shot.  Don't matter if we're now safe when bandits control the roads north and south.  Besides, everyone still thinks Calimsham is behind it all.  If they are, it means war with Calimsham isn't far off, with Tethyr caught in the middle of it all.  No more troubles?  I wish.~
+@2255 = ~Not by a long shot.  Don't matter if we're now safe when bandits control the roads north and south.  Besides, everyone still thinks Calimshan is behind it all.  If they are, it means war with Calimshan isn't far off, with Tethyr caught in the middle of it all.  No more troubles?  I wish.~
 @2256 = ~It's a good day for a change.  The demon's been vanquished and that means back to fishin' for a lot of folks.~
 @2257 = ~Good news for all concerned.  Any word on those responsible?~
 @2258 = ~Things will be getting back to normal then?~
@@ -1920,10 +1920,10 @@ So Ledban looks and sure enough, the notice says 'Tree fellers wanted'. Ledban b
 @2262 = ~Your thanks are welcome, though perhaps a reward might say it better.~
 @2263 = ~It was my great pleasure to help you, the common man.  I could not stand by while such villainy as this was allowed to pass!~
 @2264 = ~I only did what was necessary.  It could have been anyone.~
-@2265 = ~Well you've got some nerve!  Sure you may have helped the Sword Coast, but it's not like everything is wonderful now.  I'll be back to work tomorrow, but it won't matter.  As long as everyone thinks Calimsham was behind the recent problem here, Porthpentyrch could be on the frontline of a war.  You try and sleep at night when such as this is going on!~
+@2265 = ~Well you've got some nerve!  Sure you may have helped the Sword Coast, but it's not like everything is wonderful now.  I'll be back to work tomorrow, but it won't matter.  As long as everyone thinks Calimshan was behind the recent problem here, Porthpentyrch could be on the frontline of a war.  You try and sleep at night when such as this is going on!~
 @2266 = ~No wonder you went down those mines.  You're a complete loon.  Well, as long as the job is done, I suppose it doesn't matter if your helm is on too tight.  Hey, how about pointing your righteous wrath at the brigands to the south?  You could do something about the Black Lotus trade that's supposed to be coming though here.~
 @2267 = ~Nay, it couldn't have been anyone.  People were scared, most still are.  Don't get me wrong, everyone is grateful.  It's just that things aren't going to change much.  Rumors still talk of Calimshite plots and Thayan agents and we won't be able to get our fish out properly.  At least until the trade routes are finally cleared of bandits, anyway.~
-@2268 = ~It's back to work soon enough for most of us now.  Good news, but I hear who organized the whole plot is still a mystery.  Until they know for sure, the Council of Six aren't going to let up pressure on Tethyr to let their armies through into Calimsham.~
+@2268 = ~It's back to work soon enough for most of us now.  Good news, but I hear who organized the whole plot is still a mystery.  Until they know for sure, the Council of Six aren't going to let up pressure on Tethyr to let their armies through into Calimshan.~
 
 //More population - women
 @2270 = ~Hey, aren't you <CHARNAME>!  You're the one who killed the demon.  You must be real brave to have done what you did.  Wow, real heroes, here in Porthpentyrch.~
@@ -1938,8 +1938,8 @@ So Ledban looks and sure enough, the notice says 'Tree fellers wanted'. Ledban b
 @2279 = ~That would be me, but I don't really want to make a big fuss about it.~
 @2280 = ~Why yes, I am the hero that liberated your livelihood.~
 @2281 = ~I was going to thank you, but it sounds like you're doing a fine job congratulating yourselves.  Still, you did a great service to our village.  Once the trouble on the roads is dealt with, the rest of the region will benefit too.~
-@2282 = ~You are too modest.  With what you've done, this village is on its way back to normal.  Not that everyone can relax just yet.  Hopefully whoever was behind it all is found soon, before Amn and Calimsham fall into war over it.~
-@2283 = ~You're the adventurers that saved the village aren't you?  I should be thankful and all, but I just think there's so much more to be done.  The boats are out fishing but bandits rule the roads south and relations between Amn and Calimsham are still horrible.  Lots to be done yet.~
+@2282 = ~You are too modest.  With what you've done, this village is on its way back to normal.  Not that everyone can relax just yet.  Hopefully whoever was behind it all is found soon, before Amn and Calimshan fall into war over it.~
+@2283 = ~You're the adventurers that saved the village aren't you?  I should be thankful and all, but I just think there's so much more to be done.  The boats are out fishing but bandits rule the roads south and relations between Amn and Calimshan are still horrible.  Lots to be done yet.~
 
 //*************************************************************************
 //Gibri'al Meltarm
@@ -2152,8 +2152,8 @@ So Ledban looks and sure enough, the notice says 'Tree fellers wanted'. Ledban b
 @2606 = ~There is very little that escapes the notice of Renal Bloodscalp in this city. What of her? - the Lady Elizabeth Pavaral I believe is her name?~
 @2607 = ~When she first arrived in Athkatla she took a wrong turn into the Slums and was immediately robbed.~
 @2608 = ~That is not too surprising, is it? The Slums is not a good place to get lost in.~
-@2609 = ~She gave a good description of a group of Shadow Thieves disappearing into the the sewers. Don't worry - she told the Town Guard who have done precisely nothing. As usual.~
-@2610 = ~Ah. The Town Guard is not part of my worries. What is it that Lady Elizabeth is so desparate to get back? Is it that valuable? And why did she ask you?~
+@2609 = ~She gave a good description of a group of Shadow Thieves disappearing into the sewers. Don't worry - she told the Town Guard who have done precisely nothing. As usual.~
+@2610 = ~Ah. The Town Guard is not part of my worries. What is it that Lady Elizabeth is so desperate to get back? Is it that valuable? And why did she ask you?~
 @2611 = ~She recognised me from an incident a long time ago in Baldur's Gate. It is a ring given to her by her father which she says is not valuable. A flamedance set with a garnet.~
 @2612 = ~Yes. Yes, I know the ring and I agree that it is not at all valuable. Very well; if my ears do not deceive me you will find that Lughaidh and his group have just arrived in. You will need to persuade them to part with this ring - you have my permission to do so. If you wish to see Renal Bloodscalp, I believe he is now free.~
 @2613 = ~Did you get your ring back from Lughaidh?~
@@ -2401,7 +2401,7 @@ So Ledban looks and sure enough, the notice says 'Tree fellers wanted'. Ledban b
 
 //*************************************************************************
 //Death Knight of Three
-@3200 = ~So... a persistant little adventurer. Twice we have tried to warn you away; the first time was easy and the second was... not so easy. Still you have stayed.~
+@3200 = ~So... a persistent little adventurer. Twice we have tried to warn you away; the first time was easy and the second was... not so easy. Still you have stayed.~
 @3201 = ~Who are you?~
 @3202 = ~The second time was just as easy as the first, actually. Are *you* going to stop us?~
 @3203 = ~We are... the Three. The One Guardian.~
@@ -2481,7 +2481,7 @@ So Ledban looks and sure enough, the notice says 'Tree fellers wanted'. Ledban b
 @3299 = ~I lived it. I travelled the Vilhon Reach in luxury and comfort and set up home in Hlondeth. Once a dwarf, always a dwarf - at the start I couldn't bear to be too far from the Deepwing Mountains and caves, you see. But gradually, the more I saw of the Vilhon Reach, the more I was bitten by the wanderlust and eventually it took me from the Deepwing Mountains to Ormath and the Deepwash, over the Snowflake Mountains and into Riatavin. I never stayed long in one place; there was always too much to see and I had the money to see it.~
 @3300 = ~At Riatavin I fell in with a caravan that was heading for Saradush, Castle Tethyr, the Trade Way, Athkatla and on to places north. There's only so much gold you can carry with you and by now I was getting a little short of it, so I joined as a caravan guard. A dwarf and his axe are rarely parted; it was the one item I would not part with. It had been one of the first things I had purchased with the dragon's gold and had been forged by the finest dwarven smith on the Reach. I waited a year for him to create that axe.~
 @3301 = ~What happened after you joined the caravan?~
-@3302 = ~We got as far as Castle Tethyr when we met a caravan coming up from Calimsham. There were dwarfs in that caravan - slaves, chained and bound - and I saw red. Luck was still with me that day because all of the Calimshite guards, save three, lay dead befoe they realised what had hit them. We took the caravan and headed west for Zazesspur where we sold the Calimshite goods - the Githyanki merchants will buy anything if they think they're getting a bargain! - and charted a Amnish ship to take us to Murann, where the freed slaves intended to join a dwarf clan there.~
+@3302 = ~We got as far as Castle Tethyr when we met a caravan coming up from Calimshan. There were dwarfs in that caravan - slaves, chained and bound - and I saw red. Luck was still with me that day because all of the Calimshite guards, save three, lay dead befoe they realised what had hit them. We took the caravan and headed west for Zazesspur where we sold the Calimshite goods - the Githyanki merchants will buy anything if they think they're getting a bargain! - and charted a Amnish ship to take us to Murann, where the freed slaves intended to join a dwarf clan there.~
 @3303 = ~By now I was ready to go home, but on the third day out we were hit by a tremendous storm and were driven ashore near Porthpentyrch.~
 @3304 = ~Ah. So that's how you got here. What about the dragon's hoard back in Hlondeth?~
 @3305 = ~It eventually arrived in Porthpentyrch many months later - under very heavy guard - but that is not yet part of this story. There were caves under the mountain that we found very useful indeed and we set about enlarging and building to turn them into a home fit for dwarfkind. There was no human village here then and the halls of Meldorarth both expanded and filled as more dwarfs heard of it, came to see it, then stayed.~
@@ -2507,7 +2507,7 @@ So Ledban looks and sure enough, the notice says 'Tree fellers wanted'. Ledban b
 @3325 = ~Just give me the Orb - I have need of it.~
 @3326 = ~You - ! But - you! But - how?~
 @3327 = ~You must have known of the Traps of the Living in the caves not far from here. Someone of the dwarven folk must have put them in; the only way to cross them is to be not living but not dead - I crossed the Traps with the aid of an ex-necromancer and it is not an experience I wish to repeat.~
-@3328 = ~You - you crossed the Traps? If I had a voice, I would laugh - *I* designed those traps to protect the graves of my kinfolk and the necromancer must have known this. Oh, but he was a clever one; I can almost admire him for the twist in his curse. Then the Orb of Breaca is yours by right - and finally, *finally* - I can rest in peace!!! Here, take the key to my tomb and may whatever god you worship bless you and keep you for ever!!!~
+@3328 = ~You - you crossed the Traps? If I had a voice, I would laugh - *I* designed those traps to protect the graves of my kinfolk and the necromancer must have known this. Oh, but he was a clever one; I can almost admire him for the twist in his curse. Then the Orb of Breaca is yours by right - and finally, *finally* - I can rest in peace!!! Here, take the key to my tomb and may whatever god you worship bless you and keep you forever!!!~
 @3329 = ~Ah! To the point so soon. You are looking for the Orb of Breaca? Why?~
 @3330 = ~I have been sent here to get it.~
 @3331 = ~Have you heard of Angharad Firehair? Or Garalial Geltareth?~
@@ -2547,7 +2547,7 @@ So Ledban looks and sure enough, the notice says 'Tree fellers wanted'. Ledban b
 @3410 = ~He asks that you would lend us the Glass Dagger.~
 @3411 = ~The Glass Dagger! What do you need that for?~
 @3412 = ~To cut the root of the Tiger's Eye.~
-@3413 = ~The Tiger's Eye grows only in the Calim Desert. He must be desparate indeed to have someone go down there.~
+@3413 = ~The Tiger's Eye grows only in the Calim Desert. He must be desperate indeed to have someone go down there.~
 @3414 = ~It is his sister, Eildaren, who is sick.~
 @3415 = ~Eildaren is sick! Why did you not say so before? Of course you may have the dagger.~
 @3416 = ~Thank you. One question though?~
@@ -2588,8 +2588,8 @@ So Ledban looks and sure enough, the notice says 'Tree fellers wanted'. Ledban b
 @3510 = ~Not in my house you won't. You have two choices; give me your name and I might listen, or you can leave. Now.~
 @3511 = ~I am <CHARNAME>, one of the Bhaalspawn.~
 @3512 = ~A Bhaalspawn, eh? And not afraid to admit it. Why not?~
-@3513 = ~I doubt that an ex-Harper wouldn't know of my existance.~
-@3514 = ~Perhaps I wanted to scare you with it. You do know of the existance of the Bhaalspawn?~
+@3513 = ~I doubt that an ex-Harper wouldn't know of my existence.~
+@3514 = ~Perhaps I wanted to scare you with it. You do know of the existence of the Bhaalspawn?~
 @3515 = ~True. Then what do you want?~
 @3516 = ~Your help. I have a problem with a village of undead that I'm told only you have the power to deal with.~
 @3517 = ~Who told you that?~
@@ -2721,7 +2721,7 @@ So Ledban looks and sure enough, the notice says 'Tree fellers wanted'. Ledban b
 @3643 = ~And Porthpentyrch...?~
 @3644 = ~I know... Sometimes it pained me, sometimes I found it funny. It is as Eildaren says, though you may like to seek more proof than just my sister's words.~
 @3645 = ~I will agree that it makes dry chewing and has very little flavour to recommend it.... I am content for now.~
-@3646 = ~We will leave immediately. Now I have Eildaren and Angharad with me, I can be sure that the curse will be lifted. Be there in one week and not before. If you enter the village before the curse is lifted, you stand a very good chance of destroying the counter-magic and that will condemn the village for ever.~
+@3646 = ~We will leave immediately. Now I have Eildaren and Angharad with me, I can be sure that the curse will be lifted. Be there in one week and not before. If you enter the village before the curse is lifted, you stand a very good chance of destroying the counter-magic and that will condemn the village forever.~
 @3647 = ~You fool! I warned you not to come here before the week is out, so what do you do? Welcome to the wreck of Porthpentyrch, Bhaalspawn - I hope you enjoy your legacy. I do not expect to see you again, in this world or the next!~
 @3648 = ~Ah no! What are you doing here <CHARNAME>? Don't you realise that by coming here before the week is up you have destroyed any chance of restoring Porthpentyrch? I warned you this would happen!!~
 @3649 = ~There is nothing more we can do here now - it is all over and finished with. Angharad, Eildaren and I will go back to Athkatla.~
@@ -2839,7 +2839,7 @@ So Ledban looks and sure enough, the notice says 'Tree fellers wanted'. Ledban b
 @3849 = ~What do I sell? Potions for love, potions for beauty! Potions that will keep you healthy and make your life long and fruitful! Potions of fecundity! Do you wish to see them?~
 @3850 = ~Yes please.~
 @3851 = ~No, thank you.~
-@3852 = ~Ah! If only I *had* potions of love and beauty and fecundity I would be the richest man in Calimsham! - and I wouldn't be stood here talking to all who came by, now would I? Especially if I had potions of love that worked? Ah! Do you know just how many times I have been asked for one of those? I would be rich if I had a gold coin - no, no - a copper coin! - for each time of asking. I jest not, young <LADYLORD>! A very rich man indeed!~
+@3852 = ~Ah! If only I *had* potions of love and beauty and fecundity I would be the richest man in Calimshan! - and I wouldn't be stood here talking to all who came by, now would I? Especially if I had potions of love that worked? Ah! Do you know just how many times I have been asked for one of those? I would be rich if I had a gold coin - no, no - a copper coin! - for each time of asking. I jest not, young <LADYLORD>! A very rich man indeed!~
 @3853 = ~As it is, I keep just those potions that help keep the Wanderers of the Desert out of the jaws of Bane. Do you still wish to see them?~
 @3854 = ~Ah! You're back. Do you want to see my potions again?~
 @3855 = ~The Souls of the Dead? Ah - you have been set a task by Aiesha, I would say? No, I know nothing of them, save the number of times I have been asked about them.~
@@ -2852,7 +2852,7 @@ So Ledban looks and sure enough, the notice says 'Tree fellers wanted'. Ledban b
 @3861 = ~What do you sell?~
 @3862 = ~Do you know anything about the Souls of the Dead?~
 @3863 = ~The Souls of the Dead? You have been talking to Aiesha, have you not? No, I know nothing of them. I prefer my souls to be living rather than dead - dead souls are bad for trade.~
-@3864 = ~What do I sell? Why, the finest armour and weapons this side of Calimsham! Do you wish to see them?~
+@3864 = ~What do I sell? Why, the finest armour and weapons this side of Calimshan! Do you wish to see them?~
 @3865 = ~Yes please.~
 @3866 = ~No, thank you.~
 @3867 = ~Ah! You're back again. Do you want to see my goods?~
@@ -2916,12 +2916,12 @@ So Ledban looks and sure enough, the notice says 'Tree fellers wanted'. Ledban b
 @3934 = ~I've never seen you before either. Where are you from?~
 @3935 = ~I've never seen you before either. Now sod off and leave me in peace.~
 @3936 = ~Sorry - I've no time to stop and talk.~
-@3937 = ~Calimsham Port, as it happens. My second trip across the desert. I'm heading back that way soon and am looking for merchandise. You wouldn't have anything to sell, would you?~
+@3937 = ~Calimshan Port, as it happens. My second trip across the desert. I'm heading back that way soon and am looking for merchandise. You wouldn't have anything to sell, would you?~
 @3938 = ~Nothing that would be of any use to you.~
 @3939 = ~Huh! There's no need to be quite so offensive!~
 @3940 = ~Ah well, it had to be worth asking.~
 @3941 = ~Have you seen a horse-dealer around here? No, I didn't think so.~
-@3942 = ~I'm an honest merchant trying to earn a decent living but I tell you those bastards down in Calimsham Port would rob you blind if you'd let them.~
+@3942 = ~I'm an honest merchant trying to earn a decent living but I tell you those bastards down in Calimshan Port would rob you blind if you'd let them.~
 
 //*************************************************************************
 //Imradim general population
@@ -3025,14 +3025,14 @@ So Ledban looks and sure enough, the notice says 'Tree fellers wanted'. Ledban b
 @4079 = ~Regretably, the feeling is mutual. I wish you peace, <CHARNAME>, but I can wish you neither luck nor fortune.~
 @4080 = ~I have news but it is not good - and it is all my own fault. Garalial Geltareth warned me against visiting Porthpentyrch before his specified time was up but I did not heed him. Now the village is cursed with zombies and the tanar'ri is trapped forever within the lighthouse. If I could undo this stupid mistake, I would.~
 @4081 = ~As you say, not good news, especially for those poor unfortunate villagers. What was Olren of Thay thinking of! Ach, there's no use in crying over spilt milk. Let this be a hard-won lesson to you in listening to people, <CHARNAME>! A whole village condemned by deaf stupidity!~
-@4082 = ~Then there is no more need for me to wait here any longer. Come, Lief; it's a long road down to Calimsham. There's a certain greedy mage down there that I want a long word with.~
+@4082 = ~Then there is no more need for me to wait here any longer. Come, Lief; it's a long road down to Calimshan. There's a certain greedy mage down there that I want a long word with.~
 @4083 = ~Your village is saved, old man. I saved it for you. I also got rid of the damnable tanar'ri.~
 @4084 = ~That is not quite the story I heard. Yes, Porthpentyrch is saved and the tanar'ri is returned to his own plane but I believe that you had help with this. I find myself less and less able to believe your word without getting independant confirmation, <CHARNAME>. I also find myself wondering what Gorion saw in you.~
 @4085 = ~That is your choice, old man. I fixed your problem, so what are you whining about? For myself, I would have as little to do with you in future as I possibly can.~
 @4086 = ~Porthpentyrch is saved and the tanar'ri is returned to his own plane. Garalial Geltarath did the trick!~
 @4087 = ~Garalial Geltarath? The ex-Harper?~
 @4088 = ~Well, he and Eildaren Colver and Angharad Firehair between them.~
-@4089 = ~Ahh! I had long suspected that something wasn't quite as it seemed with Garalial and Eildaren. And Ceinwen. He was a staunch Harper and a good, reliable man until - until whatever actually happened to turn him away. It appears then that I must pay a visit to our mutual aquaintance.... but well done, <CHARNAME>! I wish you peace, luck and fortune. Come, Lief; it's a long road down to Calimsham. There's a certain greedy mage down there that I want a long word with first.~
+@4089 = ~Ahh! I had long suspected that something wasn't quite as it seemed with Garalial and Eildaren. And Ceinwen. He was a staunch Harper and a good, reliable man until - until whatever actually happened to turn him away. It appears then that I must pay a visit to our mutual aquaintance.... but well done, <CHARNAME>! I wish you peace, luck and fortune. Come, Lief; it's a long road down to Calimshan. There's a certain greedy mage down there that I want a long word with first.~
 @4090 = ~What! Ah, <CHARNAME>! What brings you here? And looking so dejected, to boot!~
 @4091 = ~Err... you'll need to go to Porthpentyrch yourself, Elminster. I confess that I have made a mess of things.~
 @4092 = ~Go and sort your own problems out in that stinking fish village, old man. I am through with it.~
@@ -3066,7 +3066,7 @@ So Ledban looks and sure enough, the notice says 'Tree fellers wanted'. Ledban b
 @4120 = ~Well, <CHARNAME>, have you any news about Porthpentyrch?~
 @4121 = ~No, not yet. I'm still looking.~
 @4122 = ~All in my own good time, greybeard.~
-@4123 = ~You'd better get to it then. I can't wait around for ever and neither can Porthpentyrch!~
+@4123 = ~You'd better get to it then. I can't wait around forever and neither can Porthpentyrch!~
 @4124 = ~I'll get there as soon as possible.~
 @4125 = ~I'll think about it old man. Now shut up and leave me be.~
 @4126 = ~Ah, <CHARNAME>! This town crier is a little noisy, is he not? Repeats himself, too. Hmm. Have you reconsidered my request?~
@@ -3321,7 +3321,7 @@ So Ledban looks and sure enough, the notice says 'Tree fellers wanted'. Ledban b
 @4436 = ~That's the truth from where I stand. Not even the worst of the Desert Wanderers would consider the trespass that you have commited. If you would retain some semblance of honour you will leave now.~
 @4437 = ~Honour does not get me gold, peasant. Where are you hiding it?~
 @4438 = ~You impune my honour? Then die!~
-@4439 = ~Gold? In this house? You must be desparate - or a fool. Go ahead and search if you must; you will find exactly none.~
+@4439 = ~Gold? In this house? You must be desperate - or a fool. Go ahead and search if you must; you will find exactly none.~
 @4440 = ~I tire of your gabbling. Keep your mouth shut or die.~
 @4441 = ~You impune me? Then die!~
 @4442 = ~I have never been afraid to speak the truth, intruder. It makes me no friends at times but it builds something that you cannot have and that is trust.~
@@ -3526,7 +3526,7 @@ So Ledban looks and sure enough, the notice says 'Tree fellers wanted'. Ledban b
 @4689 = ~Yes, I am; now live with it.~
 @4690 = ~A perfectly good name if you ask me.~
 @4691 = ~Then I would guess from the name that you were at least partly responsible for the death of a dragon?.~
-@4692 = ~Well.... not quite. It wasn't really a dragon, only a wyvern. Me da' was up the front end of the wyvern beating it's head in quite well and I was trying desparately to get a good blow in next to him. All of a sudden me da' sticks this wyvern right between the eyes with 'is sword.~
+@4692 = ~Well.... not quite. It wasn't really a dragon, only a wyvern. Me da' was up the front end of the wyvern beating it's head in quite well and I was trying desperately to get a good blow in next to him. All of a sudden me da' sticks this wyvern right between the eyes with 'is sword.~
 @4693 = ~And?~
 @4694 = ~The wyvern swung its tail round and I ducked, but it chose that moment to let go a real rip-snorter of a fart.~
 @4695 = ~But surely the wyvern was dead? You did say your father had stabbed it between the eyes?~
@@ -3861,7 +3861,7 @@ So Ledban looks and sure enough, the notice says 'Tree fellers wanted'. Ledban b
 @6093 = ~That's ridiculous. Go away and come back when you have a better answer.~
 @6094 = ~Hm. I'm not used to talking to nameless folk. Not at all. No, I'm not going to break the habit of a lifetime - go away and come back when you have a better answer.~
 @6095 = ~Candlekeep! It's been a long time since I've been there. Are you some sort of refugee? On the run from the law, perhaps? Escaping from the monks?~
-@6096 = ~A refugee, eh? You could put it that way. I'm definately not on the run from the law; in fact it would be truthful to say that I'm on the side of the law.~
+@6096 = ~A refugee, eh? You could put it that way. I'm definitely not on the run from the law; in fact it would be truthful to say that I'm on the side of the law.~
 @6097 = ~Escaping from the monks? Oh ma'am - if you could know just how much I'd give to be back there right now. Unfortunately Candlekeep is as closed to me as it is to any other traveller.~
 @6098 = ~Candlekeep! Why didn't you say so?~
 @6099 = ~That is a too-long story ma'am and I'm sure you don't have the time to listen.~

@@ -1,0 +1,102 @@
+//Cloudpeaks
+	COMPILE ~fishingfortrouble/area_scripts/ysblcv.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0370.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0370t1.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0370t2.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0370f1.baf~
+
+//Athkatla
+	COPY_EXISTING ~ar0305.are~ ~override~
+	WRITE_ASCII 0x94 ~ar0305~
+	COMPILE ~fishingfortrouble/area_scripts/ar0305.baf~
+	COPY_EXISTING ~ar0306.are~ ~override~
+	WRITE_ASCII 0x94 ~ar0306~
+	COMPILE ~fishingfortrouble/area_scripts/ar0306.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0390.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0401.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0405.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0383.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0407.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0407t1.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0408.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0409.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0430t1.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0431t1.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0431.baf~
+	EXTEND_BOTTOM ~ar0020.bcs~ ~fishingfortrouble/area_scripts/ysar0020.baf~
+	EXTEND_TOP ~ar0709.bcs~ ~fishingfortrouble/area_scripts/ysar0709.baf~
+	EXTEND_TOP ~ar1000.bcs~ ~fishingfortrouble/area_scripts/ysar1000.baf~
+	EXTEND_TOP ~ar1002.bcs~ ~fishingfortrouble/area_scripts/ysar1002.baf~
+	EXTEND_TOP ~ar0801.bcs~ ~fishingfortrouble/area_scripts/ysar0801.baf~
+	EXTEND_TOP ~ar0808.bcs~ ~fishingfortrouble/area_scripts/ysar0808.baf~
+	EXTEND_TOP ~ar0400.bcs~ ~fishingfortrouble/area_scripts/ysar0400.baf~
+	EXTEND_TOP ~ar0300.bcs~ ~fishingfortrouble/area_scripts/ysar0300.baf~
+
+//Trademeet
+	EXTEND_TOP ~ar2000.bcs~ ~fishingfortrouble/area_scripts/ysar2000.baf~
+
+//Porthpentyrch
+	COMPILE ~fishingfortrouble/area_scripts/ysdr0200.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ysdr0270.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0270t1.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0270t2.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0270t3.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0270.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys1000.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys1001.baf~
+	COMPILE ~fishingfortrouble/area_scripts/yslhdoor.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0030.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0031.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0040.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0041.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0260in.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0260tp.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0161.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0200.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0200d1.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0200d2.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0200d3.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0200d4.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0200d5.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0200d6.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0200d8.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0200d9.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0200et.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0200ft.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0200t1.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0200t2.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0200t3.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0200t4.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys020010.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys020011.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys020012.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0396.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0282.baf~
+
+//Cerendor Hold
+	COMPILE ~fishingfortrouble/area_scripts/ys0330.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0330cv.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0350.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0360.baf~
+
+//North Forest
+	EXTEND_TOP ~ar1800.bcs~ ~fishingfortrouble/area_scripts/ysar1800.baf~
+
+//Forest of Tethyr
+	EXTEND_TOP ~ar2600.bcs~ ~fishingfortrouble/area_scripts/ysar2600.baf~
+
+//Spellhold
+	EXTEND_TOP ~ar1515.bcs~ ~fishingfortrouble/area_scripts/ysar1515.baf~
+
+//Imradim
+	COMPILE ~fishingfortrouble/area_scripts/ys0410.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0410t1.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0410t2.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0410t3.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0410t4.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0410t5.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0424t2.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0424t1.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0414.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0441.baf~
+	COMPILE ~fishingfortrouble/area_scripts/ys0440.baf~

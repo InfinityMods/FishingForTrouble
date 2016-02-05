@@ -1,0 +1,92 @@
+//Cloudpeaks
+	COPY ~fishingfortrouble/items/yslotus.itm~ ~override/yslotus.itm~
+	SAY NAME2 @130
+	SAY IDENTIFIED_DESC @131
+
+//Athkatla
+	COPY ~fishingfortrouble/items/ysletel.itm~ ~override/ysletel.itm~
+	SAY NAME1 @102
+	SAY NAME2 @103
+	SAY UNIDENTIFIED_DESC @104
+	SAY IDENTIFIED_DESC @105
+	COPY ~fishingfortrouble/items/yspotn01.itm~ ~override/yspotn01.itm~
+	SAY NAME2 @116
+	SAY IDENTIFIED_DESC @115
+	COPY ~fishingfortrouble/items/yspotn02.itm~ ~override/yspotn02.itm~
+	SAY NAME2 @120
+	SAY IDENTIFIED_DESC @121
+	COPY ~fishingfortrouble/items/ysdhkey.itm~ ~override/ysdhkey.itm~
+	SAY NAME1 @106
+	SAY NAME2 @107
+	SAY UNIDENTIFIED_DESC @108
+	SAY IDENTIFIED_DESC @100
+	COPY ~fishingfortrouble/items/ysepring.itm~ ~override/ysepring.itm~
+	SAY NAME2 @128
+	SAY IDENTIFIED_DESC @129
+	COPY ~fishingfortrouble/items/ysgldag.itm~ ~override/ysgldag.itm~
+	SAY NAME2 @137
+	SAY IDENTIFIED_DESC @138
+	COPY ~fishingfortrouble/items/ysprpt.itm~ ~override/ysprpt.itm~
+	SAY NAME2 @144
+	SAY IDENTIFIED_DESC @145
+	COPY ~fishingfortrouble/items/ysvmpbld.itm~ ~override/ysvmpbld.itm~
+	SAY NAME2 @122
+	SAY IDENTIFIED_DESC @123
+
+//Porthpentyrch
+	COPY ~fishingfortrouble/items/yslabrd.itm~ ~override/yslabrd.itm~
+	SAY NAME2 @171
+	SAY IDENTIFIED_DESC @171
+	COPY ~fishingfortrouble/items/yscnote.itm~ ~override/yscnote.itm~
+	SAY NAME2 @169
+	SAY IDENTIFIED_DESC @170
+	COPY ~fishingfortrouble/items/yspkhmr.itm~ ~override/yspkhmr.itm~
+	SAY NAME1 @110
+	SAY NAME2 @111
+	SAY UNIDENTIFIED_DESC @112
+	SAY IDENTIFIED_DESC @113
+	COPY ~fishingfortrouble/items/yslhskey.itm~ ~override/yslhskey.itm~
+	SAY NAME1 @107
+	SAY NAME2 @107
+	SAY UNIDENTIFIED_DESC @114
+	SAY IDENTIFIED_DESC @114
+	COPY ~fishingfortrouble/items/ystankey.itm~ ~override/ystankey.itm~
+	SAY NAME1 @107
+	SAY NAME2 @107
+	SAY UNIDENTIFIED_DESC @119
+	SAY IDENTIFIED_DESC @119
+	COPY ~fishingfortrouble/items/ysdltkey.itm~ ~override/ysdltkey.itm~
+	SAY NAME1 @107
+	SAY NAME2 @107
+	SAY UNIDENTIFIED_DESC @132
+	SAY IDENTIFIED_DESC @132
+	COPY ~fishingfortrouble/items/ysorb.itm~ ~override/ysorb.itm~
+	SAY NAME2 @133
+	SAY IDENTIFIED_DESC @134
+	COPY ~fishingfortrouble/items/ysghoul1.itm~ ~override/ysghoul1.itm~
+	SAY 0x1fe @148
+	SAY NAME1 @146
+	SAY NAME2 @146
+	SAY UNIDENTIFIED_DESC @147
+
+//Cerendor Hold
+	COPY ~fishingfortrouble/items/yschdnky.itm~ ~override/yschdnky.itm~
+	SAY NAME2 @107
+	SAY IDENTIFIED_DESC @126
+	COPY ~fishingfortrouble/items/yscelkey.itm~ ~override/yscelkey.itm~
+	SAY NAME2 @107
+	SAY IDENTIFIED_DESC @127
+
+//Imradim
+	COPY ~fishingfortrouble/items/ysteye.itm~ ~override/ysteye.itm~
+	SAY NAME2 @135
+	SAY IDENTIFIED_DESC @136
+	COPY ~fishingfortrouble/items/yscpem.itm~ ~override/yscpem.itm~
+	SAY NAME2 @139
+	SAY IDENTIFIED_DESC @140
+	COPY ~fishingfortrouble/items/yscpfl.itm~ ~override/yscpfl.itm~
+	SAY NAME2 @139
+	SAY IDENTIFIED_DESC @141
+	COPY ~fishingfortrouble/items/yssfrb.itm~ ~override/yssfrb.itm~
+	SAY NAME2 @142
+	SAY IDENTIFIED_DESC @143

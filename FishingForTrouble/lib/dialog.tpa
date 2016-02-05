@@ -1,0 +1,123 @@
+//Cloudpeaks
+	COMPILE ~fishingfortrouble/dialog/ysblgrd.d~
+	COMPILE ~fishingfortrouble/dialog/ysblrwz.d~
+	COMPILE ~fishingfortrouble/dialog/ysblmr.d~
+
+//Trademeet
+	COMPILE ~fishingfortrouble/dialog/yselm01.d~
+
+//Athkatla
+	COMPILE ~fishingfortrouble/dialog/ysltor.d~
+	COMPILE ~fishingfortrouble/dialog/ysbran.d~
+	COMPILE ~fishingfortrouble/dialog/ysceinwn.d~
+	COMPILE ~fishingfortrouble/dialog/ysgaelie.d~
+	COMPILE ~fishingfortrouble/dialog/yscwlwiz.d~
+	COMPILE ~fishingfortrouble/dialog/ystelthe.d~
+	COMPILE ~fishingfortrouble/dialog/ysaella.d~
+	COMPILE ~fishingfortrouble/dialog/yselpara.d~
+	COMPILE ~fishingfortrouble/dialog/yssanob1.d~
+	COMPILE ~fishingfortrouble/dialog/yssanob2.d~
+	COMPILE ~fishingfortrouble/dialog/ysapopf.d~
+	COMPILE ~fishingfortrouble/dialog/ysapopm.d~
+	COMPILE ~fishingfortrouble/dialog/ysmcook.d~
+	COMPILE ~fishingfortrouble/dialog/ysoengus.d~
+	COMPILE ~fishingfortrouble/dialog/yslugh.d~
+	COMPILE ~fishingfortrouble/dialog/yshansol.d~
+	COMPILE ~fishingfortrouble/dialog/ysstbboy.d~
+	COMPILE ~fishingfortrouble/dialog/yskeldrl.d~
+	COMPILE ~fishingfortrouble/dialog/ysgibmel.d~
+	COMPILE ~fishingfortrouble/dialog/yselcol2.d~
+	COMPILE ~fishingfortrouble/dialog/ysgargel.d~
+	COMPILE ~fishingfortrouble/dialog/ysanghrd.d~
+	COMPILE ~fishingfortrouble/dialog/ysdrosig.d~
+	COMPILE ~fishingfortrouble/dialog/ystiggrd.d~
+	COMPILE ~fishingfortrouble/dialog/ystignch.d~
+	COMPILE ~fishingfortrouble/dialog/yscolla.d~
+	COMPILE ~fishingfortrouble/dialog/ysserv.d~
+	COMPILE ~fishingfortrouble/dialog/ysbengch.d~
+	COMPILE ~fishingfortrouble/dialog/ysprpt.d~
+	COMPILE ~fishingfortrouble/dialog/ystigres.d~
+
+//Porthpentyrch
+	COMPILE ~fishingfortrouble/dialog/ysboydlg.d~
+	COMPILE ~fishingfortrouble/dialog/ysgrldlg.d~
+	COMPILE ~fishingfortrouble/dialog/ysmandlg.d~
+	COMPILE ~fishingfortrouble/dialog/yswmndlg.d~
+	COMPILE ~fishingfortrouble/dialog/yswmnres.d~
+	COMPILE ~fishingfortrouble/dialog/ysmenres.d~
+	COMPILE ~fishingfortrouble/dialog/bwfishw.d~
+	COMPILE ~fishingfortrouble/dialog/bfisher2.d~
+	COMPILE ~fishingfortrouble/dialog/ysmtown.d~
+	COMPILE ~fishingfortrouble/dialog/ysftown.d~
+	COMPILE ~fishingfortrouble/dialog/ystanarr.d~
+	COMPILE ~fishingfortrouble/dialog/yslkeep.d~
+	COMPILE ~fishingfortrouble/dialog/ysgensto.d~
+	COMPILE ~fishingfortrouble/dialog/ysarmsto.d~
+	COMPILE ~fishingfortrouble/dialog/ysaine.d~
+	COMPILE ~fishingfortrouble/dialog/ysderv.d~
+	COMPILE ~fishingfortrouble/dialog/ysmorv.d~
+	COMPILE ~fishingfortrouble/dialog/ysmorvr.d~
+	COMPILE ~fishingfortrouble/dialog/ysgaol.d~
+	COMPILE ~fishingfortrouble/dialog/yswtchmn.d~
+	COMPILE ~fishingfortrouble/dialog/ysdwfknt.d~
+	COMPILE ~fishingfortrouble/dialog/ysdwflrd.d~
+	COMPILE ~fishingfortrouble/dialog/yslabrd.d~
+
+//Cerendor Hold
+	COMPILE ~fishingfortrouble/dialog/ysblksto.d~
+	COMPILE ~fishingfortrouble/dialog/yshhappr.d~
+	COMPILE ~fishingfortrouble/dialog/yscvmstr.d~
+	COMPILE ~fishingfortrouble/dialog/yschearl.d~
+	COMPILE ~fishingfortrouble/dialog/yscgroad.d~
+	COMPILE ~fishingfortrouble/dialog/yscgtowr.d~
+	COMPILE ~fishingfortrouble/dialog/yschdg.d~
+	COMPILE ~fishingfortrouble/dialog/yscrnbl.d~
+	COMPILE ~fishingfortrouble/dialog/ysserj.d~
+	COMPILE ~fishingfortrouble/dialog/yschcapt.d~
+	COMPILE ~fishingfortrouble/dialog/ysailoth.d~
+	COMPILE ~fishingfortrouble/dialog/yschclr.d~
+	COMPILE ~fishingfortrouble/dialog/yschcom.d~
+	COMPILE ~fishingfortrouble/dialog/yschnob.d~
+	COMPILE ~fishingfortrouble/dialog/yschbnd.d~
+	COMPILE ~fishingfortrouble/dialog/yscado.d~
+	COMPILE ~fishingfortrouble/dialog/yshldgrd.d~
+	COMPILE ~fishingfortrouble/dialog/ysredgrd.d~
+	COMPILE ~fishingfortrouble/dialog/yscook1.d~
+	COMPILE ~fishingfortrouble/dialog/yscook2.d~
+	COMPILE ~fishingfortrouble/dialog/yscntwul.d~
+
+//North Forest and the Forest of Tethyr
+	COMPILE ~fishingfortrouble/dialog/yskalun.d~
+	COMPILE ~fishingfortrouble/dialog/yswdman.d~
+
+//Imradim
+	COMPILE ~fishingfortrouble/dialog/yspashan.d~
+	COMPILE ~fishingfortrouble/dialog/ysaiesha.d~
+	COMPILE ~fishingfortrouble/dialog/ysadara.d~
+	COMPILE ~fishingfortrouble/dialog/yskhoury.d~
+	COMPILE ~fishingfortrouble/dialog/ysnuri.d~
+	COMPILE ~fishingfortrouble/dialog/ysgadil.d~
+	COMPILE ~fishingfortrouble/dialog/ystahir.d~
+	COMPILE ~fishingfortrouble/dialog/yscdmer.d~
+	COMPILE ~fishingfortrouble/dialog/yscdpop.d~
+	COMPILE ~fishingfortrouble/dialog/yscddw.d~
+	COMPILE ~fishingfortrouble/dialog/yscdcg.d~
+	COMPILE ~fishingfortrouble/dialog/yskarim.d~
+	COMPILE ~fishingfortrouble/dialog/ysjehan.d~
+	COMPILE ~fishingfortrouble/dialog/ysmuktar.d~
+	COMPILE ~fishingfortrouble/dialog/ysharem.d~
+	COMPILE ~fishingfortrouble/dialog/yseunch.d~
+	COMPILE ~fishingfortrouble/dialog/ysyasar.d~
+	COMPILE ~fishingfortrouble/dialog/ysqadir.d~
+	COMPILE ~fishingfortrouble/dialog/yscadfan.d~
+	COMPILE ~fishingfortrouble/dialog/ysfirdos.d~
+	COMPILE ~fishingfortrouble/dialog/ysain.d~
+	COMPILE ~fishingfortrouble/dialog/ysgivon.d~
+	COMPILE ~fishingfortrouble/dialog/yswermr.d~
+	COMPILE ~fishingfortrouble/dialog/ysbasima.d~
+	COMPILE ~fishingfortrouble/dialog/ysjalil.d~
+	COMPILE ~fishingfortrouble/dialog/ysakil.d~
+	COMPILE ~fishingfortrouble/dialog/yslevon.d~
+	COMPILE ~fishingfortrouble/dialog/ysakilfr.d~
+	COMPILE ~fishingfortrouble/dialog/ysrimon.d~
+	COMPILE ~fishingfortrouble/dialog/ysakilah.d~

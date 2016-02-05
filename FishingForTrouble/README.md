@@ -14,7 +14,11 @@ For more details about the mod itself, see the readme.html.
 
 Future updates will make this mod compatible with Baldur's Gate II: Enhanced Edition and Baldur's Gate: Enhanced Edition Trilogy (EET).
 
-## Changes from v3.0 ##
+## Changes since v3.0 ##
 
 1. Incorporated patches from the BiG World Fixpack
-2. Renamed the setup program from setup-dq to setup-fishingfortrouble
+2. Renamed mod folder and tp2 from dq to fishingfortrouble
+3. Incorporated EET compatibility patches from K4thos
+4. Simplified tp2 by moving sub-sections into tpa files
+5. Replaced platform-specific conversions with HANDLE_AUDIO and HANDLE_TILESETS
+6. Fixed some typos in the English translation

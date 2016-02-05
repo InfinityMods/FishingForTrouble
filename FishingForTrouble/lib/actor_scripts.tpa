@@ -1,0 +1,78 @@
+//General
+	COMPILE ~fishingfortrouble/cre_scripts/ysreact.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/yschild.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/ysmorale.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/ysstatic.baf~
+
+//Cloudpeaks
+	COMPILE ~fishingfortrouble/cre_scripts/ysblgrd.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/ysblrwz.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/ysblmr.baf~
+
+//Trademeet
+	COMPILE ~fishingfortrouble/cre_scripts/yselmov.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/yselm01.baf~
+
+//Athkatla
+	COMPILE ~fishingfortrouble/cre_scripts/ysltor.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/ysbran.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/ysbehold.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/ysceinwn.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/ysgaelie.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/ystelthe.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/yscvam.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/ysaella.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/ysoengus.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/yslugh.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/yssthief.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/ysgargel.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/ysanghrd.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/ysbengch.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/ysatgrd.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/ysatbow.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/yselcol1.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/yselcol2.baf~
+
+//Portpentyrch
+	COMPILE ~fishingfortrouble/cre_scripts/yspoprnd.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/ystanarr.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/ysdwfknt.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/ysdwflrd.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/ysdwfgrd.baf~
+
+//Cerendor Hold
+	COMPILE ~fishingfortrouble/cre_scripts/ysgalid.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/yscgroad.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/ysgengrd.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/yscgtowr.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/yschdg.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/yscrnbl.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/yscrncon.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/ysserj.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/yshldgrd.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/ysredgrd.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/ysredwiz.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/ysailoth.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/yschnob.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/yschnob1.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/yschbnd.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/yschearl.baf~
+
+//North Forest and Forest of Tethyr
+	COMPILE ~fishingfortrouble/cre_scripts/yskalun.baf~
+	EXTEND_BOTTOM ~hunter.bcs~ ~fishingfortrouble/cre_scripts/hunter.baf~
+
+//Imradim
+	COMPILE ~fishingfortrouble/cre_scripts/yscdpop.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/yscddw.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/yscdcg.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/yscdcg1.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/yscdcg2.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/ysfirdos.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/ysain.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/ysgivon.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/ysbasima.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/ysakil.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/ysakilfr.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/yslevon.baf~
+	COMPILE ~fishingfortrouble/cre_scripts/yslevong.baf~

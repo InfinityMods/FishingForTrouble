@@ -1,0 +1,37 @@
+//Athkatla
+	COPY ~fishingfortrouble/stores/ysslvale.sto~ ~override/ysslvale.sto~
+	SAY 0xc @403
+	COPY ~fishingfortrouble/stores/yskeldrl.sto~ ~override/yskeldrl.sto~
+	SAY 0xc @405
+	COPY ~fishingfortrouble/stores/ysgibmel.sto~ ~override/ysgibmel.sto~
+	SAY 0xc @406
+	COPY ~fishingfortrouble/stores/yscolla1.sto~ ~override/yscolla1.sto~
+	SAY 0xc @272
+	COPY ~fishingfortrouble/stores/yscolla2.sto~ ~override/yscolla2.sto~
+	SAY 0xc @272
+
+//Porthpentyrch
+	COPY ~fishingfortrouble/stores/ysstor1c.sto~ ~override/ysstor1c.sto~
+	COPY ~fishingfortrouble/stores/ysstor1e.sto~ ~override/ysstor1e.sto~
+	COPY ~fishingfortrouble/stores/ysstor2c.sto~ ~override/ysstor2c.sto~
+	COPY ~fishingfortrouble/stores/ysstor2e.sto~ ~override/ysstor2e.sto~
+	COPY ~fishingfortrouble/stores/ysmorv.sto~ ~override/ysmorv.sto~
+	SAY 0xc @402
+
+//Cerendor Hold
+	COPY ~fishingfortrouble/stores/yschclr.sto~ ~override/yschclr.sto~
+	SAY 0xc @233
+	COPY ~fishingfortrouble/stores/ysbk1sto.sto~ ~override/ysbk1sto.sto~
+	SAY 0xc @222
+	COPY ~fishingfortrouble/stores/ysblksto.sto~ ~override/ysblksto.sto~
+	SAY 0xc @222
+
+//Imradim
+	COPY ~fishingfortrouble/stores/ysnuri.sto~ ~override/ysnuri.sto~
+	SAY 0xc @266
+	COPY ~fishingfortrouble/stores/yskhoury.sto~ ~override/yskhoury.sto~
+	SAY 0xc @265
+	COPY ~fishingfortrouble/stores/ystahir.sto~ ~override/ystahir.sto~
+	SAY 0xc @407
+	COPY ~fishingfortrouble/stores/ysbasima.sto~ ~override/ysbasima.sto~
+	SAY 0xc @422
