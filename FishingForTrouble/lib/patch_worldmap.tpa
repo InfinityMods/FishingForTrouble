@@ -200,8 +200,8 @@
 	OUTER_SPRINT strDesc "Cerendor Hold"	// area description which will show up when hovering the area on the worldmap
 
 	OUTER_SET mapIcon = 13							// map icon
-	OUTER_SET xCoord	= 912 + wmp_xCoord_SoA		// x coordinate
-	OUTER_SET yCoord	= 65 + wmp_yCoord_SoA		// y coordinate
+	OUTER_SET xCoord	= 900 + wmp_xCoord_SoA		// x coordinate
+	OUTER_SET yCoord	= 56 + wmp_yCoord_SoA		// y coordinate
 	OUTER_SET tTime	 = 6							// travel time, *4, so two means eight hours
 	OUTER_SET inclSv	= 1							// include save games bool, 1 means yes and 0 means no
 
@@ -258,9 +258,13 @@
 	OUTER_SPRINT strName "Cloudpeak Mountains"	// area name, like "Waukeen's Promenade"
 	OUTER_SPRINT strDesc "Cloudpeak Mountains"	// area description which will show up when hovering the area on the worldmap
 
-	OUTER_SET mapIcon = 17							// map icon
+	ACTION_IF GAME_IS ~eet~ BEGIN
+		OUTER_SET mapIcon = 98				// map icon
+	END ELSE BEGIN
+		OUTER_SET mapIcon = 17				// map icon
+	END
 	OUTER_SET xCoord	= 799 + wmp_xCoord_SoA		// x coordinate
-	OUTER_SET yCoord	= 53 + wmp_yCoord_SoA		// y coordinate
+	OUTER_SET yCoord	= 72 + wmp_yCoord_SoA		// y coordinate
 	OUTER_SET tTime	 = 6							// travel time, *4, so two means eight hours
 	OUTER_SET inclSv	= 1							// include save games bool, 1 means yes and 0 means no
 
