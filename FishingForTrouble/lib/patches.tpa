@@ -2,69 +2,71 @@
 //Patch the user's ids files as necessary
 //***************************************************
 APPEND ~STATE.IDS~ ~0x80101FEF CD_STATE_NOTVALID~
-	UNLESS ~CD_STATE_NOTVALID~
+	UNLESS ~CD_STATE_NOTVALID~ // already in EE
 APPEND ~state.ids~ ~0x00102029 STATE_HARMLESS~
-	UNLESS ~0x00102029 STATE_HARMLESS~
+	UNLESS ~0x00102029 STATE_HARMLESS~ // already in EE
 APPEND ~state.ids~ ~0x00400010 STATE_NOT_VISIBLE~
-	UNLESS ~0x00400010 STATE_NOT_VISIBLE~
+	UNLESS ~0x00400010 STATE_NOT_VISIBLE~ // not in EE, alias of STATE_NOT_TARGETABLE
 
 APPEND ~shoutids.ids~ ~1001 POISONED~
-	UNLESS ~1001 POISONED~
+	UNLESS ~1001 POISONED~ // not in EE
 APPEND ~shoutids.ids~ ~2024 SEE_ENEMY~
-	UNLESS ~2024 SEE_ENEMY~
+	UNLESS ~2024 SEE_ENEMY~ // not in EE
 APPEND ~shoutids.ids~ ~2001 HELP~
-	UNLESS ~2001 HELP~
+	UNLESS ~2001 HELP~ // not in EE
 
 APPEND ~specific.ids~ ~202 HAS_SHIELDS~
-	UNLESS ~202 HAS_SHIELDS~
+	UNLESS ~202 HAS_SHIELDS~ // not in EE
 APPEND ~specific.ids~ ~202 HAS_SHIELD~
-	UNLESS ~202 HAS_SHIELD~
+	UNLESS ~202 HAS_SHIELD~ // not in EE
 APPEND ~specific.ids~ ~201 NEEDS_BREACH~
-	UNLESS ~201 NEEDS_BREACH~
+	UNLESS ~201 NEEDS_BREACH~ // not in EE
 
-APPEND ~ACTION.IDS~ ~31 SpellRES(S:RES*,O:Target*)~
-	UNLESS ~31 SpellRES(S:RES\*,O:Target\*)~
-APPEND ~ACTION.IDS~ ~95 SpellPointRES(S:RES*,P:Target*)~
-	UNLESS ~95 SpellPointRES(S:RES\*,P:Target\*)~
-APPEND ~ACTION.IDS~ ~113 ForceSpellRES(S:RES*,O:Target)~
-	UNLESS ~113 ForceSpellRES(S:RES\*,O:Target)~
-APPEND ~ACTION.IDS~ ~114 ForceSpellPointRES(S:RES*,P:Target)~
-	UNLESS ~114 ForceSpellPointRES(S:RES\*,P:Target)~
-APPEND ~ACTION.IDS~ ~147 RemoveSpellRES(S:Spell*)~
-	UNLESS ~147 RemoveSpellRES(S:Spell\*)~
-APPEND ~ACTION.IDS~ ~160 ApplySpellRES(S:RES*,O:Target)~
-	UNLESS ~160 ApplySpellRES(S:RES\*,O:Target)~
-APPEND ~ACTION.IDS~ ~181 ReallyForceSpellRES(S:RES*,O:Target)~
-	UNLESS ~181 ReallyForceSpellRES(S:RES\*,O:Target)~
-APPEND ~ACTION.IDS~ ~191 SpellNoDecRES(S:RES*,O:Target*)~
-	UNLESS ~191 SpellNoDecRES(S:RES\*,O:Target\*)~
-APPEND ~ACTION.IDS~ ~192 SpellPointNoDecRES(S:RES*,P:Target*)~
-	UNLESS ~192 SpellPointNoDecRES(S:RES\*,P:Target\*)~
-APPEND ~ACTION.IDS~ ~240 ReallyForceSpellDeadRES(S:RES*,O:Target)~
-	UNLESS ~240 ReallyForceSpellDeadRES(S:RES\*,O:Target)~
-APPEND ~ACTION.IDS~ ~318 ForceSpellRangeRES(S:RES*,O:Target)~
-	UNLESS ~318 ForceSpellRangeRES(S:RES\*,O:Target)~
-APPEND ~ACTION.IDS~ ~319 ForceSpellPointRangeRES(S:RES*,P:Target)~
-	UNLESS ~319 ForceSpellPointRangeRES(S:RES\*,P:Target)~
-APPEND ~ACTION.IDS~ ~336 MakeGlobal()~
-	UNLESS ~336 MakeGlobal()~
-APPEND ~ACTION.IDS~ ~337 ReallyForceSpellPointRES(S:RES*,P:Target*)~
-	UNLESS ~337 ReallyForceSpellPointRES(S:RES\*,P:Target\*)~
-APPEND ~ACTION.IDS~ ~7 CreateCreature(S:NewObject*,P:Location*,I:Face*)~
-	UNLESS ~7 CreateCreature(S:NewObject*,P:Location*,I:Face*)~
+ACTION_IF (NOT GAME_IS ~bgee bg2ee eet~) BEGIN // only if not EE
+	APPEND ~ACTION.IDS~ ~31 SpellRES(S:RES*,O:Target*)~
+		UNLESS ~31 SpellRES(S:RES\*,O:Target\*)~
+	APPEND ~ACTION.IDS~ ~95 SpellPointRES(S:RES*,P:Target*)~
+		UNLESS ~95 SpellPointRES(S:RES\*,P:Target\*)~
+	APPEND ~ACTION.IDS~ ~113 ForceSpellRES(S:RES*,O:Target)~
+		UNLESS ~113 ForceSpellRES(S:RES\*,O:Target)~
+	APPEND ~ACTION.IDS~ ~114 ForceSpellPointRES(S:RES*,P:Target)~
+		UNLESS ~114 ForceSpellPointRES(S:RES\*,P:Target)~
+	APPEND ~ACTION.IDS~ ~147 RemoveSpellRES(S:Spell*)~
+		UNLESS ~147 RemoveSpellRES(S:Spell\*)~
+	APPEND ~ACTION.IDS~ ~160 ApplySpellRES(S:RES*,O:Target)~
+		UNLESS ~160 ApplySpellRES(S:RES\*,O:Target)~
+	APPEND ~ACTION.IDS~ ~181 ReallyForceSpellRES(S:RES*,O:Target)~
+		UNLESS ~181 ReallyForceSpellRES(S:RES\*,O:Target)~
+	APPEND ~ACTION.IDS~ ~191 SpellNoDecRES(S:RES*,O:Target*)~
+		UNLESS ~191 SpellNoDecRES(S:RES\*,O:Target\*)~
+	APPEND ~ACTION.IDS~ ~192 SpellPointNoDecRES(S:RES*,P:Target*)~
+		UNLESS ~192 SpellPointNoDecRES(S:RES\*,P:Target\*)~
+	APPEND ~ACTION.IDS~ ~240 ReallyForceSpellDeadRES(S:RES*,O:Target)~
+		UNLESS ~240 ReallyForceSpellDeadRES(S:RES\*,O:Target)~
+	APPEND ~ACTION.IDS~ ~318 ForceSpellRangeRES(S:RES*,O:Target)~
+		UNLESS ~318 ForceSpellRangeRES(S:RES\*,O:Target)~
+	APPEND ~ACTION.IDS~ ~319 ForceSpellPointRangeRES(S:RES*,P:Target)~
+		UNLESS ~319 ForceSpellPointRangeRES(S:RES\*,P:Target)~
+	APPEND ~ACTION.IDS~ ~336 MakeGlobal()~
+		UNLESS ~336 MakeGlobal()~
+	APPEND ~ACTION.IDS~ ~337 ReallyForceSpellPointRES(S:RES*,P:Target*)~
+		UNLESS ~337 ReallyForceSpellPointRES(S:RES\*,P:Target\*)~
+	APPEND ~ACTION.IDS~ ~7 CreateCreature(S:NewObject*,P:Location*,I:Face*)~
+		UNLESS ~7 CreateCreature(S:NewObject*,P:Location*,I:Face*)~ // breaks EE
 
-APPEND ~TRIGGER.IDS~ ~0x00A1 SpellCastOnMeRES(S:Spell*,O:Caster*)~
-	UNLESS ~0x00A1 SpellCastOnMeRES(S:Spell\*,O:Caster\*)~
-APPEND ~TRIGGER.IDS~ ~0x0091 SpellCastRES(S:Spell*,O:Object*)~
-	UNLESS ~0x0091 SpellCastRES(S:Spell\*,O:Object\*)~
-APPEND ~TRIGGER.IDS~ ~0x00A6 SpellCastPriestRES(S:Spell*,O:Object*)~
-	UNLESS ~0x00A6 SpellCastPriestRES(S:Spell\*,O:Object\*)~
-APPEND ~TRIGGER.IDS~ ~0x00A7 SpellCastInnateRES(S:Spell*,O:Object*)~
-	UNLESS ~0x00A7 SpellCastInnateRES(S:Spell\*,O:Object\*)~
-APPEND ~TRIGGER.IDS~ ~0x4031 HaveSpellRES(S:Spell*)~
-	UNLESS ~0x4031 HaveSpellRES(S:Spell\*)~
-APPEND ~TRIGGER.IDS~ ~0x40D5 ActuallyInCombat()~
-	UNLESS ~0x40D5 ActuallyInCombat()~
+	APPEND ~TRIGGER.IDS~ ~0x00A1 SpellCastOnMeRES(S:Spell*,O:Caster*)~
+		UNLESS ~0x00A1 SpellCastOnMeRES(S:Spell\*,O:Caster\*)~
+	APPEND ~TRIGGER.IDS~ ~0x0091 SpellCastRES(S:Spell*,O:Object*)~
+		UNLESS ~0x0091 SpellCastRES(S:Spell\*,O:Object\*)~
+	APPEND ~TRIGGER.IDS~ ~0x00A6 SpellCastPriestRES(S:Spell*,O:Object*)~
+		UNLESS ~0x00A6 SpellCastPriestRES(S:Spell\*,O:Object\*)~
+	APPEND ~TRIGGER.IDS~ ~0x00A7 SpellCastInnateRES(S:Spell*,O:Object*)~
+		UNLESS ~0x00A7 SpellCastInnateRES(S:Spell\*,O:Object\*)~
+	APPEND ~TRIGGER.IDS~ ~0x4031 HaveSpellRES(S:Spell*)~
+		UNLESS ~0x4031 HaveSpellRES(S:Spell\*)~
+	APPEND ~TRIGGER.IDS~ ~0x40D5 ActuallyInCombat()~
+		UNLESS ~0x40D5 ActuallyInCombat()~
+END
 
 // I can do this because they are my ids files
 COPY ~fishingfortrouble/ids/face.ids~ ~override/face.ids~

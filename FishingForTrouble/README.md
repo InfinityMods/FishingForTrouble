@@ -1,6 +1,6 @@
 ## What is this repository? ##
 
-This is Yovaneth's Fishing for Trouble mod for Baldur's Gate II: Shadows of Amn.
+This is Yovaneth's Fishing for Trouble mod for Baldur's Gate II: Shadows of Amn, adapted for Enhanced Edition while remaining compatible with original BG2 and BGT.
 
 Yovaneth is no longer supporting this mod and has given permission to update it.
 
@@ -13,8 +13,9 @@ For more details about the mod itself, see the readme.html.
 ## Plans ##
 
 Future updates will make this mod compatible with Baldur's Gate II: Enhanced Edition and Baldur's Gate: Enhanced Edition Trilogy (EET).
+Gerri is working on a German translation.
 
-## Changes since v3.0 ##
+## Changes since v3.0 HF 1 (last release by Yovaneth) ##
 
 1. Incorporated patches from the BiG World Fixpack
 2. Renamed mod folder and tp2 from dq to fishingfortrouble
@@ -22,3 +23,4 @@ Future updates will make this mod compatible with Baldur's Gate II: Enhanced Edi
 4. Simplified tp2 by moving sub-sections into tpa files
 5. Replaced platform-specific conversions with HANDLE_AUDIO and HANDLE_TILESETS
 6. Fixed some typos in the English translation
+7. Added check for EE game type to lib/patches.tpa to avoid patching ACTION.IDS (some signatures changed in EE)
