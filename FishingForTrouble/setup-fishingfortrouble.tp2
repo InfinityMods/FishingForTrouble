@@ -6,8 +6,8 @@ VERSION ~v3.1.1 pre-release~
 README ~fishingfortrouble/readme.html~
 
 ALWAYS
-	ACTION_IF (GAME_IS ~eet~) AND (FILE_CONTAINS ~override/EET.flag~ ~EET_JOURNAL~) BEGIN
-		OUTER_SET bg2_chapter = 14
+	ACTION_IF GAME_IS ~eet~ BEGIN
+		OUTER_SET bg2_chapter = 12
 	END ELSE BEGIN
 		OUTER_SET bg2_chapter = 0
 	END
