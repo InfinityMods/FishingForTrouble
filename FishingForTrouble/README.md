@@ -24,3 +24,5 @@ Gerri is working on a German translation.
 5. Replaced platform-specific conversions with HANDLE_AUDIO and HANDLE_TILESETS
 6. Fixed some typos in the English translation
 7. Added check for EE game type to lib/patches.tpa to avoid patching ACTION.IDS (some signatures changed in EE)
+8. Incorporated patch from K4thos to fix EET journal chapter numbering
+9. Removed an invalid reference (http://www.shsforums.net/topic/58178-missing-spell-in-script/)
