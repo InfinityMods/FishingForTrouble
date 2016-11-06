@@ -110,7 +110,8 @@ IF ~Global("ysTalkedToCado","GLOBAL",0)~ THEN BEGIN 25
   SAY @1067
   IF ~~ THEN
 	  JOURNAL @63
-    DO~SetGlobal("ysTalkedToCado","GLOBAL",1)~
+    DO~SetGlobal("ysTalkedToCado","GLOBAL",1)
+       SetGlobal("ysCerendorThief","GLOBAL",1)~
   EXIT
 END
 

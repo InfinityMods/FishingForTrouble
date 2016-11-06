@@ -114,10 +114,8 @@ IF ~Global("ys_TalkedToAiloth","GLOBAL",0)
 		Global("ys_FoundWizard","GLOBAL",1)~ THEN BEGIN BLK15
 	SAY @1651
 	IF~InParty("Jaheira")~THEN
-		DO ~SetGlobal("ys_TalkedToGarGel","GLOBAL",1)~
 		EXTERN JAHEIRAJ CHBLK3
  	IF~!InParty("Jaheira")~THEN
-		DO ~SetGlobal("ys_TalkedToGarGel","GLOBAL",1)~
 	 	REPLY @1652 GOTO BLK16
 END
 

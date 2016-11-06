@@ -3,7 +3,7 @@ BEGIN yslevon
 //---------------------------------------------------------
 // Kill Akil accepted
 //---------------------------------------------------------
-IF ~Global("ysTalkedToLeron","GLOBAL",1)~ THEN BEGIN 50
+IF ~Global("ysTalkedToLeron","GLOBAL",1) !Global("ysTalkedToAkil","GLOBAL",2)~ THEN BEGIN 50
 	SAY @4950
 	IF~Global("ysAkilIsDead","GLOBAL",1)~THEN REPLY @4951 GOTO 51
 	IF~Global("ysAkilIsDead","GLOBAL",1)~THEN REPLY @4952 GOTO 51
@@ -28,8 +28,8 @@ END
 IF ~Global("ysTalkedToAkil","GLOBAL",2)~ THEN BEGIN 0
 	SAY @4955
 	IF~~THEN
-	DO~SetGlobal("ys_AkilNoLevon","GLOBAL",1)~ 
-	REPLY@4956EXTERN YSAKIL LEVON1
+      DO~SetGlobal("ys_AkilNoLevon","GLOBAL",1)~ 
+	  REPLY @4956 EXTERN YSAKIL LEVON1
 END
 
 //---------------------------------------------------------
@@ -47,13 +47,13 @@ END
 //---------------------------------------------------------
 IF ~Global("ysTalkedToAkil","GLOBAL",2)~ THEN BEGIN 3
 	SAY @4960
-	IF~~THEN REPLY @4961GOTO 4
+	IF~~THEN REPLY @4961 GOTO 4
 END
 
 //---------------------------------------------------------
 IF ~Global("ysTalkedToAkil","GLOBAL",2)~ THEN BEGIN 4
 	SAY @4962
-	IF~Global("ysTalkedToLeron","GLOBAL",1)~THEN REPLY@4963GOTO 5
+	IF~Global("ysTalkedToLeron","GLOBAL",1)~THEN REPLY @4963 GOTO 5
 	IF~~THEN REPLY @4964 GOTO 5
 END
 
@@ -67,10 +67,10 @@ END
 //---------------------------------------------------------
 IF ~Global("ysTalkedToAkil","GLOBAL",2)~ THEN BEGIN 6
 	SAY @4968
-	IF~CheckStatLT(Myself,11,CHR)~THEN REPLY @4969 GOTO 7
-	IF~CheckStatGT(Myself,10,CHR)
-     CheckStatLT(Myself,14,CHR)~THEN REPLY @4969 GOTO 8
-	IF~CheckStatGT(Myself,13,CHR)~THEN REPLY @4969 GOTO 9
+	IF~CheckStatLT(LastTalkedToBy(Myself),11,CHR)~THEN REPLY @4969 GOTO 7
+	IF~CheckStatGT(LastTalkedToBy(Myself),10,CHR)
+       CheckStatLT(LastTalkedToBy(Myself),14,CHR)~THEN REPLY @4969 GOTO 8
+	IF~CheckStatGT(LastTalkedToBy(Myself),13,CHR)~THEN REPLY @4969 GOTO 9
 END
 
 //---------------------------------------------------------

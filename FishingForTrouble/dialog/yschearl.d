@@ -94,7 +94,7 @@ IF ~Global("ys_TalkedToWultheof","GLOBAL",1)
 	Global("ys_GarrisonFight","GLOBAL",3)~ THEN BEGIN BLK100
 	SAY @2226
 	IF~~THEN
-		DO ~GivePartyGold(1500)
+		DO ~GiveGoldForce(1500)
 		SetGlobal("ys_TalkedToWultheof","GLOBAL",2)
 		SetGlobal("ys_WultheofReward","GLOBAL",1)~
 		EXIT

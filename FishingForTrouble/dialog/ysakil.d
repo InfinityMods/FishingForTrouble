@@ -210,7 +210,7 @@ END
 //---------------------------------------------------------
 IF ~Global("ysTalkedToRimon","GLOBAL",2)~ THEN BEGIN 20
 	SAY @4868
-	IF~Class(Player1,MAGE_ALL)~THEN REPLY @4869 GOTO 21
+	IF~~THEN REPLY @4869 GOTO 21 // was restricted to Class(Player1,MAGE_ALL), but CHARNAME is resourceful, so this reply should be available even if not a mage
 	IF~!Class(Player1,MAGE_ALL)~THEN REPLY @4870 GOTO 21
 END
 
