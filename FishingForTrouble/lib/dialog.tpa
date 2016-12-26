@@ -11,7 +11,7 @@
 	COMPILE ~fishingfortrouble/dialog/ysbran.d~
 	COMPILE ~fishingfortrouble/dialog/ysceinwn.d~
 	COMPILE ~fishingfortrouble/dialog/ysgaelie.d~
-	COMPILE ~fishingfortrouble/dialog/yscwlwiz.d~
+	COMPILE EVALUATE_BUFFER ~fishingfortrouble/dialog/yscwlwiz.d~
 	COMPILE ~fishingfortrouble/dialog/ystelthe.d~
 	COMPILE ~fishingfortrouble/dialog/ysaella.d~
 	COMPILE ~fishingfortrouble/dialog/yselpara.d~

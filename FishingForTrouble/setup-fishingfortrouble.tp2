@@ -129,7 +129,7 @@ INCLUDE ~fishingfortrouble/lib/area_scripts.tpa~
 //##################################################
 //Other area scripts
 //##################################################
-EXTEND_TOP ~baldur.bcs~ ~fishingfortrouble/area_scripts/ysbaldur.baf~
+EXTEND_TOP ~baldur.bcs~ ~fishingfortrouble/area_scripts/ysbaldur.baf~ EVALUATE_BUFFER
 
 //##################################################
 //Stores
