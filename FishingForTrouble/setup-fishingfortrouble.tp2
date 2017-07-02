@@ -35,11 +35,6 @@ BEGIN @20000
 REQUIRE_PREDICATE GAME_INCLUDES ~TOB~ ~This mod requires Baldur's Gate II: Throne of Bhaal or Enhanced Edition~
 
 //##################################################
-// Add new areas to the worldmap
-//##################################################
-INCLUDE ~fishingfortrouble/wmp/worldmap.tph~
-
-//##################################################
 // Apply IDS and EXE patches if necessary (no TobEx)
 //##################################################
 INCLUDE ~fishingfortrouble/lib/patches.tpa~
@@ -142,7 +137,7 @@ INCLUDE ~fishingfortrouble/lib/stores.tpa~
 COPY ~fishingfortrouble/tis~ ~override~
 
 //##################################################
-//SConrad's Worldmap patching - do this last so we can patch the new areas too
+//Worldmap and icons patching - do this last so we can patch the new areas too
 //##################################################
 INCLUDE ~fishingfortrouble/lib/patch_worldmap.tpa~
 
@@ -168,17 +163,23 @@ COPY ~fishingfortrouble/portraits~ ~override~
 BEGIN @20002
 REQUIRE_COMPONENT ~setup-fishingfortrouble.tp2~ 0 ~This component requires the main component.~
 
-ACTION_IF FILE_EXISTS ~Worldmap/map_mods_areas.tbl~ THEN BEGIN
-	COPY ~Worldmap/map_mods_areas.tbl~						~Worldmap~
-		APPEND_FILE ~fishingfortrouble/Worldmap/areas.tbl~
-	COPY ~Worldmap/map_mods_links.tbl~						~Worldmap~
-		APPEND_FILE ~fishingfortrouble/Worldmap/links.tbl~
-	COPY - ~fishingfortrouble/Worldmap/worldmap.tra~		~tmp_worldmap.tra~
-	COPY ~Worldmap/map_mods_trans.tra~						~Worldmap~
-		APPEND_FILE ~tmp_worldmap.tra~
+MKDIR ~Worldmap~
+
+ACTION_IF FILE_EXISTS ~Worldmap/map_mods_areas.tbl~ BEGIN
+	COPY ~Worldmap/map_mods_areas.tbl~ ~Worldmap~
+		APPEND_FILE ~%MOD_FOLDER%/Worldmap/areas.tbl~
 END ELSE BEGIN
-	MKDIR ~Worldmap~
-	COPY ~fishingfortrouble/Worldmap/areas.tbl~				~Worldmap/map_mods_areas.tbl~
-	COPY ~fishingfortrouble/Worldmap/links.tbl~				~Worldmap/map_mods_links.tbl~
-	COPY ~fishingfortrouble/Worldmap/worldmap.tra~			~Worldmap/map_mods_trans.tra~
+	COPY ~%MOD_FOLDER%/Worldmap/areas.tbl~ ~Worldmap/map_mods_areas.tbl~
+END
+ACTION_IF FILE_EXISTS ~Worldmap/map_mods_links.tbl~ BEGIN
+	COPY ~Worldmap/map_mods_links.tbl~ ~Worldmap~
+		APPEND_FILE ~%MOD_FOLDER%/Worldmap/links.tbl~
+END ELSE BEGIN
+	COPY ~%MOD_FOLDER%/Worldmap/links.tbl~ ~Worldmap/map_mods_links.tbl~
+END
+ACTION_IF FILE_EXISTS ~Worldmap/map_mods_trans.tra~ BEGIN
+	COPY ~Worldmap/map_mods_trans.tra~ ~Worldmap~
+		APPEND_FILE ~%MOD_FOLDER%/language/%LANGUAGE%/worldmap.tra~
+END ELSE BEGIN
+	COPY ~%MOD_FOLDER%/language/%LANGUAGE%/worldmap.tra~ ~Worldmap/map_mods_trans.tra~
 END

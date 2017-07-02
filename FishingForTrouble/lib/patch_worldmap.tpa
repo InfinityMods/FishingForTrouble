@@ -9,307 +9,45 @@
 	APPEND ~MASTAREA.2da~ ~ys1001 value~ UNLESS ~ys1001~	//Portpentyrch
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// Porthpentyrch abandoned
+// Add new icon
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	OUTER_SPRINT areName "YS1000"			// area reference, like "AR0700"
-	OUTER_SPRINT strName "Porthpentyrch"	// area name, like "Waukeen's Promenade"
-	OUTER_SPRINT strDesc "Porthpentyrch"	// area description which will show up when hovering the area on the worldmap
-
-	OUTER_SET mapIcon = 13							// map icon
-	OUTER_SET xCoord	= 583 + wmp_xCoord_SoA		// x coordinate
-	OUTER_SET yCoord	= 630 + wmp_yCoord_SoA		// y coordinate
-	OUTER_SET tTime	 = 2							// travel time, *4, so two means eight hours
-	OUTER_SET inclSv	= 1							// include save games bool, 1 means yes and 0 means no
-
-	// set up link variables
-
-	// add links from these area(s) to the new area
-	ACTION_DEFINE_ASSOCIATIVE_ARRAY toNewArea BEGIN
-		"AR0020" => "Exitne"			// City Gates
-		"AR0300" => "Exitne"			// Docks
-		"AR0400" => "Exitne"			// Slums
-		"AR0500" => "Exitne"			// Bridge District
-		"AR0700" => "Exitne"			// Waukeen's Promenade
-		"AR0800" => "Exitne"			// Graveyard
-		"AR0900" => "Exitne"			// Temple District
-		"AR1000" => "Exitne"			// Government
-		"YS0390" => "Exitne"			// Government Westside
-		"AR1100" => "Exitne"			// Umar Hills
-		"AR1300" => "Exitne"			// d'Arnise Keep
-		"AR1304" => "Exitne"			// d'Arnise Keep
-		"AR2000" => "Exite"				// Trademeet
-		"AR1200" => "Exite"				// Windspear Hills
-		"YS0390" => "Exite"				// Govt westside
-		"YS0360" => "Exite"				// Cerendor Hold
-		"YS0370" => "Exite"				// Cloudpeaks
-	END
-
-	// add links from the new area to these area(s)
-	ACTION_DEFINE_ASSOCIATIVE_ARRAY fromNewArea BEGIN
-		"AR0020" => "ExitNE"			// City Gates
-		"AR0300" => "ExitN"				// Docks
-		"AR0400" => "ExitN"				// Slums
-		"AR0500" => "ExitNE"			// Bridge District
-		"AR0700" => "ExitE"				// Waukeen's Promenade
-		"AR0800" => "ExitS"				// Graveyard
-		"AR0900" => "ExitNW"			// Temple District
-		"AR1000" => "ExitN"				// Government
-		"YS0390" => "Exitwmp"			// Government Westside
-		"AR1100" => "ExitSE"			// Umar Hills
-		"AR1300" => "ExitSE"			// d'Arnise Keep
-		"AR1304" => "ExitSE"			// d'Arnise Keep
-		"AR2000" => "ExitSW"			// Trademeet
-		"AR1200" => "ExitW"				// Windspear Hills
-		"YS0390" => "Exitwmp"			// Govt westside
-		"YS0360" => "Exit1"				// Cerendor Hold
-		"YS0370" => "Exits"				// Cloudpeaks
-	END
-
-	// call the sc#addWmpAre function
-	// returns the worldmap entry number for the new area
-	LAUNCH_ACTION_FUNCTION sc#addWmpAre RET areNum = areNum END
-	PRINT "Portpentyrch abandoned patched. New area number is: %areNum%"
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// Porthpentyrch restored
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	OUTER_SPRINT areName "YS1001"			// area reference, like "AR0700"
-	OUTER_SPRINT strName "Porthpentyrch"	// area name, like "Waukeen's Promenade"
-	OUTER_SPRINT strDesc "Porthpentyrch"	// area description which will show up when hovering the area on the worldmap
-
-	OUTER_SET mapIcon = 13							// map icon
-	OUTER_SET xCoord	= 583 + wmp_xCoord_SoA		// x coordinate
-	OUTER_SET yCoord	= 630 + wmp_yCoord_SoA		// y coordinate
-	OUTER_SET tTime	 = 2							// travel time, *4, so two means eight hours
-	OUTER_SET inclSv	= 1							// include save games bool, 1 means yes and 0 means no
-
-	// set up link variables
-
-	// add links from these area(s) to the new area
-	// add links from these area(s) to the new area
-	ACTION_DEFINE_ASSOCIATIVE_ARRAY toNewArea BEGIN
-		"AR0020" => "Exitne"			// City Gates
-		"AR0300" => "Exitne"			// Docks
-		"AR0400" => "Exitne"			// Slums
-		"AR0500" => "Exitne"			// Bridge District
-		"AR0700" => "Exitne"			// Waukeen's Promenade
-		"AR0800" => "Exitne"			// Graveyard
-		"AR0900" => "Exitne"			// Temple District
-		"AR1000" => "Exitne"			// Government
-		"YS0390" => "Exitne"			// Government Westside
-		"AR1100" => "Exitne"			// Umar Hills
-		"AR1300" => "Exitne"			// d'Arnise Keep
-		"AR1304" => "Exitne"			// d'Arnise Keep
-		"AR2000" => "Exite"				// Trademeet
-		"AR1200" => "Exite"				// Windspear Hills
-		"YS0390" => "Exite"				// Govt westside
-		"YS0360" => "Exite"		 		// Cerendor Hold
-		"YS0370" => "Exite"				// Cloudpeaks
-	END
-
-	// add links from the new area to these area(s)
-	ACTION_DEFINE_ASSOCIATIVE_ARRAY fromNewArea BEGIN
-		"AR0020" => "ExitNE"			// City Gates
-		"AR0300" => "ExitN"				// Docks
-		"AR0400" => "ExitN"				// Slums
-		"AR0500" => "ExitNE"			// Bridge District
-		"AR0700" => "ExitE"				// Waukeen's Promenade
-		"AR0800" => "ExitS"				// Graveyard
-		"AR0900" => "ExitNW"			// Temple District
-		"AR1000" => "ExitN"				// Government
-		"YS0390" => "Exitwmp"			// Government Westside
-		"AR1100" => "ExitSE"			// Umar Hills
-		"AR1300" => "ExitSE"			// d'Arnise Keep
-		"AR1304" => "ExitSE"			// d'Arnise Keep
-		"AR2000" => "ExitSW"			// Trademeet
-		"AR1200" => "ExitW"				// Windspear Hills
-		"YS0390" => "Exitwmp"			// Govt westside
-		"YS0360" => "Exit1"				// Cerendor Hold
-		"YS0370" => "ExitS"				// Cloudpeaks
-	END
-
-	// call the sc#addWmpAre function
-	// returns the worldmap entry number for the new area
-	LAUNCH_ACTION_FUNCTION sc#addWmpAre RET areNum = areNum END
-	PRINT "Portpentyrch restored patched. New area number is: %areNum%"
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// Government District Westside
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	OUTER_SPRINT areName "YS0390"		// area reference, like "AR0700"
-	OUTER_SPRINT strName "Govt. West"	// area name, like "Waukeen's Promenade"
-	OUTER_SPRINT strDesc "Govt. West"	// area description which will show up when hovering the area on the worldmap
-
-	OUTER_SET mapIcon = 21							// map icon
-	OUTER_SET xCoord	= 240 + wmp_xCoord_SoA		// x coordinate
-	OUTER_SET yCoord	= 130 + wmp_yCoord_SoA		// y coordinate
-	OUTER_SET tTime	 = 2							// travel time, *4, so two means eight hours
-	OUTER_SET inclSv	= 1							// include save games bool, 1 means yes and 0 means no
-
-	// set up link variables
-	// add links from these area(s) to the new area
-	ACTION_DEFINE_ASSOCIATIVE_ARRAY toNewArea BEGIN
-		"AR0020" => "Exitwmp"			// City Gates
-		"AR0300" => "Exitwmp"			// Docks
-		"AR0400" => "Exitwmp"			// Slums
-		"AR0500" => "Exitwmp"			// Bridge District
-		"AR0700" => "Exitwmp"			// Waukeen's Promenade
-		"AR0800" => "Exitwmp"			// Graveyard
-		"AR0900" => "Exitwmp"			// Temple District
-		"AR1000" => "Exitwmp"			// Government
-		"AR1100" => "Exitwmp"			// Umar Hills
-		"AR1300" => "Exitwmp"			// d'Arnise Keep
-		"AR1304" => "Exitwmp"			// d'Arnise Keep
-		"AR2000" => "Exitwmp"			// Trademeet
-		"AR1200" => "Exitwmp"			// Windspear Hills
-		"YS1000" => "Exitwmp"		 	// Porthpentyrch
-		"YS0360" => "Exitwmp"		 	// Cerendor Hold
-		"YS0370" => "Exitwmp"			// Cloudpeaks
-	END
-
-	// add links from the new area to these area(s)
-	ACTION_DEFINE_ASSOCIATIVE_ARRAY fromNewArea BEGIN
-		"AR0020" => "ExitNE"			// City Gates
-		"AR0300" => "ExitN"				// Docks
-		"AR0400" => "ExitN"				// Slums
-		"AR0500" => "ExitNE"			// Bridge District
-		"AR0700" => "ExitE"				// Waukeen's Promenade
-		"AR0800" => "ExitS"				// Graveyard
-		"AR0900" => "ExitNW"			// Temple District
-		"AR1000" => "ExitN"				// Government
-		"AR1100" => "ExitSE"			// Umar Hills
-		"AR1300" => "ExitSE"			// d'Arnise Keep
-		"AR1304" => "ExitSE"			// d'Arnise Keep
-		"AR2000" => "ExitSW"			// Trademeet
-		"AR1200" => "ExitW"				// Windspear Hills
-		"YS1000" => "Exitne"			// Porthpentyrch
-		"YS0360" => "Exit2"			 	// Cerendor Hold
-		"YS0370" => "ExitS"				// Cloudpeaks
-	END
-
-	// call the sc#addWmpAre function
-	// returns the worldmap entry number for the new area
-	LAUNCH_ACTION_FUNCTION sc#addWmpAre RET areNum = areNum END
-	PRINT "Government District Westside patched. New area number is: %areNum%"
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// Cerendor Hold
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	OUTER_SPRINT areName "YS0360"			// area reference, like "AR0700"
-	OUTER_SPRINT strName "Cerendor Hold"	// area name, like "Waukeen's Promenade"
-	OUTER_SPRINT strDesc "Cerendor Hold"	// area description which will show up when hovering the area on the worldmap
-
-	OUTER_SET mapIcon = 13							// map icon
-	OUTER_SET xCoord	= 900 + wmp_xCoord_SoA		// x coordinate
-	OUTER_SET yCoord	= 56 + wmp_yCoord_SoA		// y coordinate
-	OUTER_SET tTime	 = 6							// travel time, *4, so two means eight hours
-	OUTER_SET inclSv	= 1							// include save games bool, 1 means yes and 0 means no
-
-	// set up link variables
-	// add links from these area(s) to the new area
-	ACTION_DEFINE_ASSOCIATIVE_ARRAY toNewArea BEGIN
-		"AR0020" => "Exit1"				// City Gates
-		"AR0300" => "Exit1"				// Docks
-		"AR0400" => "Exit1"				// Slums
-		"AR0500" => "Exit1"				// Bridge District
-		"AR0700" => "Exit1"				// Waukeen's Promenade
-		"AR0800" => "Exit1"				// Graveyard
-		"AR0900" => "Exit1"				// Temple District
-		"AR1000" => "Exit1"				// Government
-		"AR1100" => "Exit2"				// Umar Hills
-		"AR1300" => "Exit2"				// d'Arnise Keep
-		"AR1304" => "Exit2"				// d'Arnise Keep
-		"AR2000" => "Exit2"				// Trademeet
-		"AR1200" => "Exit2"				// Windspear Hills
-		"YS1000" => "Exit2"			 	// Porthpentyrch
-		"YS0390" => "Exit1"				// Govt westside
-		"YS0370" => "Exit2"				// Cloudpeaks
-	END
-
-	// add links from the new area to these area(s)
-	ACTION_DEFINE_ASSOCIATIVE_ARRAY fromNewArea BEGIN
-		"AR0020" => "ExitNE"			// City Gates
-		"AR0300" => "ExitN"				// Docks
-		"AR0400" => "ExitN"				// Slums
-		"AR0500" => "ExitNE"			// Bridge District
-		"AR0700" => "ExitE"				// Waukeen's Promenade
-		"AR0800" => "ExitS"				// Graveyard
-		"AR0900" => "ExitNW"			// Temple District
-		"AR1000" => "ExitN"				// Government
-		"AR1100" => "ExitSE"			// Umar Hills
-		"AR1300" => "ExitSE"			// d'Arnise Keep
-		"AR1304" => "ExitSE"			// d'Arnise Keep
-		"AR2000" => "ExitSW"			// Trademeet
-		"AR1200" => "ExitW"				// Windspear Hills
-		"YS1000" => "Exitne"			// Porthpentyrch
-		"YS0390" => "Exitwmp"			// Govt westside
-		"YS0370" => "Exitn"				// Cloudpeaks
-	END
-
-	// call the sc#addWmpAre function
-	// returns the worldmap entry number for the new area
-	LAUNCH_ACTION_FUNCTION sc#addWmpAre RET areNum = areNum END
-	PRINT "Cerendor Hold patched. New area number is: %areNum%"
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// Cloudpeak Caravan
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	OUTER_SPRINT areName "YS0370"				// area reference, like "AR0700"
-	OUTER_SPRINT strName "Cloudpeak Mountains"	// area name, like "Waukeen's Promenade"
-	OUTER_SPRINT strDesc "Cloudpeak Mountains"	// area description which will show up when hovering the area on the worldmap
-
 	ACTION_IF GAME_IS ~eet~ BEGIN
-		OUTER_SET mapIcon = 98				// map icon
-	END ELSE BEGIN
-		OUTER_SET mapIcon = 17				// map icon
-	END
-	OUTER_SET xCoord	= 799 + wmp_xCoord_SoA		// x coordinate
-	OUTER_SET yCoord	= 72 + wmp_yCoord_SoA		// y coordinate
-	OUTER_SET tTime	 = 6							// travel time, *4, so two means eight hours
-	OUTER_SET inclSv	= 1							// include save games bool, 1 means yes and 0 means no
-
-	// set up link variables
-	// add links from these area(s) to the new area
-	ACTION_DEFINE_ASSOCIATIVE_ARRAY toNewArea BEGIN
-		"AR0020" => "Exit1"				// City Gates
-		"AR0300" => "Exit1"				// Docks
-		"AR0400" => "Exit1"				// Slums
-		"AR0500" => "Exit1"				// Bridge District
-		"AR0700" => "Exit1"				// Waukeen's Promenade
-		"AR0800" => "Exit1"				// Graveyard
-		"AR0900" => "Exit1"				// Temple District
-		"AR1000" => "Exit1"				// Government
-		"AR1100" => "Exit2"				// Umar Hills
-		"AR1300" => "Exit2"				// d'Arnise Keep
-		"AR1304" => "Exit2"				// d'Arnise Keep
-		"AR2000" => "Exit2"				// Trademeet
-		"AR1200" => "Exit2"				// Windspear Hills
-		"YS1000" => "Exit2"			 	// Porthpentyrch
-		"YS0390" => "Exit1"				// Govt westside
-		"YS0360" => "Exit2"				// Cerendor Hold
+		OUTER_SET YS0370_icon = 98
+		OUTER_SET YS0390_icon = 182
+		OUTER_SET include_saves = 0
+	END ELSE ACTION_IF GAME_IS ~bg2ee~ BEGIN
+		INCLUDE ~%MOD_FOLDER%/Worldmap/icon/ee/add_map_icons.tpa~
+		LAF ADD_MAP_ICONS STR_VAR path_to_icons = EVAL ~%MOD_FOLDER%/Worldmap/icon/ee/icon.bam~ patch_to_pvrz = EVAL ~%MOD_FOLDER%/Worldmap/icon/ee~ RET new_icon_index END
+		OUTER_SET YS0370_icon = 17
+		OUTER_SET YS0390_icon = new_icon_index
+		OUTER_SET include_saves = 0
+	END ELSE BEGIN //bg2, bgt
+		INCLUDE ~%MOD_FOLDER%/Worldmap/icon/bg/add_map_icons.tpa~
+		LAF ADD_MAP_ICONS STR_VAR path_to_icons = EVAL ~%MOD_FOLDER%/Worldmap/icon/bg/icon.bam~ RET new_icon_index END
+		OUTER_SET YS0370_icon = 17
+		OUTER_SET YS0390_icon = new_icon_index
+		OUTER_SET include_saves = 1
 	END
 
-	// add links from the new area to these area(s)
-	ACTION_DEFINE_ASSOCIATIVE_ARRAY fromNewArea BEGIN
-		"AR0020" => "ExitNE"			// City Gates
-		"AR0300" => "ExitN"				// Docks
-		"AR0400" => "ExitN"				// Slums
-		"AR0500" => "ExitNE"			// Bridge District
-		"AR0700" => "ExitE"				// Waukeen's Promenade
-		"AR0800" => "ExitS"				// Graveyard
-		"AR0900" => "ExitNW"			// Temple District
-		"AR1000" => "ExitN"				// Government
-		"AR1100" => "ExitSE"			// Umar Hills
-		"AR1300" => "ExitSE"			// d'Arnise Keep
-		"AR1304" => "ExitSE"			// d'Arnise Keep
-		"AR2000" => "ExitSW"			// Trademeet
-		"AR1200" => "ExitW"				// Windspear Hills
-		"YS1000" => "Exitne"			// Porthpentyrch
-		"YS0390" => "Exitwmp"			// Govt westside
-		"YS0360" => "Exit2"			 	// Cerendor Hold
-	END
+	// patch areas_bg2.tbl to use new dynamic icon
+	COPY ~%MOD_FOLDER%/Worldmap/areas_bg2.tbl~ ~%MOD_FOLDER%/Worldmap~
+		REPLACE_TEXTUALLY ~\([ %TAB%]+YS0370[ %TAB%]+[0-9]+[ %TAB%]+\)[0-9]+~ ~\1%YS0370_icon%~
+		REPLACE_TEXTUALLY ~\([ %TAB%]+YS0390[ %TAB%]+[0-9]+[ %TAB%]+\)[0-9]+~ ~\1%YS0390_icon%~
+	BUT_ONLY
 
-	// call the sc#addWmpAre function
-	// returns the worldmap entry number for the new area
-	LAUNCH_ACTION_FUNCTION sc#addWmpAre RET areNum = areNum END
-	PRINT "Cloudpeak Mountains patched. New area number is: %areNum%"
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// TBL Worldmap patching
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	INCLUDE ~%MOD_FOLDER%/lib/add_worldmap_tbl.tpa~
+	LAF ADD_WORLDMAP_TBL
+		INT_VAR
+		//verbose = 1
+		inclSv = include_saves
+		add_x = wmp_xCoord_SoA
+		add_y = wmp_yCoord_SoA
+		STR_VAR
+		path_to_areas = EVAL ~%MOD_FOLDER%/Worldmap/areas_bg2.tbl~
+		path_to_areas_bp = EVAL ~%MOD_FOLDER%/Worldmap/areas.tbl~
+		path_to_links = EVAL ~%MOD_FOLDER%/Worldmap/links.tbl~
+		path_to_trans = EVAL ~%MOD_FOLDER%/language/%LANGUAGE%/worldmap.tra~
+	END
