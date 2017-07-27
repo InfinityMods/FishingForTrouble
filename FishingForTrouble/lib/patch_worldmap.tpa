@@ -51,3 +51,23 @@
 		path_to_links = EVAL ~%MOD_FOLDER%/Worldmap/links.tbl~
 		path_to_trans = EVAL ~%MOD_FOLDER%/language/%LANGUAGE%/worldmap.tra~
 	END
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// BP-BGT Worldmap support
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    MKDIR ~Worldmap~
+    ACTION_IF FILE_EXISTS ~Worldmap/map_mods_areas.tbl~ BEGIN
+        COPY ~Worldmap/map_mods_areas.tbl~ ~Worldmap~ APPEND_FILE ~%MOD_FOLDER%/Worldmap/areas.tbl~
+    END ELSE BEGIN
+        COPY ~%MOD_FOLDER%/Worldmap/areas.tbl~ ~Worldmap/map_mods_areas.tbl~
+    END
+    ACTION_IF FILE_EXISTS ~Worldmap/map_mods_links.tbl~ BEGIN
+        COPY ~Worldmap/map_mods_links.tbl~ ~Worldmap~ APPEND_FILE ~%MOD_FOLDER%/Worldmap/links.tbl~
+    END ELSE BEGIN
+        COPY ~%MOD_FOLDER%/Worldmap/links.tbl~ ~Worldmap/map_mods_links.tbl~
+    END
+    ACTION_IF FILE_EXISTS ~Worldmap/map_mods_trans.tra~ BEGIN
+        COPY ~Worldmap/map_mods_trans.tra~ ~Worldmap~ APPEND_FILE ~%MOD_FOLDER%/language/%LANGUAGE%/worldmap.tra~
+    END ELSE BEGIN
+        COPY ~%MOD_FOLDER%/language/%LANGUAGE%/worldmap.tra~ ~Worldmap/map_mods_trans.tra~
+    END

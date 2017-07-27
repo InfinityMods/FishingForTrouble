@@ -1,6 +1,6 @@
 BACKUP ~fishingfortrouble/backup~
 AUTHOR ~www.shsforums.net/forum/550-fishing-for-trouble/~
-VERSION ~3.1.3.1~
+VERSION ~3.2.1~
 //MODDER setup_tra NONE
 //launch the ReadMe file immediately
 README ~fishingfortrouble/readme.html~
@@ -157,29 +157,3 @@ REQUIRE_COMPONENT ~setup-fishingfortrouble.tp2~ 0 ~This component requires the m
 
 COPY ~fishingfortrouble/portraits~ ~override~
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//Optional component - add Fishing for Trouble to BP-BGT-Worldmap
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-BEGIN @20002
-REQUIRE_COMPONENT ~setup-fishingfortrouble.tp2~ 0 ~This component requires the main component.~
-
-MKDIR ~Worldmap~
-
-ACTION_IF FILE_EXISTS ~Worldmap/map_mods_areas.tbl~ BEGIN
-	COPY ~Worldmap/map_mods_areas.tbl~ ~Worldmap~
-		APPEND_FILE ~%MOD_FOLDER%/Worldmap/areas.tbl~
-END ELSE BEGIN
-	COPY ~%MOD_FOLDER%/Worldmap/areas.tbl~ ~Worldmap/map_mods_areas.tbl~
-END
-ACTION_IF FILE_EXISTS ~Worldmap/map_mods_links.tbl~ BEGIN
-	COPY ~Worldmap/map_mods_links.tbl~ ~Worldmap~
-		APPEND_FILE ~%MOD_FOLDER%/Worldmap/links.tbl~
-END ELSE BEGIN
-	COPY ~%MOD_FOLDER%/Worldmap/links.tbl~ ~Worldmap/map_mods_links.tbl~
-END
-ACTION_IF FILE_EXISTS ~Worldmap/map_mods_trans.tra~ BEGIN
-	COPY ~Worldmap/map_mods_trans.tra~ ~Worldmap~
-		APPEND_FILE ~%MOD_FOLDER%/language/%LANGUAGE%/worldmap.tra~
-END ELSE BEGIN
-	COPY ~%MOD_FOLDER%/language/%LANGUAGE%/worldmap.tra~ ~Worldmap/map_mods_trans.tra~
-END
