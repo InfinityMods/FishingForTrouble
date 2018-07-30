@@ -26,10 +26,9 @@ IF ~Global("ys_TalkedToLugh","GLOBAL",0)~ THEN BEGIN 3
 END
 
 //---------------------------------------------------------
-IF ~Global("ys_TalkedToLugh","GLOBAL",0)~ THEN BEGIN 5
+IF ~~ THEN BEGIN 5
 	SAY @2559
-	IF~~THEN REPLY ~~
-	DO~GiveItemCreate("ysepring",Player1,0,0,0)
+	IF~~THEN DO~GiveItemCreate("ysepring",Player1,0,0,0)
 		AddexperienceParty(1000)
 		EraseJournalEntry(@152)
 		SetGlobal("ys_TalkedToLugh","GLOBAL",1)
@@ -38,25 +37,19 @@ IF ~Global("ys_TalkedToLugh","GLOBAL",0)~ THEN BEGIN 5
 END
 
 //---------------------------------------------------------
-IF ~Global("ys_TalkedToLugh","GLOBAL",0)~ THEN BEGIN 6
+IF ~~ THEN BEGIN 6
 	SAY @2561
 	IF~~THEN REPLY @2562 GOTO 7
 END
 
 //---------------------------------------------------------
-IF ~Global("ys_TalkedToLugh","GLOBAL",0)~ THEN BEGIN 7
+IF ~~ THEN BEGIN 7
 	SAY @2563
-	IF~~THEN REPLY ~~
-	DO~SetGlobal("ysLughFight","GLOBAL",1)
+	IF~~THEN DO~SetGlobal("ysLughFight","GLOBAL",1)
   		EraseJournalEntry(@152)~
 	EXIT
 END
 
-//---------------------------------------------------------
-//IF ~Global("ys_TalkedToLugh","GLOBAL",0)~ THEN BEGIN
-//	SAY ~~
-//	IF~~THEN REPLY ~~ GOTO
-//	IF~~THEN REPLY ~~ GOTO
-//END
+
 
 
