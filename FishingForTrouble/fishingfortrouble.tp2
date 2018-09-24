@@ -153,7 +153,7 @@ LAF HANDLE_TILESETS END // tiz folder
 //Optional component - install major character portraits
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 BEGIN @20001
-REQUIRE_COMPONENT ~setup-fishingfortrouble.tp2~ 0 ~This component requires the main component.~
+REQUIRE_COMPONENT ~fishingfortrouble.tp2~ 0 ~This component requires the main component.~
 
 COPY ~fishingfortrouble/portraits~ ~override~
 
