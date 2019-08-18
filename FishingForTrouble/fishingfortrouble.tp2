@@ -1,9 +1,6 @@
 BACKUP ~fishingfortrouble/backup~
 AUTHOR ~www.shsforums.net/forum/550-fishing-for-trouble/~
 VERSION ~3.2.3~
-//MODDER setup_tra NONE
-//launch the ReadMe file immediately
-README ~fishingfortrouble/readme.html~
 
 ALWAYS
 	ACTION_IF GAME_IS ~eet~ BEGIN
@@ -146,6 +143,10 @@ INCLUDE ~fishingfortrouble/lib/patch_worldmap.tpa~
 //##################################################
 LAF HANDLE_AUDIO END // audio folder
 LAF HANDLE_TILESETS END // tiz folder
+
+ACTION_IF GAME_IS ~eet BG2EE~ BEGIN
+COPY ~fishingfortrouble/EE_Tis~ ~override~
+END
 
 // End of core component
 
