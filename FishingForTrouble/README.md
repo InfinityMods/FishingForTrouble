@@ -8,12 +8,7 @@ For more details about the mod itself, see the readme.html.
 
 ## Who is currently maintaining this mod? ##
 
-- agb1 at SHS Forums, G3 Forums, Beamdog Forums
-
-## Plans ##
-
-Future updates will make this mod compatible with Baldur's Gate II: Enhanced Edition and Baldur's Gate: Enhanced Edition Trilogy (EET).
-Gerri is working on a German translation.
+- Alien, Roxanne, InfinityMods, http://baldursextendedworld.com/Vanilla_Forums/categories/mod-help 
 
 ## Changes since v3.0 HF 1 (last release by Yovaneth) ##
 
@@ -27,3 +22,5 @@ Gerri is working on a German translation.
 8. Incorporated patch from K4thos to fix EET journal chapter numbering
 9. Removed an invalid reference (http://www.shsforums.net/topic/58178-missing-spell-in-script/)
 10. Fixed issues reported by micbaldur (http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/page-50#entry589066)
+11. Fixed Tis files for large areas in EE games
+
