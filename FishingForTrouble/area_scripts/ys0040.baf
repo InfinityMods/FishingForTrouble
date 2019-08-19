@@ -1,7 +1,9 @@
 IF
-  Global("ysTanarri","ys0040",0)
+Global("ysTanarri","ys0040",0)
+Global("ys_VillageQuestComplete","GLOBAL",0)
+!Exists("ysTanarr")
 THEN
-  RESPONSE #100
-    CreateCreature("ystanarr",[308.168],14)
-  	SetGlobal("ysTanarri","ys0040",1)
+RESPONSE #100
+CreateCreature("ystanarr",[308.168],14)
+SetGlobal("ysTanarri","ys0040",1)
 END
