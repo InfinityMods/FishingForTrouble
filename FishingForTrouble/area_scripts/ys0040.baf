@@ -1,6 +1,6 @@
 IF
 Global("ysTanarri","ys0040",0)
-Global("ys_VillageQuestComplete","GLOBAL",0)
+GlobalLT("dai_TalkedToTanaari","GLOBAL",5)
 !Exists("ysTanarr")
 THEN
 RESPONSE #100

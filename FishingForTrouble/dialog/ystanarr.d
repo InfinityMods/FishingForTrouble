@@ -430,7 +430,8 @@ IF ~~ THEN BEGIN LHTBLOCK407
   IF~NumInPartyGT(1)~THEN
       DO ~SetGlobal("dai_TalkedToTanaari","GLOBAL",5)
         RevealAreaOnMap("ys0360")
-    	  AddJournalEntry(@32,QUEST)~
+    	  AddJournalEntry(@32,QUEST)
+          ActionOverride("ystanarr",ForceSpell(Myself,DRYAD_TELEPORT))~
     REPLY @801GOTO LHTBLOCK409
 END
 
@@ -440,7 +441,8 @@ IF ~Global("dai_TalkedToTanaari","GLOBAL",3)~ THEN BEGIN LHTBLOCK408
   IF~~THEN
     DO  ~SetGlobal("dai_TalkedToTanaari","GLOBAL",5)
         RevealAreaOnMap("ys0360")
-    	  AddJournalEntry(@32,QUEST)~
+    	  AddJournalEntry(@32,QUEST)
+          ActionOverride("ystanarr",ForceSpell(Myself,DRYAD_TELEPORT))~
     REPLY @803
       EXIT
 END
