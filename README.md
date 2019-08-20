@@ -30,3 +30,4 @@ Active members of InfinityMods Github organization
 - Fixed issues reported by micbaldur (http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/page-50#entry589066)
 - Fixed Tis files for large areas in EE games
 - added MacOS WeiDU executable and changed setup-fishingfortrouble.command file
+- fixed double spawning of tanar'ri at lighthouse and added missing leaving code
