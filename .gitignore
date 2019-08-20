@@ -4,6 +4,9 @@ backup/
 temp/
 tmp/
 
+Thumbs.db
+ehthumbs.db
+
 .*
 !/.gitignore
 !/.gitattributes
@@ -13,8 +16,5 @@ tmp/
 *.tmp
 *.lnk
 *.rar
-*.zip
 *.tar*
-
-Thumbs.db
-ehthumbs.db
+*.zip
