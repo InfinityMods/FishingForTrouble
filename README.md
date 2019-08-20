@@ -18,15 +18,15 @@ Active members of InfinityMods Github organization
 
 ## Changes since v3.0 HF 1 (last release by Yovaneth) ##
 
-1. Incorporated patches from the BiG World Fixpack
-2. Renamed mod folder and tp2 from dq to fishingfortrouble
-3. Incorporated EET compatibility patches from K4thos
-4. Simplified tp2 by moving sub-sections into tpa files
-5. Replaced platform-specific conversions with HANDLE_AUDIO and HANDLE_TILESETS
-6. Fixed some typos in the English translation
-7. Added check for EE game type to lib/patches.tpa to avoid patching ACTION.IDS (some signatures changed in EE)
-8. Incorporated patch from K4thos to fix EET journal chapter numbering
-9. Removed an invalid reference (http://www.shsforums.net/topic/58178-missing-spell-in-script/)
-10. Fixed issues reported by micbaldur (http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/page-50#entry589066)
-11. Fixed Tis files for large areas in EE games
-
+- Incorporated patches from the BiG World Fixpack
+- Renamed mod folder and tp2 from dq to fishingfortrouble
+- Incorporated EET compatibility patches from K4thos
+- Simplified tp2 by moving sub-sections into tpa files
+- Replaced platform-specific conversions with HANDLE_AUDIO and HANDLE_TILESETS
+- Fixed some typos in the English translation
+- Added check for EE game type to lib/patches.tpa to avoid patching ACTION.IDS (some signatures changed in EE)
+- Incorporated patch from K4thos to fix EET journal chapter numbering
+- Removed an invalid reference (http://www.shsforums.net/topic/58178-missing-spell-in-script/)
+- Fixed issues reported by micbaldur (http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/page-50#entry589066)
+- Fixed Tis files for large areas in EE games
+- added MacOS WeiDU executable and changed setup-fishingfortrouble.command file
