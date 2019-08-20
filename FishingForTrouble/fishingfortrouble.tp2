@@ -1,6 +1,6 @@
 BACKUP ~fishingfortrouble/backup~
 AUTHOR ~www.shsforums.net/forum/550-fishing-for-trouble/~
-VERSION ~3.2.3~
+VERSION ~3.2.4~
 
 ALWAYS
 	ACTION_IF GAME_IS ~eet~ BEGIN
