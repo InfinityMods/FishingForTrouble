@@ -1,6 +1,3 @@
-#!/bin/sh
-
-command_path=${0%/*}
-cd "$command_path"
-./setup-fishingfortrouble-linux
-exit 0
+cd "${0%/*}"
+ScriptName="${0##*/}"
+./${ScriptName%.*}
