@@ -51,3 +51,11 @@ THEN
     CreateCreature("ysblgrd",[529.753],10)
     CreateCreature("ysblgrd",[529.753],10)
 END
+
+IF
+Global("ysFoundCaravan","GLOBAL",0)
+PartyHasItem("yslotus")
+THEN
+RESPONSE #100
+SetGlobal("ysFoundCaravan","GLOBAL",1)
+END

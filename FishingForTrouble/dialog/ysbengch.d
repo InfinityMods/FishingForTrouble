@@ -84,8 +84,8 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 72
 	SAY @4228
-	IF~CheckStatLT(LastTalkedToBy(Player1),15,CHR)~THEN REPLY @4229 GOTO 73
-	IF~CheckStatGT(LastTalkedToBy(Player1),14,CHR)~THEN REPLY @4230 GOTO 74
+	IF~CheckStatLT(LastTalkedToBy,15,CHR)~THEN REPLY @4229 GOTO 73
+	IF~CheckStatGT(LastTalkedToBy,14,CHR)~THEN REPLY @4230 GOTO 74
 END
 
 //---------------------------------------------------------
@@ -154,8 +154,8 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 83
 	SAY @4242
-	IF~CheckStatLT(LastTalkedToBy(Player1),15,CHR)~THEN REPLY @4243 GOTO 84
-	IF~CheckStatGT(LastTalkedToBy(Player1),14,CHR)~THEN REPLY @4244 GOTO 85
+	IF~CheckStatLT(LastTalkedToBy,15,CHR)~THEN REPLY @4243 GOTO 84
+	IF~CheckStatGT(LastTalkedToBy,14,CHR)~THEN REPLY @4244 GOTO 85
 END
 
 //---------------------------------------------------------
