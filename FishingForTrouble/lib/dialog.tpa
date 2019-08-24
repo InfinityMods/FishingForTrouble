@@ -37,6 +37,7 @@
 	COMPILE ~fishingfortrouble/dialog/ysbengch.d~
 	COMPILE ~fishingfortrouble/dialog/ysprpt.d~
 	COMPILE ~fishingfortrouble/dialog/ystigres.d~
+	COMPILE ~fishingfortrouble/dialog/ysbrega.d~
 
 //Porthpentyrch
 	COMPILE ~fishingfortrouble/dialog/ysboydlg.d~
