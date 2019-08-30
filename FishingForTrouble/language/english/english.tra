@@ -2780,9 +2780,9 @@ So Ledban looks and sure enough, the notice says 'Tree fellers wanted'. Ledban b
 @3721 = ~Koury says the best weapons in the Calim Desert are made by the Wanderers of the Sand. You're lucky - they camped at the southern end of the town only today. They won't let me play with the shiny swords though.~
 @3722 = ~That house belongs to the richest merchant in all of Imradim! One day I'm gonna be like him!~
 @3723 = ~A rich merchant, eh? Who is that then?~
-@3724 = ~Leron.~
-@3725 = ~Just - Leron?~
-@3726 = ~Yes. No. Shan't tell you. Aiesha says his real name is Leron of Desthima.~
+@3724 = ~Levon.~
+@3725 = ~Just - Levon?~
+@3726 = ~Yes. No. Shan't tell you. Aiesha says his real name is Levon of Desthima.~
 
 //*************************************************************************
 //Gadil
@@ -3625,14 +3625,14 @@ So Ledban looks and sure enough, the notice says 'Tree fellers wanted'. Ledban b
 @4827 = ~Akil. And this is your cave is it?~
 @4828 = ~This is my cave. My hideout. My 'home from home'.~
 @4829 = ~Is it now? I detect some hidden story here. I'd be interested to hear it if you want to tell it.~
-@4830 = ~If you're looking for me then you've been talking to that bastard Leron, haven't you? Has he given you a price for my head? There's a few who've tried to take it and failed. Are you going to be next?~
-@4831 = ~Calm down Akil. Leron wants you dead alright but I'm not so sure. The price on your head is a little too high for a common bandit.~
+@4830 = ~If you're looking for me then you've been talking to that bastard Levon, haven't you? Has he given you a price for my head? There's a few who've tried to take it and failed. Are you going to be next?~
+@4831 = ~Calm down Akil. Levon wants you dead alright but I'm not so sure. The price on your head is a little too high for a common bandit.~
 @4832 = ~The price on your head? 2000GP and I'm about to take it!!~
 @4833 = ~So you want my story? There's little enough to tell and I daresay you've heard it many times before. A tale of stupidity, cupidity and revenge. Are we sitting comfortably? Good - then I'll begin.~
-@4834 = ~My first mistake was to fall in love with Leron's daughter, Aaliyah. Well no, it wasn't a mistake at the time; it just became one later. My second mistake was deciding to show Leron that I was good enough for his daughter.~
+@4834 = ~My first mistake was to fall in love with Levon's daughter, Aaliyah. Well no, it wasn't a mistake at the time; it just became one later. My second mistake was deciding to show Levon that I was good enough for his daughter.~
 @4835 = ~This is taking too long. I've decided that removing your head is a lot quicker.~
 @4836 = ~And?~
-@4837 = ~My third mistake was becoming a gem merchant, like Leron. I was good at it, you see - very good. A few trips to Calimport to bargain with the ships from Tashalar, a few more trips to the Border Kingdoms and one memorable trip to Nelanther and I was on my way to being rich.~
+@4837 = ~My third mistake was becoming a gem merchant, like Levon. I was good at it, you see - very good. A few trips to Calimport to bargain with the ships from Tashalar, a few more trips to the Border Kingdoms and one memorable trip to Nelanther and I was on my way to being rich.~
 @4838 = ~Talos! - I even got a couple of trips in to Athkatla, but it took too long to get there and back using the Trade Routes. The sea was quicker.~
 @4839 = ~So the day came when I figured I was successful enough to please even that old miser.~
 @4840 = ~You asked for Aaliyah's hand in marriage?~
@@ -3644,18 +3644,18 @@ So Ledban looks and sure enough, the notice says 'Tree fellers wanted'. Ledban b
 @4846 = ~It looked like a grassfire - nothing unusual in that at this time of year - so we turned south along the wetlands to avoid it. That slowed us right down. The next thing we knew was a well-armed band of raiders coming out of the thick smoke and into the middle of us.~
 @4847 = ~Grassfire? Pah. It was a perfectly done illusion spell. The caravan guards were taken down first; many before they had chance to draw swords. Then the raiders came for us - me and my six guards. Okay? There were eight merchants in that caravan and we were near the back but they came straight for us.~
 @4848 = ~It could have been coincidence?~
-@4849 = ~It could have been. Except for one thing. I heard one of the raiders say 'There they are - the bunch that Leron told us about'.~
+@4849 = ~It could have been. Except for one thing. I heard one of the raiders say 'There they are - the bunch that Levon told us about'.~
 @4850 = ~Can you prove that?~
 @4851 = ~Of course I can't. I'm supposed to be dead, but I survived. The raiders killed my guards and I took a wound to the side during the melee. My horse threw me into the water and they assumed I was dead with all of the blood colouring the swamp around me.~
 @4852 = ~What happened to the rest of the caravan?~
 @4853 = ~Apparently the raiders cut it up, robbed one or two merchants to cover their tracks and got the hell out of there, along with the blue diamonds and all of my profits for the trip.~
-@4854 = ~I had some gold pieces left in the purse on my belt and the wound wasn't as bad as it first looked. Three months later I rode back into Imradim and Leron's jaw made a hole big enough to just about serve as his grave. He recovered quickly and showed me great sympathy, but two days later I was served with a Notice of Compensation.~
+@4854 = ~I had some gold pieces left in the purse on my belt and the wound wasn't as bad as it first looked. Three months later I rode back into Imradim and Levon's jaw made a hole big enough to just about serve as his grave. He recovered quickly and showed me great sympathy, but two days later I was served with a Notice of Compensation.~
 @4855 = ~A 'Notice of Compensation'? What's that?~
 @4856 = ~A claim on the loss of the blue diamonds. Said I'd not looked after them properly and had allowed them to be stolen while trying to escape. Said I'd blabbed about what I was carrying while drunk, except that I don't drink. And do you know what? Given what I'd heard the raider say, I wasn't that surprised.~
 @4857 = ~All in all, he stripped me of every copper I owned - what wasn't taken to cover the cost of the blue diamonds was taken as compensation for loss and hardship. So he got his profit on the blue diamonds anyway.~
 @4858 = ~And what of Aaliyah in all this?~
 @4859 = ~Ah - now we come to it, don't we? Married off. Married off to a prince, no less, the Sultan's third son. I had some friends left - as you can guess, most of my 'friends' disappeared with my fortune - and I asked a few discreet questions.~
-@4860 = ~The answers were very revealing. The offer for Aaliyah's hand came from the prince one week before that trip and I can prove that. An alliance with the ruling house makes Leron very powerful indeed, far more powerful than he could ever have been without it. I counted for nothing in the face of that.~
+@4860 = ~The answers were very revealing. The offer for Aaliyah's hand came from the prince one week before that trip and I can prove that. An alliance with the ruling house makes Levon very powerful indeed, far more powerful than he could ever have been without it. I counted for nothing in the face of that.~
 @4861 = ~But why take all your money?~
 @4862 = ~Having failed to kill me once, he didn't dare try again. A poor Akil is far less trouble than a rich Akil.~
 @4863 = ~An interesting sob-story, young Akil. Thank you for the entertainment - I think I'll remove your head for an encore.~

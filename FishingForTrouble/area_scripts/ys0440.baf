@@ -26,3 +26,12 @@ THEN
     SetGlobal("ysCreateLevon","GLOBAL",2)
     CreateCreature("yslevon",[201.367],9)
 END
+
+IF
+Global("ysTalkedToLeron","GLOBAL",3)
+THEN
+RESPONSE #100
+SetGlobal("ysTalkedToLeron","GLOBAL",4)
+ActionOverride("yslevon",EscapeArea())
+ActionOverride("ysakil",EscapeArea())
+END
