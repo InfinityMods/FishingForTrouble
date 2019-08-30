@@ -3,8 +3,8 @@
 *.txt text eol=crlf
 *.htm[l] text eol=crlf
 
-*.gitignore text eol=crlf
-*.gitattributes text eol=crlf
+*.gitignore text eol=crlf export-ignore
+*.gitattributes text eol=crlf export-ignore
 
 *.gif binary
 *.ico binary
