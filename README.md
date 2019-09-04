@@ -11,7 +11,6 @@ For more details about the mod itself, see the FishingForTrouble-Readme.html.
 Active members of InfinityMods Github organization
 
 ## Where to look for help regarding this mod? ##
-- http://baldursextendedworld.com/Vanilla_Forums/categories/mod-help
 - http://www.shsforums.net/forum/550-fishing-for-trouble
 - https://www.gibberlings3.net/forums
 - https://forums.beamdog.com
