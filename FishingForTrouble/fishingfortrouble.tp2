@@ -145,7 +145,7 @@ LAF HANDLE_AUDIO END // audio folder
 LAF HANDLE_TILESETS END // tiz folder
 
 ACTION_IF GAME_IS ~eet BG2EE~ BEGIN
-COPY ~fishingfortrouble/EE_Tis~ ~override~
+COPY ~fishingfortrouble/tis_ee~ ~override~
 END
 
 // End of core component
