@@ -156,7 +156,7 @@ END
 //Optional component - install major character portraits
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 BEGIN @20001
-REQUIRE_COMPONENT ~%MOD_FOLDER%.tp2~ 0 ~This component requires the main component.~
+REQUIRE_COMPONENT ~FishingForTrouble.tp2~ 0 ~This component requires the main component.~
 
 COPY ~%MOD_FOLDER%/portraits~ ~override~
 
