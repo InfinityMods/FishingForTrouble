@@ -1,4 +1,4 @@
-BACKUP ~fishingfortrouble/backup~
+BACKUP ~FishingForTrouble/backup~
 AUTHOR ~www.shsforums.net/forum/550-fishing-for-trouble/~
 VERSION ~3.2.5~
 
@@ -22,8 +22,8 @@ ALWAYS
 	END
 END
 
-LANGUAGE ~English (Yovaneth)~ ~english~ ~fishingfortrouble/language/english/english.tra~
-LANGUAGE ~Russian (subzero400)~ ~russian~ ~fishingfortrouble/language/russian/russian.tra~
+LANGUAGE ~English (Yovaneth)~ ~english~ ~%MOD_FOLDER%/language/english/english.tra~
+LANGUAGE ~Russian (subzero400)~ ~russian~ ~%MOD_FOLDER%/language/russian/russian.tra~
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //Core component: Fishing for Trouble by Yovaneth
@@ -34,47 +34,47 @@ REQUIRE_PREDICATE GAME_INCLUDES ~TOB~ ~This mod requires Baldur's Gate II: Thron
 //##################################################
 // Apply IDS and EXE patches if necessary (no TobEx)
 //##################################################
-INCLUDE ~fishingfortrouble/lib/patches.tpa~
+INCLUDE ~%MOD_FOLDER%/lib/patches.tpa~
 
 //##################################################
 // Copy new material
 //##################################################
 //Spells
-COPY ~fishingfortrouble/spells/yselmin.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/yselmin.spl~ ~override~
 	SAY NAME1 @149
 
-COPY ~fishingfortrouble/spells/ysghoul.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/ysghoul.spl~ ~override~
 
 //##################################################
 //Cutscenes
 //##################################################
 //Cerendor Hold
-COMPILE ~fishingfortrouble/cutscenes/yscutgte.baf~
-COMPILE ~fishingfortrouble/cutscenes/yscut01.baf~
-COMPILE ~fishingfortrouble/cutscenes/yscut02.baf~
-COMPILE ~fishingfortrouble/cutscenes/yscut03.baf~
+COMPILE ~%MOD_FOLDER%/cutscenes/yscutgte.baf~
+COMPILE ~%MOD_FOLDER%/cutscenes/yscut01.baf~
+COMPILE ~%MOD_FOLDER%/cutscenes/yscut02.baf~
+COMPILE ~%MOD_FOLDER%/cutscenes/yscut03.baf~
 
 //##################################################
 //Bams
 //##################################################
-COPY ~fishingfortrouble/bams~ ~override~
+COPY ~%MOD_FOLDER%/bams~ ~override~
 
 //##################################################
 //Music
 //##################################################
-COPY ~fishingfortrouble/audio/ysblank.mus~ ~music~
+COPY ~%MOD_FOLDER%/audio/ysblank.mus~ ~music~
 COPY_EXISTING ~songlist.2da~ ~override~
 	SET_2DA_ENTRY 0 2 3 ~YSBLANK.MUS~ // "no_music" resource
 
 //##################################################
 //Sounds
 //##################################################
-	COPY ~fishingfortrouble/sounds~ ~override~
+	COPY ~%MOD_FOLDER%/sounds~ ~override~
 
 //##################################################
 //Ghoul portrait
 //##################################################
-	COPY ~fishingfortrouble/bmp~ ~override~
+	COPY ~%MOD_FOLDER%/bmp~ ~override~
 
 //##################################################
 //2da
@@ -88,7 +88,7 @@ APPEND ~itemdial.2da~ ~YSLABRD		4978	YSLABRD~
 	UNLESS ~YSLABRD[ %TAB%]4978[ %TAB%]YSLABRD~
 
 ACTION_IF NOT FILE_EXISTS_IN_GAME ~racetext.2da~ BEGIN
-	COPY ~fishingfortrouble/2da/racetext.2da~ ~override~
+	COPY ~%MOD_FOLDER%/2da/racetext.2da~ ~override~
 END ELSE BEGIN
 	APPEND ~racetext.2da~ ~108	15946~ UNLESS ~^108~
 END
@@ -96,47 +96,47 @@ END
 //##################################################
 //Items
 //##################################################
-INCLUDE ~fishingfortrouble/lib/items.tpa~
+INCLUDE ~%MOD_FOLDER%/lib/items.tpa~
 
 //##################################################
 //Dialog files
 //##################################################
-INCLUDE ~fishingfortrouble/lib/dialog.tpa~
+INCLUDE ~%MOD_FOLDER%/lib/dialog.tpa~
 
 //##################################################
 //Areas
 //##################################################
-INCLUDE ~fishingfortrouble/lib/areas.tpa~
+INCLUDE ~%MOD_FOLDER%/lib/areas.tpa~
 
 //##################################################
 //Actor scripts
 //##################################################
-INCLUDE ~fishingfortrouble/lib/actor_scripts.tpa~
+INCLUDE ~%MOD_FOLDER%/lib/actor_scripts.tpa~
 
 //##################################################
 //Area scripts
 //##################################################
-INCLUDE ~fishingfortrouble/lib/area_scripts.tpa~
+INCLUDE ~%MOD_FOLDER%/lib/area_scripts.tpa~
 
 //##################################################
 //Other area scripts
 //##################################################
-EXTEND_TOP ~baldur.bcs~ ~fishingfortrouble/area_scripts/ysbaldur.baf~ EVALUATE_BUFFER
+EXTEND_TOP ~baldur.bcs~ ~%MOD_FOLDER%/area_scripts/ysbaldur.baf~ EVALUATE_BUFFER
 
 //##################################################
 //Stores
 //##################################################
-INCLUDE ~fishingfortrouble/lib/stores.tpa~
+INCLUDE ~%MOD_FOLDER%/lib/stores.tpa~
 
 //##################################################
 //Uncompressed Tilesets
 //##################################################
-COPY ~fishingfortrouble/tis~ ~override~
+COPY ~%MOD_FOLDER%/tis~ ~override~
 
 //##################################################
 //Worldmap and icons patching - do this last so we can patch the new areas too
 //##################################################
-INCLUDE ~fishingfortrouble/lib/patch_worldmap.tpa~
+INCLUDE ~%MOD_FOLDER%/lib/patch_worldmap.tpa~
 
 //##################################################
 // .ogg and .tiz conversion
@@ -145,7 +145,7 @@ LAF HANDLE_AUDIO END // audio folder
 LAF HANDLE_TILESETS END // tiz folder
 
 ACTION_IF GAME_IS ~eet BG2EE~ BEGIN
-COPY ~fishingfortrouble/tis_ee~ ~override~
+COPY ~%MOD_FOLDER%/tis_ee~ ~override~
 END
 
 // End of core component
@@ -154,7 +154,7 @@ END
 //Optional component - install major character portraits
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 BEGIN @20001
-REQUIRE_COMPONENT ~fishingfortrouble.tp2~ 0 ~This component requires the main component.~
+REQUIRE_COMPONENT ~%MOD_FOLDER%.tp2~ 0 ~This component requires the main component.~
 
-COPY ~fishingfortrouble/portraits~ ~override~
+COPY ~%MOD_FOLDER%/portraits~ ~override~
 
