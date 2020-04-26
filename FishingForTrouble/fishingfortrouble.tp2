@@ -2,6 +2,8 @@ BACKUP ~FishingForTrouble/backup~
 AUTHOR ~www.shsforums.net/forum/550-fishing-for-trouble/~
 VERSION ~3.2.5~
 
+AUTO_TRA ~%MOD_FOLDER%/language/%s~
+
 ALWAYS
 	ACTION_IF GAME_IS ~eet~ BEGIN
 		OUTER_SET bg2_chapter = 12
