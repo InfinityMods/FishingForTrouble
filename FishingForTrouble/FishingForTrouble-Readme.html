@@ -320,7 +320,7 @@
             <h1>
                 Fishing For Trouble
             </h1><strong>A Spellhold Studios mod for Baldur's Gate II:<acronym title="Throne of Bhaal">ToB</acronym> and
-                Baldur's Gate II Enhanced Edition </strong>
+                Baldur's Gate II: Enhanced Edition </strong>
             <hr />
             <p class="about">
                 Author: Yovaneth
@@ -331,8 +331,8 @@
             <p class="about">
                 <a href="http://www.spellholdstudios.net/ie/fft">Mod Website</a> &#8226;
                 <a href="http://www.shsforums.net/forum/550-fishing-for-trouble/">Mod Forum</a> &#8226;
-                <a href="https://github.com/InfinityMods/FishingForTrouble/archive/master.zip">Download</a> &#8226;
-                Version 3.2.4
+                <a href="https://github.com/InfinityMods/FishingForTrouble/releases/latest">Download</a> &#8226;
+                Version 3.2.6
             </p>
             <hr />
             <p class="menu">
@@ -417,13 +417,13 @@
                 </h2>
                 <p>
                     This mod works with Baldur's Gate II: Throne of Bhaal patch 26498 and Baldur's Gate II: Enhanced
-                    Edition patch 1.3.
+                    Edition patch 1.3 and above.
                 </p>
                 <p>
                     This mod should be compatible with other mods. It should work with <a
                         href="http://www.shsforums.net/forum/261-bgt-weidu/">Baldur's Gate Trilogy</a> and with
                     <a href="http://gibberlings3.net/forums/index.php?showforum=195"> Enhanced Edition Trilogy
-                        (EET)</a>, though it has not yet had extensive testing on that platform.
+                        (EET)</a>.
                     If using <a href="http://www.shsforums.net/forum/606-tobex/"><acronym
                             title="Throne of Bhaal Extender">ToBEx</acronym></a>, make sure that is installed first.
                     If using <a href="http://www.shsforums.net/forum/418-auroras-shoes/">Aurora's Shoes</a> or <a
@@ -443,9 +443,9 @@
                 </h2>
                 <p>
                     <em><strong>Note:</strong> If you've previously installed the mod,
-                        remove it before extracting the new version. To do this, run
-                        <strong>setup-fishingfortrouble.exe</strong> (or .command), uninstall all
-                        previously installed components and delete the fishingfortrouble folder. When
+                        first uninstall, then remove it before extracting the new version. To do this, run
+                        <strong>Setup-FishingForTrouble.exe</strong> (or .command), uninstall all
+                        previously installed components and delete the "FishingForTrouble" folder. When
                         installing or uninstalling, do not close the <acronym
                             title="Disk Operating System">DOS</acronym> window by clicking on the
                         <strong>X</strong> button! Instead, press the
@@ -459,31 +459,31 @@
                     <acronym title="Weimer Dialogue Utility">WeiDU</acronym> mods.
                 </p>
                 <p>
-                    You can extract files from the archive using <a href="http://www.7-zip.org/download.html">7-Zip</a>
-                    (Windows), <a href="http://www.macupdate.com/app/mac/17741/rar-expander">RAR Expander</a>
-                    (OS X), <a href="http://home.gna.org/unrar/">unrar</a> (Linux) or
-                    another file compression utility that handles .rar files.
+                    You can extract files from the archive using Windows build-in "Extract all..." feature, <a
+                        href="http://www.7-zip.org/download.html">7-Zip</a>,
+                    build-in macOS 'zip extraction' feature, using unzip tool Linux or another file compression utility
+                    that handles .zip files.
                 </p>
                 <p>
                     <strong>Windows</strong><br />
                     Extract the contents of the mod to the folder of the game you wish
                     to modify (<acronym title="Baldur's Gate II">BG2</acronym>,
                     <acronym title="Baldur's Gate Trilogy">BGT</acronym> or EasyTutu).
-                    On successful extraction, there should be a fishingfortrouble folder and a
-                    setup-fishingfortrouble.exe file in your game folder. To install, simply
-                    double-click <strong>setup-fishingfortrouble.exe</strong> and follow the
+                    On successful extraction, there should be a "FishingForTrouble" folder and a
+                    Setup-FishingForTrouble.exe file in your game folder. To install, simply
+                    double-click <strong>Setup-FishingForTrouble.exe</strong> and follow the
                     instructions on screen.
                 </p>
                 <p>
-                    Run <strong>setup-fishingfortrouble.exe</strong> in your game folder to
+                    Run <strong>Setup-FishingForTrouble.exe</strong> in your game folder to
                     reinstall, uninstall or otherwise change components.
                 </p>
                 <p>
                     <strong>Mac OS X</strong><br />
                     Extract the contents of the mod to the folder of the game you wish
-                    to modify. On successful extraction, there should be a fishingfortrouble
+                    to modify. On successful extraction, there should be a "fishingfortrouble"
                     subfolder in your game folder. Download the OS X version of <a
-                        href="http://weidu.org/~thebigg/"><acronym title="Weimer Dialogue Utility">WeiDU</acronym></a>
+                        href="https://github.com/WeiDUorg/weidu/releases/latest"><acronym title="Weimer Dialogue Utility">WeiDU</acronym></a>
                     (or copy another mod's
                     launcher) and rename it <strong>setup-fishingfortrouble</strong>. Put this and
                     the <strong>setup-fishingfortrouble.command</strong> file within the fishingfortrouble
@@ -494,7 +494,7 @@
                 <p>
                     <strong>Linux</strong><br />
                     Extract the contents of the mod to the folder of the game you wish
-                    to modify. Download the latest Linux version of <a href="http://weidu.org/~thebigg/"><acronym
+                    to modify. Download the latest Linux version of <a href="https://github.com/WeiDUorg/weidu/releases/latest"><acronym
                             title="Weimer Dialogue Utility">WeiDU</acronym></a> and copy WeiDU and
                     WeInstall to /usr/bin. Then open a terminal and cd to your game
                     installation directory.
@@ -525,20 +525,13 @@
                     Components
                 </h2>
                 <p>
-                    There are three components:
+                    There are two components:
                 <ul>
-                    <li>0 - Core Files: Fishing for Trouble by Yovaneth
+                    <li>Fishing for Trouble by Yovaneth
                     </li>
-                    <li>1 - Optional: Add portraits for 63 major NPCs in Fishing for Trouble
+                    <li>Fishing for Trouble - Major character portraits
                     </li>
                 </ul>
-                </p>
-                <p>
-                    When the core files installation has completed, the installer will
-                    automatically decompress the Ogg Vorbis music files and the area
-                    tilesets. This may take some time. Uninstalling the mod will cause
-                    the installer to clean up behind itself, so there should be no trace
-                    left behind after it has finished uninstalling.
                 </p>
                 <address>
                     <span class="footer">Fishing For Trouble &gt; Components</span>
@@ -845,93 +838,67 @@
                     Version History
                 </h2>
                 <h6>
-                    Version v1: 15 Feb 2011
+                    Version v3.2.6: 06.01.2021 by AL|EN
                 </h6>
                 <ul>
-                    <li>First public release
+                    <li>updated russian lang, thanks AGKanevchev</li>
+                    <li>traify ysblksto.d and yselcol2.d</li>
+                    <li>traify setup messages</li>
+                    <li>Update macOS version of tisunpack</li>
+                    <li>use %MOD_FOLDER% where possible</li>
+                    <li>added Infinity Auto Packager</li>
+                    <li>added globally unique LABEL's</li>
+                    <li>replace REQUIRE COMPONENT with equivalent code which does not depend on DESIGNATED numbers</li>
+                    <li>restore original version name formatting to match tags and release names</li>
+                    <li>rename AUTHOR to SUPPORT</li>
+                    <li>updated ReadMe</li>
+                </ul>
+                <h6>
+                    Version v3.2.5: 04.09.2019 by AL|EN and Roxanne
+                </h6>
+                <ul>
+                    <li>Fixed loop in final Akil quest dialogue
+                    </li>
+                    <li>Fixed inconsistent villain name Levon vs Leron
+                    </li>
+                    <li>Added remaining Tis for EE
+                    </li>
+                    <li>Removed illegal support contact
                     </li>
                 </ul>
                 <h6>
-                    Version v2.3: 24 December 2012
-                </h6>
-                <h6>
-                    Version v2.4: 24 June 2013
-                </h6>
-                <h6>
-                    Version v2.5: 24 August 2013
-                </h6>
-                <h6>
-                    Version v2.6: 25 August 2013 (spot the panic release)
-                </h6>
-                <h6>
-                    Version v2.7: 8 October 2013
-                </h6>
-                <h6>
-                    Version v2.8: 14 December 2013
-                </h6>
-                <h6>
-                    Version v3.0: 25 February 2014
-                </h6>
-                <h6>
-                    Version v3.0HF1: 19 February 2015
+                    Version v3.2.4: 20.08.2019 by AL|EN
                 </h6>
                 <ul>
-                    <li>Hotfix 1 folded into the main installer
+                    <li>updated mod readme
                     </li>
-                    <li>See the 3.0HF1.pdf in the \fishingfortrouble folder for a comprehensive list of updates, fixes
-                        and known issues
+                    <li>added support forum
                     </li>
                 </ul>
                 <h6>
-                    Version v3.1: 5 February 2016
+                    Version v3.2.3: 20.08.2019 by AL|EN and Roxanne
                 </h6>
                 <ul>
-                    <li>Incorporated patches from the BiG World Fixpack
+                    <li>fixed Tis files for large areas in EE games
                     </li>
-                    <li>Renamed mod folder and tp2 from dq to fishingfortrouble
+                    <li>added MacOS WeiDU executable and changed setup-fishingfortrouble.command file
                     </li>
-                    <li>Incorporated EET compatibility patches from K4thos
-                    </li>
-                    <li>Simplified tp2 by moving sub-sections into tpa files
-                    </li>
-                    <li>Replaced platform-specific conversions with HANDLE_AUDIO and HANDLE_TILESETS
-                    </li>
-                    <li>Fixed some typos in the English translation
+                    <li>fixed double spawning of tanar'ri at lighthouse and added missing leaving code
                     </li>
                 </ul>
                 <h6>
-                    Version v3.1.1: 21 July 2016
+                    Version v3.2.2: 19 August 2019 by AL|EN and Roxanne
                 </h6>
                 <ul>
-                    <li>Added check for EE game type to lib/patches.tpa to avoid patching ACTION.IDS (some signatures
-                        changed in EE)
+                    <li>Consolidated maintenance fixes from 2018 and 2019
                     </li>
                 </ul>
                 <h6>
-                    Version v3.1.2: 3 November 2016
+                    Version v3.2.1: 27 July 2016 by AL|EN
                 </h6>
                 <ul>
-                    <li>Incorporated patch from K4thos to fix EET journal chapter numbering
-                    </li>
-                    <li>Removed an invalid reference (http://www.shsforums.net/topic/58178-missing-spell-in-script/)
-                    </li>
-                </ul>
-                <h6>
-                    Version v3.1.3: 6 November 2016
-                </h6>
-                <ul>
-                    <li>Fixed following issues reported by micbaldur
-                        (http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=589066)
-                    </li>
-                    <li>Earl Wultheof will give a gold reward as his dialogue claims
-                    </li>
-                    <li>The Food Thief quest now advances and can be completed after talking with Cado
-                    </li>
-                    <li>Talking with Ailoth no longer makes Garalial act as if you already talked to him
-                    </li>
-                    <li>Fixed Levon's dialogue when Akil is in the same room (possible quest outcome)
-                    </li>
-                    <li>Fixed charisma checks in Levon's dialogue (speaker's charisma affects outcome)
+                    <li>removed the "Optional component - add Fishing for Trouble to BP-BGT-Worldmap" because it doesn't
+                        make sense, proper code by K4thos added to lib/patch_worldmap.tpa
                     </li>
                 </ul>
                 <h6>
@@ -955,60 +922,95 @@
                     </li>
                 </ul>
                 <h6>
-                    Version v3.2.1: 27 July 2016 by AL|EN
+                    Version v3.1.3: 6 November 2016
                 </h6>
                 <ul>
-                    <li>removed the "Optional component - add Fishing for Trouble to BP-BGT-Worldmap" because it doesn't
-                        make sense, proper code by K4thos added to lib/patch_worldmap.tpa
+                    <li>Fixed following issues reported by micbaldur
+                        (http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=589066)
+                    </li>
+                    <li>Earl Wultheof will give a gold reward as his dialogue claims
+                    </li>
+                    <li>The Food Thief quest now advances and can be completed after talking with Cado
+                    </li>
+                    <li>Talking with Ailoth no longer makes Garalial act as if you already talked to him
+                    </li>
+                    <li>Fixed Levon's dialogue when Akil is in the same room (possible quest outcome)
+                    </li>
+                    <li>Fixed charisma checks in Levon's dialogue (speaker's charisma affects outcome)
                     </li>
                 </ul>
                 <h6>
-                    Version v3.2.2: 19 August 2019 by AL|EN and Roxanne
+                    Version v3.1.2: 3 November 2016
                 </h6>
                 <ul>
-                    <li>Consolidated maintenance fixes from 2018 and 2019
+                    <li>Incorporated patch from K4thos to fix EET journal chapter numbering
+                    </li>
+                    <li>Removed an invalid reference (http://www.shsforums.net/topic/58178-missing-spell-in-script/)
                     </li>
                 </ul>
                 <h6>
-                    Version v3.2.3: 20.08.2019 by AL|EN and Roxanne
+                    Version v3.1.1: 21 July 2016
                 </h6>
                 <ul>
-                    <li>fixed Tis files for large areas in EE games
-                    </li>
-                    <li>added MacOS WeiDU executable and changed setup-fishingfortrouble.command file
-                    </li>
-                    <li>fixed double spawning of tanar'ri at lighthouse and added missing leaving code
+                    <li>Added check for EE game type to lib/patches.tpa to avoid patching ACTION.IDS (some signatures
+                        changed in EE)
                     </li>
                 </ul>
                 <h6>
-                    Version v3.2.4: 20.08.2019 by AL|EN
+                    Version v3.1: 5 February 2016
                 </h6>
                 <ul>
-                    <li>updated mod readme
+                    <li>Incorporated patches from the BiG World Fixpack
                     </li>
-                    <li>added support forum
+                    <li>Renamed mod folder and tp2 from dq to fishingfortrouble
+                    </li>
+                    <li>Incorporated EET compatibility patches from K4thos
+                    </li>
+                    <li>Simplified tp2 by moving sub-sections into tpa files
+                    </li>
+                    <li>Replaced platform-specific conversions with HANDLE_AUDIO and HANDLE_TILESETS
+                    </li>
+                    <li>Fixed some typos in the English translation
                     </li>
                 </ul>
                 <h6>
-                    Version v3.2.5: 04.09.2019 by AL|EN and Roxanne
+                    Version v3.0HF1: 19 February 2015
                 </h6>
                 <ul>
-                    <li>Fixed loop in final Akil quest dialogue
+                    <li>Hotfix 1 folded into the main installer
                     </li>
-                    <li>Fixed inconsistent villain name Levon vs Leron
-                    </li>
-                    <li>Added remaining Tis for EE
-                    </li>
-                    <li>Removed illegal support contact
+                    <li>See the 3.0HF1.pdf in the \fishingfortrouble folder for a comprehensive list of updates, fixes
+                        and known issues
                     </li>
                 </ul>
                 <h6>
-                    Version v3.2.6: by AL|EN
+                    Version v3.0: 25 February 2014
+                </h6>
+                <h6>
+                    Version v2.8: 14 December 2013
+                </h6>
+                <h6>
+                    Version v2.7: 8 October 2013
+                </h6>
+                <h6>
+                    Version v2.6: 25 August 2013 (spot the panic release)
+                </h6>
+                <h6>
+                    Version v2.5: 24 August 2013
+                </h6>
+                <h6>
+                    Version v2.4: 24 June 2013
+                </h6>
+                <h6>
+                    Version v2.3: 24 December 2012
+                </h6>
+                <h6>
+                    Version v1: 15 Feb 2011
                 </h6>
                 <ul>
-                    <li>restore original version name formatting to match tags and release names</li>
+                    <li>First public release
+                    </li>
                 </ul>
-
                 <address>
                     <span class="footer">Fishing For Trouble &gt; Version History</span>
                     &#8226;<a href="#top">Back to top</a>
