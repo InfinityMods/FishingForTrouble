@@ -30,7 +30,7 @@ LANGUAGE ~Russian (bysubzero400, updated by AGKanevchev)~ ~russian~ ~FishingForT
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //Core component: Fishing for Trouble by Yovaneth
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-BEGIN @20000
+BEGIN @20000 LABEL ~FishingForTrouble-Main~
 REQUIRE_PREDICATE GAME_INCLUDES ~TOB~ @30000
 
 //##################################################
@@ -155,7 +155,7 @@ END
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //Optional component - install major character portraits
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-BEGIN @20001
+BEGIN @20001 LABEL ~FishingForTrouble-Portraits~
 REQUIRE_COMPONENT ~FishingForTrouble.tp2~ 0 @30001
 
 COPY ~%MOD_FOLDER%/portraits~ ~override~
