@@ -24,8 +24,8 @@ ALWAYS
 	END
 END
 
-LANGUAGE ~English (Yovaneth)~ ~english~ ~%MOD_FOLDER%/language/english/english.tra~
-LANGUAGE ~Russian (bysubzero400, updated by AGKanevchev)~ ~russian~ ~%MOD_FOLDER%/language/russian/russian.tra~
+LANGUAGE ~English (Yovaneth)~ ~english~ ~FishingForTrouble/language/english/english.tra~
+LANGUAGE ~Russian (bysubzero400, updated by AGKanevchev)~ ~russian~ ~FishingForTrouble/language/russian/russian.tra~
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //Core component: Fishing for Trouble by Yovaneth
