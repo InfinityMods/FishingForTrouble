@@ -156,7 +156,7 @@ END
 //Optional component - install major character portraits
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 BEGIN @20001 LABEL ~FishingForTrouble-Portraits~
-REQUIRE_COMPONENT ~FishingForTrouble.tp2~ 0 @30001
+REQUIRE_PREDICATE MOD_IS_INSTALLED ~FishingForTrouble.tp2~ (ID_OF_LABEL ~FishingForTrouble.tp2~ ~FishingForTrouble-Main~) @30001
 
 COPY ~%MOD_FOLDER%/portraits~ ~override~
 
