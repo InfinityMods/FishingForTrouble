@@ -1,0 +1,11 @@
+yspotn01.itm
+yspotn02.itm
+
+C:CreateItem("yspotn01")
+C:CreateItem("yspotn02")
+
+CLUAConsole:CreateItem("yspotn01")
+CLUAConsole:CreateItem("yspotn02")
+
+C:MoveToArea("ys0282")
+C:ExploreArea()
