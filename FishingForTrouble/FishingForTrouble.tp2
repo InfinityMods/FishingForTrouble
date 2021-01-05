@@ -31,7 +31,7 @@ LANGUAGE ~Russian (bysubzero400, updated by AGKanevchev)~ ~russian~ ~FishingForT
 //Core component: Fishing for Trouble by Yovaneth
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 BEGIN @20000
-REQUIRE_PREDICATE GAME_INCLUDES ~TOB~ ~This mod requires Baldur's Gate II: Throne of Bhaal or Enhanced Edition~
+REQUIRE_PREDICATE GAME_INCLUDES ~TOB~ @30000
 
 //##################################################
 // Apply IDS and EXE patches if necessary (no TobEx)
@@ -156,7 +156,7 @@ END
 //Optional component - install major character portraits
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 BEGIN @20001
-REQUIRE_COMPONENT ~FishingForTrouble.tp2~ 0 ~This component requires the main component.~
+REQUIRE_COMPONENT ~FishingForTrouble.tp2~ 0 @30001
 
 COPY ~%MOD_FOLDER%/portraits~ ~override~
 
