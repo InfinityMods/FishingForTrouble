@@ -2,8 +2,8 @@
 
 # use export-ignore to skip files when downloading
 **/.* export-ignore
-*.gitignore text eol=crlf
-*.gitattributes text eol=crlf
+.gitignore text eol=crlf
+.gitattributes text eol=crlf
 
 # Common
 *.7z binary
