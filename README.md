@@ -8,7 +8,7 @@ For more details about the mod itself, see the FishingForTrouble-Readme.html.
 
 ## Who is currently maintaining this mod? ##
 
-Active members of InfinityMods Github organization
+Active members of InfinityMods GitHub organization
 
 ## Where to look for help regarding this mod? ##
 - http://www.shsforums.net/forum/550-fishing-for-trouble
