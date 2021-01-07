@@ -283,7 +283,7 @@ ACTION_IF (~%WEIDU_OS%~ STRING_EQUAL_CASE ~win32~ != 0) AND (NOT GAME_IS ~bgee b
 	ACTION_IF tbex < 2 BEGIN
 		COPY ~bgmain.exe~ ~bgmain.exe~
 			PATCH_IF tbex = 1 BEGIN
-				PATCH_PRINT ~Skipping race strref patching (TobEx already does this).~
+				PATCH_PRINT @40010
 			END ELSE BEGIN
 				READ_ASCII 0x0b27c9 target_bytes_1 ELSE 0 (0xc)
 				READ_ASCII 0x2a7bf1 target_bytes_2 ELSE 0 (0x12)
@@ -298,7 +298,7 @@ ACTION_IF (~%WEIDU_OS%~ STRING_EQUAL_CASE ~win32~ != 0) AND (NOT GAME_IS ~bgee b
 					AND (~%target_bytes_5%~ STRING_EQUAL ~%orig_bytes_5%~)
 					AND (~%target_bytes_6%~ STRING_EQUAL ~%orig_bytes_6%~)
 				THEN BEGIN
-					PATCH_PRINT ~Patching .exe to externalize race strrefs ...~
+					PATCH_PRINT @40020
 					WRITE_ASCIIE 0x000b27c9 ~%patch_bytes_1%~ (0xc)
 					WRITE_ASCIIE 0x002a7bf1 ~%patch_bytes_2%~ (0x12)
 					WRITE_ASCIIE 0x002d8fa6 ~%patch_bytes_3%~ (0xe)
@@ -306,20 +306,20 @@ ACTION_IF (~%WEIDU_OS%~ STRING_EQUAL_CASE ~win32~ != 0) AND (NOT GAME_IS ~bgee b
 					WRITE_ASCIIE 0x0033437d ~%patch_bytes_5%~ (0x1f)
 					WRITE_ASCIIE 0x003e4195 ~%patch_bytes_6%~ (0x12)
 				END ELSE BEGIN
-					PATCH_PRINT ~Target bytes not found for .exe race strref patch.~
+					PATCH_PRINT @40030
 				END
 				READ_BYTE 0x41ae67 b1
 				READ_LONG 0x41ae68 b2
 				READ_BYTE 0x41ae86 b3
 				READ_LONG 0x41ae87 b4
 				PATCH_IF (b1 = 0xe9) AND (b2 = 0x1ec) AND (b3 = 0xe9) AND (b4 = 0x1cd) BEGIN
-					PATCH_PRINT ~Patching .exe to enable creature paperdolls ...~
+					PATCH_PRINT @40040
 					WRITE_BYTE 0x41ae67 0xeb
 					WRITE_LONG 0x41ae68 0x90909042
 					WRITE_BYTE 0x41ae86 0xeb
 					WRITE_LONG 0x41ae87 0x90909023
 				END ELSE BEGIN
-					PATCH_PRINT ~Target bytes not found for .exe paperdoll patch.~
+					PATCH_PRINT @40050
 				END
 			END
 		BUT_ONLY

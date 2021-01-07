@@ -1,8 +1,18 @@
-//Journal entries - NOTE: Two carriage returns needed to create a journal title with the entry
+//FishingForTrouble.tp2
 @20000 = ~Fishing for Trouble by Yovaneth~
 @20001 = ~Fishing for Trouble - Major character portraits~
+
 @30000 = ~This mod requires Baldur's Gate II: Throne of Bhaal or Baldur's Gate II: Enhanced Edition~
 @30001 = ~This component requires the main Fishing for Trouble component.~
+
+//lib/patches.tpa
+@40010 = ~Skipping race strref patching (TobEx already does this).~ // patches.tpa
+@40020 = ~Patching .exe to externalize race strrefs ...~ // patches.tpa
+@40030 = ~Target bytes not found for .exe race strref patch.~ // patches.tpa
+@40040 = ~Patching .exe to enable creature paperdolls ...~
+@40050 = ~Target bytes not found for .exe paperdoll patch.~
+
+//Journal entries - NOTE: Two carriage returns needed to create a journal title with the entry
 @2 = ~Fishing for Trouble: Find Elminster
 
 I met a mage at the Crooked Crane Inn who claims to be an acquaintance of Elminster and who asked me to deliver a message to the old mage himself. I have promised nothing but have agreed to carry it in case I come across Elminster somewhere in the course of our travels.~
