@@ -1,6 +1,6 @@
 BACKUP ~FishingForTrouble/backup~
 SUPPORT ~www.shsforums.net/forum/550-fishing-for-trouble/~
-VERSION ~v3.2.6~
+VERSION ~v3.2.7~
 
 AUTO_TRA ~%MOD_FOLDER%/language/%s~
 
@@ -24,17 +24,17 @@ ALWAYS
 	END
 END
 
-LANGUAGE ~English (Yovaneth)~ ~english~ ~FishingForTrouble/language/english/english.tra~
-LANGUAGE ~Russian (bysubzero400, updated by AGKanevchev)~ ~russian~ ~FishingForTrouble/language/russian/russian.tra~
+LANGUAGE ~English~ ~english~ ~FishingForTrouble/language/english/english.tra~
+LANGUAGE ~Russian (subzero400, Velv, minor updates by AGKanevchev)~ ~russian~ ~FishingForTrouble/language/russian/russian.tra~
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//Core component: Fishing for Trouble by Yovaneth
+//Fishing for Trouble by Yovaneth
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 BEGIN @20000 LABEL ~FishingForTrouble-Main~
 REQUIRE_PREDICATE GAME_INCLUDES ~TOB~ @30000
 
 //##################################################
-// Apply IDS and EXE patches if necessary (no TobEx)
+//Apply IDS and EXE patches if necessary (no TobEx)
 //##################################################
 INCLUDE ~%MOD_FOLDER%/lib/patches.tpa~
 
@@ -43,7 +43,7 @@ INCLUDE ~%MOD_FOLDER%/lib/patches.tpa~
 //##################################################
 //Spells
 COPY ~%MOD_FOLDER%/spells/yselmin.spl~ ~override~
-	SAY NAME1 @149
+    SAY NAME1 @149
 
 COPY ~%MOD_FOLDER%/spells/ysghoul.spl~ ~override~
 
@@ -82,7 +82,7 @@ COPY_EXISTING ~songlist.2da~ ~override~
 //2da
 //##################################################
 COPY_EXISTING ~itemdial.2da~ ~override~
-	BUT_ONLY_IF_IT_CHANGES
+	BUT_ONLY
 
 APPEND ~itemdial.2da~ ~YSPRPT		4978	YSPRPT~
 	UNLESS ~YSPRPT[ %TAB%]4978[ %TAB%]YSPRPT~
@@ -147,16 +147,15 @@ LAF HANDLE_AUDIO END // audio folder
 LAF HANDLE_TILESETS END // tiz folder
 
 ACTION_IF GAME_IS ~eet BG2EE~ BEGIN
-COPY ~%MOD_FOLDER%/tis_ee~ ~override~
+    COPY ~%MOD_FOLDER%/tis_ee~ ~override~
 END
 
 // End of core component
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//Optional component - install major character portraits
+//Fishing for Trouble - Major character portraits
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 BEGIN @20001 LABEL ~FishingForTrouble-Portraits~
 REQUIRE_PREDICATE MOD_IS_INSTALLED ~FishingForTrouble.tp2~ (ID_OF_LABEL ~FishingForTrouble.tp2~ ~FishingForTrouble-Main~) @30001
 
 COPY ~%MOD_FOLDER%/portraits~ ~override~
-
