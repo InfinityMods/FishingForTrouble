@@ -7,7 +7,7 @@ IF
 THEN
   RESPONSE #100
 	  SetGlobal("ys_PlayDayNightMovie","GLOBAL",1)
-    StartMovie("ysdayni")
+    StartMovie("daynite")
 END
 
 //Day
@@ -18,7 +18,7 @@ IF
 THEN
   RESPONSE #100
 	  SetGlobal("ys_PlayDayNightMovie","GLOBAL",0)
-    StartMovie("ysniday")
+    StartMovie("niteday")
 END
 
 //Reset globals

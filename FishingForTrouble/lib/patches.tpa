@@ -52,7 +52,7 @@ ACTION_IF (NOT GAME_IS ~bgee bg2ee eet~) BEGIN // only if not EE
 	APPEND ~ACTION.IDS~ ~337 ReallyForceSpellPointRES(S:RES*,P:Target*)~
 		UNLESS ~337 ReallyForceSpellPointRES(S:RES\*,P:Target\*)~
 	APPEND ~ACTION.IDS~ ~7 CreateCreature(S:NewObject*,P:Location*,I:Face*)~
-		UNLESS ~7 CreateCreature(S:NewObject*,P:Location*,I:Face*)~ // breaks EE
+		UNLESS ~7 CreateCreature(S:NewObject\*,P:Location\*,I:Face\*.*)~
 
 	APPEND ~TRIGGER.IDS~ ~0x00A1 SpellCastOnMeRES(S:Spell*,O:Caster*)~
 		UNLESS ~0x00A1 SpellCastOnMeRES(S:Spell\*,O:Caster\*)~
