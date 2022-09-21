@@ -5,7 +5,7 @@
 // dialog   : ./dialog.tlk
 // dialogF  : (none)
 
-BEGIN BWFISH2 // non-zero flags may indicate non-pausing dialogue
+BEGIN BFISHW2 // non-zero flags may indicate non-pausing dialogue
 //////////////////////////////////////////////////
 // WARNING: this file contains non-trivial WEIGHTs
 //////////////////////////////////////////////////
