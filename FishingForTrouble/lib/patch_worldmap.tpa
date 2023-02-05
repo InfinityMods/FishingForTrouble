@@ -26,13 +26,19 @@
 		LAF ADD_MAP_ICONS STR_VAR path_to_icons = EVAL ~%MOD_FOLDER%/Worldmap/icon/bg/icon.bam~ RET new_icon_index END
 		OUTER_SET YS0370_icon = 17
 		OUTER_SET YS0390_icon = new_icon_index
-		OUTER_SET include_saves = 1
+		OUTER_SET include_saves = 0
 	END
 
 	// patch areas_bg2.tbl to use new dynamic icon
-	COPY ~%MOD_FOLDER%/Worldmap/areas_bg2.tbl~ ~%MOD_FOLDER%/Worldmap~
-		REPLACE_TEXTUALLY ~\([ %TAB%]+YS0370[ %TAB%]+[0-9]+[ %TAB%]+\)[0-9]+~ ~\1%YS0370_icon%~
-		REPLACE_TEXTUALLY ~\([ %TAB%]+YS0390[ %TAB%]+[0-9]+[ %TAB%]+\)[0-9]+~ ~\1%YS0390_icon%~
+	COPY ~%MOD_FOLDER%/worldmap/areas_bg2.tbl~ ~%MOD_FOLDER%/worldmap~
+		REPLACE_TEXTUALLY ~YS0370_icon~ ~%YS0370_icon%~
+		REPLACE_TEXTUALLY ~YS0390_icon~ ~%YS0390_icon%~
+		PATCH_IF GAME_IS ~bgt~ BEGIN
+		  REPLACE_TEXTUALLY ~56~ ~661~
+		  REPLACE_TEXTUALLY ~72~ ~677~
+		  REPLACE_TEXTUALLY ~87~ ~692~
+		  REPLACE_TEXTUALLY ~630~ ~1235~
+		END
 	BUT_ONLY
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
