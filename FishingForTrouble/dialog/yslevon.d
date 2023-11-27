@@ -242,7 +242,7 @@ IF ~~ THEN BEGIN 42
 	SAY @5008
 	IF~~THEN REPLY @5009
 	 DO~SetGlobal("ysTalkedToLeron","GLOBAL",1)
-	 SetGlobal("ysAssassinCave,","GLOBAL",1)
+	 SetGlobal("ysAssassinCave","GLOBAL",1)
    AddJournalEntry(@155,QUEST)~
 	GOTO 43
 	IF~~THEN REPLY @5010
