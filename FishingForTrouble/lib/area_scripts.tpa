@@ -8,10 +8,12 @@
 //Athkatla
 	COPY_EXISTING ~ar0305.are~ ~override~
 	WRITE_ASCII 0x94 ~ar0305~
-	COMPILE ~fishingfortrouble/area_scripts/ar0305.baf~
+    EXTEND_TOP ~ar0305.bcs~ ~fishingfortrouble/area_scripts/ar0305.baf~
+
 	COPY_EXISTING ~ar0306.are~ ~override~
 	WRITE_ASCII 0x94 ~ar0306~
-	COMPILE ~fishingfortrouble/area_scripts/ar0306.baf~
+    EXTEND_TOP ~ar0306.bcs~ ~fishingfortrouble/area_scripts/ar0306.baf~
+
 	COMPILE ~fishingfortrouble/area_scripts/ys0390.baf~
 	COMPILE EVALUATE_BUFFER ~fishingfortrouble/area_scripts/ys0401.baf~
 	COMPILE ~fishingfortrouble/area_scripts/ys0405.baf~
