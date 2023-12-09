@@ -1,30 +1,30 @@
 //Cloudpeak Mountains
-	COPY ~fishingfortrouble/areas/cloudpeaks/.~ ~override/.~
-	COPY ~fishingfortrouble/areas/cloudpeaks/ys0370/.~ ~override/.~
+	COPY ~fishingfortrouble/areas/cloudpeaks/~ ~override~
+	COPY ~fishingfortrouble/areas/cloudpeaks/ys0370/~ ~override~
 	SAY 0x11e8 @404
 
 //Athkatla
-	COPY ~fishingfortrouble/areas/Athkatla/.~ ~override/.~
+	COPY ~fishingfortrouble/areas/Athkatla/~ ~override~
 
 //Porthpentyrch
-	COPY ~fishingfortrouble/areas/porthpentyrch/.~ ~override/.~
-	COPY ~fishingfortrouble/areas/porthpentyrch/ys0030/.~ ~override/.~
+	COPY ~fishingfortrouble/areas/porthpentyrch/~ ~override~
+	COPY ~fishingfortrouble/areas/porthpentyrch/ys0030/~ ~override~
 	SAY 0x308 @218
-	COPY ~fishingfortrouble/areas/porthpentyrch/ys1000/.~ ~override/.~
+	COPY ~fishingfortrouble/areas/porthpentyrch/ys1000/~ ~override~
 	SAY 0x4054 @400
 	SAY 0x4118 @401
 	SAY 0x41dc @402
-	COPY ~fishingfortrouble/areas/porthpentyrch/ys1001/.~ ~override/.~
+	COPY ~fishingfortrouble/areas/porthpentyrch/ys1001/~ ~override~
 	SAY 0x4e24 @400
 	SAY 0x4ee8 @401
 	SAY 0x4fac @402
 
 //Cerendor Hold
-	COPY ~fishingfortrouble/areas/Cerendor Hold/.~ ~override/.~
+	COPY ~fishingfortrouble/areas/Cerendor Hold/~ ~override~
 
 //Imradim
-	COPY ~fishingfortrouble/areas/Calim Desert/.~ ~override/.~
-	COPY ~fishingfortrouble/areas/Calim Desert/cave/.~ ~override/.~
+	COPY ~fishingfortrouble/areas/Calim Desert/~ ~override~
+	COPY ~fishingfortrouble/areas/Calim Desert/cave/~ ~override~
 	SAY 0x664 @411
 	SAY 0x728 @410
 
@@ -43,7 +43,7 @@
 	SAY NAME2 @253
 
 //Athkatla
-	COPY ~fishingfortrouble/cre/athkatla/.~ ~override/.~
+	COPY ~fishingfortrouble/cre/athkatla/~ ~override~
 	COPY ~fishingfortrouble/cre/ysltor.cre~ ~override/ysltor.cre~
 	SAY NAME1 @200
 	SAY NAME2 @201
@@ -144,7 +144,7 @@
 	COPY ~fishingfortrouble/cre/yselm01.cre~ ~override/yselm01.cre~
 
 //Porthpentyrch
-	COPY ~fishingfortrouble/cre/ppt/.~ ~override/.~
+	COPY ~fishingfortrouble/cre/ppt/~ ~override~
 	COPY ~fishingfortrouble/cre/ysogrema.cre~ ~override/ysogrema.cre~
 	COPY ~fishingfortrouble/bcs/ysogmage.bcs~ ~override/ysogmage.bcs~
 	COPY ~fishingfortrouble/cre/ystanarr.cre~ ~override/ystanarr.cre~
@@ -190,7 +190,7 @@
 	COPY ~fishingfortrouble/cre/ysgrmarc.cre~ ~override/ysgrmarc.cre~
 
 //Cerendor Hold
-	COPY ~fishingfortrouble/cre/cerendor/.~ ~override/.~
+	COPY ~fishingfortrouble/cre/cerendor/~ ~override~
 	COPY ~fishingfortrouble/cre/ysblksto.cre~ ~override/ysblksto.cre~
 	SAY NAME1 @222
 	SAY NAME2 @222
@@ -273,7 +273,7 @@
 	SAY NAME2 @209
 
 //Imradim
-	COPY ~fishingfortrouble/cre/imradim/.~ ~override/.~
+	COPY ~fishingfortrouble/cre/imradim/~ ~override~
 	COPY ~fishingfortrouble/cre/yspashan.cre~ ~override/yspashan.cre~
 	SAY NAME1 @263
 	SAY NAME2 @263
