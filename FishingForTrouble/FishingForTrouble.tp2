@@ -1,6 +1,6 @@
 BACKUP ~FishingForTrouble/backup~
 SUPPORT ~www.shsforums.net/forum/550-fishing-for-trouble/~
-VERSION ~v3.2.8~
+VERSION ~v3.2.9~
 
 AUTO_TRA ~%MOD_FOLDER%/language/%s~
 
