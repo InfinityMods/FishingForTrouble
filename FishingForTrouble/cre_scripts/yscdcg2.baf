@@ -28,7 +28,7 @@ THEN
 		Attack(LastSeenBy(Myself))
 	RESPONSE #11
 		IncrementGlobal("ys_cg2","LOCALS",1)
-		ForceSpell(LastSeenBy(Myself),WIZARD_FOG_CLOUD)
+		ForceSpell(LastSeenBy(Myself),WIZARD_ICE_STORM)
 END
 
 IF
