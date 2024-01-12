@@ -22,10 +22,25 @@ ALWAYS
 		OUTER_SET wmp_xCoord_SoA = 0
 		OUTER_SET wmp_yCoord_SoA = 0
 	END
+
+	/* Converts tra files to UTF-8 */
+	ACTION_DEFINE_ARRAY noconvert BEGIN END
+
+	// any tra files used in LANGUAGE need to be reloaded after UTF-8 conversion
+	ACTION_DEFINE_ARRAY reload BEGIN Setup END
+
+	LAF HANDLE_CHARSETS
+		INT_VAR
+			infer_charsets = 1
+		STR_VAR
+			tra_path = EVAL ~%MOD_FOLDER%/Language~
+			noconvert_array = noconvert
+			reload_array = reload
+	END
 END
 
 LANGUAGE ~English~ ~english~ ~FishingForTrouble/language/english/english.tra~
-LANGUAGE ~Russian (subzero400, Velv, minor updates by AGKanevchev)~ ~russian~ ~FishingForTrouble/language/russian/russian.tra~
+LANGUAGE ~Russian (by subzero400, Velv, minor updates by AGKanevchev)~ ~russian~ ~FishingForTrouble/language/russian/russian.tra~
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //Fishing for Trouble by Yovaneth
