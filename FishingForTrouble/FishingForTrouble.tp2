@@ -31,10 +31,10 @@ LANGUAGE ~Russian (subzero400, Velv, minor updates by AGKanevchev)~ ~russian~ ~F
 //Fishing for Trouble by Yovaneth
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 BEGIN @20000 LABEL ~FishingForTrouble-Main~
-REQUIRE_PREDICATE GAME_INCLUDES ~TOB~ @30000
+REQUIRE_PREDICATE GAME_INCLUDES ~tob~ @30000
 
 //##################################################
-//Apply IDS and EXE patches if necessary (no TobEx)
+//Apply IDS and EXE patches if necessary (no ToBEx)
 //##################################################
 INCLUDE ~%MOD_FOLDER%/lib/patches.tpa~
 
@@ -135,6 +135,10 @@ INCLUDE ~%MOD_FOLDER%/lib/stores.tpa~
 //##################################################
 COPY ~%MOD_FOLDER%/tis~ ~override~
 
+ACTION_IF GAME_IS ~eet bg2ee~ BEGIN
+    COPY ~%MOD_FOLDER%/tis_ee~ ~override~
+END
+
 //##################################################
 //Worldmap and icons patching - do this last so we can patch the new areas too
 //##################################################
@@ -145,10 +149,6 @@ INCLUDE ~%MOD_FOLDER%/lib/patch_worldmap.tpa~
 //##################################################
 LAF HANDLE_AUDIO END // audio folder
 LAF HANDLE_TILESETS END // tiz folder
-
-ACTION_IF GAME_IS ~eet BG2EE~ BEGIN
-    COPY ~%MOD_FOLDER%/tis_ee~ ~override~
-END
 
 // End of core component
 
