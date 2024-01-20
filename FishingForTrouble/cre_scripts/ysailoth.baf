@@ -55,4 +55,11 @@ THEN
 		ForceSpell(LastAttackerOf(Myself),WIZARD_EMOTION_HOPELESSNESS)
 END
 
+IF
+	Global("ys_RWMM","LOCALS",10)
+THEN
+	RESPONSE #20
+		Attack(NearestEnemyOf(Myself))
+END
+
 

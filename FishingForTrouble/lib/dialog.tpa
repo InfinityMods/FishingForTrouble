@@ -46,7 +46,7 @@
 	COMPILE ~fishingfortrouble/dialog/yswmndlg.d~
 	COMPILE ~fishingfortrouble/dialog/yswmnres.d~
 	COMPILE ~fishingfortrouble/dialog/ysmenres.d~
-	COMPILE ~fishingfortrouble/dialog/bwfishw.d~
+	COMPILE ~fishingfortrouble/dialog/bfishw2.d~
 	COMPILE ~fishingfortrouble/dialog/bfisher2.d~
 	COMPILE ~fishingfortrouble/dialog/ysmtown.d~
 	COMPILE ~fishingfortrouble/dialog/ysftown.d~

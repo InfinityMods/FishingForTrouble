@@ -1,4 +1,12 @@
 IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	!Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
   Global("ysgrshld","GLOBAL",1)
   !Allegiance(Myself,ENEMY)
 THEN

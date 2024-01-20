@@ -1,6 +1,6 @@
 //Tent Guards - condition to go red
 IF
-  Global("ys_TalkedToTentGuard","GLOBAL",2)
+  Global("ys_GuardAttacked","GLOBAL",2)
   !Allegiance(Myself,ENEMY)
 THEN
   RESPONSE #100
