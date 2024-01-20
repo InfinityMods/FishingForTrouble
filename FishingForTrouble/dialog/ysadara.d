@@ -2,8 +2,9 @@
 BEGIN ysadara
 
 //---------------------------------------------------------
-IF ~Global("ysTalkedToAdara","GLOBAL",1)
-    Global("ysTalkedToAdara","GLOBAL",4)~ THEN BEGIN stall
+IF ~OR(2)
+      Global("ysTalkedToAdara","GLOBAL",1)
+      Global("ysTalkedToAdara","GLOBAL",4)~ THEN BEGIN stall
 	SAY @3870
 	IF ~~ THEN EXIT
 END
