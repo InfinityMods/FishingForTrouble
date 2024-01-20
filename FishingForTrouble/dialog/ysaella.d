@@ -57,7 +57,7 @@ END
 IF ~~ THEN BEGIN BLK5
 	SAY @4513
 	IF~~THEN
-		DO ~SetGlobal("ystalkedToAella","GLOBAL",1)~
+		DO ~SetGlobal("ys_talkedToAela","GLOBAL",1)~
 	EXIT
 END
 

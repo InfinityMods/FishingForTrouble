@@ -54,13 +54,13 @@ IF ~RandomNum(12,10)~THEN BEGIN yscom10
     IF~~THEN EXIT
 END
 
-IF ~RandomNum(12,10)
+IF ~RandomNum(12,11)
 		Global("ys_GarrisonFight","GLOBAL",3)~THEN BEGIN yscom11
     SAY @520
     IF~~THEN EXIT
 END
 
-IF ~RandomNum(12,10)
+IF ~RandomNum(12,12)
 		Global("ys_GarrisonFight","GLOBAL",3)~THEN BEGIN yscom12
     SAY @521
     IF~~THEN EXIT

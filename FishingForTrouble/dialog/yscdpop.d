@@ -18,13 +18,13 @@ IF ~RandomNum(13,2)
 END
 
 IF ~RandomNum(13,3)
-		!AreaCheck("ys0413")~ THEN BEGIN res5
+		!AreaCheck("ys0413")~ THEN BEGIN res51
 	SAY @3953
 	IF~~THEN EXIT
 END
 
 IF ~RandomNum(13,3)
-		AreaCheck("ys0413")~ THEN BEGIN res5
+		AreaCheck("ys0413")~ THEN BEGIN res52
 	SAY @3954
 	IF~~THEN EXIT
 END
@@ -69,13 +69,13 @@ IF ~RandomNum(13,8)~THEN BEGIN res12
 END
 
 IF ~RandomNum(13,9)
-		AreaCheck("ys0413")~ THEN BEGIN res13
+		AreaCheck("ys0413")~ THEN BEGIN res131
     SAY @3962
 	IF~~THEN EXIT
 END
 
 IF ~RandomNum(13,9)
-		!AreaCheck("ys0413")~ THEN BEGIN res13
+		!AreaCheck("ys0413")~ THEN BEGIN res132
     SAY @3963
 	IF~~THEN EXIT
 END
@@ -86,45 +86,45 @@ IF ~RandomNum(13,10)~ THEN BEGIN res0
 END
 
 IF ~RandomNum(13,11)
-		AreaCheck("ys0413")~ THEN BEGIN res14
+		AreaCheck("ys0413")~ THEN BEGIN res13
 	SAY @3965
 	IF~~THEN EXIT
 END
 
 IF ~RandomNum(13,11)
-		!AreaCheck("ys0413")~ THEN BEGIN res13
+		!AreaCheck("ys0413")~ THEN BEGIN res14
 	SAY @3964
 	IF~~THEN EXIT
 END
 
 IF ~RandomNum(13,12)
-		AreaCheck("ys0413")~ THEN BEGIN res14
+		AreaCheck("ys0413")~ THEN BEGIN res15
 	SAY @3966
 	IF~~THEN EXIT
 END
 
 IF ~RandomNum(13,12)
-		!AreaCheck("ys0413")~ THEN BEGIN res13
+		!AreaCheck("ys0413")~ THEN BEGIN res16
 	SAY @3956
 	IF~~THEN EXIT
 END
 
 IF ~RandomNum(13,13)
-		AreaCheck("ys0413")~ THEN BEGIN res14
+		AreaCheck("ys0413")~ THEN BEGIN res17
 	SAY @3967
 	IF~~THEN EXIT
 END
 
 IF ~RandomNum(13,13)
 		!AreaCheck("ys0413")
-		Gender(Myself,MALE)~THEN BEGIN res9
+		Gender(Myself,MALE)~THEN BEGIN res18
 	SAY @3958
 	IF~~THEN EXIT
 END
 
 IF ~RandomNum(13,13)
 		!AreaCheck("ys0413")
-		Gender(Myself,FEMALE)~THEN BEGIN res10
+		Gender(Myself,FEMALE)~THEN BEGIN res19
 	SAY @3959
 	IF~~THEN EXIT
 END

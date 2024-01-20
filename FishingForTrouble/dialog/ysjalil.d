@@ -114,6 +114,12 @@ IF ~~ THEN BEGIN 19
 END
 
 //---------------------------------------------------------
+IF ~GlobalGT("ysTalkedToJalil","GLOBAL",0)~ THEN BEGIN 100
+	SAY @4779
+	IF~~THEN EXIT
+END
+
+//---------------------------------------------------------
 //IF ~~ THEN BEGIN
 //	SAY ~~
 //	IF~~THEN REPLY ~~ GOTO

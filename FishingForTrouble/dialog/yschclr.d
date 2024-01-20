@@ -32,8 +32,7 @@ IF ~Global("dai_TalkedToCHCleric","GLOBAL",0)
 END
 
 //---------------------------------------------------------
-IF ~Global("dai_TalkedToCHCleric","GLOBAL",0)
-		Global("ys_GarrisonFight","GLOBAL",0)~ THEN BEGIN BLK1
+IF ~~ THEN BEGIN BLK1
 	SAY @1708
 	IF~~THEN REPLY @1709 GOTO BLK2
 	IF~NumInPartyGT(1)~THEN REPLY @1705 GOTO BLK20
@@ -42,8 +41,7 @@ IF ~Global("dai_TalkedToCHCleric","GLOBAL",0)
 END
 
 //---------------------------------------------------------
-IF ~Global("dai_TalkedToCHCleric","GLOBAL",0)
-		Global("ys_GarrisonFight","GLOBAL",0)~ THEN BEGIN BLK2
+IF ~~ THEN BEGIN BLK2
 	SAY @1710
 	IF~~THEN REPLY @1711 GOTO BLK3
 	IF~NumInPartyGT(1)~THEN REPLY @1705 GOTO BLK20
@@ -52,8 +50,7 @@ IF ~Global("dai_TalkedToCHCleric","GLOBAL",0)
 END
 
 //---------------------------------------------------------
-IF ~Global("dai_TalkedToCHCleric","GLOBAL",0)
-		Global("ys_GarrisonFight","GLOBAL",0)~ THEN BEGIN BLK3
+IF ~~ THEN BEGIN BLK3
 	SAY @1712
 	IF~~THEN REPLY @1713 GOTO BLK4
 	IF~NumInPartyGT(1)~THEN REPLY @1705 GOTO BLK20
@@ -62,15 +59,13 @@ IF ~Global("dai_TalkedToCHCleric","GLOBAL",0)
 END
 
 //---------------------------------------------------------
-IF ~Global("dai_TalkedToCHCleric","GLOBAL",0)
-		Global("ys_GarrisonFight","GLOBAL",0)~ THEN BEGIN BLK4
+IF ~~ THEN BEGIN BLK4
 	SAY @1714
 	IF~~THEN REPLY @1715 GOTO BLK5
 END
 
 //---------------------------------------------------------
-IF ~Global("dai_TalkedToCHCleric","GLOBAL",0)
-		Global("ys_GarrisonFight","GLOBAL",0)~ THEN BEGIN BLK5
+IF ~~ THEN BEGIN BLK5
 	SAY @1716
 	IF~NumInPartyGT(1)~THEN REPLY @1717 GOTO BLK20
 	IF~NumInParty(1)~THEN REPLY @1718 GOTO BLK20
@@ -82,15 +77,14 @@ END
 //After the garrison fight
 //---------------------------------------------------------
 IF ~Global("dai_TalkedToCHCleric","GLOBAL",1)
-		GlobalGT("ys_GarrisonFight","GLOBAL",2)~ THEN BEGIN BLK10
+	GlobalGT("ys_GarrisonFight","GLOBAL",2)~ THEN BEGIN BLK10
 	SAY @1720
 	IF~~THEN REPLY @1721 GOTO BLK11
 	IF~~THEN REPLY @1722 GOTO BLK11
 END
 
 //---------------------------------------------------------
-IF ~Global("dai_TalkedToCHCleric","GLOBAL",1)
-		GlobalGT("ys_GarrisonFight","GLOBAL",2)~ THEN BEGIN BLK11
+IF ~~ THEN BEGIN BLK11
 	SAY @1723
 	IF~NumInPartyGT(1)~THEN REPLY @1705 GOTO BLK20
 	IF~NumInParty(1)~THEN REPLY @1706 GOTO BLK20
@@ -111,7 +105,7 @@ IF ~Global("dai_UsedCHStore","GLOBAL",0)~ THEN BEGIN BLK20
     SAY @1724
     IF~~THEN
       DO ~StartStore("yschclr",LastTalkedToBy())
-					SetGlobal("dai_TalkedToCHCleric","GLOBAL",1)~
+		  SetGlobal("dai_TalkedToCHCleric","GLOBAL",1)~
       EXIT
 END
 

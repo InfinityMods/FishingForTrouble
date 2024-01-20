@@ -13,59 +13,45 @@ IF ~Global("dai_TalkedToTanaari","GLOBAL",1)
 END
 
 //---------------------------------------------------------
-IF ~Global("dai_TalkedToTanaari","GLOBAL",1)
-	GlobalGT("Chapter","GLOBAL",%bg2_chapter_4%)
-	Global("ys_TalkedToGaelie","GLOBAL",2)~ THEN BEGIN TAN1
+IF ~~ THEN BEGIN TAN1
 	SAY @1353
 	IF ~~ THEN REPLY @1354 GOTO TAN5
 	IF ~~ THEN REPLY @1355 GOTO TAN2
 END
 
 //---------------------------------------------------------
-IF ~Global("dai_TalkedToTanaari","GLOBAL",1)
-	GlobalGT("Chapter","GLOBAL",%bg2_chapter_4%)
-	Global("ys_TalkedToGaelie","GLOBAL",2)~ THEN BEGIN TAN2
+IF ~~ THEN BEGIN TAN2
 	SAY @1356
 	IF ~~ THEN REPLY @1357 GOTO TAN3
 END
 
 //---------------------------------------------------------
-IF ~Global("dai_TalkedToTanaari","GLOBAL",1)
-	GlobalGT("Chapter","GLOBAL",%bg2_chapter_4%)
-	Global("ys_TalkedToGaelie","GLOBAL",2)~ THEN BEGIN TAN3
+IF ~~ THEN BEGIN TAN3
 	SAY @1358
 	IF ~~ THEN REPLY @1359 GOTO TAN6
 END
 
 //---------------------------------------------------------
-IF ~Global("dai_TalkedToTanaari","GLOBAL",1)
-	GlobalGT("Chapter","GLOBAL",%bg2_chapter_4%)
-	Global("ys_TalkedToGaelie","GLOBAL",2)~ THEN BEGIN TAN5
+IF ~~ THEN BEGIN TAN5
 	SAY @1360
 	IF ~~ THEN REPLY @1361 GOTO TAN6
 END
 
 //---------------------------------------------------------
-IF ~Global("dai_TalkedToTanaari","GLOBAL",1)
-	GlobalGT("Chapter","GLOBAL",%bg2_chapter_4%)
-	Global("ys_TalkedToGaelie","GLOBAL",2)~ THEN BEGIN TAN6
+IF ~~ THEN BEGIN TAN6
 	SAY @1362
 	IF ~~ THEN REPLY @1363 GOTO TAN7
 END
 
 //---------------------------------------------------------
-IF ~Global("dai_TalkedToTanaari","GLOBAL",1)
-	GlobalGT("Chapter","GLOBAL",%bg2_chapter_4%)
-	Global("ys_TalkedToGaelie","GLOBAL",2)~ THEN BEGIN TAN7
+IF ~~ THEN BEGIN TAN7
 	SAY @1364
 	IF ~~ THEN REPLY @1365 GOTO TAN8
 	IF ~~ THEN REPLY @1366 GOTO TAN8
 END
 
 //---------------------------------------------------------
-IF ~Global("dai_TalkedToTanaari","GLOBAL",1)
-	GlobalGT("Chapter","GLOBAL",%bg2_chapter_4%)
-	Global("ys_TalkedToGaelie","GLOBAL",2)~ THEN BEGIN TAN8
+IF ~~ THEN BEGIN TAN8
 	SAY @1367
 	IF ~~ THEN
 	DO ~ForceSpellPoint([601.469],WIZARD_DIMENSION_DOOR)
@@ -93,40 +79,40 @@ IF ~Global("dai_TalkedToCowled","GLOBAL",0)~ THEN BEGIN BLK0
 END
 
 //---------------------------------------------------------
-IF ~Global("dai_TalkedToCowled","GLOBAL",0)~ THEN BEGIN BLK1
+IF ~~ THEN BEGIN BLK1
 	SAY @1370
 	IF ~~ THEN REPLY @1371 GOTO BLK2
 END
 
 //---------------------------------------------------------
-IF ~Global("dai_TalkedToCowled","GLOBAL",0)~ THEN BEGIN BLK2
+IF ~~ THEN BEGIN BLK2
 	SAY @1372
 	IF ~~ THEN REPLY @1373 GOTO BLK30
 END
 
 //---------------------------------------------------------
-IF ~Global("dai_TalkedToCowled","GLOBAL",0)~ THEN BEGIN BLK30
+IF ~~ THEN BEGIN BLK30
 	SAY @1374
 	IF ~~ THEN REPLY @1375 GOTO BLK4
 	IF ~~ THEN REPLY @1376 GOTO BLK4
 END
 
 //---------------------------------------------------------
-IF ~Global("dai_TalkedToCowled","GLOBAL",0)~ THEN BEGIN BLK3
+IF ~~ THEN BEGIN BLK3
 	SAY @1377
 	IF ~~ THEN REPLY @1375 GOTO BLK4
 	IF ~~ THEN REPLY @1376 GOTO BLK4
 END
 
 //---------------------------------------------------------
-IF ~Global("dai_TalkedToCowled","GLOBAL",0)~ THEN BEGIN BLK4
+IF ~~ THEN BEGIN BLK4
 	SAY @1378
 	IF ~~ THEN REPLY @1379 GOTO BLK5
 	IF ~~ THEN REPLY @1380 GOTO BLK40
 END
 
 //---------------------------------------------------------
-IF ~Global("dai_TalkedToCowled","GLOBAL",0)~ THEN BEGIN BLK40
+IF ~~ THEN BEGIN BLK40
 	SAY @1381
 	IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)~ THEN
 	DO ~SetGlobal("ys_CeinwenSpellhold","GLOBAL",1)
@@ -154,14 +140,14 @@ IF ~Global("dai_TalkedToCowled","GLOBAL",0)~ THEN BEGIN BLK40
 END
 
 //---------------------------------------------------------
-IF ~Global("dai_TalkedToCowled","GLOBAL",0)~ THEN BEGIN BLK5
+IF ~~ THEN BEGIN BLK5
 	SAY @1382
 	IF ~~ THEN REPLY @1383 GOTO BLK7
 	IF ~PartyGoldGT(3999)~ THEN REPLY @1384 GOTO BLK6
 END
 
 //---------------------------------------------------------
-IF ~Global("dai_TalkedToCowled","GLOBAL",0)~ THEN BEGIN BLK6
+IF ~~ THEN BEGIN BLK6
 	SAY @1385
 	IF ~~ THEN
 	DO ~SetGlobal("dai_TalkedToCowled","GLOBAL",4)
@@ -176,7 +162,7 @@ IF ~Global("dai_TalkedToCowled","GLOBAL",0)~ THEN BEGIN BLK6
 END
 
 //---------------------------------------------------------
-IF ~Global("dai_TalkedToCowled","GLOBAL",0)~ THEN BEGIN BLK7
+IF ~~ THEN BEGIN BLK7
 	SAY @1386
 	IF ~~ THEN REPLY @1387
 	DO ~SetGlobal("dai_TalkedToCowled","GLOBAL",2)
@@ -198,8 +184,7 @@ IF ~Global("dai_TalkedToCowled","GLOBAL",2)
 END
 
 //---------------------------------------------------------
-IF ~Global("dai_TalkedToCowled","GLOBAL",2)
-	GlobalTimerNotExpired("ys_GetCeinwenGold","GLOBAL")~ THEN BEGIN BLK11
+IF ~~ THEN BEGIN BLK11
 	SAY @1385
 	IF ~~ THEN
 	DO ~SetGlobal("dai_TalkedToCowled","GLOBAL",1)
