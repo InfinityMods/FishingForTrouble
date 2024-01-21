@@ -78,14 +78,14 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK5
 	SAY @713
-	IF ~~ THEN
-    DO~SetGlobal("ys_RudeToTanari","GLOBAL",1)~
-    REPLY @714
+	IF ~~ THEN REPLY @714
+    DO ~SetGlobal("dai_TanEntry","LOCALS",1) 
+		SetGlobal("ys_RudeToTanari","GLOBAL",1)~
     EXIT
-	IF ~~ THEN
+	IF ~~ THEN REPLY @715
     DO ~SetGlobal("dai_TanEntry","LOCALS",2)
-    SetGlobal("ys_RudeToTanari","GLOBAL",2)~
-    REPLY @715 EXIT
+		SetGlobal("ys_RudeToTanari","GLOBAL",2)~
+    EXIT
 END
 
 //---------------------------------------------------------
@@ -101,7 +101,7 @@ END
 IF ~Global("dai_TalkedToTanaari","GLOBAL",0)
     Global("ys_RudeToTanari","GLOBAL",3)~ THEN BEGIN LHTBLOCK10
 	SAY @719
-  IF ~~ THEN
+	IF ~~ THEN
     REPLY @720 GOTO LHTBLOCK12
 END
 
@@ -114,9 +114,8 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK13
 	SAY @723
-  IF ~~ THEN
-    DO  ~SetGlobal("dai_TanEntry","LOCALS",1)~
-    REPLY @724 GOTO LHTBLOCK50
+	IF ~~ THEN REPLY @724 
+	GOTO LHTBLOCK50
 END
 
 //---------------------------------------------------------
@@ -124,7 +123,7 @@ END
 //---------------------------------------------------------
 IF ~Global("dai_TalkedToTanaari","GLOBAL",0)
     Global("ys_RudeToTanari","GLOBAL",4)~ THEN BEGIN LHTBLOCK20
-	  SAY @725
+	SAY @725
   	IF ~~ THEN REPLY @726
   	GOTO LHTBLOCK22
 END
@@ -138,7 +137,7 @@ END
 //---------------------------------------------------------
 //Good path
 //---------------------------------------------------------
-IF ~Global("dai_TalkedToTanaari","GLOBAL",0)~ THEN BEGIN LHTBLOCK30
+IF ~~ THEN BEGIN LHTBLOCK30
     SAY @729
     IF ~~ THEN
     DO  ~SetGlobal("dai_TanEntry","LOCALS",3)~
@@ -257,10 +256,10 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK206
 	SAY @754
-  IF ~~ THEN
-  DO ~SetGlobal("dai_TalkedToTanaari","GLOBAL",1)
-      SetGlobal("dai_CeinwenSpawn","GLOBAL",1)
-      SetGlobal("dai_TalkedToTanaari","GLOBAL",1)
+	IF ~~ THEN
+	DO ~SetGlobal("dai_TalkedToTanaari","GLOBAL",1)
+		SetGlobal("dai_CeinwenSpawn","GLOBAL",1)
+		SetGlobal("dai_TalkedToTanaari","GLOBAL",1)
 		AddJournalEntry(@11,QUEST)~
     EXIT
 END
@@ -271,22 +270,22 @@ END
 IF ~Global("dai_TalkedToTanaari","GLOBAL",3)
 	PartyHasItem("ysghoul1")~ THEN BEGIN 1000
 	SAY @755
-  IF ~~ THEN REPLY @756GOTO LHTBLOCK300
-  IF ~~ THEN REPLY @757GOTO 1001
+  IF ~~ THEN REPLY @756 GOTO LHTBLOCK300
+  IF ~~ THEN REPLY @757 GOTO 1001
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 1001
 	SAY @758
-  IF ~~ THEN REPLY @759GOTO LHTBLOCK300
+  IF ~~ THEN REPLY @759 GOTO LHTBLOCK300
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK300
 	SAY @760
-  IF ~~ THEN REPLY @761GOTO LHTBLOCK301
-  IF ~~ THEN REPLY @762GOTO LHTBLOCK302
-  IF ~~ THEN REPLY @763GOTO LHTBLOCK303
+  IF ~~ THEN REPLY @761 GOTO LHTBLOCK301
+  IF ~~ THEN REPLY @762 GOTO LHTBLOCK302
+  IF ~~ THEN REPLY @763 GOTO LHTBLOCK303
 END
 
 //---------------------------------------------------------
@@ -294,27 +293,27 @@ IF ~~ THEN BEGIN LHTBLOCK301
 	SAY @764
   IF ~~ THEN
     DO ~TakePartyItem("ystankey")~
-    REPLY @765GOTO LHTBLOCK304
+    REPLY @765 GOTO LHTBLOCK304
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK302
 	SAY @766
   IF ~~ THEN
-    REPLY @767GOTO LHTBLOCK305
+    REPLY @767 GOTO LHTBLOCK305
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK303
 	SAY @768
   IF~NumInPartyGT(2)~THEN
-    REPLY @769GOTO LHTBLOCK306
+    REPLY @769 GOTO LHTBLOCK306
 
   IF~NumInParty(2)~THEN
-    REPLY @769GOTO LHTBLOCK307
+    REPLY @769 GOTO LHTBLOCK307
 
   IF~NumInParty(1)~THEN
-    REPLY @769GOTO LHTBLOCK308
+    REPLY @769 GOTO LHTBLOCK308
 END
 
 //---------------------------------------------------------
@@ -322,7 +321,7 @@ IF ~~ THEN BEGIN LHTBLOCK304
 	SAY @770
   IF ~~ THEN
     DO ~SetGlobal("dai_HonourSpeech","LOCALS",1)~
-    REPLY @771GOTO LHTBLOCK400
+    REPLY @771 GOTO LHTBLOCK400
 END
 
 //---------------------------------------------------------
@@ -330,7 +329,7 @@ IF ~~ THEN BEGIN LHTBLOCK305
 	SAY @772
   IF ~~ THEN
     DO ~TakePartyItem("ystankey")~
-    REPLY @771GOTO LHTBLOCK400
+    REPLY @771 GOTO LHTBLOCK400
 END
 
 //---------------------------------------------------------
@@ -338,7 +337,7 @@ IF ~~ THEN BEGIN LHTBLOCK306
     SAY @773
     IF ~~ THEN
       DO ~TakePartyItem("ystankey")~
-      REPLY @774GOTO LHTBLOCK309
+      REPLY @774 GOTO LHTBLOCK309
 END
 
 //---------------------------------------------------------
@@ -346,7 +345,7 @@ IF ~~ THEN BEGIN LHTBLOCK307
     SAY @775
     IF ~~ THEN
       DO ~TakePartyItem("ystankey")~
-      REPLY @776GOTO LHTBLOCK309
+      REPLY @776 GOTO LHTBLOCK309
 END
 
 //---------------------------------------------------------
@@ -354,14 +353,14 @@ IF ~~ THEN BEGIN LHTBLOCK308
     SAY @777
     IF ~~ THEN
       DO ~TakePartyItem("ystankey")~
-      REPLY @778GOTO LHTBLOCK309
+      REPLY @778 GOTO LHTBLOCK309
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK309
 	SAY @779
   IF ~~ THEN
-    REPLY @780GOTO LHTBLOCK400
+    REPLY @780 GOTO LHTBLOCK400
 END
 
 //---------------------------------------------------------
@@ -374,9 +373,8 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK401
 	SAY @783
-  IF~InParty("Edwin") InMyArea("Edwin")~THEN
+  IF~IfValidForPartyDialogue("Edwin") InMyArea("Edwin")~THEN
     REPLY @784 EXTERN EDWINJ CHOLD2
-
   IF~!InParty("Edwin")~THEN
     REPLY @784 GOTO LHTBLOCK402
 END
@@ -392,7 +390,7 @@ END
 IF ~~ THEN BEGIN LHTBLOCK402
 	SAY @787
   IF~!InParty("Edwin")~THEN REPLY @788 GOTO LHTBLOCK403
-  IF~InParty("Edwin") InMyArea("Edwin")~THEN EXTERN EDWINJ LHBLK1
+  IF~IfValidForPartyDialogue("Edwin") InMyArea("Edwin")~THEN EXTERN EDWINJ LHBLK1
 END
 
 //---------------------------------------------------------
@@ -459,28 +457,28 @@ END
 IF ~~ THEN BEGIN LHTBLOCK409
  	SAY @804
 
-  IF~InParty("Yoshimo") InMyArea("Yoshimo")~THEN EXTERN BYOSHIM CHOLD
-  IF~InParty("Viconia") InMyArea("Viconia")~THEN EXTERN BVICONI CHOLD
-  IF~InParty("Anomen") InMyArea("Anomen")~THEN EXTERN BANOMEN CHOLD
-  IF~InParty("Aerie") InMyArea("Aerie")~THEN EXTERN BAERIE CHOLD
-  IF~InParty("HaerDalis") InMyArea("HaerDalis")~THEN EXTERN BHAERDA CHOLD
-  IF~InParty("Korgan") InMyArea("Korgan")~THEN EXTERN BKORGAN CHOLD
-  IF~InParty("Keldorn") InMyArea("Keldorn")~THEN EXTERN BKELDOR CHOLD
-  IF~InParty("Valygar") InMyArea("Valygar")~THEN EXTERN BVALYGA CHOLD
-  IF~InParty("Cernd") InMyArea("Cernd")~THEN EXTERN BCERND CHOLD
-  IF~InParty("Mazzy") InMyArea("Mazzy")~THEN EXTERN BMAZZY CHOLD
-  IF~InParty("Jaheira") InMyArea("Jaheira")~THEN EXTERN BJAHEIR CHOLD
-  IF~InParty("Edwin") InMyArea("Edwin")~THEN EXTERN BEDWIN CHOLD
-  IF~InParty("Jan") InMyArea("Jan")~THEN EXTERN BJAN CHOLD1
-  IF~InParty("Nalia") InMyArea("Nalia")~THEN EXTERN NALIAJ CHOLD
-  IF~InParty("Jan")
-		 InParty("Edwin") InMyArea("Edwin") InMyArea("Jan")~THEN EXTERN BJAN CHOLD
-  IF~InParty("Anomen")
-		 InParty("Nalia") InMyArea("Nalia") InMyArea("Anomen")~THEN EXTERN BANOMEN CHOLD1
-  IF~InParty("Yoshimo")
-		 InParty("Jaheira") InMyArea("Yoshimo") InMyArea("Jaheira")~THEN EXTERN BYOSHIM CHOLD1
-  IF~InParty("Keldorn")
-		 InParty("Nalia") InMyArea("Keldorn") InMyArea("Nalia")~THEN EXTERN BKELDOR CHOLD1
+  IF~IfValidForPartyDialogue("Yoshimo") InMyArea("Yoshimo")~THEN EXTERN BYOSHIM CHOLD
+  IF~IfValidForPartyDialogue("Viconia") InMyArea("Viconia")~THEN EXTERN BVICONI CHOLD
+  IF~IfValidForPartyDialogue("Anomen") InMyArea("Anomen")~THEN EXTERN BANOMEN CHOLD
+  IF~IfValidForPartyDialogue("Aerie") InMyArea("Aerie")~THEN EXTERN BAERIE CHOLD
+  IF~IfValidForPartyDialogue("HaerDalis") InMyArea("HaerDalis")~THEN EXTERN BHAERDA CHOLD
+  IF~IfValidForPartyDialogue("Korgan") InMyArea("Korgan")~THEN EXTERN BKORGAN CHOLD
+  IF~IfValidForPartyDialogue("Keldorn") InMyArea("Keldorn")~THEN EXTERN BKELDOR CHOLD
+  IF~IfValidForPartyDialogue("Valygar") InMyArea("Valygar")~THEN EXTERN BVALYGA CHOLD
+  IF~IfValidForPartyDialogue("Cernd") InMyArea("Cernd")~THEN EXTERN BCERND CHOLD
+  IF~IfValidForPartyDialogue("Mazzy") InMyArea("Mazzy")~THEN EXTERN BMAZZY CHOLD
+  IF~IfValidForPartyDialogue("Jaheira") InMyArea("Jaheira")~THEN EXTERN BJAHEIR CHOLD
+  IF~IfValidForPartyDialogue("Edwin") InMyArea("Edwin")~THEN EXTERN BEDWIN CHOLD
+  IF~IfValidForPartyDialogue("Jan") InMyArea("Jan")~THEN EXTERN BJAN CHOLD1
+  IF~IfValidForPartyDialogue("Nalia") InMyArea("Nalia")~THEN EXTERN NALIAJ CHOLD
+  IF~IfValidForPartyDialogue("Jan")
+		 IfValidForPartyDialogue("Edwin") InMyArea("Edwin") InMyArea("Jan")~THEN EXTERN BJAN CHOLD
+  IF~IfValidForPartyDialogue("Anomen")
+		 IfValidForPartyDialogue("Nalia") InMyArea("Nalia") InMyArea("Anomen")~THEN EXTERN BANOMEN CHOLD1
+  IF~IfValidForPartyDialogue("Yoshimo")
+		 IfValidForPartyDialogue("Jaheira") InMyArea("Yoshimo") InMyArea("Jaheira")~THEN EXTERN BYOSHIM CHOLD1
+  IF~IfValidForPartyDialogue("Keldorn")
+		 IfValidForPartyDialogue("Nalia") InMyArea("Keldorn") InMyArea("Nalia")~THEN EXTERN BKELDOR CHOLD1
   IF~!InParty("Yoshimo")
       !InParty("Viconia")
       !InParty("Anomen")
@@ -548,10 +546,9 @@ END
 IF ~~ THEN BEGIN BLK7
 	SAY @820
   IF ~~ THEN
-    DO
-      ~SetGlobal("dai_TalkedToTanaari","GLOBAL",5)
-       SetGlobal("ys_TanarriElminister","GLOBAL",1)
-		  AddJournalEntry(@16,QUEST)~
+    DO ~SetGlobal("dai_TalkedToTanaari","GLOBAL",5)
+		SetGlobal("ys_TanarriElminister","GLOBAL",1)
+		AddJournalEntry(@16,QUEST)~
     EXIT
 END
 
@@ -560,9 +557,7 @@ END
 //---------------------------------------------------------
 IF ~GlobalGT("dai_TalkedToTanaari","GLOBAL",0)~ THEN BEGIN LHTBLOCK100
 	SAY @821
-	IF ~~ THEN
-    REPLY @822
-    EXIT
+	IF ~~ THEN REPLY @822 EXIT
 END
 
 //---------------------------------------------------------

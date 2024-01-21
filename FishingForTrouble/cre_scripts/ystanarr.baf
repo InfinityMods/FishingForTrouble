@@ -37,7 +37,7 @@ THEN
 	RESPONSE #100
     Wait (2)
     SetGlobal("ys_RudeToTanari","GLOBAL",3)
-    Dialogue(Protagonist)
+    StartDialogueNoSet(Protagonist)
 END
 
 //--------------------------------------------------------
@@ -63,7 +63,7 @@ THEN
 	RESPONSE #100
     Wait (2)
     SetGlobal("ys_RudeToTanari","GLOBAL",4)
-    Dialogue(Protagonist)
+    StartDialogueNoSet(Protagonist)
 END
 
 IF
