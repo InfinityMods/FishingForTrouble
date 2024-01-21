@@ -19,6 +19,14 @@ We found a Tanar'ri trapped on the top floor of the lighthouse at Porthpentyrch.
 The Tanar'ri laughed at us for failing to pass the Traps of the Living, then told us to talk to someone called Ceinwen Ravenhair who, it appears, lives somewhere in the Government district of Athkatla.~
 */
 //---------------------------------------------------------
+//Respawn in the lighthouse
+//---------------------------------------------------------
+IF
+  ~Dead("ysTanarr") Global("ysTanarridead","ys0040",1)~ THEN BEGIN RESPAWN
+	SAY @771
+	IF ~~ THEN EXIT
+END
+//---------------------------------------------------------
 //Trapped Tan'ari on the top floor of the lighthouse - no PC
 //---------------------------------------------------------
 IF
@@ -29,7 +37,7 @@ IF
     IsGabber(Player5)
     IsGabber(Player6)~ THEN BEGIN GETPC
 	SAY @700
-	IF~~THEN REPLY @701
+	IF ~~ THEN REPLY @701
     EXIT
 END
 
@@ -39,52 +47,52 @@ END
 IF ~Global("dai_TalkedToTanaari","GLOBAL",0)
     Global("ys_RudeToTanari","GLOBAL",0)~ THEN BEGIN LHTBLOCK0
 	SAY @702
-	IF~~THEN REPLY @703GOTO LHTBLOCK1
+	IF ~~ THEN REPLY @703 GOTO LHTBLOCK1
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK1
 	SAY @704
-	IF~~THEN REPLY @705GOTO LHTBLOCK2
-	IF~~THEN REPLY @706GOTO LHTBLOCK3
+	IF ~~ THEN REPLY @705 GOTO LHTBLOCK2
+	IF ~~ THEN REPLY @706 GOTO LHTBLOCK3
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK2
 	SAY @707
-	IF~~THEN REPLY @708GOTO LHTBLOCK4
+	IF ~~ THEN REPLY @708 GOTO LHTBLOCK4
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK3
 	SAY @709
-	IF~~THEN REPLY @710GOTO LHTBLOCK5
+	IF ~~ THEN REPLY @710 GOTO LHTBLOCK5
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK4
 	SAY @711
-	IF~~THEN REPLY @712GOTO LHTBLOCK6
+	IF ~~ THEN REPLY @712 GOTO LHTBLOCK6
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK5
 	SAY @713
-	IF~~THEN
+	IF ~~ THEN
     DO~SetGlobal("ys_RudeToTanari","GLOBAL",1)~
     REPLY @714
     EXIT
-	IF~~THEN
+	IF ~~ THEN
     DO ~SetGlobal("dai_TanEntry","LOCALS",2)
     SetGlobal("ys_RudeToTanari","GLOBAL",2)~
-    REPLY @715EXIT
+    REPLY @715 EXIT
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK6
 	SAY @716
-	IF~~THEN REPLY @717GOTO LHTBLOCK30
-	IF~~THEN REPLY @718GOTO LHTBLOCK40
+	IF ~~ THEN REPLY @717 GOTO LHTBLOCK30
+	IF ~~ THEN REPLY @718 GOTO LHTBLOCK40
 END
 
 //---------------------------------------------------------
@@ -93,22 +101,22 @@ END
 IF ~Global("dai_TalkedToTanaari","GLOBAL",0)
     Global("ys_RudeToTanari","GLOBAL",3)~ THEN BEGIN LHTBLOCK10
 	SAY @719
-  IF~~THEN
-    REPLY @720GOTO LHTBLOCK12
+  IF ~~ THEN
+    REPLY @720 GOTO LHTBLOCK12
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK12
 	SAY @721
-	IF~~THEN REPLY @722GOTO LHTBLOCK13
+	IF ~~ THEN REPLY @722 GOTO LHTBLOCK13
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK13
 	SAY @723
-  IF~~THEN
+  IF ~~ THEN
     DO  ~SetGlobal("dai_TanEntry","LOCALS",1)~
-    REPLY @724GOTO LHTBLOCK50
+    REPLY @724 GOTO LHTBLOCK50
 END
 
 //---------------------------------------------------------
@@ -117,14 +125,14 @@ END
 IF ~Global("dai_TalkedToTanaari","GLOBAL",0)
     Global("ys_RudeToTanari","GLOBAL",4)~ THEN BEGIN LHTBLOCK20
 	  SAY @725
-  	IF~~THEN REPLY@726
+  	IF ~~ THEN REPLY @726
   	GOTO LHTBLOCK22
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK22
 	SAY @727
-	IF~~THEN REPLY @728GOTO LHTBLOCK50
+	IF ~~ THEN REPLY @728 GOTO LHTBLOCK50
 END
 
 //---------------------------------------------------------
@@ -132,9 +140,9 @@ END
 //---------------------------------------------------------
 IF ~Global("dai_TalkedToTanaari","GLOBAL",0)~ THEN BEGIN LHTBLOCK30
     SAY @729
-    IF~~THEN
+    IF ~~ THEN
     DO  ~SetGlobal("dai_TanEntry","LOCALS",3)~
-        REPLY @730GOTO LHTBLOCK50
+        REPLY @730 GOTO LHTBLOCK50
 END
 
 //---------------------------------------------------------
@@ -142,9 +150,9 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK40
 	SAY @731
-	IF~~THEN
+	IF ~~ THEN
     DO ~SetGlobal("dai_TanEntry","LOCALS",4)~
-    REPLY @732GOTO LHTBLOCK50
+    REPLY @732 GOTO LHTBLOCK50
 END
 
 //---------------------------------------------------------
@@ -153,7 +161,7 @@ END
 IF ~~ THEN BEGIN LHTBLOCK50
 	SAY @733
 	IF~Global("dai_FoundTraps","GLOBAL",0)~THEN
-    REPLY @734GOTO LHTBLOCK51
+    REPLY @734 GOTO LHTBLOCK51
 
 	IF~Global("dai_FoundTraps","GLOBAL",1)~THEN
     REPLY @734
@@ -166,25 +174,25 @@ IF ~~ THEN BEGIN LHTBLOCK51
 	SAY @735
   IF ~Global("dai_TanEntry","LOCALS",1)~ THEN
       DO ~SetGlobal("dai_TalkedToTanaari","GLOBAL",1)
-		    AddJournalEntry(@7,QUEST)~
+		  AddJournalEntry(@7,QUEST)~
         REPLY @736
       EXIT
 
   IF ~Global("dai_TanEntry","LOCALS",2)~ THEN
       DO ~SetGlobal("dai_TalkedToTanaari","GLOBAL",1)
-		    AddJournalEntry(@8,QUEST)~
+		  AddJournalEntry(@8,QUEST)~
         REPLY @736
       EXIT
 
   IF ~Global("dai_TanEntry","LOCALS",3)~ THEN
       DO ~SetGlobal("dai_TalkedToTanaari","GLOBAL",1)
-		    AddJournalEntry(@9,QUEST)~
-        REPLY @737
+		  AddJournalEntry(@9,QUEST)~
+        REPLY @736
       EXIT
 
   IF ~Global("dai_TanEntry","LOCALS",4)~ THEN
       DO ~SetGlobal("dai_TalkedToTanaari","GLOBAL",1)
-		    AddJournalEntry(@10,QUEST)~
+		  AddJournalEntry(@10,QUEST)~
         REPLY @736
       EXIT
 END
@@ -195,56 +203,55 @@ END
 IF ~Global("dai_TalkedToTanaari","GLOBAL",2)
     Global("dai_FoundTraps","GLOBAL",0)~ THEN BEGIN LHTBLOCK200
 	SAY @738
-	IF~~THEN REPLY @739 GOTO LHTBLOCK201
-	IF~~THEN REPLY @740 GOTO LHTBLOCK202
+	IF ~~ THEN REPLY @739 GOTO LHTBLOCK201
+	IF ~~ THEN REPLY @740 GOTO LHTBLOCK202
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK201
 	SAY @741
-	IF~~THEN REPLY @742 GOTO LHTBLOCK203
+	IF ~~ THEN REPLY @742 GOTO LHTBLOCK203
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK202
 	SAY @743
-	IF~~THEN REPLY @744 GOTO LHTBLOCK203
+	IF ~~ THEN REPLY @744 GOTO LHTBLOCK203
 END
 
 //---------------------------------------------------------
 //Party has found Traps of the Living before talking to the Tanar'ri
 //---------------------------------------------------------
-IF ~Global("dai_TalkedToTanaari","GLOBAL",2)
-    Global("dai_FoundTraps","GLOBAL",1)~ THEN BEGIN BLK100
+IF ~~ THEN BEGIN BLK100
 	SAY @735
-  IF~~THEN REPLY @745 GOTO BLK101
+  IF ~~ THEN REPLY @745 GOTO BLK101
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN BLK101
 	SAY @746
-  IF~~THEN
+  IF ~~ THEN
     REPLY @747 GOTO LHTBLOCK203
 END
 
 //---------------------------------------------------------
 //Traps of the Living rejoin path
 //---------------------------------------------------------
-IF ~Global("dai_TalkedToTanaari","GLOBAL",2)~ THEN BEGIN LHTBLOCK203
+IF ~~ THEN BEGIN LHTBLOCK203
 	SAY @748
-	IF~~THEN REPLY @749 GOTO LHTBLOCK204
+	IF ~~ THEN REPLY @749 GOTO LHTBLOCK204
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK204
 	SAY @750
-	IF~~THEN REPLY @751 GOTO LHTBLOCK205
+	IF ~~ THEN REPLY @751 GOTO LHTBLOCK205
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK205
 	SAY @752
-	IF~~THEN REPLY @753 GOTO LHTBLOCK206
+	IF ~~ THEN REPLY @753 GOTO LHTBLOCK206
 END
 
 //---------------------------------------------------------
@@ -262,30 +269,30 @@ END
 //Retrieved the key - set the global trigger by area script in the tomb (PartyHasItem)
 //---------------------------------------------------------
 IF ~Global("dai_TalkedToTanaari","GLOBAL",3)
-		PartyHasItem("ysghoul1")~ THEN BEGIN 1000
+	PartyHasItem("ysghoul1")~ THEN BEGIN 1000
 	SAY @755
-  IF~~THEN REPLY @756GOTO LHTBLOCK300
-  IF~~THEN REPLY @757GOTO 1001
+  IF ~~ THEN REPLY @756GOTO LHTBLOCK300
+  IF ~~ THEN REPLY @757GOTO 1001
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 1001
 	SAY @758
-  IF~~THEN REPLY @759GOTO LHTBLOCK300
+  IF ~~ THEN REPLY @759GOTO LHTBLOCK300
 END
 
 //---------------------------------------------------------
-IF ~Global("dai_TalkedToTanaari","GLOBAL",3)~ THEN BEGIN LHTBLOCK300
+IF ~~ THEN BEGIN LHTBLOCK300
 	SAY @760
-  IF~~THEN REPLY @761GOTO LHTBLOCK301
-  IF~~THEN REPLY @762GOTO LHTBLOCK302
-  IF~~THEN REPLY @763GOTO LHTBLOCK303
+  IF ~~ THEN REPLY @761GOTO LHTBLOCK301
+  IF ~~ THEN REPLY @762GOTO LHTBLOCK302
+  IF ~~ THEN REPLY @763GOTO LHTBLOCK303
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK301
 	SAY @764
-  IF~~THEN
+  IF ~~ THEN
     DO ~TakePartyItem("ystankey")~
     REPLY @765GOTO LHTBLOCK304
 END
@@ -293,7 +300,7 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK302
 	SAY @766
-  IF~~THEN
+  IF ~~ THEN
     REPLY @767GOTO LHTBLOCK305
 END
 
@@ -313,7 +320,7 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK304
 	SAY @770
-  IF~~THEN
+  IF ~~ THEN
     DO ~SetGlobal("dai_HonourSpeech","LOCALS",1)~
     REPLY @771GOTO LHTBLOCK400
 END
@@ -321,7 +328,7 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK305
 	SAY @772
-  IF~~THEN
+  IF ~~ THEN
     DO ~TakePartyItem("ystankey")~
     REPLY @771GOTO LHTBLOCK400
 END
@@ -329,7 +336,7 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK306
     SAY @773
-    IF~~THEN
+    IF ~~ THEN
       DO ~TakePartyItem("ystankey")~
       REPLY @774GOTO LHTBLOCK309
 END
@@ -337,7 +344,7 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK307
     SAY @775
-    IF~~THEN
+    IF ~~ THEN
       DO ~TakePartyItem("ystankey")~
       REPLY @776GOTO LHTBLOCK309
 END
@@ -345,7 +352,7 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK308
     SAY @777
-    IF~~THEN
+    IF ~~ THEN
       DO ~TakePartyItem("ystankey")~
       REPLY @778GOTO LHTBLOCK309
 END
@@ -353,21 +360,21 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK309
 	SAY @779
-  IF~~THEN
+  IF ~~ THEN
     REPLY @780GOTO LHTBLOCK400
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK400
 	SAY @781
-  IF~~THEN
+  IF ~~ THEN
 		REPLY @782 GOTO LHTBLOCK401
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK401
 	SAY @783
-  IF~InParty("Edwin")~THEN
+  IF~InParty("Edwin") InMyArea("Edwin")~THEN
     REPLY @784 EXTERN EDWINJ CHOLD2
 
   IF~!InParty("Edwin")~THEN
@@ -378,46 +385,46 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK4022
 	SAY @785
-  IF~~THEN REPLY @786 GOTO LHTBLOCK402
+  IF ~~ THEN REPLY @786 GOTO LHTBLOCK402
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK402
 	SAY @787
   IF~!InParty("Edwin")~THEN REPLY @788 GOTO LHTBLOCK403
-  IF~InParty("Edwin")~THEN EXTERN EDWINJ LHBLK1
+  IF~InParty("Edwin") InMyArea("Edwin")~THEN EXTERN EDWINJ LHBLK1
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK4021
 	SAY @789
-  IF~~THEN REPLY @790 GOTO LHTBLOCK403
+  IF ~~ THEN REPLY @790 GOTO LHTBLOCK403
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK403
 	SAY @791
-  IF~~THEN REPLY @792 GOTO LHTBLOCK404
+  IF ~~ THEN REPLY @792 GOTO LHTBLOCK404
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK404
 	SAY @793
-  IF~~THEN
+  IF ~~ THEN
     REPLY @794 GOTO LHTBLOCK405
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK405
 	SAY @795
-  IF~~THEN
+  IF ~~ THEN
     REPLY @796 GOTO LHTBLOCK406
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK406
  	SAY @797
-  IF~~THEN
+  IF ~~ THEN
     REPLY @798 GOTO LHTBLOCK407
 END
 
@@ -425,24 +432,24 @@ END
 IF ~~ THEN BEGIN LHTBLOCK407
  	SAY @799
   IF~NumInPartyLT(2)~THEN
-    REPLY @800GOTO LHTBLOCK408
+    REPLY @800 GOTO LHTBLOCK408
 
   IF~NumInPartyGT(1)~THEN
       DO ~SetGlobal("dai_TalkedToTanaari","GLOBAL",5)
-        RevealAreaOnMap("ys0360")
+		  RevealAreaOnMap("ys0360")
     	  AddJournalEntry(@32,QUEST)
           ActionOverride("ystanarr",ForceSpell(Myself,DRYAD_TELEPORT))~
-    REPLY @801GOTO LHTBLOCK409
+    REPLY @801 GOTO LHTBLOCK409
 END
 
 //---------------------------------------------------------
-IF ~Global("dai_TalkedToTanaari","GLOBAL",3)~ THEN BEGIN LHTBLOCK408
+IF ~~ THEN BEGIN LHTBLOCK408
  	SAY @802
-  IF~~THEN
-    DO  ~SetGlobal("dai_TalkedToTanaari","GLOBAL",5)
+  IF ~~ THEN
+    DO ~SetGlobal("dai_TalkedToTanaari","GLOBAL",5)
         RevealAreaOnMap("ys0360")
-    	  AddJournalEntry(@32,QUEST)
-          ActionOverride("ystanarr",ForceSpell(Myself,DRYAD_TELEPORT))~
+    	AddJournalEntry(@32,QUEST)
+        ActionOverride("ystanarr",ForceSpell(Myself,DRYAD_TELEPORT))~
     REPLY @803
       EXIT
 END
@@ -452,28 +459,28 @@ END
 IF ~~ THEN BEGIN LHTBLOCK409
  	SAY @804
 
-  IF~InParty("Yoshimo")~THEN EXTERN BYOSHIM CHOLD
-  IF~InParty("Viconia")~THEN EXTERN BVICONI CHOLD
-  IF~InParty("Anomen")~THEN EXTERN BANOMEN CHOLD
-  IF~InParty("Aerie")~THEN EXTERN BAERIE CHOLD
-  IF~InParty("HaerDalis")~THEN EXTERN BHAERDA CHOLD
-  IF~InParty("Korgan")~THEN EXTERN BKORGAN CHOLD
-  IF~InParty("Keldorn")~THEN EXTERN BKELDOR CHOLD
-  IF~InParty("Valygar")~THEN EXTERN BVALYGA CHOLD
-  IF~InParty("Cernd")~THEN EXTERN BCERND CHOLD
-  IF~InParty("Mazzy")~THEN EXTERN BMAZZY CHOLD
-  IF~InParty("Jaheira")~THEN EXTERN BJAHEIR CHOLD
-  IF~InParty("Edwin")~THEN EXTERN BEDWIN CHOLD
-  IF~InParty("Jan")~THEN EXTERN BJAN CHOLD1
-  IF~InParty("Nalia")~THEN EXTERN NALIAJ CHOLD
+  IF~InParty("Yoshimo") InMyArea("Yoshimo")~THEN EXTERN BYOSHIM CHOLD
+  IF~InParty("Viconia") InMyArea("Viconia")~THEN EXTERN BVICONI CHOLD
+  IF~InParty("Anomen") InMyArea("Anomen")~THEN EXTERN BANOMEN CHOLD
+  IF~InParty("Aerie") InMyArea("Aerie")~THEN EXTERN BAERIE CHOLD
+  IF~InParty("HaerDalis") InMyArea("HaerDalis")~THEN EXTERN BHAERDA CHOLD
+  IF~InParty("Korgan") InMyArea("Korgan")~THEN EXTERN BKORGAN CHOLD
+  IF~InParty("Keldorn") InMyArea("Keldorn")~THEN EXTERN BKELDOR CHOLD
+  IF~InParty("Valygar") InMyArea("Valygar")~THEN EXTERN BVALYGA CHOLD
+  IF~InParty("Cernd") InMyArea("Cernd")~THEN EXTERN BCERND CHOLD
+  IF~InParty("Mazzy") InMyArea("Mazzy")~THEN EXTERN BMAZZY CHOLD
+  IF~InParty("Jaheira") InMyArea("Jaheira")~THEN EXTERN BJAHEIR CHOLD
+  IF~InParty("Edwin") InMyArea("Edwin")~THEN EXTERN BEDWIN CHOLD
+  IF~InParty("Jan") InMyArea("Jan")~THEN EXTERN BJAN CHOLD1
+  IF~InParty("Nalia") InMyArea("Nalia")~THEN EXTERN NALIAJ CHOLD
   IF~InParty("Jan")
-		 InParty("Edwin")~THEN EXTERN BJAN CHOLD
+		 InParty("Edwin") InMyArea("Edwin") InMyArea("Jan")~THEN EXTERN BJAN CHOLD
   IF~InParty("Anomen")
-		 InParty("Nalia")~THEN EXTERN BANOMEN CHOLD1
+		 InParty("Nalia") InMyArea("Nalia") InMyArea("Anomen")~THEN EXTERN BANOMEN CHOLD1
   IF~InParty("Yoshimo")
-		 InParty("Jaheira")~THEN EXTERN BYOSHIM CHOLD1
+		 InParty("Jaheira") InMyArea("Yoshimo") InMyArea("Jaheira")~THEN EXTERN BYOSHIM CHOLD1
   IF~InParty("Keldorn")
-		 InParty("Nalia")~THEN EXTERN BKELDOR CHOLD1
+		 InParty("Nalia") InMyArea("Keldorn") InMyArea("Nalia")~THEN EXTERN BKELDOR CHOLD1
   IF~!InParty("Yoshimo")
       !InParty("Viconia")
       !InParty("Anomen")
@@ -495,52 +502,52 @@ END
 //---------------------------------------------------------
 IF ~Global("dai_TalkedToTanaari","GLOBAL",4)~ THEN BEGIN BLK1
 	SAY @805
-  IF~~THEN REPLY @806 GOTO BLK20
-  IF~~THEN REPLY @807 GOTO BLK2
+  IF ~~ THEN REPLY @806 GOTO BLK20
+  IF ~~ THEN REPLY @807 GOTO BLK2
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN BLK20
 	SAY @808
-  IF~~THEN REPLY @809 GOTO BLK3
+  IF ~~ THEN REPLY @809 GOTO BLK3
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN BLK2
 	SAY @810
-  IF~~THEN REPLY @811 GOTO BLK3
+  IF ~~ THEN REPLY @811 GOTO BLK3
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN BLK3
 	SAY @812
-  IF~~THEN REPLY @813 GOTO BLK4
-  IF~~THEN REPLY @814 GOTO BLK6
+  IF ~~ THEN REPLY @813 GOTO BLK4
+  IF ~~ THEN REPLY @814 GOTO BLK6
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN BLK4
 	SAY @815
-  IF~~THEN REPLY @816 GOTO BLK5
+  IF ~~ THEN REPLY @816 GOTO BLK5
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN BLK5
 	SAY @817
-  IF~~THEN GOTO BLK6
+  IF ~~ THEN GOTO BLK6
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN BLK6
 	SAY @818
-  IF~~THEN REPLY @819 GOTO BLK7
+  IF ~~ THEN REPLY @819 GOTO BLK7
 END
 
 //---------------------------------------------------------
 //("dai_TalkedToTanaari","GLOBAL",5) is a holding value to prevent talking to the Tanar'ri again
 IF ~~ THEN BEGIN BLK7
 	SAY @820
-  IF~~THEN
+  IF ~~ THEN
     DO
       ~SetGlobal("dai_TalkedToTanaari","GLOBAL",5)
        SetGlobal("ys_TanarriElminister","GLOBAL",1)
@@ -553,7 +560,7 @@ END
 //---------------------------------------------------------
 IF ~GlobalGT("dai_TalkedToTanaari","GLOBAL",0)~ THEN BEGIN LHTBLOCK100
 	SAY @821
-	IF~~THEN
+	IF ~~ THEN
     REPLY @822
     EXIT
 END
