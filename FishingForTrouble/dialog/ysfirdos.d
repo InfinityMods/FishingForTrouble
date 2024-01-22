@@ -19,8 +19,8 @@ END
 //---------------------------------------------------------
 IF ~Global("ysTalkedToFirdos","GLOBAL",0)~ THEN BEGIN 0
 	SAY @4453
-	IF~Global("ysTalkedToFirdosOnce","GLOBAL",0)~THEN REPLY @4454 GOTO 100
-	IF~Global("ysTalkedToFirdosOnce","GLOBAL",1)~THEN REPLY @4454 GOTO 300
+	IF~Global("ysTalkedToFirdosOnce","GLOBAL",0)~ THEN REPLY @4454 GOTO 100
+	IF~Global("ysTalkedToFirdosOnce","GLOBAL",1)~ THEN REPLY @4454 GOTO 300
 	IF ~~ THEN REPLY @4455 GOTO 1
 	IF ~~ THEN REPLY @4456 GOTO 10
 END

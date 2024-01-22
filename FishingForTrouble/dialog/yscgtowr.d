@@ -24,8 +24,9 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN BLK3
 	SAY @1439
-	IF ~!InParty("Nalia")~ THEN REPLY @1440GOTO BLK5
-	IF ~InParty("Nalia")~  THEN
+	IF ~!InParty("Nalia")~ THEN REPLY @1440 GOTO BLK5
+	IF ~IfValidForPartyDialogue("Nalia") OR(2) !InMyArea("Nalia") StateCheck("Nalia",CD_STATE_NOTVALID)~ THEN REPLY @1440 GOTO BLK5
+	IF ~IfValidForPartyDialogue("Nalia") InMyArea("Nalia") !StateCheck("Nalia",CD_STATE_NOTVALID)~ THEN
 		DO ~SetGlobal("ys_TowerGuard","GLOBAL",1)~
 		EXTERN NALIAJ BLK6
 END

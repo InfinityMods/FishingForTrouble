@@ -159,10 +159,10 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK50
 	SAY @733
-	IF~Global("dai_FoundTraps","GLOBAL",0)~THEN
+	IF ~Global("dai_FoundTraps","GLOBAL",0)~ THEN
     REPLY @734 GOTO LHTBLOCK51
 
-	IF~Global("dai_FoundTraps","GLOBAL",1)~THEN
+	IF ~Global("dai_FoundTraps","GLOBAL",1)~ THEN
     REPLY @734
     DO ~SetGlobal("dai_TalkedToTanaari","GLOBAL",2)~
     GOTO BLK100
@@ -306,13 +306,13 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK303
 	SAY @768
-  IF~NumInPartyGT(2)~THEN
+  IF ~NumInPartyGT(2)~ THEN
     REPLY @769 GOTO LHTBLOCK306
 
-  IF~NumInParty(2)~THEN
+  IF ~NumInParty(2)~ THEN
     REPLY @769 GOTO LHTBLOCK307
 
-  IF~NumInParty(1)~THEN
+  IF ~NumInParty(1)~ THEN
     REPLY @769 GOTO LHTBLOCK308
 END
 
@@ -373,9 +373,11 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK401
 	SAY @783
-  IF~IfValidForPartyDialogue("Edwin") InMyArea("Edwin")~THEN
+  IF ~IfValidForPartyDialogue("Edwin") InMyArea("Edwin") !StateCheck("Edwin",CD_STATE_NOTVALID)~ THEN
     REPLY @784 EXTERN EDWINJ CHOLD2
-  IF~!InParty("Edwin")~THEN
+  IF ~!InParty("Edwin")~ THEN
+    REPLY @784 GOTO LHTBLOCK402
+  IF ~IfValidForPartyDialogue("Edwin") OR(2) !InMyArea("Edwin") StateCheck("Edwin",CD_STATE_NOTVALID)~ THEN
     REPLY @784 GOTO LHTBLOCK402
 END
 
@@ -389,8 +391,9 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK402
 	SAY @787
-  IF~!InParty("Edwin")~THEN REPLY @788 GOTO LHTBLOCK403
-  IF~IfValidForPartyDialogue("Edwin") InMyArea("Edwin")~THEN EXTERN EDWINJ LHBLK1
+  IF ~!InParty("Edwin")~ THEN REPLY @788 GOTO LHTBLOCK403
+  IF ~IfValidForPartyDialogue("Edwin") InMyArea("Edwin") !StateCheck("Edwin",CD_STATE_NOTVALID)~ THEN EXTERN EDWINJ LHBLK1
+  IF ~IfValidForPartyDialogue("Edwin") OR(2) !InMyArea("Edwin") StateCheck("Edwin",CD_STATE_NOTVALID)~ THEN REPLY @788 GOTO LHTBLOCK403
 END
 
 //---------------------------------------------------------
@@ -429,10 +432,10 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHTBLOCK407
  	SAY @799
-  IF~NumInPartyLT(2)~THEN
+  IF ~NumInPartyLT(2)~ THEN
     REPLY @800 GOTO LHTBLOCK408
 
-  IF~NumInPartyGT(1)~THEN
+  IF ~NumInPartyGT(1)~ THEN
       DO ~SetGlobal("dai_TalkedToTanaari","GLOBAL",5)
 		  RevealAreaOnMap("ys0360")
     	  AddJournalEntry(@32,QUEST)
@@ -457,29 +460,29 @@ END
 IF ~~ THEN BEGIN LHTBLOCK409
  	SAY @804
 
-  IF~IfValidForPartyDialogue("Yoshimo") InMyArea("Yoshimo")~THEN EXTERN BYOSHIM CHOLD
-  IF~IfValidForPartyDialogue("Viconia") InMyArea("Viconia")~THEN EXTERN BVICONI CHOLD
-  IF~IfValidForPartyDialogue("Anomen") InMyArea("Anomen")~THEN EXTERN BANOMEN CHOLD
-  IF~IfValidForPartyDialogue("Aerie") InMyArea("Aerie")~THEN EXTERN BAERIE CHOLD
-  IF~IfValidForPartyDialogue("HaerDalis") InMyArea("HaerDalis")~THEN EXTERN BHAERDA CHOLD
-  IF~IfValidForPartyDialogue("Korgan") InMyArea("Korgan")~THEN EXTERN BKORGAN CHOLD
-  IF~IfValidForPartyDialogue("Keldorn") InMyArea("Keldorn")~THEN EXTERN BKELDOR CHOLD
-  IF~IfValidForPartyDialogue("Valygar") InMyArea("Valygar")~THEN EXTERN BVALYGA CHOLD
-  IF~IfValidForPartyDialogue("Cernd") InMyArea("Cernd")~THEN EXTERN BCERND CHOLD
-  IF~IfValidForPartyDialogue("Mazzy") InMyArea("Mazzy")~THEN EXTERN BMAZZY CHOLD
-  IF~IfValidForPartyDialogue("Jaheira") InMyArea("Jaheira")~THEN EXTERN BJAHEIR CHOLD
-  IF~IfValidForPartyDialogue("Edwin") InMyArea("Edwin")~THEN EXTERN BEDWIN CHOLD
-  IF~IfValidForPartyDialogue("Jan") InMyArea("Jan")~THEN EXTERN BJAN CHOLD1
-  IF~IfValidForPartyDialogue("Nalia") InMyArea("Nalia")~THEN EXTERN NALIAJ CHOLD
-  IF~IfValidForPartyDialogue("Jan")
-		 IfValidForPartyDialogue("Edwin") InMyArea("Edwin") InMyArea("Jan")~THEN EXTERN BJAN CHOLD
-  IF~IfValidForPartyDialogue("Anomen")
-		 IfValidForPartyDialogue("Nalia") InMyArea("Nalia") InMyArea("Anomen")~THEN EXTERN BANOMEN CHOLD1
-  IF~IfValidForPartyDialogue("Yoshimo")
-		 IfValidForPartyDialogue("Jaheira") InMyArea("Yoshimo") InMyArea("Jaheira")~THEN EXTERN BYOSHIM CHOLD1
-  IF~IfValidForPartyDialogue("Keldorn")
-		 IfValidForPartyDialogue("Nalia") InMyArea("Keldorn") InMyArea("Nalia")~THEN EXTERN BKELDOR CHOLD1
-  IF~!InParty("Yoshimo")
+  IF ~IfValidForPartyDialogue("Yoshimo") InMyArea("Yoshimo") !StateCheck("Yoshimo",CD_STATE_NOTVALID)~ THEN EXTERN BYOSHIM CHOLD
+  IF ~IfValidForPartyDialogue("Viconia") InMyArea("Viconia") !StateCheck("Viconia",CD_STATE_NOTVALID)~ THEN EXTERN BVICONI CHOLD
+  IF ~IfValidForPartyDialogue("Anomen") InMyArea("Anomen") !StateCheck("Anomen",CD_STATE_NOTVALID)~ THEN EXTERN BANOMEN CHOLD
+  IF ~IfValidForPartyDialogue("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN EXTERN BAERIE CHOLD
+  IF ~IfValidForPartyDialogue("HaerDalis") InMyArea("HaerDalis") !StateCheck("HaerDalis",CD_STATE_NOTVALID)~ THEN EXTERN BHAERDA CHOLD
+  IF ~IfValidForPartyDialogue("Korgan") InMyArea("Korgan") !StateCheck("Korgan",CD_STATE_NOTVALID)~ THEN EXTERN BKORGAN CHOLD
+  IF ~IfValidForPartyDialogue("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID)~ THEN EXTERN BKELDOR CHOLD
+  IF ~IfValidForPartyDialogue("Valygar") InMyArea("Valygar") !StateCheck("Valygar",CD_STATE_NOTVALID)~ THEN EXTERN BVALYGA CHOLD
+  IF ~IfValidForPartyDialogue("Cernd") InMyArea("Cernd") !StateCheck("Cernd",CD_STATE_NOTVALID)~ THEN EXTERN BCERND CHOLD
+  IF ~IfValidForPartyDialogue("Mazzy") InMyArea("Mazzy") !StateCheck("Mazzy",CD_STATE_NOTVALID)~ THEN EXTERN BMAZZY CHOLD
+  IF ~IfValidForPartyDialogue("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN EXTERN BJAHEIR CHOLD
+  IF ~IfValidForPartyDialogue("Edwin") InMyArea("Edwin") !StateCheck("Edwin",CD_STATE_NOTVALID)~ THEN EXTERN BEDWIN CHOLD
+  IF ~IfValidForPartyDialogue("Jan") InMyArea("Jan") !StateCheck("Jan",CD_STATE_NOTVALID)~ THEN EXTERN BJAN CHOLD1
+  IF ~IfValidForPartyDialogue("Nalia") InMyArea("Nalia") !StateCheck("Nalia",CD_STATE_NOTVALID)~ THEN EXTERN NALIAJ CHOLD
+  IF ~IfValidForPartyDialogue("Jan")
+		 IfValidForPartyDialogue("Edwin") InMyArea("Edwin") InMyArea("Jan") !StateCheck("Edwin",CD_STATE_NOTVALID) !StateCheck("Jan",CD_STATE_NOTVALID)~ THEN EXTERN BJAN CHOLD
+  IF ~IfValidForPartyDialogue("Anomen")
+		 IfValidForPartyDialogue("Nalia") InMyArea("Nalia") InMyArea("Anomen") !StateCheck("Anomen",CD_STATE_NOTVALID) !StateCheck("Nalia",CD_STATE_NOTVALID)~ THEN EXTERN BANOMEN CHOLD1
+  IF ~IfValidForPartyDialogue("Yoshimo")
+		 IfValidForPartyDialogue("Jaheira") InMyArea("Yoshimo") InMyArea("Jaheira") !StateCheck("Yoshimo",CD_STATE_NOTVALID) !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN EXTERN BYOSHIM CHOLD1
+  IF ~IfValidForPartyDialogue("Keldorn")
+		 IfValidForPartyDialogue("Nalia") InMyArea("Keldorn") InMyArea("Nalia") !StateCheck("Keldorn",CD_STATE_NOTVALID) !StateCheck("Nalia",CD_STATE_NOTVALID)~ THEN EXTERN BKELDOR CHOLD1
+  IF ~!InParty("Yoshimo")
       !InParty("Viconia")
       !InParty("Anomen")
       !InParty("Aerie")
@@ -492,7 +495,49 @@ IF ~~ THEN BEGIN LHTBLOCK409
       !InParty("Jaheira")
       !InParty("Edwin")
       !InParty("Jan")
-      !InParty("Nalia")~THEN EXIT
+      !InParty("Nalia")~ THEN EXIT
+  IF ~OR(2)
+	    InMyArea("Yoshimo")
+	    StateCheck("Yoshimo",CD_STATE_NOTVALID)
+	OR(2)
+	    InMyArea("Viconia")
+	    StateCheck("Viconia",CD_STATE_NOTVALID)
+	OR(2)
+	    InMyArea("Anomen")
+	    StateCheck("Anomen",CD_STATE_NOTVALID)
+	OR(2)
+	    InMyArea("Aerie")
+	    StateCheck("Aerie",CD_STATE_NOTVALID)
+	OR(2)
+	    InMyArea("HaerDalis")
+	    StateCheck("HaerDalis",CD_STATE_NOTVALID)
+	OR(2)
+	    InMyArea("Korgan")
+	    StateCheck("Korgan",CD_STATE_NOTVALID)
+	OR(2)
+	    InMyArea("Keldorn")
+	    StateCheck("Keldorn",CD_STATE_NOTVALID)
+	OR(2)
+	    InMyArea("Valygar")
+	    StateCheck("Valygar",CD_STATE_NOTVALID)
+	OR(2)
+	    InMyArea("Cernd")
+	    StateCheck("Cernd",CD_STATE_NOTVALID)
+	OR(2)
+	    InMyArea("Mazzy")
+	    StateCheck("Mazzy",CD_STATE_NOTVALID)
+	OR(2)
+	    InMyArea("Jaheira")
+	    StateCheck("Jaheira",CD_STATE_NOTVALID)
+	OR(2)
+	    InMyArea("Edwin")
+	    StateCheck("Edwin",CD_STATE_NOTVALID)
+	OR(2)
+	    InMyArea("Jan")
+	    StateCheck("Jan",CD_STATE_NOTVALID)
+	OR(2)
+	    InMyArea("Nalia")
+	    StateCheck("Nalia",CD_STATE_NOTVALID)~ THEN EXIT
 END
 
 //---------------------------------------------------------

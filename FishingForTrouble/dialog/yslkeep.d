@@ -26,7 +26,7 @@ END
 IF ~Global("ysLHDoorIsLocked","GLOBAL",1)
     Global("ysTalkedToLHKeeper","GLOBAL",1)~ THEN BEGIN LHKLOCKED
     SAY @601
-    IF ~~ THEN REPLY @603GOTO LHKBLOCKEND
+    IF ~~ THEN REPLY @603 GOTO LHKBLOCKEND
 END
 
 //---------------------------------------------------------
@@ -54,22 +54,22 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHKBLOCK3
   SAY @612
-  IF ~~ THEN REPLY @613GOTO LHKBLOCK41
+  IF ~~ THEN REPLY @613 GOTO LHKBLOCK41
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHKBLOCK4
   SAY @614
 		=@615
-  IF ~~ THEN REPLY@616GOTO LHKBLOCK6
+  IF ~~ THEN REPLY @616GOTO LHKBLOCK6
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN LHKBLOCK41
   SAY @614 
 		=@615
-  IF ~~ THEN REPLY@617GOTO LHKBLOCK6
-  IF ~~ THEN REPLY@618GOTO LHKBLOCK5
+  IF ~~ THEN REPLY @617GOTO LHKBLOCK6
+  IF ~~ THEN REPLY @618GOTO LHKBLOCK5
 END
 
 //---------------------------------------------------------
@@ -109,7 +109,7 @@ END
 IF ~~ THEN BEGIN LHKBLOCK10
   SAY @632
 		= @633
-  IF ~~ THEN REPLY @634GOTO LHKBLOCK11
+  IF ~~ THEN REPLY @634 GOTO LHKBLOCK11
 END
 
 //---------------------------------------------------------
@@ -211,13 +211,13 @@ END
 //----------------------------------------
 IF ~~ THEN BEGIN BLK104
   SAY @661
-	IF ~~ THEN REPLY@662 GOTO BLK105
+	IF ~~ THEN REPLY @662 GOTO BLK105
 END
 
 //----------------------------------------
 IF ~~ THEN BEGIN BLK105
   SAY @663
-	IF ~~ THEN REPLY@664 GOTO BLK106
+	IF ~~ THEN REPLY @664 GOTO BLK106
 END
 
 //----------------------------------------

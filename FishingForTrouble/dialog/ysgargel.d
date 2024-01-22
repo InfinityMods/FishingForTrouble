@@ -13,7 +13,7 @@ END
 //Impatient player
 //---------------------------------------------------------
 IF ~!GlobalTimerExpired("ysCureEildaren","GLOBAL")
-	Global("ys_TalkedToGarGel","GLOBAL",5)~THEN BEGIN BLK2001
+	Global("ys_TalkedToGarGel","GLOBAL",5)~ THEN BEGIN BLK2001
 	SAY@3501
 	IF ~~ THEN EXIT
 END
@@ -33,7 +33,7 @@ END
 IF ~~ THEN BEGIN 1001
 	SAY @3504
 	IF ~Global("ys_TalkedToGarGel","GLOBAL",0)
-			Global("ys_TalkedToAiloth","GLOBAL",0)~THEN
+			Global("ys_TalkedToAiloth","GLOBAL",0)~ THEN
 			REPLY @3505 GOTO BLK2000
 	IF ~Global("ys_TalkedToGarGel","GLOBAL",0)
 			Global("ys_TalkedToAiloth","GLOBAL",1)~ THEN
@@ -85,11 +85,11 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN BLK21
 	SAY @3519
-	IF ~!InParty("Jaheira")~THEN REPLY @3520 GOTO BLK5
-	IF ~InParty("Jaheira")
+	IF ~!InParty("Jaheira")~ THEN REPLY @3520 GOTO BLK5
+	IF ~IfValidForPartyDialogue("Jaheira") OR(2) !InMyArea("Jaheira")
       StateCheck("Jaheira",CD_STATE_NOTVALID)~
 	REPLY @3520 GOTO BLK5
-	IF ~InParty("Jaheira")
+	IF ~IfValidForPartyDialogue("Jaheira") InMyArea("Jaheira")
       !StateCheck("Jaheira",CD_STATE_NOTVALID)
       See("Jaheira")~ THEN
 	REPLY @3520 GOTO BLK3
@@ -147,7 +147,7 @@ IF ~~ THEN BEGIN BLK8
 	SAY @3532
 	IF ~~ THEN REPLY @3533 GOTO BLK9
 	IF ~~ THEN REPLY @3534 GOTO BLK9
-	IF ~PartyGoldGT(29999)~THEN REPLY @3535 GOTO BLK10
+	IF ~PartyGoldGT(29999)~ THEN REPLY @3535 GOTO BLK10
 END
 
 //---------------------------------------------------------
@@ -156,7 +156,7 @@ IF ~~ THEN BEGIN BLK9
 	IF ~~ THEN REPLY @3537
 		DO ~SetGlobal("ys_TalkedToGarGel","GLOBAL",1)~
 	EXIT
-	IF ~PartyGoldGT(29999)~THEN REPLY @3535 GOTO BLK10
+	IF ~PartyGoldGT(29999)~ THEN REPLY @3535 GOTO BLK10
 END
 
 //---------------------------------------------------------
@@ -200,7 +200,7 @@ END
 IF ~Global("ys_TalkedToGarGel","GLOBAL",1)
 		Global("ys_TalkedToAngharad","GLOBAL",1)~ THEN BEGIN BLK100
 	SAY @3545
-	IF ~PartyGoldGT(29999)~THEN REPLY @3546 GOTO BLK101
+	IF ~PartyGoldGT(29999)~ THEN REPLY @3546 GOTO BLK101
 	IF ~~ THEN REPLY @3547 GOTO BLK102
 	IF ~~ THEN REPLY @3548
 	EXIT
@@ -282,7 +282,7 @@ IF ~Global("ys_TalkedToGarGel","GLOBAL",2)
 		GlobalGT("ys_FindColver","GLOBAL",0)
 		GlobalLT("ys_FindColver","GLOBAL",6)~ THEN BEGIN 0
 	SAY @3557
-	IF ~~ THEN REPLY@3558
+	IF ~~ THEN REPLY @3558
   EXIT
 END
 
@@ -292,39 +292,39 @@ END
 IF ~Global("ys_TalkedToGarGel","GLOBAL",2)
 		Global("ys_FindColver","GLOBAL",6)~ THEN BEGIN 1
 	SAY @3557
-	IF ~~ THEN REPLY@3558EXIT
-	IF ~~ THEN REPLY@3559GOTO 2
+	IF ~~ THEN REPLY @3558EXIT
+	IF ~~ THEN REPLY @3559GOTO 2
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 2
 	SAY @3560
-	IF ~~ THEN REPLY@3561GOTO 3
+	IF ~~ THEN REPLY @3561GOTO 3
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 3
 	SAY @3562
-	IF ~~ THEN REPLY@3563GOTO 4
+	IF ~~ THEN REPLY @3563 GOTO 4
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 4
 	SAY @3564
 	IF ~~ THEN  UNSOLVED_JOURNAL @154
-   REPLY@3565
+   REPLY @3565
 	 DO ~SetGlobal("ys_FindColver","GLOBAL",7)
    ActionOverride("ysgargel",DestroySelf())
    ActionOverride("ysanghrd",DestroySelf())~
   EXIT
-  IF ~Global("ys_PaidGaralial","GLOBAL",1)~THEN REPLY@3566GOTO 5
-  IF ~!Global("ys_PaidGaralial","GLOBAL",1)~THEN REPLY@3567GOTO 5
+  IF ~Global("ys_PaidGaralial","GLOBAL",1)~ THEN REPLY @3566GOTO 5
+  IF ~!Global("ys_PaidGaralial","GLOBAL",1)~ THEN REPLY @3567GOTO 5
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 5
 	SAY @3568
-	IF ~~ THEN REPLY@3569 GOTO 6
+	IF ~~ THEN REPLY @3569 GOTO 6
 END
 
 //---------------------------------------------------------
@@ -344,20 +344,20 @@ END
 IF ~Global("ys_TalkedToGarGel","GLOBAL",2)
 		Global("ys_FindColver","GLOBAL",7)~ THEN BEGIN 10
 	SAY @3571
-	IF ~~ THEN REPLY@3572 GOTO 11
+	IF ~~ THEN REPLY @3572 GOTO 11
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 11
 	SAY @3573
-	IF ~Global("ys_PaidGaralial","GLOBAL",1)~THEN REPLY@3574 GOTO 12
-	IF ~!Global("ys_PaidGaralial","GLOBAL",1)~THEN REPLY@3575 GOTO 13
+	IF ~Global("ys_PaidGaralial","GLOBAL",1)~ THEN REPLY @3574 GOTO 12
+	IF ~!Global("ys_PaidGaralial","GLOBAL",1)~ THEN REPLY @3575 GOTO 13
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 12
 	SAY @3576
-	IF ~~ THEN REPLY@3577 GOTO 14
+	IF ~~ THEN REPLY @3577 GOTO 14
 END
 
 //---------------------------------------------------------
@@ -365,18 +365,18 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 13
 	SAY @3578
-	IF ~Global("ys_CeinwenActive","GLOBAL",1)~THEN REPLY@3577 GOTO 14
-	IF ~Global("ys_CeinwenActive","GLOBAL",0)~THEN REPLY@3577 GOTO 2000
+	IF ~Global("ys_CeinwenActive","GLOBAL",1)~ THEN REPLY @3577 GOTO 14
+	IF ~Global("ys_CeinwenActive","GLOBAL",0)~ THEN REPLY @3577 GOTO 2000
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 14
 	SAY @3579
-	IF ~InParty("Jaheira")
-	   !StateCheck("Jaheira",STATE_DEAD)~THEN REPLY@3580 GOTO 15
-	IF ~InParty("Jaheira")
-	   StateCheck("Jaheira",STATE_DEAD)~THEN REPLY@3580 GOTO 17
-	IF ~!InParty("Jaheira")~THEN REPLY@3580 GOTO 17
+	IF ~IfValidForPartyDialogue("Jaheira") InMyArea("Jaheira")
+	   !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN REPLY @3580 GOTO 15
+	IF ~IfValidForPartyDialogue("Jaheira") OR(2) !InMyArea("Jaheira")
+	   StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN REPLY @3580 GOTO 17
+	IF ~!InParty("Jaheira")~ THEN REPLY @3580 GOTO 17
 END
 
 //---------------------------------------------------------
@@ -388,64 +388,64 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 16
 	SAY @3582
-	IF ~Global("ys_CeinwenRescuedByElminster","GLOBAL",1)~THEN REPLY@3583GOTO 19
-	IF ~!Global("ys_CeinwenRescuedByElminster","GLOBAL",1)~THEN REPLY@3584GOTO 18
-  IF ~~ THEN REPLY@3585 GOTO 50
+	IF ~Global("ys_CeinwenRescuedByElminster","GLOBAL",1)~ THEN REPLY @3583 GOTO 19
+	IF ~!Global("ys_CeinwenRescuedByElminster","GLOBAL",1)~ THEN REPLY @3584 GOTO 18
+  IF ~~ THEN REPLY @3585 GOTO 50
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 17
 	SAY @3586
-	IF ~Global("ys_CeinwenRescuedByElminster","GLOBAL",1)~THEN REPLY@3583GOTO 19
-	IF ~!Global("ys_CeinwenRescuedByElminster","GLOBAL",1)~THEN REPLY@3584GOTO 18
-	IF ~~ THEN REPLY@3585 GOTO 50
+	IF ~Global("ys_CeinwenRescuedByElminster","GLOBAL",1)~ THEN REPLY @3583 GOTO 19
+	IF ~!Global("ys_CeinwenRescuedByElminster","GLOBAL",1)~ THEN REPLY @3584 GOTO 18
+	IF ~~ THEN REPLY @3585 GOTO 50
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 18
 	SAY @3587
-	IF ~~ THEN REPLY@3588 GOTO 49
-	IF ~~ THEN REPLY@3585 GOTO 50
+	IF ~~ THEN REPLY @3588 GOTO 49
+	IF ~~ THEN REPLY @3585 GOTO 50
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 19
 	SAY @3589
-	IF ~~ THEN REPLY@3590 GOTO 20
+	IF ~~ THEN REPLY @3590 GOTO 20
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 20
 	SAY @3591
-	IF ~InParty("Jaheira")
-	   !StateCheck("Jaheira",STATE_DEAD)~THEN REPLY@3592 GOTO 21
-	IF ~InParty("Jaheira")
-	   StateCheck("Jaheira",STATE_DEAD)~THEN REPLY@3592 GOTO 210
-	IF ~!InParty("Jaheira")~THEN REPLY@3592 GOTO 210
+	IF ~IfValidForPartyDialogue("Jaheira") InMyArea("Jaheira")
+	   !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN REPLY @3592 GOTO 21
+	IF ~IfValidForPartyDialogue("Jaheira") OR(2) !InMyArea("Jaheira")
+	   StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN REPLY @3592 GOTO 210
+	IF ~!InParty("Jaheira")~ THEN REPLY @3592 GOTO 210
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 21
-	SAY@3593
+	SAY @3593
 	IF ~~ THEN EXTERN JAHEIRAJ GGBLK4
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 210
 	SAY@3593
-	IF ~~ THEN REPLY@3594 GOTO 49
+	IF ~~ THEN REPLY @3594 GOTO 49
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 22
 	SAY @3595
-	IF ~~ THEN REPLY@3585 GOTO 50
+	IF ~~ THEN REPLY @3585 GOTO 50
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 49
 	SAY @3596
-	IF ~~ THEN REPLY@3585 GOTO 50
+	IF ~~ THEN REPLY @3585 GOTO 50
 END
 
 //---------------------------------------------------------
@@ -453,28 +453,28 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 2000
 	SAY @3597
-	IF ~~ THEN REPLY@3585 GOTO 50
+	IF ~~ THEN REPLY @3585 GOTO 50
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 50
 	SAY @3598
-	IF ~InParty("Edwin")
-	   !StateCheck("Edwin",STATE_DEAD)~THEN REPLY@3599 GOTO 5100
-	IF ~InParty("Edwin")
-	   StateCheck("Edwin",STATE_DEAD)~THEN REPLY@3600 GOTO 5100
-	IF ~InParty("Edwin")
-	   StateCheck("Edwin",STATE_DEAD)~THEN REPLY@3599 GOTO 51
-	IF ~!InParty("Edwin")~THEN REPLY@3599 GOTO 51
-	IF ~InParty("Edwin")
-	   !StateCheck("Edwin",STATE_DEAD)~THEN REPLY@3600 GOTO 51
-	IF ~!InParty("Edwin")~THEN REPLY@3600 GOTO 51
+	IF ~IfValidForPartyDialogue("Edwin") InMyArea("Edwin")
+	   !StateCheck("Edwin",CD_STATE_NOTVALID)~ THEN REPLY @3599 GOTO 5100
+	IF ~IfValidForPartyDialogue("Edwin") OR(2) !InMyArea("Edwin")
+	   StateCheck("Edwin",CD_STATE_NOTVALID)~ THEN REPLY @3600 GOTO 5100
+	IF ~IfValidForPartyDialogue("Edwin") OR(2) !InMyArea("Edwin")
+	   StateCheck("Edwin",CD_STATE_NOTVALID)~ THEN REPLY @3599 GOTO 51
+	IF ~!InParty("Edwin")~ THEN REPLY @3599 GOTO 51
+	IF ~IfValidForPartyDialogue("Edwin") InMyArea("Edwin")
+	   !StateCheck("Edwin",CD_STATE_NOTVALID)~ THEN REPLY @3600 GOTO 51
+	IF ~!InParty("Edwin")~ THEN REPLY @3600 GOTO 51
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 51
 	SAY @3601
-	IF ~~ THEN REPLY@3602 GOTO 53
+	IF ~~ THEN REPLY @3602 GOTO 53
 END
 
 //---------------------------------------------------------
@@ -486,23 +486,23 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 510
 	SAY @3603
-	IF ~~ THEN REPLY@3604 GOTO 53
+	IF ~~ THEN REPLY @3604 GOTO 53
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 53
 	SAY @3605
-	IF ~InParty("Anomen")
-	   StateCheck("Anomen",STATE_DEAD)~THEN REPLY@3606 GOTO 54
-	IF ~!InParty("Anomen")~THEN REPLY@3606 GOTO 54
-	IF ~InParty("Anomen")
-	   !StateCheck("Anomen",STATE_DEAD)~THEN REPLY@3606 GOTO 540
+	IF ~IfValidForPartyDialogue("Anomen") OR(2) !InMyArea("Anomen")
+	   StateCheck("Anomen",CD_STATE_NOTVALID)~ THEN REPLY @3606 GOTO 54
+	IF ~!InParty("Anomen")~ THEN REPLY @3606 GOTO 54
+	IF ~IfValidForPartyDialogue("Anomen") InMyArea("Anomen")
+	   !StateCheck("Anomen",CD_STATE_NOTVALID)~ THEN REPLY @3606 GOTO 540
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 54
 	SAY @3607
-	IF ~~ THEN REPLY@3608 GOTO 56
+	IF ~~ THEN REPLY @3608 GOTO 56
 END
 
 //---------------------------------------------------------
@@ -514,17 +514,17 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 55
 	SAY @3609
-	IF ~~ THEN REPLY@3608 GOTO 56
+	IF ~~ THEN REPLY @3608 GOTO 56
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 56
 	SAY @3610
-	IF ~InParty("Jan")
-	   !StateCheck("Jan",STATE_DEAD)~THEN REPLY@3611 GOTO 590
-	IF ~InParty("Jan")
-	   StateCheck("Jan",STATE_DEAD)~THEN REPLY@3611 GOTO 59
-	IF ~!InParty("Jan")~THEN REPLY@3611 GOTO 59
+	IF ~IfValidForPartyDialogue("Jan") InMyArea("Jan")
+	   !StateCheck("Jan",CD_STATE_NOTVALID)~ THEN REPLY @3611 GOTO 590
+	IF ~IfValidForPartyDialogue("Jan") OR(2) !InMyArea("Jan")
+	   StateCheck("Jan",CD_STATE_NOTVALID)~ THEN REPLY @3611 GOTO 59
+	IF ~!InParty("Jan")~ THEN REPLY @3611 GOTO 59
 END
 
 
@@ -549,7 +549,7 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 558
 	SAY @3615
-	IF ~~ THEN REPLY@3616 GOTO 59
+	IF ~~ THEN REPLY @3616 GOTO 59
 END
 
 //---------------------------------------------------------
@@ -566,14 +566,14 @@ END
 IF ~Global("ys_TalkedToGarGel","GLOBAL",2)
 		Global("ys_FindColver","GLOBAL",8)~ THEN BEGIN 60
 	SAY @3618
-	IF ~PartyHasItem("ysgldag")~THEN REPLY@3559 GOTO 61
-	IF ~~ THEN REPLY@3558EXIT
+	IF ~PartyHasItem("ysgldag")~ THEN REPLY @3559 GOTO 61
+	IF ~~ THEN REPLY @3558EXIT
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 61
 	SAY @3619
-	IF ~~ THEN REPLY@3559
+	IF ~~ THEN REPLY @3559
 	DO ~GiveItemCreate("ysprpt",Player1,0,0,0)
 		SetGlobal("ys_TalkedToGarGel","GLOBAL",3)
   	ActionOverride(Player1,LeaveAreaLUA("ys0410","",[3320.150],0))
@@ -589,7 +589,7 @@ IF ~~ THEN BEGIN 61
     ActionOverride(Player5,CreateVisualEffectObject("SPUSEANY",Player5))
     ActionOverride(Player6,CreateVisualEffectObject("SPUSEANY",Player6))~
 	EXIT
-	IF ~~ THEN REPLY@3558EXIT
+	IF ~~ THEN REPLY @3558EXIT
 END
 
 //---------------------------------------------------------
@@ -597,15 +597,15 @@ END
 //---------------------------------------------------------
 IF ~Global("ys_TalkedToGarGel","GLOBAL",3)~ THEN BEGIN 80
 	SAY @3620
-	IF ~PartyHasItem("ysteye")~THEN REPLY@3621 GOTO 86
+	IF ~PartyHasItem("ysteye")~ THEN REPLY @3621 GOTO 86
 	IF ~InParty("Jaheira")
-     PartyHasItem("ysteye")~THEN REPLY@3622 GOTO 82
+     PartyHasItem("ysteye")~ THEN REPLY @3622 GOTO 82
 	IF ~InParty("Jaheira")
-     !PartyHasItem("ysteye")~THEN REPLY@3622 GOTO 81
+     !PartyHasItem("ysteye")~ THEN REPLY @3622 GOTO 81
 	IF ~!InParty("Jaheira")
-     PartyHasItem("ysteye")~THEN REPLY@3622 GOTO 881
+     PartyHasItem("ysteye")~ THEN REPLY @3622 GOTO 881
 	IF ~!InParty("Jaheira")
-     !PartyHasItem("ysteye")~THEN REPLY@3622 GOTO 882
+     !PartyHasItem("ysteye")~ THEN REPLY @3622 GOTO 882
 END
 
 //---------------------------------------------------------
@@ -619,11 +619,11 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 82
 	SAY @3623
-		IF ~InParty("Jaheira")
-	   !StateCheck("Jaheira",STATE_DEAD)~THEN REPLY@3624 GOTO 83
-		IF ~InParty("Jaheira")
-	   StateCheck("Jaheira",STATE_DEAD)~THEN REPLY@3624 GOTO 84
-		IF ~!InParty("Jaheira")~THEN REPLY@3624 GOTO 84
+		IF ~IfValidForPartyDialogue("Jaheira") InMyArea("Jaheira")
+	   !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN REPLY @3624 GOTO 83
+		IF ~IfValidForPartyDialogue("Jaheira") OR(2) !InMyArea("Jaheira")
+	   StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN REPLY @3624 GOTO 84
+		IF ~!InParty("Jaheira")~ THEN REPLY @3624 GOTO 84
 END
 
 //---------------------------------------------------------
@@ -637,7 +637,7 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 882
 	SAY @3625
-		IF ~~ THEN REPLY@3624 GOTO 84
+		IF ~~ THEN REPLY @3624 GOTO 84
 END
 
 //---------------------------------------------------------
@@ -649,7 +649,7 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 84
 	SAY @3627
-	IF ~~ THEN REPLY@3628 GOTO 85
+	IF ~~ THEN REPLY @3628 GOTO 85
 END
 
 //---------------------------------------------------------
@@ -668,34 +668,30 @@ END
 IF ~~ THEN BEGIN 86
 	SAY @3630
   =@3631
-	IF ~!InParty("Anomen")~THEN UNSOLVED_JOURNAL @165
+	IF ~!InParty("Anomen")~ THEN UNSOLVED_JOURNAL @165
   REPLY @3632
 	 DO ~SetGlobalTimer("ysCureEildaren","GLOBAL", ONE_DAY)
 	 		TakePartyItem("ysteye")
 	 		AddexperienceParty(10000)
 			SetGlobal("ys_TalkedToGarGel","GLOBAL",6)~
 	EXIT
-	IF ~InParty("Anomen")
-     StateCheck("Anomen",STATE_DEAD)~THEN UNSOLVED_JOURNAL @165
+	IF ~InParty("Anomen") !InMyArea("Anomen") 
+     StateCheck("Anomen",CD_STATE_NOTVALID)~ THEN UNSOLVED_JOURNAL @165
   REPLY @3632
 	 DO ~SetGlobalTimer("ysCureEildaren","GLOBAL", ONE_DAY)
 	 		TakePartyItem("ysteye")
 	 		AddexperienceParty(10000)
 			SetGlobal("ys_TalkedToGarGel","GLOBAL",6)~
 	EXIT
-	IF ~InParty("Anomen")
-     !StateCheck("Anomen",STATE_DEAD)~THEN UNSOLVED_JOURNAL @165
-  REPLY @3633GOTO 870
+	IF ~IfValidForPartyDialogue("Anomen") InMyArea("Anomen")
+     !StateCheck("Anomen",CD_STATE_NOTVALID)~ THEN UNSOLVED_JOURNAL @165
+  REPLY @3633 GOTO 870
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 870
   SAY@3634
-	IF ~!InParty("Jaheira")~THEN EXTERN ANOMENJ GGBLK2
-	IF ~InParty("Jaheira")
-	   !StateCheck("Jaheira",STATE_DEAD)~THEN EXTERN ANOMENJ GGBLK3
-	IF ~InParty("Jaheira")
-	   StateCheck("Jaheira",STATE_DEAD)~THEN EXTERN ANOMENJ GGBLK2
+	IF ~~ THEN EXTERN ANOMENJ GGBLK3
 END
 
 //---------------------------------------------------------
@@ -725,9 +721,9 @@ END
 //---------------------------------------------------------
 IF ~GlobalTimerExpired("ysCureEildaren","GLOBAL")
 		Global("ys_GarGelDislikesProt","GLOBAL",1)
-	  Global("ys_TalkedToGarGel","GLOBAL",6)~THEN BEGIN 90
+	  Global("ys_TalkedToGarGel","GLOBAL",6)~ THEN BEGIN 90
 	SAY@3637
-	IF ~~ THEN REPLY@3638 GOTO 91
+	IF ~~ THEN REPLY @3638 GOTO 91
 END
 
 //---------------------------------------------------------
@@ -752,9 +748,9 @@ END
 IF ~GlobalTimerExpired("ysCureEildaren","GLOBAL")
 		Global("ys_GarGelDislikesProt","GLOBAL",0)
 		!InParty("Jaheira")
-	  Global("ys_TalkedToGarGel","GLOBAL",6)~THEN BEGIN 92
+	  Global("ys_TalkedToGarGel","GLOBAL",6)~ THEN BEGIN 92
 	SAY@3640
-	IF ~~ THEN REPLY@3641 GOTO 93
+	IF ~~ THEN REPLY @3641 GOTO 93
 END
 
 //---------------------------------------------------------
@@ -762,9 +758,10 @@ END
 //---------------------------------------------------------
 IF ~GlobalTimerExpired("ysCureEildaren","GLOBAL")
 		Global("ys_GarGelDislikesProt","GLOBAL",0)
-		InParty("Jaheira")
-	  !StateCheck("Jaheira",STATE_DEAD)
-	  Global("ys_TalkedToGarGel","GLOBAL",6)~THEN BEGIN 99
+		IfValidForPartyDialogue("Jaheira")
+		InMyArea("Jaheira")
+	  !StateCheck("Jaheira",CD_STATE_NOTVALID)
+	  Global("ys_TalkedToGarGel","GLOBAL",6)~ THEN BEGIN 99
 	SAY@3640
 	IF ~~ THEN EXTERN YSELCOL2 JAHEIRATALK
 END
@@ -774,35 +771,36 @@ END
 //---------------------------------------------------------
 IF ~GlobalTimerExpired("ysCureEildaren","GLOBAL")
 		Global("ys_GarGelDislikesProt","GLOBAL",0)
-		InParty("Jaheira")
-	  StateCheck("Jaheira",STATE_DEAD)
-	  Global("ys_TalkedToGarGel","GLOBAL",6)~THEN BEGIN 100
+		IfValidForPartyDialogue("Jaheira")  
+		OR(2) !InMyArea("Jaheira")
+	  StateCheck("Jaheira",CD_STATE_NOTVALID)
+	  Global("ys_TalkedToGarGel","GLOBAL",6)~ THEN BEGIN 100
 	SAY@3640
-	IF ~~ THEN REPLY@3641 GOTO 93
+	IF ~~ THEN REPLY @3641 GOTO 93
 END
 
 //---------------------------------------------------------
-IF ~~THEN BEGIN 93
+IF ~~ THEN BEGIN 93
 	SAY@3642
-	IF ~~ THEN REPLY@3643 GOTO 200
+	IF ~~ THEN REPLY @3643 GOTO 200
 END
 
 //---------------------------------------------------------
 //Interject Eildaren
-IF ~~THEN BEGIN 150
+IF ~~ THEN BEGIN 150
 	SAY@3644
 	IF ~~ THEN EXTERN JAHEIRAJ GGBLK6
 END
 
 //---------------------------------------------------------
 //Interject Eildaren
-IF ~~THEN BEGIN 151
+IF ~~ THEN BEGIN 151
 	SAY@3645
-	IF ~~ THEN REPLY@3643 GOTO 200
+	IF ~~ THEN REPLY @3643 GOTO 200
 END
 
 //---------------------------------------------------------
-IF ~~THEN BEGIN 200
+IF ~~ THEN BEGIN 200
 	SAY@3646
 	IF ~~ THEN UNSOLVED_JOURNAL @166
 	 DO ~SetGlobalTimer("ysLiftCurse","GLOBAL", SEVEN_DAYS)
@@ -873,17 +871,17 @@ IF ~Global("ys_TalkedToGarGel","GLOBAL",7)
 		Global("ys_GarGelDislikesProt","GLOBAL",0)
     GlobalTimerExpired("ysLiftCurse","GLOBAL")~ THEN BEGIN 303
 	SAY @3651
-	IF ~~ THEN REPLY@3652 GOTO 3000
+	IF ~~ THEN REPLY @3652 GOTO 3000
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 3000
 	SAY @3653
-	IF ~!InParty("Jaheira")~THEN REPLY@3654 GOTO 304
-	IF ~InParty("Jaheira")
-	  !StateCheck("Jaheira",STATE_DEAD)~THEN REPLY@3654 GOTO 305
-	IF ~InParty("Jaheira")
-	  StateCheck("Jaheira",STATE_DEAD)~THEN REPLY@3654 GOTO 304
+	IF ~!InParty("Jaheira")~ THEN REPLY @3654 GOTO 304
+	IF ~IfValidForPartyDialogue("Jaheira") InMyArea("Jaheira")
+	  !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN REPLY @3654 GOTO 305
+	IF ~IfValidForPartyDialogue("Jaheira") OR(2) !InMyArea("Jaheira")
+	  StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN REPLY @3654 GOTO 304
 END
 
 //---------------------------------------------------------

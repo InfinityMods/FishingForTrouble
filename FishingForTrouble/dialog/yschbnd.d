@@ -50,8 +50,8 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN BLK7
 	SAY @1816
-	IF~Gender(Protagonist,FEMALE)~THEN REPLY @1817 GOTO BLK8
-	IF~Gender(Protagonist,MALE)~THEN REPLY @1817 GOTO BLK18
+	IF~Gender(Protagonist,FEMALE)~ THEN REPLY @1817 GOTO BLK8
+	IF~Gender(Protagonist,MALE)~ THEN REPLY @1817 GOTO BLK18
 END
 
 //---------------------------------------------------------

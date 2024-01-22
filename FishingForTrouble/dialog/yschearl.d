@@ -2,8 +2,8 @@ BEGIN yschearl
 
 IF ~Global("ys_TalkedToWultheof","GLOBAL",0)~ THEN BEGIN BLK0
 	SAY @2200
-	IF~Global("ys_TalkedToCaravanMaster","GLOBAL",3)~THEN REPLY @2201 GOTO BLK1
-	IF~!Global("ys_TalkedToCaravanMaster","GLOBAL",3)~THEN REPLY @2202 GOTO BLKEND
+	IF~Global("ys_TalkedToCaravanMaster","GLOBAL",3)~ THEN REPLY @2201 GOTO BLK1
+	IF~!Global("ys_TalkedToCaravanMaster","GLOBAL",3)~ THEN REPLY @2202 GOTO BLKEND
 END
 
 //---------------------------------------------------------

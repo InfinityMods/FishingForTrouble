@@ -336,14 +336,14 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 121
 	SAY @3274
-	IF ~ReputationLT(Player1,8)~THEN REPLY @3275 GOTO 122
+	IF ~ReputationLT(Player1,8)~ THEN REPLY @3275 GOTO 122
 	IF ~ReputationGT(Player1,7)
 		ReputationLT(Player1,16)
-		RandomNum(2,1)~THEN REPLY @3275 GOTO 123
+		RandomNum(2,1)~ THEN REPLY @3275 GOTO 123
 	IF ~ReputationGT(Player1,7)
 		ReputationLT(Player1,16)
-		RandomNum(2,2)~THEN REPLY @3275 GOTO 151
-	IF ~ReputationGT(Player1,15)~THEN REPLY @3275 GOTO 124
+		RandomNum(2,2)~ THEN REPLY @3275 GOTO 151
+	IF ~ReputationGT(Player1,15)~ THEN REPLY @3275 GOTO 124
 END
 
 //---------------------------------------------------------

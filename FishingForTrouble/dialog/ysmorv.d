@@ -4,7 +4,7 @@ BEGIN ysmorv
 IF ~Global("ys_TalkedToMorvans","LOCALS",1)
     AreaCheck("ys0161")~ THEN BEGIN CHEAPGOODS
     SAY @1900
-    IF~Global("ys_PianoTalk","GLOBAL",1)~THEN REPLY @1901 GOTO BLK11
+    IF~Global("ys_PianoTalk","GLOBAL",1)~ THEN REPLY @1901 GOTO BLK11
     IF ~~ THEN REPLY @1902 GOTO OPENSTORE
     IF ~~ THEN REPLY @1903 EXIT
 END
@@ -50,7 +50,7 @@ END
 IF ~~ THEN BEGIN BLK3
     SAY @1913
     IF ~~ THEN REPLY @1914 GOTO BLK4
-    IF ~Global("ys_PianoTalk","GLOBAL",1)~THEN REPLY @1901 GOTO BLK11
+    IF ~Global("ys_PianoTalk","GLOBAL",1)~ THEN REPLY @1901 GOTO BLK11
     IF ~~ THEN REPLY @1915 GOTO OPENSTORE
 END
 
@@ -65,14 +65,14 @@ END
 IF ~~ THEN BEGIN BLK5
     SAY @1919
     IF ~~ THEN REPLY @1920 GOTO BLK6
-    IF~Global("ys_PianoTalk","GLOBAL",1)~THEN REPLY @1901 GOTO BLK11
+    IF~Global("ys_PianoTalk","GLOBAL",1)~ THEN REPLY @1901 GOTO BLK11
     IF ~~ THEN REPLY @1921 GOTO OPENSTORE
 END
 
 //-----------------------------------------------
 IF ~~ THEN BEGIN BLK6
     SAY @1922
-    IF~Global("ys_PianoTalk","GLOBAL",1)~THEN REPLY @1901 GOTO BLK11
+    IF~Global("ys_PianoTalk","GLOBAL",1)~ THEN REPLY @1901 GOTO BLK11
     IF ~~ THEN REPLY @1921 GOTO OPENSTORE
 END
 
@@ -80,7 +80,7 @@ END
 IF ~~ THEN BEGIN BLK10
     SAY @1923
     IF ~~ THEN REPLY @1915 GOTO OPENSTORE
-    IF ~Global("ys_PianoTalk","GLOBAL",1)~THEN REPLY @1901 GOTO BLK11
+    IF ~Global("ys_PianoTalk","GLOBAL",1)~ THEN REPLY @1901 GOTO BLK11
 END
 
 //-----------------------------------------------

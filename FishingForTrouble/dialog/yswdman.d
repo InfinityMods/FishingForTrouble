@@ -48,12 +48,12 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN BLK10
   SAY@1119
-  IF~~THEN REPLY @1120
+  IF~~ THEN REPLY @1120
 	UNSOLVED_JOURNAL @22
     DO ~SetGlobal("ys_TethyrWoodsman","GLOBAL",1)~
     EXIT
 
-  IF~~THEN REPLY @1121
+  IF~~ THEN REPLY @1121
    UNSOLVED_JOURNAL @22
     DO ~SetGlobal("ys_TethyrWoodsman","GLOBAL",1)~
     EXIT
@@ -62,12 +62,12 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN BLK11
   SAY@1119
-  IF~~THEN REPLY @1120
+  IF~~ THEN REPLY @1120
    UNSOLVED_JOURNAL @31
     DO ~SetGlobal("ys_TethyrWoodsman","GLOBAL",1)~
     EXIT
 
-  IF~~THEN REPLY @1121
+  IF~~ THEN REPLY @1121
    UNSOLVED_JOURNAL @31
     DO ~SetGlobal("ys_TethyrWoodsman","GLOBAL",1)~
     EXIT

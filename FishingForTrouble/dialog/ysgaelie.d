@@ -167,12 +167,12 @@ END
 //---------------------------------------------------------
 IF ~Global("ys_KalunIsDead","GLOBAL",1)~ THEN BEGIN BLK50
 	SAY @1340
-	IF~InParty("Jaheira")
-	!StateCheck("Jaheira",STATE_DEAD)~THEN REPLY @1341 EXTERN JAHEIRAJ GTBLK1
-	IF~InParty("Aerie")
-	!StateCheck("Aerie",STATE_DEAD)~THEN REPLY @1341 EXTERN AERIEJ GTBLK1
-	IF~InParty("Cernd")
-	!StateCheck("Cernd",STATE_DEAD)~THEN REPLY @1341 EXTERN CERNDJ GTBLK1
+	IF~IfValidForPartyDialogue("Jaheira") InMyArea("Jaheira")
+	!StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN REPLY @1341 EXTERN JAHEIRAJ GTBLK1
+	IF~IfValidForPartyDialogue("Aerie") InMyArea("Aerie")
+	!StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN REPLY @1341 EXTERN AERIEJ GTBLK1
+	IF~IfValidForPartyDialogue("Cernd") InMyArea("Cernd")
+	!StateCheck("Cernd",CD_STATE_NOTVALID)~ THEN REPLY @1341 EXTERN CERNDJ GTBLK1
 	IF ~~ THEN REPLY @1342 GOTO BLK60
 	IF ~~ THEN REPLY @1343 GOTO BLK70
 END

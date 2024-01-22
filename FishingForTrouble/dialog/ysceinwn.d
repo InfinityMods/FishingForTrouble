@@ -191,8 +191,8 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN BLK12
 	 SAY @1554
-	 IF~Global("ys_RudeToCeinwen","GLOBAL",0)~THEN REPLY @1555 GOTO BLK13
-	 IF~!Global("ys_RudeToCeinwen","GLOBAL",0)~THEN REPLY @1555 GOTO BLK14
+	 IF~Global("ys_RudeToCeinwen","GLOBAL",0)~ THEN REPLY @1555 GOTO BLK13
+	 IF~!Global("ys_RudeToCeinwen","GLOBAL",0)~ THEN REPLY @1555 GOTO BLK14
 END
 
 //---------------------------------------------------------
@@ -437,13 +437,13 @@ IF ~Global("dai_TalkedToCeinwen","GLOBAL",7)
     GlobalTimerExpired("ys_CeinwenTimer","GLOBAL")
     Global("ys_VampChildIsDead","GLOBAL",1)~ THEN BEGIN BLK600
   SAY@1605
-  IF ~~ THEN REPLY@1519 GOTO BLK601
-  IF ~~ THEN REPLY@1606 GOTO BLK602
+  IF ~~ THEN REPLY @1519 GOTO BLK601
+  IF ~~ THEN REPLY @1606 GOTO BLK602
 END
 
 IF ~~ THEN BEGIN BLK601
   SAY@1607
-  IF ~~ THEN REPLY@1608
+  IF ~~ THEN REPLY @1608
     DO ~SetGlobal("dai_TalkedToCeinwen","GLOBAL",8)
 		GiveItemCreate("yspotn01",Player1,0,0,0)
 		GiveItemCreate("yspotn02",Player1,0,0,0)
@@ -466,31 +466,31 @@ END
 //Ghoul transformation is permanent
 //---------------------------------------------------------
 IF ~Global("dai_TalkedToCeinwen","GLOBAL",8)
-    PartyHasItem("ysghoul1")~THEN BEGIN BLK700
+    PartyHasItem("ysghoul1")~ THEN BEGIN BLK700
   SAY@1610
   =@1611
-  IF ~~ THEN REPLY@1612 GOTO BLK701
-  IF ~~ THEN REPLY@1613 GOTO BLK702
+  IF ~~ THEN REPLY @1612 GOTO BLK701
+  IF ~~ THEN REPLY @1613 GOTO BLK702
 END
 
 //---------------------------------------------------------
-IF ~~THEN BEGIN BLK701
+IF ~~ THEN BEGIN BLK701
   SAY@1614
-  IF ~~ THEN REPLY@1615
+  IF ~~ THEN REPLY @1615
   DO ~SetGlobal("dai_TalkedToCeinwen","GLOBAL",9)~
   EXIT
 END
 
 //---------------------------------------------------------
-IF ~~THEN BEGIN BLK702
+IF ~~ THEN BEGIN BLK702
   SAY@1616
-  IF ~~ THEN REPLY@1617GOTO BLK703
+  IF ~~ THEN REPLY @1617GOTO BLK703
 END
 
 //---------------------------------------------------------
-IF ~~THEN BEGIN BLK703
+IF ~~ THEN BEGIN BLK703
   SAY@1618
-  IF ~~ THEN REPLY@1619
+  IF ~~ THEN REPLY @1619
   DO ~SetGlobal("dai_TalkedToCeinwen","GLOBAL",10)~
   EXIT
 END

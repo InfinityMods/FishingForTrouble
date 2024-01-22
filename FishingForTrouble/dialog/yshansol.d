@@ -49,8 +49,8 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 7
 	SAY @2866
-	IF~PartyGoldGT(499)~THEN REPLY @2867 GOTO 8
-	IF~PartyGoldLT(500)~THEN REPLY @2868 GOTO 80
+	IF~PartyGoldGT(499)~ THEN REPLY @2867 GOTO 8
+	IF~PartyGoldLT(500)~ THEN REPLY @2868 GOTO 80
 END
 
 //---------------------------------------------------------
@@ -65,7 +65,7 @@ END
 IF ~~ THEN BEGIN 8
 	SAY @2870
 	IF ~~ THEN REPLY @2871 GOTO 9
-	IF~PartyGoldGT(499)~THEN REPLY @2872
+	IF~PartyGoldGT(499)~ THEN REPLY @2872
 	  DO ~TakePartyGold(500)
 		  SetGlobal("ys_FindColver","GLOBAL",4)~
   GOTO 11
@@ -83,7 +83,7 @@ END
 IF ~Global("ys_FindColver","GLOBAL",3)~ THEN BEGIN 10
 	SAY @2874
 	IF ~~ THEN REPLY @2875 EXIT
-	IF~PartyGoldGT(499)~THEN REPLY @2872
+	IF~PartyGoldGT(499)~ THEN REPLY @2872
 	  DO ~TakePartyGold(500)
 		  SetGlobal("ys_FindColver","GLOBAL",4)~
   GOTO 11
@@ -109,7 +109,7 @@ IF ~Global("dai_TalkedToCaliden","GLOBAL",0)~ THEN BEGIN 100
 END
 
 //---------------------------------------------------------
-IF ~~THEN BEGIN 101
+IF ~~ THEN BEGIN 101
     SAY @2882
     IF ~~ THEN
       DO ~StartStore("ysslvale",LastTalkedToBy())~

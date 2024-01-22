@@ -50,8 +50,8 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 4
 	SAY @4405
-	IF~Gender(Protagonist,MALE)~THEN REPLY @4406 GOTO 5
-	IF~Gender(Protagonist,FEMALE)~THEN REPLY @4406 GOTO 6
+	IF~Gender(Protagonist,MALE)~ THEN REPLY @4406 GOTO 5
+	IF~Gender(Protagonist,FEMALE)~ THEN REPLY @4406 GOTO 6
 	IF ~~ THEN REPLY @4407 GOTO 65
 	IF ~~ THEN REPLY @4401
 	 DO ~SetGlobal("ysTalkedToCadfan","GLOBAL",1)~

@@ -17,33 +17,33 @@ END
 IF ~~ THEN BEGIN BLK2
 	SAY @2106
 	IF ~~ THEN REPLY @2107 GOTO BLK4
-	IF~!InParty("Edwin")~THEN REPLY @2108 GOTO BLK6
-	IF~InParty("Edwin")~THEN REPLY @2108 GOTO BLK100
+	IF ~!InParty("Edwin")~ THEN REPLY @2108 GOTO BLK6
+	IF ~IfValidForPartyDialogue("Edwin") InMyArea("Edwin") !StateCheck("Edwin",CD_STATE_NOTVALID)~ THEN REPLY @2108 GOTO BLK100
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN BLK3
 	SAY @2109
 	IF ~~ THEN REPLY @2110 GOTO BLK4
-	IF~!InParty("Edwin")~THEN REPLY @2111 GOTO BLK6
-	IF~InParty("Edwin")~THEN REPLY @2111 GOTO BLK100
+	IF ~!InParty("Edwin")~ THEN REPLY @2111 GOTO BLK6
+	IF ~IfValidForPartyDialogue("Edwin") InMyArea("Edwin") !StateCheck("Edwin",CD_STATE_NOTVALID)~ THEN REPLY @2111 GOTO BLK100
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN BLK4
 	SAY @2112
-	IF~!InParty("Edwin")~THEN REPLY @2113 GOTO BLK6
-	IF~InParty("Edwin")~THEN REPLY @2113 GOTO BLK100
+	IF ~!InParty("Edwin")~ THEN REPLY @2113 GOTO BLK6
+	IF ~IfValidForPartyDialogue("Edwin") InMyArea("Edwin") !StateCheck("Edwin",CD_STATE_NOTVALID)~ THEN REPLY @2113 GOTO BLK100
 	IF ~~ THEN REPLY @2114 GOTO BLK5
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN BLK5
 	SAY @2115
-	IF~!InParty("Edwin")~THEN REPLY @2113 GOTO BLK6
-	IF~!InParty("Edwin")~THEN REPLY @2108 GOTO BLK6
-	IF~InParty("Edwin")~THEN REPLY @2113 GOTO BLK100
-	IF~InParty("Edwin")~THEN REPLY @2108 GOTO BLK100
+	IF ~!InParty("Edwin")~ THEN REPLY @2113 GOTO BLK6
+	IF ~!InParty("Edwin")~ THEN REPLY @2108 GOTO BLK6
+	IF ~IfValidForPartyDialogue("Edwin") InMyArea("Edwin") !StateCheck("Edwin",CD_STATE_NOTVALID)~ THEN REPLY @2113 GOTO BLK100
+	IF ~IfValidForPartyDialogue("Edwin") InMyArea("Edwin") !StateCheck("Edwin",CD_STATE_NOTVALID)~ THEN REPLY @2108 GOTO BLK100
 END
 
 //---------------------------------------------------------
@@ -258,7 +258,7 @@ IF ~Global("ys_TalkedToCaravanMaster","GLOBAL",4)
 	IF ~!InParty("Minsc")~ THEN REPLY @2168
 	  DO ~SetGlobal("ys_TalkedToCaravanMaster","GLOBAL",5)~
     EXIT
-	IF ~InParty("Minsc")~ THEN EXTERN MINSCJ CH1
+	IF ~IfValidForPartyDialogue("Minsc") InMyArea("Minsc") !StateCheck("Minsc",CD_STATE_NOTVALID)~ THEN EXTERN MINSCJ CH1
 END
 
 //---------------------------------------------------------
@@ -278,17 +278,17 @@ IF ~Global("ys_TalkedToCaravanMaster","GLOBAL",5)
 	Global("ys_GarrisonFight","GLOBAL",3)
 	Global("ys_WultheofReward","GLOBAL",1)~ THEN BEGIN BLK320
 	SAY @2170
-	IF ~!InParty("Nalia")~THEN
+	IF ~!InParty("Nalia")~ THEN
 	DO~ AddexperienceParty(60000)
         RevealAreaOnMap("ys0370")
 		SetGlobal("ys_TalkedToCaravanMaster","GLOBAL",6)
 		AddJournalEntry(@36,QUEST)~
 	EXIT
 
-	IF ~InParty("Nalia")
+	IF ~IfValidForPartyDialogue("Nalia") InMyArea("Nalia") !StateCheck("Nalia",CD_STATE_NOTVALID)
 		Global("ys_NaliaInterjectCapt","GLOBAL",1)~ THEN EXTERN NALIAJ CH2
 
-	IF ~InParty("Nalia")
+	IF ~IfValidForPartyDialogue("Nalia") InMyArea("Nalia") !StateCheck("Nalia",CD_STATE_NOTVALID)
 		Global("ys_NaliaInterjectCapt","GLOBAL",0)~ THEN EXTERN NALIAJ CH3
 
 END
@@ -301,16 +301,16 @@ IF ~Global("ys_TalkedToCaravanMaster","GLOBAL",5)
 	Global("ys_GarrisonFight","GLOBAL",3)
 	Global("ys_WultheofReward","GLOBAL",0)~ THEN BEGIN BLK322
 	SAY @2171
-	IF ~!InParty("Nalia")~THEN
+	IF ~!InParty("Nalia")~ THEN
 	DO~ AddexperienceParty(60000)
 		RevealAreaOnMap("ys0370")
 		SetGlobal("ys_TalkedToCaravanMaster","GLOBAL",6)
 		AddJournalEntry(@36,QUEST)~
 	EXIT
 
-	IF ~InParty("Nalia")
+	IF ~IfValidForPartyDialogue("Nalia") InMyArea("Nalia") !StateCheck("Nalia",CD_STATE_NOTVALID)
 		Global("ys_NaliaInterjectCapt","GLOBAL",1)~ THEN EXTERN NALIAJ CH2
-	IF ~InParty("Nalia")
+	IF ~IfValidForPartyDialogue("Nalia") InMyArea("Nalia") !StateCheck("Nalia",CD_STATE_NOTVALID)
 		Global("ys_NaliaInterjectCapt","GLOBAL",0)~ THEN EXTERN NALIAJ CH3
 END
 
@@ -370,7 +370,7 @@ END
 CHAIN EDWINJ CH1
 @2188
 END
-IF ~InParty("Minsc")~ THEN EXTERN MINSCJ CH2
+IF ~IfValidForPartyDialogue("Minsc") InMyArea("Minsc") !StateCheck("Minsc",CD_STATE_NOTVALID)~ THEN EXTERN MINSCJ CH2
 ++@2187 EXTERN yscvmstr BLK102
 
 CHAIN EDWINJ CH2

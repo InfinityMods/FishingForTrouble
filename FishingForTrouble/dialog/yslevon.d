@@ -5,8 +5,8 @@ BEGIN yslevon
 //---------------------------------------------------------
 IF ~Global("ysTalkedToLeron","GLOBAL",1) !Global("ysTalkedToAkil","GLOBAL",2)~ THEN BEGIN 50
 	SAY @4950
-	IF~Global("ysAkilIsDead","GLOBAL",1)~THEN REPLY @4951 GOTO 51
-	IF~Global("ysAkilIsDead","GLOBAL",1)~THEN REPLY @4952 GOTO 51
+	IF~Global("ysAkilIsDead","GLOBAL",1)~ THEN REPLY @4951 GOTO 51
+	IF~Global("ysAkilIsDead","GLOBAL",1)~ THEN REPLY @4952 GOTO 51
 	IF ~~ THEN REPLY @4953 EXIT
 END
 
@@ -53,7 +53,7 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 4
 	SAY @4962
-	IF ~Global("ysTalkedToLeron","GLOBAL",1)~THEN REPLY @4963 GOTO 5
+	IF ~Global("ysTalkedToLeron","GLOBAL",1)~ THEN REPLY @4963 GOTO 5
 	IF ~~ THEN REPLY @4964 GOTO 5
 END
 
@@ -67,10 +67,10 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 6
 	SAY @4968
-	IF~CheckStatLT(LastTalkedToBy(Myself),11,CHR)~THEN REPLY @4969 GOTO 7
+	IF~CheckStatLT(LastTalkedToBy(Myself),11,CHR)~ THEN REPLY @4969 GOTO 7
 	IF~CheckStatGT(LastTalkedToBy(Myself),10,CHR)
-       CheckStatLT(LastTalkedToBy(Myself),14,CHR)~THEN REPLY @4969 GOTO 8
-	IF~CheckStatGT(LastTalkedToBy(Myself),13,CHR)~THEN REPLY @4969 GOTO 9
+       CheckStatLT(LastTalkedToBy(Myself),14,CHR)~ THEN REPLY @4969 GOTO 8
+	IF~CheckStatGT(LastTalkedToBy(Myself),13,CHR)~ THEN REPLY @4969 GOTO 9
 END
 
 //---------------------------------------------------------
@@ -99,7 +99,7 @@ END
 //Shame
 IF ~~ THEN BEGIN 8
 	SAY @4971
-	IF ~~ THEN REPLY@4972 GOTO 9
+	IF ~~ THEN REPLY @4972 GOTO 9
 END
 
 //---------------------------------------------------------
@@ -139,12 +139,12 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 21
 	SAY @4983
-	IF~InParty("Jaheira")
-  !StateCheck("Jaheira",CD_STATE_NOTVALID)~THEN EXTERN BJAHEIR LEVON1
-	IF~InParty("Minsc")
-  !StateCheck("Minsc",CD_STATE_NOTVALID)~THEN EXTERN BMINSC LEVON1
-	IF~InParty("Nalia")
-  !StateCheck("Nalia",CD_STATE_NOTVALID)~THEN EXTERN BNALIA LEVON1
+	IF~IfValidForPartyDialogue("Jaheira") InMyArea("Jaheira")
+  !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN EXTERN BJAHEIR LEVON1
+	IF~IfValidForPartyDialogue("Minsc") InMyArea("Minsc")
+  !StateCheck("Minsc",CD_STATE_NOTVALID)~ THEN EXTERN BMINSC LEVON1
+	IF~IfValidForPartyDialogue("Nalia") InMyArea("Nalia")
+  !StateCheck("Nalia",CD_STATE_NOTVALID)~ THEN EXTERN BNALIA LEVON1
 	IF ~~ THEN REPLY @4984 GOTO 30
 END
 

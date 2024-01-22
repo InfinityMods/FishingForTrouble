@@ -9,10 +9,10 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 1
 	SAY @3403
-	IF~!InParty("Jaheira")~THEN REPLY @3404 GOTO 4
-	IF~InParty("Jaheira")
+	IF~!InParty("Jaheira")~ THEN REPLY @3404 GOTO 4
+	IF~IfValidForPartyDialogue("Jaheira") OR(2) !InMyArea("Jaheira")
       StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN REPLY @3404 GOTO 4
-	IF~InParty("Jaheira")
+	IF~IfValidForPartyDialogue("Jaheira") InMyArea("Jaheira")
       !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN EXTERN JAHEIRAJ TMM1
 END
 

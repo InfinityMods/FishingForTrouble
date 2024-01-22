@@ -2,16 +2,16 @@ BEGIN ysmuktar
 
 IF ~Global("ys_SpeakToMukhtar","GLOBAL",0)~ THEN BEGIN 0
 	SAY @4330
-	IF ~Global("ysTalkedToKarim","GLOBAL",3)~THEN REPLY @4331 GOTO 1
-	IF ~!Global("ysTalkedToKarim","GLOBAL",3)~THEN REPLY @4332 EXIT
+	IF ~Global("ysTalkedToKarim","GLOBAL",3)~ THEN REPLY @4331 GOTO 1
+	IF ~!Global("ysTalkedToKarim","GLOBAL",3)~ THEN REPLY @4332 EXIT
 	IF ~~ THEN REPLY @4333 EXIT
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 1
 	SAY @4334
-	IF ~CheckStatLT(LastTalkedToBy(Myself),13,CHR)~THEN REPLY @4335 GOTO 2
-	IF ~CheckStatGT(LastTalkedToBy(Myself),12,CHR)~THEN REPLY @4335 GOTO 3
+	IF ~CheckStatLT(LastTalkedToBy(Myself),13,CHR)~ THEN REPLY @4335 GOTO 2
+	IF ~CheckStatGT(LastTalkedToBy(Myself),12,CHR)~ THEN REPLY @4335 GOTO 3
 	IF ~~ THEN REPLY @4336 EXIT
 END
 

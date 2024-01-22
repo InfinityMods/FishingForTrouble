@@ -8,7 +8,7 @@ END
 
 //---------------------------------------------------------
 IF ~Global("ys_AkilNoLevon","GLOBAL",0)
-	AreaCheck("ys0440")~THEN BEGIN 30
+	AreaCheck("ys0440")~ THEN BEGIN 30
 	SAY @4800
 	IF ~~ THEN EXIT
 END

@@ -152,10 +152,10 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 22
 	SAY @4571
-	IF~Global("ysCaveBlocked","GLOBAL",0)~THEN REPLY @4572
+	IF~Global("ysCaveBlocked","GLOBAL",0)~ THEN REPLY @4572
 	  DO~SetGlobal("ysCaveBlocked","GLOBAL",2)~
 	EXIT
-	IF~Global("ysCaveBlocked","GLOBAL",1)~THEN REPLY @4573
+	IF~Global("ysCaveBlocked","GLOBAL",1)~ THEN REPLY @4573
       DO~SetGlobal("ysCaveBlocked","GLOBAL",2)~
 	GOTO 23
 END
@@ -236,10 +236,10 @@ END
 // IF ~Global("ysTalkedToAiesha","GLOBAL",3)
     // ~ THEN BEGIN 31
 	// SAY @4588
-	// IF ~Global("ysCaveBlocked","GLOBAL",3)~THEN
+	// IF ~Global("ysCaveBlocked","GLOBAL",3)~ THEN
       // DO ~TakePartyItem("yssfrb")~
     // REPLY @4589 GOTO 32
-	// IF ~Global("ysCaveBlocked","GLOBAL",2)~THEN
+	// IF ~Global("ysCaveBlocked","GLOBAL",2)~ THEN
       // DO ~TakePartyItem("yssfrb")~
     // REPLY @4589 GOTO 33
 // END

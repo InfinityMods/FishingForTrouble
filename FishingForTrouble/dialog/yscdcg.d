@@ -53,7 +53,7 @@ IF ~~ THEN BEGIN 6
 	IF ~~ THEN REPLY @4009 GOTO 7
 	IF ~~ THEN REPLY @4010 GOTO 7
 	IF ~~ THEN REPLY @4011 GOTO 7
-	IF~Global("ysAieshaAdvice","GLOBAL",1)~THEN REPLY @4012 GOTO 8
+	IF~Global("ysAieshaAdvice","GLOBAL",1)~ THEN REPLY @4012 GOTO 8
 END
 
 //---------------------------------------------------------

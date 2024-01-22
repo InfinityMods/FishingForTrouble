@@ -16,8 +16,8 @@ END
 //---------------------------------------------------------
 IF ~Global("ys_TalkedToTigGuard","GLOBAL",1)~ THEN BEGIN 2
 	SAY @3454
-	IF ~!Global("ys_FindColver","GLOBAL",8)~THEN REPLY @3453 GOTO 3
-	IF ~Global("ys_FindColver","GLOBAL",8)~THEN REPLY @3453 GOTO 4
+	IF ~!Global("ys_FindColver","GLOBAL",8)~ THEN REPLY @3453 GOTO 3
+	IF ~Global("ys_FindColver","GLOBAL",8)~ THEN REPLY @3453 GOTO 4
 END
 
 

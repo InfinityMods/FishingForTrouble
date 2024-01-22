@@ -15,7 +15,7 @@ IF ~Global("ys_talkedToEP","GLOBAL",1)~ THEN BEGIN 5
 END
 
 //----------------------------
-IF ~~THEN BEGIN 6
+IF ~~ THEN BEGIN 6
   SAY @2455
   IF ~~ THEN REPLY @2456 GOTO 9
 END

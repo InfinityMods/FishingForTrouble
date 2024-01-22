@@ -85,10 +85,10 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN BLK21
 	SAY @1761
-	IF~!InParty("Nalia")~THEN REPLY @1762
+	IF~!InParty("Nalia")~ THEN REPLY @1762
 		DO ~EscapeArea()~
 	EXIT
-	IF~InParty("Nalia")~THEN EXTERN NALIAJ CH1
+	IF~IfValidForPartyDialogue("Nalia") InMyArea("Nalia") !StateCheck("Nalia",CD_STATE_NOTVALID)~ THEN EXTERN NALIAJ CH1
 END
 
 //---------------------------------------------------------

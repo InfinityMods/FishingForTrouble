@@ -2,8 +2,8 @@ BEGIN ysprpt
 
 IF ~Global("ysPortal","GLOBAL",0)~ THEN BEGIN 0
 	SAY @4360
-	IF ~Global("ys_HomewardBound","GLOBAL",0)~THEN REPLY @4361 GOTO 1
-	IF ~Global("ys_HomewardBound","GLOBAL",1)~THEN REPLY @4361 GOTO 2
+	IF ~Global("ys_HomewardBound","GLOBAL",0)~ THEN REPLY @4361 GOTO 1
+	IF ~Global("ys_HomewardBound","GLOBAL",1)~ THEN REPLY @4361 GOTO 2
 	IF ~~ THEN REPLY @4362 EXIT
 END
 

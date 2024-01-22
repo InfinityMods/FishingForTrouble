@@ -125,10 +125,10 @@ IF ~~ THEN BEGIN 100
 END
 
 //--------------------------------------------------
-IF ~Global("ysTalkedToCado","GLOBAL",1)~THEN BEGIN 30
+IF ~Global("ysTalkedToCado","GLOBAL",1)~ THEN BEGIN 30
   SAY @1069
   IF ~GlobalLT("ys_GarrisonFight","GLOBAL",3)~ THEN REPLY @1070 EXIT
-  IF~Global("ys_GarrisonFight","GLOBAL",3)~THEN REPLY @1071 GOTO 31
+  IF~Global("ys_GarrisonFight","GLOBAL",3)~ THEN REPLY @1071 GOTO 31
 END
 
 //--------------------------------------------------

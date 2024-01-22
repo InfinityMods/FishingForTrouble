@@ -44,8 +44,9 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN BLK7
 	SAY @1631
-	IF~InParty("Edwin")~ THEN REPLY @1632 GOTO BLK9
-	IF~!InParty("Edwin")~THEN REPLY @1632 GOTO BLK8
+	IF ~IfValidForPartyDialogue("Edwin") InMyArea("Edwin") !StateCheck("Edwin",CD_STATE_NOTVALID)~ THEN REPLY @1632 GOTO BLK9
+	IF ~IfValidForPartyDialogue("Edwin") OR(2) !InMyArea("Edwin") StateCheck("Edwin",CD_STATE_NOTVALID)~ THEN REPLY @1632 GOTO BLK8
+	IF ~!InParty("Edwin")~ THEN REPLY @1632 GOTO BLK8
 END
 
 //---------------------------------------------------------
@@ -82,8 +83,9 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN BLK12
 	SAY @1644
-	IF~!InParty("Edwin")~THEN REPLY @1645 GOTO BLK13
-	IF~InParty("Edwin")~THEN REPLY @1645 EXTERN EDWINJ CHBLK2
+	IF ~!InParty("Edwin")~ THEN REPLY @1645 GOTO BLK13
+	IF ~IfValidForPartyDialogue("Edwin") OR(2) !InMyArea("Edwin") StateCheck("Edwin",CD_STATE_NOTVALID)~ THEN REPLY @1645 GOTO BLK13
+	IF ~IfValidForPartyDialogue("Edwin") InMyArea("Edwin") !StateCheck("Edwin",CD_STATE_NOTVALID)~ THEN REPLY @1645 EXTERN EDWINJ CHBLK2
 END
 
 //---------------------------------------------------------
@@ -107,9 +109,11 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN BLK15
 	SAY @1651
-	IF~InParty("Jaheira")~THEN
+	IF ~IfValidForPartyDialogue("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN
 		EXTERN JAHEIRAJ CHBLK3
- 	IF~!InParty("Jaheira")~THEN
+ 	IF ~IfValidForPartyDialogue("Jaheira") OR(2) !InMyArea("Jaheira") StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN
+	 	REPLY @1652 GOTO BLK16
+ 	IF ~!InParty("Jaheira")~ THEN
 	 	REPLY @1652 GOTO BLK16
 END
 
@@ -149,21 +153,18 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN BLK18
 	SAY @1664
-	IF~!InParty("Jaheira")~THEN
-  REPLY @1665 GOTO BLK19
-	IF~InParty("Jaheira")~THEN
-  REPLY @1665 GOTO BLK19
+	IF ~~ THEN REPLY @1665 GOTO BLK19
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN BLK19
 	SAY @1666
-	IF~!InParty("Jaheira")~THEN REPLY @1667
+	IF ~!InParty("Jaheira")~ THEN REPLY @1667
 		DO ~SetGlobal("ys_TalkedToAiloth","GLOBAL",1)
 			AddJournalEntry(@37,QUEST)
 			EscapeArea()~
 		EXIT
-	IF~InParty("Jaheira")~THEN REPLY @1668
+	IF ~InParty("Jaheira")~ THEN REPLY @1668
 		DO ~SetGlobal("ys_TalkedToAiloth","GLOBAL",1)
 			AddJournalEntry(@37,QUEST)
 			EscapeArea()~
