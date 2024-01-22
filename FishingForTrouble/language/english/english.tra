@@ -510,6 +510,8 @@ Garalial Geltarath has sent me to find Eildaren Colver. He thinks she may be in 
 @490 = ~I love the Calim desert... no better place in the entire world.~
 @491 = ~Next trip I will buy the finest horse in Calimport.~
 @492 = ~I cannot wait to be away from these cesspit dwellers.~
+@493 = ~I have confiscated this sample of black lotus that red wizards had planned to smuggle into Athkatla.~
+@494 = ~Such a quantity! I won't ask where you came by this. Thank you, friend, you've done a great service for the city. Taking such a lot off the streets will help us in our fight. You've earned a reward.~
 @500 = ~ignores you.~
 @501 = ~Have you discovered anything yet?~
 @502 = ~The door is locked.~
@@ -1646,7 +1648,7 @@ So Ledban looks and sure enough, the notice says 'Tree fellers wanted'. Ledban b
 @1930 = ~Somehow they got everything re-distributed onto the other waggons and began moving again. The decision was made to leave the Trade Way, give Purskal a miss and to continue to Athkatla via the Coast Way instead.~
 @1931 = ~Why? Why didn't they go on to Purskal?~
 @1932 = ~The fight hadn't gone entirely their way and they were carrying injured guards as well as overloaded waggons. As I was told the story, they had beaten off two groups of bandits and were now known to be weakened; a third attack may have succeeded. Bear in mind that this caravan was carrying the goods and chattels of an entire rich household; a very inviting target.~
-@1933 = ~Don't forget that the long reach south of the Amnish merchants is relatively recent. Attacks on caravans of all sizes and shapes were a common occurance until the reign of the present Duke Eltan in Athkatla. It was he who decided to defend the Trade Way as far south as Imnescar and as far north as Nashkel.~
+@1933 = ~Don't forget that the long reach south of the Amnish merchants is relatively recent. Attacks on caravans of all sizes and shapes were a common occurance until the ruling of the present Council of Six in Athkatla. It was he who decided to defend the Trade Way as far south as Imnescar and as far north as Nashkel.~
 @1934 = ~So less than a day after the second attack the caravan arrived here in Porthpentyrch. They were hoping to get the broken waggon repaired and to continue on as a whole caravan again but Einion the wainwright took one look at the damage and shook his head. The main bedribs were cracked.~
 @1935 = ~I thought you said they left the broken waggon behind?~
 @1936 = ~No. They took the yoke off, removed the broken front wheels and lifted the front onto the rear bed of another waggon. While Einion tried to procure the timbers to make new bedribs, the injured were cared for by the chirurgeon.~
@@ -3991,3 +3993,4 @@ So Ledban looks and sure enough, the notice says 'Tree fellers wanted'. Ledban b
 @6265 = ~Ah! Could we have a look?~
 @6266 = ~Here you go.~
 @6267 = ~Thank you for saving my life. That was a good thing that you did, going all that way to Imradim.~
+

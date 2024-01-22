@@ -106,8 +106,12 @@ APPEND ~itemdial.2da~ ~YSLABRD		4978	YSLABRD~
 
 ACTION_IF NOT FILE_EXISTS_IN_GAME ~racetext.2da~ BEGIN
 	COPY ~%MOD_FOLDER%/2da/racetext.2da~ ~override~
-END ELSE BEGIN
+END ELSE ACTION_IF ((FILE_EXISTS ~TobEx_ini/TobExCore.ini~) AND (FILE_CONTAINS ~TobEx_ini/TobExCore.ini~ ~Externalise Race Selection StrRef=1~)) BEGIN
 	APPEND ~racetext.2da~ ~108	15946~ UNLESS ~^108~
+	COPY_EXISTING ~racetext.2da~ ~override~
+		REPLACE_TEXTUALLY EXACT_MATCH ~108  6315~ ~108  15946~ // Lower Case
+END ELSE ACTION_IF (FILE_EXISTS_IN_GAME ~racetext.2da~ AND GAME_IS ~bgee bg2ee eet~) BEGIN
+	APPEND ~racetext.2da~ ~GHOUL   108        15946       -1         6315          -1~ UNLESS ~^GHOUL~
 END
 
 //##################################################

@@ -15,6 +15,15 @@ THEN
 		Continue()
 END
 
+// Becoming hostile
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	!Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
 //Find an initial target
 IF
   Allegiance(Myself,ENEMY)

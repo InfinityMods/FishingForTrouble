@@ -1,9 +1,25 @@
 IF
-Global("ysTanarri","ys0040",0)
-GlobalLT("dai_TalkedToTanaari","GLOBAL",5)
-!Exists("ysTanarr")
+	Global("ysTanarridead","ys0040",0)
+	GlobalLT("dai_TalkedToTanaari","GLOBAL",5)
+	!Exists("ysTanarr")  // Tanar'ri
 THEN
-RESPONSE #100
-CreateCreature("ystanarr",[308.168],14)
-SetGlobal("ysTanarri","ys0040",1)
+	RESPONSE #100
+		Wait(1)
+		CreateVisualEffect("SPPLANAR",[401.355])
+		Wait(2)
+		CreateCreature("ystanarr",[401.355],14)  // Tanar'ri		
+END
+
+IF
+	Global("ysTanarridead","ys0040",1)
+	GlobalLT("dai_TalkedToTanaari","GLOBAL",5)
+	Dead("ysTanarr")  // Tanar'ri
+THEN
+	RESPONSE #100
+		Wait(1)
+		CreateVisualEffect("SPPLANAR",[401.355])
+		Wait(2)
+		CreateCreature("ystanarr",[401.355],14)  // Tanar'ri
+		Wait(2)
+		SetGlobal("ysTanarridead","ys0040",0)
 END
