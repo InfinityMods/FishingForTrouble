@@ -7,7 +7,7 @@ THEN
 		Wait(1)
 		CreateVisualEffect("SPPLANAR",[401.355])
 		Wait(2)
-		CreateCreature("ystanarr",[401.355],SE)  // Tanar'ri		
+		CreateCreature("ystanarr",[401.355],14)  // Tanar'ri		
 END
 
 IF
@@ -19,7 +19,7 @@ THEN
 		Wait(1)
 		CreateVisualEffect("SPPLANAR",[401.355])
 		Wait(2)
-		CreateCreature("ystanarr",[401.355],SE)  // Tanar'ri
+		CreateCreature("ystanarr",[401.355],14)  // Tanar'ri
 		Wait(2)
 		SetGlobal("ysTanarridead","ys0040",0)
 END
