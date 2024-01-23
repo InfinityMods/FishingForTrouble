@@ -5,56 +5,56 @@ BEGIN ysltor
 //---------------------------------------------------------
 IF ~Global("ys_FindElminster","GLOBAL",0)~ THEN BEGIN YSBLOCK0
 	SAY @990
-	IF~~THEN REPLY @991 GOTO YSBLOCK2
-	IF~~THEN REPLY @992 GOTO YSBLOCK1
-	IF~~THEN REPLY @993 GOTO YSBLOCK4
+	IF ~~ THEN REPLY @991 GOTO YSBLOCK2
+	IF ~~ THEN REPLY @992 GOTO YSBLOCK1
+	IF ~~ THEN REPLY @993 GOTO YSBLOCK4
 END
 
 //---------------------------------------------------------
-IF ~Global("ys_FindElminster","GLOBAL",0)~ THEN BEGIN YSBLOCK1
+IF ~~ THEN BEGIN YSBLOCK1
 	SAY @994
-	IF~~THEN REPLY @995 GOTO YSBLOCK2
-	IF~~THEN REPLY @996 GOTO YSBLOCK4
+	IF ~~ THEN REPLY @995 GOTO YSBLOCK2
+	IF ~~ THEN REPLY @996 GOTO YSBLOCK4
 END
 
 //---------------------------------------------------------
-IF ~Global("ys_FindElminster","GLOBAL",0)~ THEN BEGIN YSBLOCK2
+IF ~~ THEN BEGIN YSBLOCK2
 	SAY @997
-	IF~~THEN REPLY @998 GOTO YSBLOCK3
+	IF ~~ THEN REPLY @998 GOTO YSBLOCK3
 END
 
 //---------------------------------------------------------
-IF ~Global("ys_FindElminster","GLOBAL",0)~ THEN BEGIN YSBLOCK3
+IF ~~ THEN BEGIN YSBLOCK3
 	SAY @999
-	IF~~THEN REPLY @1000 GOTO YSBLOCK5
-	IF~~THEN REPLY @1001 GOTO YSBLOCK6
+	IF ~~ THEN REPLY @1000 GOTO YSBLOCK5
+	IF ~~ THEN REPLY @1001 GOTO YSBLOCK6
 END
 
 //---------------------------------------------------------
 //Quest is killed
-IF ~Global("ys_FindElminster","GLOBAL",0)~ THEN BEGIN YSBLOCK4
+IF ~~ THEN BEGIN YSBLOCK4
 	SAY @1002
-	IF~~THEN
-	DO~
+	IF ~~ THEN
+		DO~
 		SetGlobal("ys_NoLetter","GLOBAL",1)
 		EscapeArea()~
 	EXIT
 END
 
 //---------------------------------------------------------
-IF ~Global("ys_FindElminster","GLOBAL",0)~ THEN BEGIN YSBLOCK5
+IF ~~ THEN BEGIN YSBLOCK5
 	SAY @1003
-	IF~~THEN
-    DO ~AddJournalEntry(@2,QUEST)~
-  REPLY @1004
+	IF ~~ THEN REPLY @1004
+		DO ~
+		AddJournalEntry(@2,QUEST)~
 	GOTO YSBLOCK7
 END
 
 //---------------------------------------------------------
 //Carry letter has been politely refused
-IF ~Global("ys_FindElminster","GLOBAL",0)~ THEN BEGIN YSBLOCK6
+IF ~~ THEN BEGIN YSBLOCK6
 	SAY @1005
-	IF~~THEN
+	IF ~~ THEN
 		DO~
 		ReallyForceSpell(Player1,CLERIC_CURE_SERIOUS_WOUNDS)
 		ReallyForceSpell(Player2,CLERIC_CURE_SERIOUS_WOUNDS)
@@ -69,9 +69,9 @@ END
 
 //---------------------------------------------------------
 //Carry letter has been accepted
-IF ~Global("ys_FindElminster","GLOBAL",0)~ THEN BEGIN YSBLOCK7
+IF ~~ THEN BEGIN YSBLOCK7
 	SAY @1006
-	IF~~THEN
+	IF ~~ THEN
 		DO~
 			SetGlobal("ys_FindElminster","GLOBAL",1)
 			GiveItemCreate("YSLETEL",Player1,0,0,0)
@@ -91,20 +91,19 @@ END
 IF ~Global("ys_FindElminster","GLOBAL",2)
 		Global("ys_NoLetter","GLOBAL",1)~ THEN BEGIN YSBLOCK8
 		SAY @1007
-		IF~~THEN REPLY @1008 GOTO YSBLOCK9
-		IF~~THEN REPLY @1009
-		DO ~GiveItemCreate("YSLETEL",Player1,0,0,0)
+		IF ~~ THEN REPLY @1008 GOTO YSBLOCK9
+		IF ~~ THEN REPLY @1009
+			DO ~GiveItemCreate("YSLETEL",Player1,0,0,0)
 				SetGlobal("ys_NoLetter","GLOBAL",0)
-				SetGlobal("ys_FindElminster","GLOBAL",4)~ GOTO YSBLOCK10
+				SetGlobal("ys_FindElminster","GLOBAL",1)~ GOTO YSBLOCK10
 END
 
 //---------------------------------------------------------
 //Quest refused for the last time
-IF ~Global("ys_FindElminster","GLOBAL",2)
-		Global("ys_NoLetter","GLOBAL",1)~ THEN BEGIN YSBLOCK9
+IF ~~ THEN BEGIN YSBLOCK9
 		SAY @1010
-		IF~~THEN
-				DO ~SetGlobal("ys_NoLetter","GLOBAL",2)
+		IF ~~ THEN
+			DO ~SetGlobal("ys_NoLetter","GLOBAL",2)
 				SetGlobal("ys_FindElminster","GLOBAL",5)
 				EscapeArea()~
 	EXIT
@@ -112,12 +111,11 @@ END
 
 //---------------------------------------------------------
 //Carry letter has been accepted
-IF ~Global("ys_FindElminster","GLOBAL",4)
-		Global("ys_NoLetter","GLOBAL",0)~ THEN BEGIN YSBLOCK10
+IF ~~ THEN BEGIN YSBLOCK10
 		SAY @1011
-		IF~~THEN
-		DO ~SetGlobal("ys_FindElminster","GLOBAL",1)
-        EscapeArea()~
+		IF ~~ THEN
+			DO ~
+			EscapeArea()~
 	EXIT
 END
 

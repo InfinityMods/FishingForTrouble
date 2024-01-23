@@ -9,6 +9,14 @@ THEN
 		Enemy()
 END
 
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	!Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
 //When I'm killed update the total number of dead Red Guards
 IF
   Dead("ysredwiz")

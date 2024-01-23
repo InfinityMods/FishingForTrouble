@@ -13,10 +13,38 @@ THEN
 		Dialog(NearestEnemyOf(Myself))
 END
 
+// Becoming hostile
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	!Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
 IF
 	Allegiance(Myself,ENEMY)
 	Global("ysTalkedToAin","GLOBAL",1)
 THEN
 	RESPONSE #100
 		Attack(NearestEnemyOf(Myself))
+END
+
+//If I'm being attacked then select my attacker as a new target
+IF
+  ActionListEmpty()
+	AttackedBy([ANYONE],DEFAULT)
+	See(LastAttackerOf(Myself))
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+  ActionListEmpty()
+	Range(LastSeenBy(Myself),5)
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+		Attack(LastSeenBy(Myself))
 END

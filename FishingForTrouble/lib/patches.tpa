@@ -51,8 +51,8 @@ ACTION_IF (NOT GAME_IS ~bgee bg2ee eet~) BEGIN // only if not EE
 		UNLESS ~336 MakeGlobal()~
 	APPEND ~ACTION.IDS~ ~337 ReallyForceSpellPointRES(S:RES*,P:Target*)~
 		UNLESS ~337 ReallyForceSpellPointRES(S:RES\*,P:Target\*)~
-	APPEND ~ACTION.IDS~ ~7 CreateCreature(S:NewObject*,P:Location*,I:Face*)~
-		UNLESS ~7 CreateCreature(S:NewObject\*,P:Location\*,I:Face\*.*)~
+	APPEND ~ACTION.IDS~ ~7 CreateCreature(S:NewObject*,P:Location*,I:Face*DIR)~
+		UNLESS ~7 CreateCreature(S:NewObject\*,P:Location\*,I:Face\*)~
 
 	APPEND ~TRIGGER.IDS~ ~0x00A1 SpellCastOnMeRES(S:Spell*,O:Caster*)~
 		UNLESS ~0x00A1 SpellCastOnMeRES(S:Spell\*,O:Caster\*)~
@@ -69,14 +69,14 @@ ACTION_IF (NOT GAME_IS ~bgee bg2ee eet~) BEGIN // only if not EE
 END
 
 // I can do this because they are my ids files
-COPY ~fishingfortrouble/ids/face.ids~ ~override/face.ids~
+COPY ~fishingfortrouble/ids/Dir.ids~ ~override/Dir.ids~
 COPY ~fishingfortrouble/ids/formatio.ids~ ~override/formatio.ids~
 
 //**********************************************************
 //EXE patches to enable race strrefs and paperdolls are from Taimon and Erephine, respectively
 OUTER_SET tbex = 0 //Assume no TobEx unless detected
 ACTION_IF (~%WEIDU_OS%~ STRING_EQUAL_CASE ~win32~ != 0) AND (NOT GAME_IS ~bgee bg2ee eet~) BEGIN // only if Windows and not EE
-	ACTION_IF ((FILE_EXISTS ~TobEx.ini~) AND (FILE_CONTAINS ~TobEx.ini~ ~Externalise Race Selection StrRef=1~)) BEGIN
+	ACTION_IF ((FILE_EXISTS ~TobEx_ini/TobExCore.ini~) AND (FILE_CONTAINS ~TobEx_ini/TobExCore.ini~ ~Externalise Race Selection StrRef=1~)) BEGIN
 		OUTER_SET tbex = 1
 	END ELSE ACTION_IF (FILE_EXISTS ~TobEx_ini/TobExVer.txt~) BEGIN
 		OUTER_SET tbex = 2

@@ -27,6 +27,15 @@ THEN
 //			DisplayStringHead(Myself,18893)							// say "Potion of Extra Healing"
 END
 
+// Becoming hostile
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	!Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
 //If I'm being attacked then select my attacker as a new target
 IF
   Allegiance(Myself,ENEMY)

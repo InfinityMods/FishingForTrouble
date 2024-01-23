@@ -1,6 +1,25 @@
 //---------------------------------------------------------
+//Respawn: The Tanar'ri is trapped
+//---------------------------------------------------------
+IF
+	Die()
+THEN
+	RESPONSE #100
+		SetGlobal("ysTanarridead","YS0040",1)
+END
+
+//---------------------------------------------------------
 //Dialog control
 //---------------------------------------------------------
+IF
+	Detect([PC])
+	Global("ysspoke","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ysspoke","LOCALS",1)
+		StartDialogueNoSet(LastSeenBy(Myself))
+END
+
 IF
   Global("ys_RudeToTanari","GLOBAL",1)
   Global("ys_TanariTeachesBullies","GLOBAL",0)
@@ -18,7 +37,7 @@ THEN
 	RESPONSE #100
     Wait (2)
     SetGlobal("ys_RudeToTanari","GLOBAL",3)
-    Dialogue(Protagonist)
+    StartDialogueNoSet(Protagonist)
 END
 
 //--------------------------------------------------------
@@ -44,6 +63,159 @@ THEN
 	RESPONSE #100
     Wait (2)
     SetGlobal("ys_RudeToTanari","GLOBAL",4)
-    Dialogue(Protagonist)
+    StartDialogueNoSet(Protagonist)
 END
 
+IF
+	Allegiance(Myself,ENEMY)
+	See([PC])
+	Global("Paralyze","LOCALS",0)
+THEN
+	RESPONSE #100
+		ForceSpell([PC],TANARI_PARALYZE)  // SPIN999.SPL (Paralyze)
+		SetGlobal("Paralyze","LOCALS",1)
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	See([PC.0.0.CLERIC_MAGE])
+	Global("Silence","LOCALS",0)
+THEN
+	RESPONSE #100
+		ForceSpell([PC.0.0.CLERIC_MAGE],TANARI_SILENCE)  // SPIN998.SPL (Silence 15' Radius)
+		SetGlobal("Silence","LOCALS",1)
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	See([PC.0.0.MAGE])
+	Global("Silence","LOCALS",0)
+THEN
+	RESPONSE #100
+		ForceSpell([PC.0.0.MAGE],TANARI_SILENCE)  // SPIN998.SPL (Silence 15' Radius)
+		SetGlobal("Silence","LOCALS",1)
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	See([PC.0.0.MAGE_THIEF])
+	Global("Silence","LOCALS",0)
+THEN
+	RESPONSE #100
+		ForceSpell([PC.0.0.MAGE_THIEF],TANARI_SILENCE)  // SPIN998.SPL (Silence 15' Radius)
+		SetGlobal("Silence","LOCALS",1)
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	See([PC.0.0.CLERIC])
+	Global("Silence","LOCALS",0)
+THEN
+	RESPONSE #100
+		ForceSpell([PC.0.0.CLERIC],TANARI_SILENCE)  // SPIN998.SPL (Silence 15' Radius)
+		SetGlobal("Silence","LOCALS",1)
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	See([PC.0.0.BARD])
+	Global("Silence","LOCALS",0)
+THEN
+	RESPONSE #100
+		ForceSpell([PC.0.0.BARD],TANARI_SILENCE)  // SPIN998.SPL (Silence 15' Radius)
+		SetGlobal("Silence","LOCALS",1)
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	See([PC.0.0.DRUID])
+	Global("Silence","LOCALS",0)
+THEN
+	RESPONSE #100
+		ForceSpell([PC.0.0.DRUID],TANARI_SILENCE)  // SPIN998.SPL (Silence 15' Radius)
+		SetGlobal("Silence","LOCALS",1)
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	See([PC])
+	Global("Silence","LOCALS",0)
+THEN
+	RESPONSE #100
+		ForceSpell([PC],TANARI_SILENCE)  // SPIN998.SPL (Silence 15' Radius)
+		SetGlobal("Silence","LOCALS",1)
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	See(NearestEnemyOf(Myself))
+	NumCreatureGT([GOODCUTOFF],10)
+THEN
+	RESPONSE #100
+		ForceSpell([PC],TANARI_DEATH_GAZE)  // SPIN996.SPL (Death Gaze)
+		ForceSpell(NearestEnemyOf(Myself),TANARI_VAMPIRIC_TOUCH)  // SPIN997.SPL (Vampiric Touch)
+		Wait(1)
+		AttackOneRound(NearestEnemyOf(Myself))
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	See([PC])
+	StateCheck([PC],STATE_HELPLESS)
+THEN
+	RESPONSE #70
+		ForceSpell(SecondNearest([PC]),TANARI_DEATH_GAZE)  // SPIN996.SPL (Death Gaze)
+		ForceSpell(NearestEnemyOf(Myself),TANARI_VAMPIRIC_TOUCH)  // SPIN997.SPL (Vampiric Touch)
+		AttackOneRound([PC])
+	RESPONSE #30
+		ForceSpell(ThirdNearest([PC]),TANARI_DEATH_GAZE)  // SPIN996.SPL (Death Gaze)
+		ForceSpell(NearestEnemyOf(Myself),TANARI_VAMPIRIC_TOUCH)  // SPIN997.SPL (Vampiric Touch)
+		AttackOneRound(NearestEnemyOf(Myself))
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	See([PC.0.0.0.0.FEMALE])
+	NotStateCheck([PC.0.0.0.0.FEMALE],STATE_HELPLESS)
+THEN
+	RESPONSE #100
+		ForceSpell([PC.0.0.0.0.FEMALE],TANARI_DEATH_GAZE)  // SPIN996.SPL (Death Gaze)
+		ForceSpell(NearestEnemyOf(Myself),TANARI_VAMPIRIC_TOUCH)  // SPIN997.SPL (Vampiric Touch)
+		AttackOneRound([PC])
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	See([PC.0.0.0.0.MALE])
+	See([PC.0.0.0.0.FEMALE])
+	StateCheck([PC.0.0.0.0.FEMALE],STATE_HELPLESS)
+THEN
+	RESPONSE #100
+		ForceSpell([PC.0.0.0.0.MALE],TANARI_DEATH_GAZE)  // SPIN996.SPL (Death Gaze)
+		ForceSpell(NearestEnemyOf(Myself),TANARI_VAMPIRIC_TOUCH)  // SPIN997.SPL (Vampiric Touch)
+		AttackOneRound([PC.0.0.0.0.FEMALE])
+		AttackOneRound([PC.0.0.0.0.FEMALE])
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	See([PC.0.0.0.0.FEMALE])
+	StateCheck([PC.0.0.0.0.FEMALE],STATE_HELPLESS)
+THEN
+	RESPONSE #100
+		ForceSpell(FourthNearest([PC]),TANARI_DEATH_GAZE)  // SPIN996.SPL (Death Gaze)
+		ForceSpell(NearestEnemyOf(Myself),TANARI_VAMPIRIC_TOUCH)  // SPIN997.SPL (Vampiric Touch)
+		AttackOneRound([PC.0.0.0.0.FEMALE])
+		AttackOneRound(NearestEnemyOf(Myself))
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	See([PC])
+THEN
+	RESPONSE #100
+		ForceSpell(SecondNearest([PC]),TANARI_DEATH_GAZE)  // SPIN996.SPL (Death Gaze)
+		ForceSpell(NearestEnemyOf(Myself),TANARI_VAMPIRIC_TOUCH)  // SPIN997.SPL (Vampiric Touch)
+		AttackOneRound([PC])
+		AttackOneRound([PC])
+END

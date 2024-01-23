@@ -28,6 +28,20 @@ THEN
 		Continue()
 END
 
+//Fighting script
+IF
+	OR(4)
+		AttackedBy([ANYONE],DEFAULT)
+		AttackedBy([ANYONE],MELEE)
+		AttackedBy([ANYONE],RANGED)
+		Global("ys_TalkedToTentGuard","GLOBAL",2)
+  !Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+	DisplayStringHead(Myself,@1829)
+    Enemy()
+END
+
 //If I'm being attacked then select my attacker as a new target
 IF
   Allegiance(Myself,ENEMY)
