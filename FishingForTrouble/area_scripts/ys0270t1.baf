@@ -1,46 +1,11 @@
 IF
-  IsOverMe(Player1)
-  Global("ys_Player1Vamp","GLOBAL",0)
-THEN
-  RESPONSE #100
-    SetGlobal("ys_SetTOTL","GLOBAL",1)
-    Continue()
-END
-
-IF
-  IsOverMe(Player2)
-THEN
-  RESPONSE #100
-    SetGlobal("ys_SetTOTL","GLOBAL",1)
-    Continue()
-END
-
-IF
-  IsOverMe(Player3)
-THEN
-  RESPONSE #100
-    SetGlobal("ys_SetTOTL","GLOBAL",1)
-    Continue()
-END
-
-IF
-  IsOverMe(Player4)
-THEN
-  RESPONSE #100
-    SetGlobal("ys_SetTOTL","GLOBAL",1)
-    Continue()
-END
-
-IF
-  IsOverMe(Player5)
-THEN
-  RESPONSE #100
-    SetGlobal("ys_SetTOTL","GLOBAL",1)
-    Continue()
-END
-
-IF
-  IsOverMe(Player6)
+  OR(6)
+    IsOverMe(Player1)
+    IsOverMe(Player2)
+    IsOverMe(Player3)
+	IsOverMe(Player4)
+	IsOverMe(Player5)
+	IsOverMe(Player6)
 THEN
   RESPONSE #100
     SetGlobal("ys_SetTOTL","GLOBAL",1)
@@ -69,101 +34,345 @@ END
 
 //Throw all players around
 IF
-  Global("ys_Player1Vamp","GLOBAL",0)
+  Global("ys_Player1ghoul","GLOBAL",0)
+  Global("ys_Player2ghoul","GLOBAL",0)
+  Global("ys_Player3ghoul","GLOBAL",0)
+  Global("ys_Player4ghoul","GLOBAL",0)
+  Global("ys_Player5ghoul","GLOBAL",0)
+  Global("ys_Player6ghoul","GLOBAL",0)
   Global("ys_SetTOTL","GLOBAL",1)
 THEN
   RESPONSE #10
-    ActionOverride(Player1,LeaveAreaLUA("ys0270","",[2922.1130],3))
+    ActionOverride(Player1,JumpToPoint([2922.1130]))
     ActionOverride(Player1,CreateVisualEffectObject("SPUSEANY",Player1))
-    ActionOverride(Player2,LeaveAreaLUA("ys0270","",[2125.1367],10))
+    ActionOverride(Player2,JumpToPoint([2125.1367]))
     ActionOverride(Player2,CreateVisualEffectObject("SPUSEANY",Player2))
-    ActionOverride(Player3,LeaveAreaLUA("ys0270","",[1343.572],7))
+    ActionOverride(Player3,JumpToPoint([1343.572]))
     ActionOverride(Player3,CreateVisualEffectObject("SPUSEANY",Player3))
-    ActionOverride(Player4,LeaveAreaLUA("ys0270","",[1324.249],6))
+    ActionOverride(Player4,JumpToPoint([1324.249]))
     ActionOverride(Player4,CreateVisualEffectObject("SPUSEANY",Player4))
-    ActionOverride(Player5,LeaveAreaLUA("ys0270","",[2731.1129],1))
+    ActionOverride(Player5,JumpToPoint([2731.1129]))
     ActionOverride(Player5,CreateVisualEffectObject("SPUSEANY",Player5))
-    ActionOverride(Player6,LeaveAreaLUA("ys0270","",[1603.475],9))
+    ActionOverride(Player6,JumpToPoint([1603.475]))
     ActionOverride(Player6,CreateVisualEffectObject("SPUSEANY",Player6))
     SetGlobal("ys_SetTOTL","GLOBAL",0)
   RESPONSE #15
-    ActionOverride(Player1,LeaveAreaLUA("ys0270","",[2922.1130],3))
+    ActionOverride(Player1,JumpToPoint([2922.1130]))
     ActionOverride(Player1,CreateVisualEffectObject("SPUSEANY",Player1))
     SetGlobal("ys_SetTOTL","GLOBAL",0)
   RESPONSE #15
-    ActionOverride(Player2,LeaveAreaLUA("ys0270","",[2125.1367],10))
+    ActionOverride(Player2,JumpToPoint([2125.1367]))
     SetGlobal("ys_SetTOTL","GLOBAL",0)
     ActionOverride(Player2,CreateVisualEffectObject("SPUSEANY",Player2))
   RESPONSE #15
-    ActionOverride(Player5,LeaveAreaLUA("ys0270","",[2731.1129],1))
+    ActionOverride(Player5,JumpToPoint([2731.1129]))
     ActionOverride(Player5,CreateVisualEffectObject("SPUSEANY",Player5))
     SetGlobal("ys_SetTOTL","GLOBAL",0)
   RESPONSE #15
-    ActionOverride(Player3,LeaveAreaLUA("ys0270","",[1343.572],7))
+    ActionOverride(Player3,JumpToPoint([1343.572]))
     ActionOverride(Player3,CreateVisualEffectObject("SPUSEANY",Player3))
     SetGlobal("ys_SetTOTL","GLOBAL",0)
   RESPONSE #15
-    ActionOverride(Player2,LeaveAreaLUA("ys0270","",[2125.1367],10))
+    ActionOverride(Player2,JumpToPoint([2125.1367]))
     ActionOverride(Player2,CreateVisualEffectObject("SPUSEANY",Player2))
-    ActionOverride(Player4,LeaveAreaLUA("ys0270","",[1324.249],6))
+    ActionOverride(Player4,JumpToPoint([1324.249]))
     ActionOverride(Player4,CreateVisualEffectObject("SPUSEANY",Player4))
-    ActionOverride(Player6,LeaveAreaLUA("ys0270","",[1603.475],9))
+    ActionOverride(Player6,JumpToPoint([1603.475]))
     ActionOverride(Player6,CreateVisualEffectObject("SPUSEANY",Player6))
    SetGlobal("ys_SetTOTL","GLOBAL",0)
   RESPONSE #15
-    ActionOverride(Player4,LeaveAreaLUA("ys0270","",[1324.249],6))
+    ActionOverride(Player4,JumpToPoint([1324.249]))
     ActionOverride(Player4,CreateVisualEffectObject("SPUSEANY",Player4))
-    ActionOverride(Player5,LeaveAreaLUA("ys0270","",[2731.1129],1))
+    ActionOverride(Player5,JumpToPoint([2731.1129]))
     ActionOverride(Player5,CreateVisualEffectObject("SPUSEANY",Player5))
     SetGlobal("ys_SetTOTL","GLOBAL",0)
 END
 
-//Don't throw player 1 around
+//Don't throw player around if ghoul's Bed potion has been swallowed
 IF
-  Global("ys_Player1Vamp","GLOBAL",1)
+  !Global("ys_Player1ghoul","GLOBAL",0)
   Global("ys_SetTOTL","GLOBAL",1)
 THEN
   RESPONSE #10
-    ActionOverride(Player2,LeaveAreaLUA("ys0270","",[2125.1367],10))
+    ActionOverride(Player2,JumpToPoint([2125.1367]))
     ActionOverride(Player2,CreateVisualEffectObject("SPUSEANY",Player2))
-    ActionOverride(Player3,LeaveAreaLUA("ys0270","",[1343.572],7))
+    ActionOverride(Player3,JumpToPoint([1343.572]))
     ActionOverride(Player3,CreateVisualEffectObject("SPUSEANY",Player3))
-    ActionOverride(Player4,LeaveAreaLUA("ys0270","",[1324.249],6))
+    ActionOverride(Player4,JumpToPoint([1324.249]))
     ActionOverride(Player4,CreateVisualEffectObject("SPUSEANY",Player4))
-    ActionOverride(Player5,LeaveAreaLUA("ys0270","",[2731.1129],1))
+    ActionOverride(Player5,JumpToPoint([2731.1129]))
     ActionOverride(Player5,CreateVisualEffectObject("SPUSEANY",Player5))
-    ActionOverride(Player6,LeaveAreaLUA("ys0270","",[1603.475],9))
+    ActionOverride(Player6,JumpToPoint([1603.475]))
     ActionOverride(Player6,CreateVisualEffectObject("SPUSEANY",Player6))
     SetGlobal("ys_SetTOTL","GLOBAL",0)
   RESPONSE #15
-    ActionOverride(Player4,LeaveAreaLUA("ys0270","",[2922.1130],3))
+    ActionOverride(Player4,JumpToPoint([2922.1130]))
     ActionOverride(Player4,CreateVisualEffectObject("SPUSEANY",Player4))
     SetGlobal("ys_SetTOTL","GLOBAL",0)
   RESPONSE #15
-    ActionOverride(Player2,LeaveAreaLUA("ys0270","",[2125.1367],10))
+    ActionOverride(Player2,JumpToPoint([2125.1367]))
     SetGlobal("ys_SetTOTL","GLOBAL",0)
     ActionOverride(Player2,CreateVisualEffectObject("SPUSEANY",Player2))
   RESPONSE #15
-    ActionOverride(Player5,LeaveAreaLUA("ys0270","",[2731.1129],1))
+    ActionOverride(Player5,JumpToPoint([2731.1129]))
     ActionOverride(Player5,CreateVisualEffectObject("SPUSEANY",Player5))
     SetGlobal("ys_SetTOTL","GLOBAL",0)
   RESPONSE #15
-    ActionOverride(Player3,LeaveAreaLUA("ys0270","",[1343.572],7))
+    ActionOverride(Player3,JumpToPoint([1343.572]))
     ActionOverride(Player3,CreateVisualEffectObject("SPUSEANY",Player3))
     SetGlobal("ys_SetTOTL","GLOBAL",0)
   RESPONSE #15
-    ActionOverride(Player2,LeaveAreaLUA("ys0270","",[2125.1367],10))
+    ActionOverride(Player2,JumpToPoint([2125.1367]))
     ActionOverride(Player2,CreateVisualEffectObject("SPUSEANY",Player2))
-    ActionOverride(Player4,LeaveAreaLUA("ys0270","",[1324.249],6))
+    ActionOverride(Player4,JumpToPoint([1324.249]))
     ActionOverride(Player4,CreateVisualEffectObject("SPUSEANY",Player4))
-    ActionOverride(Player6,LeaveAreaLUA("ys0270","",[1603.475],9))
+    ActionOverride(Player6,JumpToPoint([1603.475]))
      ActionOverride(Player6,CreateVisualEffectObject("SPUSEANY",Player6))
    SetGlobal("ys_SetTOTL","GLOBAL",0)
   RESPONSE #15
-    ActionOverride(Player4,LeaveAreaLUA("ys0270","",[1324.249],6))
+    ActionOverride(Player4,JumpToPoint([1324.249]))
     ActionOverride(Player4,CreateVisualEffectObject("SPUSEANY",Player4))
-    ActionOverride(Player5,LeaveAreaLUA("ys0270","",[2731.1129],1))
+    ActionOverride(Player5,JumpToPoint([2731.1129]))
     ActionOverride(Player5,CreateVisualEffectObject("SPUSEANY",Player5))
     SetGlobal("ys_SetTOTL","GLOBAL",0)
 END
 
+IF
+  !Global("ys_Player2ghoul","GLOBAL",0)
+  Global("ys_SetTOTL","GLOBAL",1)
+THEN
+  RESPONSE #10
+    ActionOverride(Player1,JumpToPoint([2125.1367]))
+    ActionOverride(Player1,CreateVisualEffectObject("SPUSEANY",Player1))
+    ActionOverride(Player3,JumpToPoint([1343.572]))
+    ActionOverride(Player3,CreateVisualEffectObject("SPUSEANY",Player3))
+    ActionOverride(Player4,JumpToPoint([1324.249]))
+    ActionOverride(Player4,CreateVisualEffectObject("SPUSEANY",Player4))
+    ActionOverride(Player5,JumpToPoint([2731.1129]))
+    ActionOverride(Player5,CreateVisualEffectObject("SPUSEANY",Player5))
+    ActionOverride(Player6,JumpToPoint([1603.475]))
+    ActionOverride(Player6,CreateVisualEffectObject("SPUSEANY",Player6))
+    SetGlobal("ys_SetTOTL","GLOBAL",0)
+  RESPONSE #15
+    ActionOverride(Player4,JumpToPoint([2922.1130]))
+    ActionOverride(Player4,CreateVisualEffectObject("SPUSEANY",Player4))
+    SetGlobal("ys_SetTOTL","GLOBAL",0)
+  RESPONSE #15
+    ActionOverride(Player1,JumpToPoint([2125.1367]))
+    SetGlobal("ys_SetTOTL","GLOBAL",0)
+    ActionOverride(Player1,CreateVisualEffectObject("SPUSEANY",Player1))
+  RESPONSE #15
+    ActionOverride(Player5,JumpToPoint([2731.1129]))
+    ActionOverride(Player5,CreateVisualEffectObject("SPUSEANY",Player5))
+    SetGlobal("ys_SetTOTL","GLOBAL",0)
+  RESPONSE #15
+    ActionOverride(Player3,JumpToPoint([1343.572]))
+    ActionOverride(Player3,CreateVisualEffectObject("SPUSEANY",Player3))
+    SetGlobal("ys_SetTOTL","GLOBAL",0)
+  RESPONSE #15
+    ActionOverride(Player1,JumpToPoint([2125.1367]))
+    ActionOverride(Player1,CreateVisualEffectObject("SPUSEANY",Player1))
+    ActionOverride(Player4,JumpToPoint([1324.249]))
+    ActionOverride(Player4,CreateVisualEffectObject("SPUSEANY",Player4))
+    ActionOverride(Player6,JumpToPoint([1603.475]))
+     ActionOverride(Player6,CreateVisualEffectObject("SPUSEANY",Player6))
+   SetGlobal("ys_SetTOTL","GLOBAL",0)
+  RESPONSE #15
+    ActionOverride(Player4,JumpToPoint([1324.249]))
+    ActionOverride(Player4,CreateVisualEffectObject("SPUSEANY",Player4))
+    ActionOverride(Player5,JumpToPoint([2731.1129]))
+    ActionOverride(Player5,CreateVisualEffectObject("SPUSEANY",Player5))
+    SetGlobal("ys_SetTOTL","GLOBAL",0)
+END
+
+IF
+  !Global("ys_Player3ghoul","GLOBAL",0)
+  Global("ys_SetTOTL","GLOBAL",1)
+THEN
+  RESPONSE #10
+    ActionOverride(Player2,JumpToPoint([2125.1367]))
+    ActionOverride(Player2,CreateVisualEffectObject("SPUSEANY",Player2))
+    ActionOverride(Player1,JumpToPoint([1343.572]))
+    ActionOverride(Player1,CreateVisualEffectObject("SPUSEANY",Player1))
+    ActionOverride(Player4,JumpToPoint([1324.249]))
+    ActionOverride(Player4,CreateVisualEffectObject("SPUSEANY",Player4))
+    ActionOverride(Player5,JumpToPoint([2731.1129]))
+    ActionOverride(Player5,CreateVisualEffectObject("SPUSEANY",Player5))
+    ActionOverride(Player6,JumpToPoint([1603.475]))
+    ActionOverride(Player6,CreateVisualEffectObject("SPUSEANY",Player6))
+    SetGlobal("ys_SetTOTL","GLOBAL",0)
+  RESPONSE #15
+    ActionOverride(Player4,JumpToPoint([2922.1130]))
+    ActionOverride(Player4,CreateVisualEffectObject("SPUSEANY",Player4))
+    SetGlobal("ys_SetTOTL","GLOBAL",0)
+  RESPONSE #15
+    ActionOverride(Player2,JumpToPoint([2125.1367]))
+    SetGlobal("ys_SetTOTL","GLOBAL",0)
+    ActionOverride(Player2,CreateVisualEffectObject("SPUSEANY",Player2))
+  RESPONSE #15
+    ActionOverride(Player5,JumpToPoint([2731.1129]))
+    ActionOverride(Player5,CreateVisualEffectObject("SPUSEANY",Player5))
+    SetGlobal("ys_SetTOTL","GLOBAL",0)
+  RESPONSE #15
+    ActionOverride(Player1,JumpToPoint([1343.572]))
+    ActionOverride(Player1,CreateVisualEffectObject("SPUSEANY",Player1))
+    SetGlobal("ys_SetTOTL","GLOBAL",0)
+  RESPONSE #15
+    ActionOverride(Player2,JumpToPoint([2125.1367]))
+    ActionOverride(Player2,CreateVisualEffectObject("SPUSEANY",Player2))
+    ActionOverride(Player4,JumpToPoint([1324.249]))
+    ActionOverride(Player4,CreateVisualEffectObject("SPUSEANY",Player4))
+    ActionOverride(Player6,JumpToPoint([1603.475]))
+     ActionOverride(Player6,CreateVisualEffectObject("SPUSEANY",Player6))
+   SetGlobal("ys_SetTOTL","GLOBAL",0)
+  RESPONSE #15
+    ActionOverride(Player4,JumpToPoint([1324.249]))
+    ActionOverride(Player4,CreateVisualEffectObject("SPUSEANY",Player4))
+    ActionOverride(Player5,JumpToPoint([2731.1129]))
+    ActionOverride(Player5,CreateVisualEffectObject("SPUSEANY",Player5))
+    SetGlobal("ys_SetTOTL","GLOBAL",0)
+END
+
+IF
+  !Global("ys_Player4ghoul","GLOBAL",0)
+  Global("ys_SetTOTL","GLOBAL",1)
+THEN
+  RESPONSE #10
+    ActionOverride(Player2,JumpToPoint([2125.1367]))
+    ActionOverride(Player2,CreateVisualEffectObject("SPUSEANY",Player2))
+    ActionOverride(Player3,JumpToPoint([1343.572]))
+    ActionOverride(Player3,CreateVisualEffectObject("SPUSEANY",Player3))
+    ActionOverride(Player1,JumpToPoint([1324.249]))
+    ActionOverride(Player1,CreateVisualEffectObject("SPUSEANY",Player1))
+    ActionOverride(Player5,JumpToPoint([2731.1129]))
+    ActionOverride(Player5,CreateVisualEffectObject("SPUSEANY",Player5))
+    ActionOverride(Player6,JumpToPoint([1603.475]))
+    ActionOverride(Player6,CreateVisualEffectObject("SPUSEANY",Player6))
+    SetGlobal("ys_SetTOTL","GLOBAL",0)
+  RESPONSE #15
+    ActionOverride(Player1,JumpToPoint([2922.1130]))
+    ActionOverride(Player1,CreateVisualEffectObject("SPUSEANY",Player1))
+    SetGlobal("ys_SetTOTL","GLOBAL",0)
+  RESPONSE #15
+    ActionOverride(Player2,JumpToPoint([2125.1367]))
+    SetGlobal("ys_SetTOTL","GLOBAL",0)
+    ActionOverride(Player2,CreateVisualEffectObject("SPUSEANY",Player2))
+  RESPONSE #15
+    ActionOverride(Player5,JumpToPoint([2731.1129]))
+    ActionOverride(Player5,CreateVisualEffectObject("SPUSEANY",Player5))
+    SetGlobal("ys_SetTOTL","GLOBAL",0)
+  RESPONSE #15
+    ActionOverride(Player3,JumpToPoint([1343.572]))
+    ActionOverride(Player3,CreateVisualEffectObject("SPUSEANY",Player3))
+    SetGlobal("ys_SetTOTL","GLOBAL",0)
+  RESPONSE #15
+    ActionOverride(Player2,JumpToPoint([2125.1367]))
+    ActionOverride(Player2,CreateVisualEffectObject("SPUSEANY",Player2))
+    ActionOverride(Player1,JumpToPoint([1324.249]))
+    ActionOverride(Player1,CreateVisualEffectObject("SPUSEANY",Player1))
+    ActionOverride(Player6,JumpToPoint([1603.475]))
+     ActionOverride(Player6,CreateVisualEffectObject("SPUSEANY",Player6))
+   SetGlobal("ys_SetTOTL","GLOBAL",0)
+  RESPONSE #15
+    ActionOverride(Player1,JumpToPoint([1324.249]))
+    ActionOverride(Player1,CreateVisualEffectObject("SPUSEANY",Player1))
+    ActionOverride(Player5,JumpToPoint([2731.1129]))
+    ActionOverride(Player5,CreateVisualEffectObject("SPUSEANY",Player5))
+    SetGlobal("ys_SetTOTL","GLOBAL",0)
+END
+
+IF
+  !Global("ys_Player5ghoul","GLOBAL",0)
+  Global("ys_SetTOTL","GLOBAL",1)
+THEN
+  RESPONSE #10
+    ActionOverride(Player2,JumpToPoint([2125.1367]))
+    ActionOverride(Player2,CreateVisualEffectObject("SPUSEANY",Player2))
+    ActionOverride(Player3,JumpToPoint([1343.572]))
+    ActionOverride(Player3,CreateVisualEffectObject("SPUSEANY",Player3))
+    ActionOverride(Player4,JumpToPoint([1324.249]))
+    ActionOverride(Player4,CreateVisualEffectObject("SPUSEANY",Player4))
+    ActionOverride(Player1,JumpToPoint([2731.1129]))
+    ActionOverride(Player1,CreateVisualEffectObject("SPUSEANY",Player1))
+    ActionOverride(Player6,JumpToPoint([1603.475]))
+    ActionOverride(Player6,CreateVisualEffectObject("SPUSEANY",Player6))
+    SetGlobal("ys_SetTOTL","GLOBAL",0)
+  RESPONSE #15
+    ActionOverride(Player4,JumpToPoint([2922.1130]))
+    ActionOverride(Player4,CreateVisualEffectObject("SPUSEANY",Player4))
+    SetGlobal("ys_SetTOTL","GLOBAL",0)
+  RESPONSE #15
+    ActionOverride(Player2,JumpToPoint([2125.1367]))
+    SetGlobal("ys_SetTOTL","GLOBAL",0)
+    ActionOverride(Player2,CreateVisualEffectObject("SPUSEANY",Player2))
+  RESPONSE #15
+    ActionOverride(Player1,JumpToPoint([2731.1129]))
+    ActionOverride(Player1,CreateVisualEffectObject("SPUSEANY",Player1))
+    SetGlobal("ys_SetTOTL","GLOBAL",0)
+  RESPONSE #15
+    ActionOverride(Player3,JumpToPoint([1343.572]))
+    ActionOverride(Player3,CreateVisualEffectObject("SPUSEANY",Player3))
+    SetGlobal("ys_SetTOTL","GLOBAL",0)
+  RESPONSE #15
+    ActionOverride(Player2,JumpToPoint([2125.1367]))
+    ActionOverride(Player2,CreateVisualEffectObject("SPUSEANY",Player2))
+    ActionOverride(Player4,JumpToPoint([1324.249]))
+    ActionOverride(Player4,CreateVisualEffectObject("SPUSEANY",Player4))
+    ActionOverride(Player6,JumpToPoint([1603.475]))
+     ActionOverride(Player6,CreateVisualEffectObject("SPUSEANY",Player6))
+   SetGlobal("ys_SetTOTL","GLOBAL",0)
+  RESPONSE #15
+    ActionOverride(Player4,JumpToPoint([1324.249]))
+    ActionOverride(Player4,CreateVisualEffectObject("SPUSEANY",Player4))
+    ActionOverride(Player1,JumpToPoint([2731.1129]))
+    ActionOverride(Player1,CreateVisualEffectObject("SPUSEANY",Player1))
+    SetGlobal("ys_SetTOTL","GLOBAL",0)
+END
+
+IF
+  !Global("ys_Player6ghoul","GLOBAL",0)
+  Global("ys_SetTOTL","GLOBAL",1)
+THEN
+  RESPONSE #10
+    ActionOverride(Player2,JumpToPoint([2125.1367]))
+    ActionOverride(Player2,CreateVisualEffectObject("SPUSEANY",Player2))
+    ActionOverride(Player3,JumpToPoint([1343.572]))
+    ActionOverride(Player3,CreateVisualEffectObject("SPUSEANY",Player3))
+    ActionOverride(Player4,JumpToPoint([1324.249]))
+    ActionOverride(Player4,CreateVisualEffectObject("SPUSEANY",Player4))
+    ActionOverride(Player5,JumpToPoint([2731.1129]))
+    ActionOverride(Player5,CreateVisualEffectObject("SPUSEANY",Player5))
+    ActionOverride(Player1,JumpToPoint([1603.475]))
+    ActionOverride(Player1,CreateVisualEffectObject("SPUSEANY",Player1))
+    SetGlobal("ys_SetTOTL","GLOBAL",0)
+  RESPONSE #15
+    ActionOverride(Player4,JumpToPoint([2922.1130]))
+    ActionOverride(Player4,CreateVisualEffectObject("SPUSEANY",Player4))
+    SetGlobal("ys_SetTOTL","GLOBAL",0)
+  RESPONSE #15
+    ActionOverride(Player2,JumpToPoint([2125.1367]))
+    SetGlobal("ys_SetTOTL","GLOBAL",0)
+    ActionOverride(Player2,CreateVisualEffectObject("SPUSEANY",Player2))
+  RESPONSE #15
+    ActionOverride(Player5,JumpToPoint([2731.1129]))
+    ActionOverride(Player5,CreateVisualEffectObject("SPUSEANY",Player5))
+    SetGlobal("ys_SetTOTL","GLOBAL",0)
+  RESPONSE #15
+    ActionOverride(Player3,JumpToPoint([1343.572]))
+    ActionOverride(Player3,CreateVisualEffectObject("SPUSEANY",Player3))
+    SetGlobal("ys_SetTOTL","GLOBAL",0)
+  RESPONSE #15
+    ActionOverride(Player2,JumpToPoint([2125.1367]))
+    ActionOverride(Player2,CreateVisualEffectObject("SPUSEANY",Player2))
+    ActionOverride(Player4,JumpToPoint([1324.249]))
+    ActionOverride(Player4,CreateVisualEffectObject("SPUSEANY",Player4))
+    ActionOverride(Player1,JumpToPoint([1603.475]))
+     ActionOverride(Player1,CreateVisualEffectObject("SPUSEANY",Player1))
+   SetGlobal("ys_SetTOTL","GLOBAL",0)
+  RESPONSE #15
+    ActionOverride(Player4,JumpToPoint([1324.249]))
+    ActionOverride(Player4,CreateVisualEffectObject("SPUSEANY",Player4))
+    ActionOverride(Player5,JumpToPoint([2731.1129]))
+    ActionOverride(Player5,CreateVisualEffectObject("SPUSEANY",Player5))
+    SetGlobal("ys_SetTOTL","GLOBAL",0)
+END

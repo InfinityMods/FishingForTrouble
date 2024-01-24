@@ -14,7 +14,7 @@ END
 //---------------------------------------------------------
 IF ~!GlobalTimerExpired("ysCureEildaren","GLOBAL")
 	Global("ys_TalkedToGarGel","GLOBAL",5)~ THEN BEGIN BLK2001
-	SAY@3501
+	SAY @3501
 	IF ~~ THEN EXIT
 END
 
@@ -292,14 +292,14 @@ END
 IF ~Global("ys_TalkedToGarGel","GLOBAL",2)
 		Global("ys_FindColver","GLOBAL",6)~ THEN BEGIN 1
 	SAY @3557
-	IF ~~ THEN REPLY @3558EXIT
-	IF ~~ THEN REPLY @3559GOTO 2
+	IF ~~ THEN REPLY @3558 EXIT
+	IF ~~ THEN REPLY @3559 GOTO 2
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 2
 	SAY @3560
-	IF ~~ THEN REPLY @3561GOTO 3
+	IF ~~ THEN REPLY @3561 GOTO 3
 END
 
 //---------------------------------------------------------
@@ -311,14 +311,15 @@ END
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 4
 	SAY @3564
+    IF ~Global("ys_PaidGaralial","GLOBAL",1)~ THEN REPLY @3566 GOTO 5
+    IF ~!Global("ys_PaidGaralial","GLOBAL",1)~ THEN REPLY @3567 GOTO 5
 	IF ~~ THEN  UNSOLVED_JOURNAL @154
    REPLY @3565
 	 DO ~SetGlobal("ys_FindColver","GLOBAL",7)
-   ActionOverride("ysgargel",DestroySelf())
-   ActionOverride("ysanghrd",DestroySelf())~
+	     EscapeArea()
+		 ActionOverride("ysgargel",EscapeArea())
+		 ActionOverride("ysanghrd",EscapeArea())~
   EXIT
-  IF ~Global("ys_PaidGaralial","GLOBAL",1)~ THEN REPLY @3566GOTO 5
-  IF ~!Global("ys_PaidGaralial","GLOBAL",1)~ THEN REPLY @3567GOTO 5
 END
 
 //---------------------------------------------------------
@@ -332,9 +333,15 @@ IF ~~ THEN BEGIN 6
 	SAY @3570
 	IF ~~ THEN UNSOLVED_JOURNAL @44
 	 DO ~SetGlobal("ys_FindColver","GLOBAL",100)
-	 		SetGlobalTimer("ysLiftCurse","GLOBAL",SEVEN_DAYS)
-      ActionOverride("ysgargel",EscapeArea())
-      ActionOverride("ysanghrd",EscapeArea())~
+	 	 SetGlobalTimer("ysLiftCurse","GLOBAL",SEVEN_DAYS)
+		 SetGlobal("ys_TalkedToGarGel","GLOBAL",7)
+		 EraseJournalEntry(@153)
+		 EraseJournalEntry(@154)
+  		 EraseJournalEntry(@163)
+  		 EraseJournalEntry(@165)
+	     EscapeArea()
+		 ActionOverride("ysgargel",EscapeArea())
+		 ActionOverride("ysanghrd",EscapeArea())~
   EXIT
 END
 
@@ -432,7 +439,7 @@ END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 210
-	SAY@3593
+	SAY @3593
 	IF ~~ THEN REPLY @3594 GOTO 49
 END
 
@@ -589,7 +596,7 @@ IF ~~ THEN BEGIN 61
     ActionOverride(Player5,CreateVisualEffectObject("SPUSEANY",Player5))
     ActionOverride(Player6,CreateVisualEffectObject("SPUSEANY",Player6))~
 	EXIT
-	IF ~~ THEN REPLY @3558EXIT
+	IF ~~ THEN REPLY @3558 EXIT
 END
 
 //---------------------------------------------------------
@@ -690,7 +697,7 @@ END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 870
-  SAY@3634
+  SAY @3634
 	IF ~~ THEN EXTERN ANOMENJ GGBLK3
 END
 
@@ -722,7 +729,7 @@ END
 IF ~GlobalTimerExpired("ysCureEildaren","GLOBAL")
 		Global("ys_GarGelDislikesProt","GLOBAL",1)
 	  Global("ys_TalkedToGarGel","GLOBAL",6)~ THEN BEGIN 90
-	SAY@3637
+	SAY @3637
 	IF ~~ THEN REPLY @3638 GOTO 91
 END
 
@@ -731,9 +738,9 @@ IF ~~ THEN BEGIN 91
 	SAY @3639
 	IF ~~ THEN UNSOLVED_JOURNAL @166
 	 DO ~SetGlobalTimer("ysLiftCurse","GLOBAL", SEVEN_DAYS)
-      SetGlobal("ys_TalkedToGarGel","GLOBAL",7)
-      EraseJournalEntry(@153)
-      EraseJournalEntry(@154)
+        SetGlobal("ys_TalkedToGarGel","GLOBAL",7)
+        EraseJournalEntry(@153)
+        EraseJournalEntry(@154)
   		EraseJournalEntry(@163)
   		EraseJournalEntry(@165)
 	    EscapeArea()
@@ -749,7 +756,7 @@ IF ~GlobalTimerExpired("ysCureEildaren","GLOBAL")
 		Global("ys_GarGelDislikesProt","GLOBAL",0)
 		!InParty("Jaheira")
 	  Global("ys_TalkedToGarGel","GLOBAL",6)~ THEN BEGIN 92
-	SAY@3640
+	SAY @3640
 	IF ~~ THEN REPLY @3641 GOTO 93
 END
 
@@ -762,7 +769,7 @@ IF ~GlobalTimerExpired("ysCureEildaren","GLOBAL")
 		InMyArea("Jaheira")
 	  !StateCheck("Jaheira",CD_STATE_NOTVALID)
 	  Global("ys_TalkedToGarGel","GLOBAL",6)~ THEN BEGIN 99
-	SAY@3640
+	SAY @3640
 	IF ~~ THEN EXTERN YSELCOL2 JAHEIRATALK
 END
 
@@ -775,38 +782,38 @@ IF ~GlobalTimerExpired("ysCureEildaren","GLOBAL")
 		OR(2) !InMyArea("Jaheira")
 	  StateCheck("Jaheira",CD_STATE_NOTVALID)
 	  Global("ys_TalkedToGarGel","GLOBAL",6)~ THEN BEGIN 100
-	SAY@3640
+	SAY @3640
 	IF ~~ THEN REPLY @3641 GOTO 93
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 93
-	SAY@3642
+	SAY @3642
 	IF ~~ THEN REPLY @3643 GOTO 200
 END
 
 //---------------------------------------------------------
 //Interject Eildaren
 IF ~~ THEN BEGIN 150
-	SAY@3644
+	SAY @3644
 	IF ~~ THEN EXTERN JAHEIRAJ GGBLK6
 END
 
 //---------------------------------------------------------
 //Interject Eildaren
 IF ~~ THEN BEGIN 151
-	SAY@3645
+	SAY @3645
 	IF ~~ THEN REPLY @3643 GOTO 200
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 200
-	SAY@3646
+	SAY @3646
 	IF ~~ THEN UNSOLVED_JOURNAL @166
 	 DO ~SetGlobalTimer("ysLiftCurse","GLOBAL", SEVEN_DAYS)
-      SetGlobal("ys_TalkedToGarGel","GLOBAL",7)
-      EraseJournalEntry(@153)
-      EraseJournalEntry(@154)
+        SetGlobal("ys_TalkedToGarGel","GLOBAL",7)
+        EraseJournalEntry(@153)
+        EraseJournalEntry(@154)
   		EraseJournalEntry(@163)
   		EraseJournalEntry(@165)
 	    EscapeArea()
@@ -841,7 +848,7 @@ IF ~Global("ys_TalkedToGarGel","GLOBAL",7)
 =@3649
 	IF ~~ THEN UNSOLVED_JOURNAL @46
 	 DO ~SetGlobal("ys_TalkedToGarGel","GLOBAL",9)
-      EraseJournalEntry(@166)
+        EraseJournalEntry(@166)
 	    EscapeArea()
 	    ActionOverride("yselcol2",EscapeArea())
 	    ActionOverride("ysanghrd",EscapeArea())~

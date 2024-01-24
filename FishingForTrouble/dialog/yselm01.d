@@ -6,31 +6,56 @@ BEGIN yselm01
 IF ~PartyHasItem("ysghoul1")
     Global("ysGhoulChangeBack","GLOBAL",0)~ THEN BEGIN 100
 	SAY @4050
-	IF~~THEN REPLY@4051GOTO 101
-	IF~~THEN REPLY@4052GOTO 101
-	IF~~THEN REPLY@4053GOTO 104
+	IF~~THEN REPLY @4051 GOTO 101
+	IF~~THEN REPLY @4052 GOTO 101
+	IF~~THEN REPLY @4053 GOTO 104
 END
 
 //---------------------------------------------------------
 //Charname is liked
 IF ~~ THEN BEGIN 101
 	SAY @4054
-	IF~~THEN REPLY@4055GOTO 102
-	IF~~THEN REPLY@4056GOTO 102
+	IF~~THEN REPLY @4055 GOTO 102
+	IF~~THEN REPLY @4056 GOTO 102
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 102
 	SAY @4057
-	IF~~THEN REPLY@4058GOTO 103
+	IF~~THEN REPLY @4058 GOTO 103
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 103
 	SAY @4059
-	IF~~THEN
+	IF~HasItem("ysghoul1",PLAYER1)~THEN
 		DO~ReallyForceSpellRES("yselmin",PLAYER1)
-    SetGlobal("ysGhoulChangeBack","GLOBAL",1)
+		SetGlobal("ysGhoulChangeBack","GLOBAL",1)
+		AddexperienceParty(10000)~
+	EXIT
+	IF~HasItem("ysghoul1",PLAYER2)~THEN
+		DO~ReallyForceSpellRES("yselmin",PLAYER2)
+		SetGlobal("ysGhoulChangeBack","GLOBAL",1)
+		AddexperienceParty(10000)~
+	EXIT
+	IF~HasItem("ysghoul1",PLAYER3)~THEN
+		DO~ReallyForceSpellRES("yselmin",PLAYER3)
+		SetGlobal("ysGhoulChangeBack","GLOBAL",1)
+		AddexperienceParty(10000)~
+	EXIT
+	IF~HasItem("ysghoul1",PLAYER4)~THEN
+		DO~ReallyForceSpellRES("yselmin",PLAYER4)
+		SetGlobal("ysGhoulChangeBack","GLOBAL",1)
+		AddexperienceParty(10000)~
+	EXIT
+	IF~HasItem("ysghoul1",PLAYER5)~THEN
+		DO~ReallyForceSpellRES("yselmin",PLAYER5)
+		SetGlobal("ysGhoulChangeBack","GLOBAL",1)
+		AddexperienceParty(10000)~
+	EXIT
+	IF~HasItem("ysghoul1",PLAYER6)~THEN
+		DO~ReallyForceSpellRES("yselmin",PLAYER6)
+		SetGlobal("ysGhoulChangeBack","GLOBAL",1)
 		AddexperienceParty(10000)~
 	EXIT
 END
@@ -39,57 +64,107 @@ END
 //Charname is not liked
 IF ~~ THEN BEGIN 104
 	SAY @4060
-	IF~~THEN REPLY@4061GOTO 105
-	IF~~THEN REPLY@4062GOTO 107
+	IF~~THEN REPLY @4061 GOTO 105
+	IF~~THEN REPLY @4062 GOTO 107
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 105
 	SAY @4063
-	IF~~THEN REPLY@4058GOTO 106
+	IF~~THEN REPLY @4058 GOTO 106
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 106
 	SAY @4064
-	IF~~THEN
+	IF~HasItem("ysghoul1",PLAYER1)~THEN
 		DO~ReallyForceSpellRES("yselmin",PLAYER1)
-    SetGlobal("ysGhoulChangeBack","GLOBAL",1)
-		AddexperienceParty(6000)~
+		SetGlobal("ysGhoulChangeBack","GLOBAL",1)
+		AddexperienceParty(10000)~
+	EXIT
+	IF~HasItem("ysghoul1",PLAYER2)~THEN
+		DO~ReallyForceSpellRES("yselmin",PLAYER2)
+		SetGlobal("ysGhoulChangeBack","GLOBAL",1)
+		AddexperienceParty(10000)~
+	EXIT
+	IF~HasItem("ysghoul1",PLAYER3)~THEN
+		DO~ReallyForceSpellRES("yselmin",PLAYER3)
+		SetGlobal("ysGhoulChangeBack","GLOBAL",1)
+		AddexperienceParty(10000)~
+	EXIT
+	IF~HasItem("ysghoul1",PLAYER4)~THEN
+		DO~ReallyForceSpellRES("yselmin",PLAYER4)
+		SetGlobal("ysGhoulChangeBack","GLOBAL",1)
+		AddexperienceParty(10000)~
+	EXIT
+	IF~HasItem("ysghoul1",PLAYER5)~THEN
+		DO~ReallyForceSpellRES("yselmin",PLAYER5)
+		SetGlobal("ysGhoulChangeBack","GLOBAL",1)
+		AddexperienceParty(10000)~
+	EXIT
+	IF~HasItem("ysghoul1",PLAYER6)~THEN
+		DO~ReallyForceSpellRES("yselmin",PLAYER6)
+		SetGlobal("ysGhoulChangeBack","GLOBAL",1)
+		AddexperienceParty(10000)~
 	EXIT
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 107
 	SAY @4065
-	IF~~THEN REPLY@4066GOTO 108
+	IF~~THEN REPLY @4066 GOTO 108
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 108
 	SAY @4067
-	IF~~THEN REPLY@4068GOTO 109
+	IF~~THEN REPLY @4068 GOTO 109
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 109
 	SAY @4069
-	IF~~THEN REPLY@4070GOTO 110
+	IF~~THEN REPLY @4070 GOTO 110
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 110
 	SAY @4071
-	IF~~THEN REPLY@4058GOTO 111
+	IF~~THEN REPLY @4058 GOTO 111
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 111
 	SAY @4072
-	IF~~THEN
+	IF~HasItem("ysghoul1",PLAYER1)~THEN
 		DO~ReallyForceSpellRES("yselmin",PLAYER1)
-    SetGlobal("ysGhoulChangeBack","GLOBAL",1)
-		AddexperienceParty(3000)~
+		SetGlobal("ysGhoulChangeBack","GLOBAL",1)
+		AddexperienceParty(10000)~
+	EXIT
+	IF~HasItem("ysghoul1",PLAYER2)~THEN
+		DO~ReallyForceSpellRES("yselmin",PLAYER2)
+		SetGlobal("ysGhoulChangeBack","GLOBAL",1)
+		AddexperienceParty(10000)~
+	EXIT
+	IF~HasItem("ysghoul1",PLAYER3)~THEN
+		DO~ReallyForceSpellRES("yselmin",PLAYER3)
+		SetGlobal("ysGhoulChangeBack","GLOBAL",1)
+		AddexperienceParty(10000)~
+	EXIT
+	IF~HasItem("ysghoul1",PLAYER4)~THEN
+		DO~ReallyForceSpellRES("yselmin",PLAYER4)
+		SetGlobal("ysGhoulChangeBack","GLOBAL",1)
+		AddexperienceParty(10000)~
+	EXIT
+	IF~HasItem("ysghoul1",PLAYER5)~THEN
+		DO~ReallyForceSpellRES("yselmin",PLAYER5)
+		SetGlobal("ysGhoulChangeBack","GLOBAL",1)
+		AddexperienceParty(10000)~
+	EXIT
+	IF~HasItem("ysghoul1",PLAYER6)~THEN
+		DO~ReallyForceSpellRES("yselmin",PLAYER6)
+		SetGlobal("ysGhoulChangeBack","GLOBAL",1)
+		AddexperienceParty(10000)~
 	EXIT
 END
 
@@ -99,19 +174,19 @@ END
 //Protagonist disliked
 IF ~Global("ys_TalkedToGarGel","GLOBAL",8)~ THEN BEGIN 20
 	SAY @4073
-	IF~~THEN REPLY@4074GOTO 21
+	IF~~THEN REPLY @4074GOTO 21
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 21
 	SAY @4075
-	IF~~THEN REPLY@4076GOTO 22
+	IF~~THEN REPLY @4076GOTO 22
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 22
 	SAY @4077
-	IF~~THEN REPLY@4078GOTO 23
+	IF~~THEN REPLY @4078GOTO 23
 END
 
 //---------------------------------------------------------
@@ -145,7 +220,7 @@ END
 //Protagonist liked
 IF ~Global("ys_TalkedToGarGel","GLOBAL",9)~ THEN BEGIN 30
 	SAY @4073
-	IF~~THEN REPLY@4080 GOTO 31
+	IF~~THEN REPLY @4080 GOTO 31
 END
 
 //---------------------------------------------------------
@@ -182,13 +257,13 @@ END
 //Protagonist disliked
 IF ~Global("ys_TalkedToGarGel","GLOBAL",10)~ THEN BEGIN 40
 	SAY @4073
-	IF~~THEN REPLY@4083GOTO 41
+	IF~~THEN REPLY @4083GOTO 41
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 41
 	SAY @4084
-	IF~~THEN REPLY@4085GOTO 42
+	IF~~THEN REPLY @4085GOTO 42
 END
 
 //---------------------------------------------------------
@@ -222,7 +297,7 @@ END
 //Protagonist liked
 IF ~Global("ys_TalkedToGarGel","GLOBAL",11)~ THEN BEGIN 50
 	SAY @4073
-	IF~~THEN REPLY@4086GOTO 51
+	IF~~THEN REPLY @4086GOTO 51
 END
 
 //---------------------------------------------------------
@@ -231,8 +306,8 @@ IF ~~ THEN BEGIN 51
 	IF~InParty("Jaheira")
 			!StateCheck("Jaheira",STATE_DEAD)~THEN EXTERN JAHEIRAJ ELM0
 	IF~InParty("Jaheira")
-			StateCheck("Jaheira",STATE_DEAD)~THEN REPLY@4088GOTO 52
-	IF~!InParty("Jaheira")~THEN REPLY@4088GOTO 52
+			StateCheck("Jaheira",STATE_DEAD)~THEN REPLY @4088GOTO 52
+	IF~!InParty("Jaheira")~THEN REPLY @4088GOTO 52
 END
 
 //---------------------------------------------------------
@@ -318,15 +393,15 @@ IF ~OR(2)
 			Global("ys_VampChildIsDead","GLOBAL",3)
 			Global("ys_TalkedToGarGel","GLOBAL",4)~ THEN BEGIN 0
 	SAY@4090
-	IF~Global("ys_VampChildIsDead","GLOBAL",3)~THEN REPLY@4091 GOTO 2
-	IF~Global("ys_TalkedToGarGel","GLOBAL",4)~THEN REPLY@4091 GOTO 3
-  IF~~THEN REPLY@4092 GOTO 1
+	IF~Global("ys_VampChildIsDead","GLOBAL",3)~THEN REPLY @4091 GOTO 2
+	IF~Global("ys_TalkedToGarGel","GLOBAL",4)~THEN REPLY @4091 GOTO 3
+  IF~~THEN REPLY @4092 GOTO 1
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN 1
 	SAY@4093
-	IF~~THEN REPLY@4094
+	IF~~THEN REPLY @4094
 		DO~SetGlobal("ys_VampChildIsDead","GLOBAL",4)
 			SetGlobal("ys_TalkedToGarGel","GLOBAL",5)
 		EscapeArea()~
@@ -362,33 +437,33 @@ END
 //---------------------------------------------------------
 IF ~Global("ys_TanarriElminister","GLOBAL",1)~ THEN BEGIN TANBLK0
   SAY@4098
-  IF~~ THEN REPLY@4099 GOTO TANBLK2
-  IF~~ THEN REPLY@4100 GOTO TANBLK1
+  IF~~ THEN REPLY @4099 GOTO TANBLK2
+  IF~~ THEN REPLY @4100 GOTO TANBLK1
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN TANBLK1
   SAY@4101
-  IF~~ THEN REPLY@4102 GOTO TANBLK2
+  IF~~ THEN REPLY @4102 GOTO TANBLK2
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN TANBLK2
   SAY@4103
-  IF~~ THEN REPLY@4104 GOTO TANBLK3
+  IF~~ THEN REPLY @4104 GOTO TANBLK3
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN TANBLK3
   SAY@4105
-  IF~~ THEN REPLY@4106 GOTO TANBLK4
+  IF~~ THEN REPLY @4106 GOTO TANBLK4
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN TANBLK4
   SAY@4107
   IF~~ THEN UNSOLVED_JOURNAL @29
-	REPLY@4108
+	REPLY @4108
   DO ~SetGlobal("ys_TanarriElminister","GLOBAL",2)
       SetGlobal("ys_ElminsterTimer","GLOBAL",21600)
       EscapeArea()~
@@ -400,27 +475,27 @@ END
 //---------------------------------------------------------
 IF ~Global("ys_TanarriElminister","GLOBAL",3)~ THEN BEGIN TANBLK10
   SAY@4109
-  IF~~ THEN REPLY@4110 GOTO TANBLK11
-  IF~~ THEN REPLY@4111 GOTO TANBLK12
+  IF~~ THEN REPLY @4110 GOTO TANBLK11
+  IF~~ THEN REPLY @4111 GOTO TANBLK12
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN TANBLK11
   SAY@4112
-  IF~~ THEN REPLY@4113 GOTO TANBLK12
+  IF~~ THEN REPLY @4113 GOTO TANBLK12
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN TANBLK12
   SAY@4114
-  IF~~ THEN REPLY@4115 GOTO TANBLK14
-  IF~~ THEN REPLY@4116 GOTO TANBLK13
+  IF~~ THEN REPLY @4115 GOTO TANBLK14
+  IF~~ THEN REPLY @4116 GOTO TANBLK13
 END
 
 //---------------------------------------------------------
 IF ~~ THEN BEGIN TANBLK13
   SAY@4117
-  IF~~ THEN REPLY@4118 GOTO TANBLK14
+  IF~~ THEN REPLY @4118 GOTO TANBLK14
 END
 
 //---------------------------------------------------------

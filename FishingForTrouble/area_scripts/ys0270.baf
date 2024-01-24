@@ -1,15 +1,6 @@
-//Initialise the timer
-IF
-  Global("ys_270Timer","GLOBAL",0)
-THEN
-  RESPONSE #100
-    SetGlobalTimer("ys_PlayerIsUndead","GLOBAL",1)
-    SetGlobal("ys_270Timer","GLOBAL",1)
-END
 
-//Check to see if the Vampire's Bed potion has been swallowed
-//If so, disable the Traps of the Living and start the Vampire Bed timer running
-//As Ceinwen says, this is CHARNAME only
+//Check to see if the ghoul's Bed potion has been swallowed
+//If so, disable the Traps of the Living and start the ghoul Bed timer running
 IF
   CheckStat(Player1,9,INT)
   CheckStat(Player1,9,WIS)
@@ -17,10 +8,74 @@ IF
   CheckStat(Player1,9,CON)
   CheckStat(Player1,17,STR)
   CheckStat(Player1,3,CHR)
+  Global("ys_Player1ghoul","GLOBAL",0)
 THEN
   RESPONSE #100
-    SetGlobal("ys_Player1Vamp","GLOBAL",1)
-    SetGlobalTimer("ys_PlayerIsUndead","GLOBAL",300)
+    SetGlobal("ys_Player1ghoul","GLOBAL",1)
+END
+
+IF
+  CheckStat(Player2,9,INT)
+  CheckStat(Player2,9,WIS)
+  CheckStat(Player2,9,DEX)
+  CheckStat(Player2,9,CON)
+  CheckStat(Player2,17,STR)
+  CheckStat(Player2,3,CHR)
+  Global("ys_Player2ghoul","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ys_Player2ghoul","GLOBAL",1)
+END
+
+IF
+  CheckStat(Player3,9,INT)
+  CheckStat(Player3,9,WIS)
+  CheckStat(Player3,9,DEX)
+  CheckStat(Player3,9,CON)
+  CheckStat(Player3,17,STR)
+  CheckStat(Player3,3,CHR)
+  Global("ys_Player3ghoul","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ys_Player3ghoul","GLOBAL",1)
+END
+IF
+  CheckStat(Player4,9,INT)
+  CheckStat(Player4,9,WIS)
+  CheckStat(Player4,9,DEX)
+  CheckStat(Player4,9,CON)
+  CheckStat(Player4,17,STR)
+  CheckStat(Player4,3,CHR)
+  Global("ys_Player4ghoul","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ys_Player4ghoul","GLOBAL",1)
+END
+
+IF
+  CheckStat(Player5,9,INT)
+  CheckStat(Player5,9,WIS)
+  CheckStat(Player5,9,DEX)
+  CheckStat(Player5,9,CON)
+  CheckStat(Player5,17,STR)
+  CheckStat(Player5,3,CHR)
+  Global("ys_Player5ghoul","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ys_Player5ghoul","GLOBAL",1)
+END
+
+IF
+  CheckStat(Player6,9,INT)
+  CheckStat(Player6,9,WIS)
+  CheckStat(Player6,9,DEX)
+  CheckStat(Player6,9,CON)
+  CheckStat(Player6,17,STR)
+  CheckStat(Player6,3,CHR)
+  Global("ys_Player6ghoul","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ys_Player6ghoul","GLOBAL",1)
 END
 
 //Set variables after key is retrieved

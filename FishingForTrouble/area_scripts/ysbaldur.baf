@@ -1,26 +1,9 @@
 //------------------------------------------------------------------
-//Need to abuse baldur.bcs to check for timer timeout because
-//we don't know where the player will be
-IF
-	Global("ys_Player1Vamp","GLOBAL",1)
-	GlobalTimerExpired("ys_PlayerIsUndead","GLOBAL")
-	CheckStat(Player1,9,INT)
-	CheckStat(Player1,9,WIS)
-	CheckStat(Player1,9,DEX)
-	CheckStat(Player1,9,CON)
-	CheckStat(Player1,17,STR)
-	CheckStat(Player1,3,CHR)
-THEN
-	RESPONSE #100
-		//ReallyForceSpellRES("yspervmp",Player1) -- http://www.shsforums.net/topic/58178-missing-spell-in-script/
-		SetGlobal("ys_Player1Vamp","GLOBAL",2)
-		Continue()
-END
-
-//------------------------------------------------------------------
 //Change Porthpentyrch area
 IF
 	GlobalTimerExpired("ysLiftCurse","GLOBAL")
+	!Global("ys_TalkedToGarGel","GLOBAL",8)
+	!Global("ys_TalkedToGarGel","GLOBAL",9)
 	Global("ysChangePPT","GLOBAL",0)
 THEN
 	RESPONSE #100
