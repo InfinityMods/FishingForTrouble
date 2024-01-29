@@ -1,3 +1,28 @@
+v3.2.10, 29.01.2024
+ TotoR115:
+ - add missing embedded scripts in the creature structure
+ - add a hostile trigger in the script when needed
+ - minor NPC corrections
+ - remove not used scripts
+ - tanarri: it now respawns as it is trapped 
+ - tanarri: fix the script, the creature will now become hostile when attacked and will fight back
+ - tanarri: add missing weapon and immunity ring
+ - lib: rename face.ids in dir.ids to match EE and other minor corrections to patches.tpa and dialog.tpa
+ - replace InParty("xxxx") by IfValidForPartyDialog("xxxx") InMyArea("xxxx") !StateCheck("xxxx",CD_STATE_NOTVALID)
+ - fix some minor issues with variable and logic
+ - clean-up files by removing useless triggers
+ - fix the door region for the house of the keeper
+ - fix the embedded script in ys0040
+ - add 2 lines that were missing from the tra file
+ - change Duke Elthan for Council of Six 
+ - trad in Russian done with Deepl for 493, 494 and 1933 - some refinement may be needed
+ - fix bug with racetext.2da for EE
+ - fix Gadil's dialogue tree
+ - fix yschdg.cre causing CTD
+ - fixes for minor issues and EE version
+ - fix for Nalia Dialog and Trap of the Dead
+ - update ghoul transformation and script, ghoul portrait change is disabled for now
+
 v3.2.9, 12.01.2024
  AL|EN:
  - added HANDLE_CHARSETS and iconv
