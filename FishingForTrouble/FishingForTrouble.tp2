@@ -92,7 +92,10 @@ COPY_EXISTING ~songlist.2da~ ~override~
 //Ghoul portrait
 //##################################################
 	COPY ~%MOD_FOLDER%/bmp~ ~override~
-
+    ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+        //Use large portiat also for small variant
+        COPY ~%MOD_FOLDER%/bmp/ysghoulm.bmp~ ~override\ysghouls.bmp~
+    END
 //##################################################
 //2da
 //##################################################
