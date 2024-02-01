@@ -1,10 +1,10 @@
-v3.2.10, 29.01.2024
+v3.2.10, 29.01.2024  
  TotoR115:
  - add missing embedded scripts in the creature structure
  - add a hostile trigger in the script when needed
  - minor NPC corrections
  - remove not used scripts
- - tanarri: it now respawns as it is trapped 
+ - tanarri: it now respawns as it is trapped
  - tanarri: fix the script, the creature will now become hostile when attacked and will fight back
  - tanarri: add missing weapon and immunity ring
  - lib: rename face.ids in dir.ids to match EE and other minor corrections to patches.tpa and dialog.tpa
@@ -14,7 +14,7 @@ v3.2.10, 29.01.2024
  - fix the door region for the house of the keeper
  - fix the embedded script in ys0040
  - add 2 lines that were missing from the tra file
- - change Duke Elthan for Council of Six 
+ - change Duke Elthan for Council of Six
  - trad in Russian done with Deepl for 493, 494 and 1933 - some refinement may be needed
  - fix bug with racetext.2da for EE
  - fix Gadil's dialogue tree
@@ -23,7 +23,7 @@ v3.2.10, 29.01.2024
  - fix for Nalia Dialog and Trap of the Dead
  - update ghoul transformation and script, ghoul portrait change is disabled for now
 
-v3.2.9, 12.01.2024
+v3.2.9, 12.01.2024  
  AL|EN:
  - added HANDLE_CHARSETS and iconv
  - move changelog from FishingForTrouble-Readme.html into FishingForTrouble-Changelog.md
@@ -49,18 +49,19 @@ v3.2.9, 12.01.2024
  - ys0407.are: is missing the ys0407.bcs
  - yshldgrd.cre: remove the shield as in oBG2 he can't use his bow
 
-v3.2.8, 28.03.2021
+v3.2.8, 28.03.2021  
  AL|EN:
  - fixed Face.ids
 
-v3.2.7, 07.01.2021
+v3.2.7, 07.01.2021  
  AL|EN:
  - fixed typo and updated Russian translation copyright line
  - traify lib/patches.tpa messages
 
-v3.2.6, 06.01.2021
+v3.2.6, 06.01.2021  
  AGKanevchev:
  - updated Russian translation, thanks AGKanevchev
+
  AL|EN:
  - traify ysblksto.d and yselcol2.d
  - traify setup messages
@@ -72,8 +73,8 @@ v3.2.6, 06.01.2021
  - restore original version name formatting to match tags and release names
  - rename AUTHOR to SUPPORT
  - updated mod readme
- 
-v3.2.5, 04.09.2019
+
+v3.2.5, 04.09.2019  
  Roxanne:
  - fixed loop in final Akil quest dialogue
  - fixed double spawning of tanar'ri at lighthouse and added missing leaving code
@@ -81,26 +82,26 @@ v3.2.5, 04.09.2019
  - added remaining Tis for EE
  - removed illegal support contact
 
-v3.2.4, 20.08.2019
+v3.2.4, 20.08.2019  
  AL|EN:
  - updated mod readme
  - added support forum
 
-v3.2.3, 20.08.2019 by AL|EN and Roxanne
+v3.2.3, 20.08.2019  
  AL|EN:
  - added MacOS WeiDU executable and changed setup-fishingfortrouble.command file
- Roxanne:
+Roxanne:
  - fixed Tis files for large areas in EE games
  - fixed double spawning of tanar'ri at lighthouse and added missing leaving code
 
 v3.2.2, 19 August 2019
  - consolidated maintenance fixes from 2018 and 2019
 
-v3.2.1, 27 July
+v3.2.1, 27 July  
  AL|EN:
  - removed the "Optional component - add Fishing for Trouble to BP-BGT-Worldmap", it doesn't make sense, proper code by K4thos added to patch_worldmap.tpa
 
-v3.2.0, 2 July 2016
+v3.2.0, 2 July 2016  
  K4thos:
  - new icon for Govt. West by Lava
  - new BAM v1 and BAM v2 icon file patching (without overwritting)
@@ -109,7 +110,7 @@ v3.2.0, 2 July 2016
  - fixed BP-BGT Worldmap component (previously would crash if Worldmap directory was empty)
  - EE worldmap save patching can be enabled in code (by default only enabled for original games, just like in old implementation)
 
-v3.1.3, 6 November 2016
+v3.1.3, 6 November 2016  
  agb1:
  - fixed following issues reported by micbaldur (http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/?p=589066)
  - Earl Wultheof will give a gold reward as his dialogue claims
@@ -118,16 +119,17 @@ v3.1.3, 6 November 2016
  - fixed Levon's dialogue when Akil is in the same room (possible quest outcome)
  - fixed charisma checks in Levon's dialogue (speaker's charisma affects outcome)
 
-v3.1.2, 3 November 2016
+v3.1.2, 3 November 2016  
  agb1:
  - incorporated patch from K4thos to fix EET journal chapter numbering
  - removed an invalid reference (http://www.shsforums.net/topic/58178-missing-spell-in-script/)
 
-v3.1.1, 21 July 2016
+v3.1.1, 21 July 2016  
  agb1:
  - added check for EE game type to lib/patches.tpa to avoid patching ACTION.IDS (some signatures changed in EE)
 
-v3.1, 5 February 2016
+v3.1, 5 February 2016  
+agb1:
  - incorporated patches from the BiG World Fixpack
  - renamed mod folder and tp2 from dq to fishingfortrouble
  - incorporated EET compatibility patches from K4thos
